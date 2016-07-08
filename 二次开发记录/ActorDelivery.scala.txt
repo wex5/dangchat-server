@@ -29,6 +29,7 @@ import com.justep.message.dispatcher._
   /**
    * 发送推送
    * by Lining 2016-6-22
+   *
    * @param senderName
    * @param pushText
    * @param censoredPushText
@@ -45,8 +46,16 @@ import com.justep.message.dispatcher._
         //得到X5用户Id
         DbExtension(system).db.run(im.actor.server.persist.UserRepo.findNickname(receiverUserId)).map {
           case Some(x5UserId) ⇒
-            personIds.add(x5UserId.get)
-            //发送推送通知
+            DbExtension(system).db.run(im.actor.server.persist.ClientStateRepo.find(receiverUserId)).map {
+              case Some(clientState) ⇒
+                if (clientState.state == 0) {
+                  //app在pause状态，发送推送通知
+                  personIds.add(x5UserId.get)
+                }
+              case _ ⇒
+                //没有app状态，默认发送推送通知
+                personIds.add(x5UserId.get)
+            }
             MessageDispatcherFactory.createMessageDispatcher(v1, v2, v3).sendMessage(message, personIds);
           case _ ⇒
         }
