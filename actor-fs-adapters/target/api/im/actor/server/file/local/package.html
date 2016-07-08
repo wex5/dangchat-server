@@ -1,0 +1,300 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>local - im.actor.server.file.local</title>
+          <meta name="description" content="local - im.actor.server.file.local" />
+          <meta name="keywords" content="local im.actor.server.file.local" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../index.html';
+            var hash = 'im.actor.server.file.local.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="im">im</a>.<a href="../../../package.html" class="extype" name="im.actor">actor</a>.<a href="../../package.html" class="extype" name="im.actor.server">server</a>.<a href="../package.html" class="extype" name="im.actor.server.file">file</a></p>
+        <h1>local</h1><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.file.local.package" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">local</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="im.actor.server.file.local.FileStorageOperations" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="FileStorageOperationsextendsLocalUploadKeyImplicits"></a>
+      <a id="FileStorageOperations:FileStorageOperations"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="FileStorageOperations.html"><span class="name">FileStorageOperations</span></a><span class="result"> extends <a href="LocalUploadKeyImplicits.html" class="extype" name="im.actor.server.file.local.LocalUploadKeyImplicits">LocalUploadKeyImplicits</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.file.local.package@FileStorageOperationsextendsLocalUploadKeyImplicits" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.file.local.LocalFileStorageAdapter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="LocalFileStorageAdapterextendsFileStorageAdapterwithRequestSigningwithFileStorageOperationswithLocalUploadKeyImplicits"></a>
+      <a id="LocalFileStorageAdapter:LocalFileStorageAdapter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="LocalFileStorageAdapter.html"><span class="name">LocalFileStorageAdapter</span></a><span class="result"> extends <a href="../FileStorageAdapter.html" class="extype" name="im.actor.server.file.FileStorageAdapter">FileStorageAdapter</a> with <a href="RequestSigning.html" class="extype" name="im.actor.server.file.local.RequestSigning">RequestSigning</a> with <a href="FileStorageOperations.html" class="extype" name="im.actor.server.file.local.FileStorageOperations">FileStorageOperations</a> with <a href="LocalUploadKeyImplicits.html" class="extype" name="im.actor.server.file.local.LocalUploadKeyImplicits">LocalUploadKeyImplicits</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.file.local.package@LocalFileStorageAdapterextendsFileStorageAdapterwithRequestSigningwithFileStorageOperationswithLocalUploadKeyImplicits" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">File adapter that works with local file system to store and retrieve files
+To use this file adapter as default provide its FQCN in modules.files.adapter of your server config.</p><div class="fullcomment"><div class="comment cmt"><p>File adapter that works with local file system to store and retrieve files
+To use this file adapter as default provide its FQCN in modules.files.adapter of your server config.
+You also need to provide default file location in services.file-storage.location of your server config
+On initialization it will try to create default file location, if it does not exist and write simple text file
+to check user's read/write permissions
+</p></div></div>
+    </li><li name="im.actor.server.file.local.LocalFileStorageConfig" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LocalFileStorageConfigextendsProductwithSerializable"></a>
+      <a id="LocalFileStorageConfig:LocalFileStorageConfig"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="LocalFileStorageConfig.html"><span class="name">LocalFileStorageConfig</span></a><span class="params">(<span name="location">location: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.file.local.package@LocalFileStorageConfigextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.file.local.LocalUploadKey" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="LocalUploadKeyextendsGeneratedMessagewithMessage[im.actor.server.file.local.LocalUploadKey]withUpdatable[im.actor.server.file.local.LocalUploadKey]withUploadKeywithProductwithSerializable"></a>
+      <a id="LocalUploadKey:LocalUploadKey"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="LocalUploadKey.html"><span class="name">LocalUploadKey</span></a><span class="params">(<span name="key">key: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>)</span><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessage">GeneratedMessage</span> with <span class="extype" name="com.trueaccord.scalapb.Message">Message</span>[<a href="LocalUploadKey.html" class="extype" name="im.actor.server.file.local.LocalUploadKey">LocalUploadKey</a>] with <span class="extype" name="com.trueaccord.lenses.Updatable">Updatable</span>[<a href="LocalUploadKey.html" class="extype" name="im.actor.server.file.local.LocalUploadKey">LocalUploadKey</a>] with <a href="../UploadKey.html" class="extype" name="im.actor.server.file.UploadKey">UploadKey</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.file.local.package@LocalUploadKeyextendsGeneratedMessagewithMessage[im.actor.server.file.local.LocalUploadKey]withUpdatable[im.actor.server.file.local.LocalUploadKey]withUploadKeywithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.file.local.LocalUploadKeyImplicits" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="LocalUploadKeyImplicitsextendsAnyRef"></a>
+      <a id="LocalUploadKeyImplicits:LocalUploadKeyImplicits"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="LocalUploadKeyImplicits.html"><span class="name">LocalUploadKeyImplicits</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.file.local.package@LocalUploadKeyImplicitsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.file.local.RequestSigning" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="RequestSigningextendsACLBase"></a>
+      <a id="RequestSigning:RequestSigning"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="RequestSigning.html"><span class="name">RequestSigning</span></a><span class="result"> extends <span class="extype" name="im.actor.acl.ACLBase">ACLBase</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.file.local.package@RequestSigningextendsACLBase" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="im.actor.server.file.local.LocalFileStorageConfig" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LocalFileStorageConfig"></a>
+      <a id="LocalFileStorageConfig:LocalFileStorageConfig"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LocalFileStorageConfig$.html"><span class="name">LocalFileStorageConfig</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.file.local.package@LocalFileStorageConfig" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.file.local.LocalProto" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LocalProto"></a>
+      <a id="LocalProto:LocalProto"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LocalProto$.html"><span class="name">LocalProto</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.file.local.package@LocalProto" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.file.local.LocalUploadKey" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LocalUploadKey"></a>
+      <a id="LocalUploadKey:LocalUploadKey"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LocalUploadKey$.html"><span class="name">LocalUploadKey</span></a><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</span>[<a href="LocalUploadKey.html" class="extype" name="im.actor.server.file.local.LocalUploadKey">LocalUploadKey</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.file.local.package@LocalUploadKey" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.file.local.LocalUploadKeyImplicits" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LocalUploadKeyImplicits"></a>
+      <a id="LocalUploadKeyImplicits:LocalUploadKeyImplicits"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LocalUploadKeyImplicits$.html"><span class="name">LocalUploadKeyImplicits</span></a><span class="result"> extends <a href="LocalUploadKeyImplicits.html" class="extype" name="im.actor.server.file.local.LocalUploadKeyImplicits">LocalUploadKeyImplicits</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.file.local.package@LocalUploadKeyImplicits" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.file.local.http" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="http"></a>
+      <a id="http:http"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="http/package.html"><span class="name">http</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.file.local.package@http" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

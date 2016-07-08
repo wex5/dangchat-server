@@ -1,0 +1,21 @@
+services {
+  postgresql {
+    host: "localhost"
+
+    db: actor
+
+    user: actor
+
+    password: <password>
+  }
+
+  actor-activation {
+    auth-token: <token>
+  }
+}
+
+secret: <put a long random string here>
+project-name: <your application name>
+public-endpoints: [
+    <list of endpoints accessible by client applications>
+]

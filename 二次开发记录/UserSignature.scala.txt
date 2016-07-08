@@ -1,0 +1,3 @@
+actor-models/src/main/scala/im/actor/server/model/UserSignature.scala
+
+添加该类

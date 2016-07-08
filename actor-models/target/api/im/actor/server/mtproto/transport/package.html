@@ -1,0 +1,551 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>transport - im.actor.server.mtproto.transport</title>
+          <meta name="description" content="transport - im.actor.server.mtproto.transport" />
+          <meta name="keywords" content="transport im.actor.server.mtproto.transport" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../index.html';
+            var hash = 'im.actor.server.mtproto.transport.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="im">im</a>.<a href="../../../package.html" class="extype" name="im.actor">actor</a>.<a href="../../package.html" class="extype" name="im.actor.server">server</a>.<a href="../package.html" class="extype" name="im.actor.server.mtproto">mtproto</a></p>
+        <h1>transport</h1><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.transport.package" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">transport</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="im.actor.server.mtproto.transport.Ack" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="AckextendsMTProtowithProductwithSerializable"></a>
+      <a id="Ack:Ack"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Ack.html"><span class="name">Ack</span></a><span class="params">(<span name="receiedPackageIndex">receiedPackageIndex: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result"> extends <a href="MTProto.html" class="extype" name="im.actor.server.mtproto.transport.MTProto">MTProto</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.transport.package@AckextendsMTProtowithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.transport.Drop" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DropextendsMTProtowithProductwithSerializable"></a>
+      <a id="Drop:Drop"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Drop.html"><span class="name">Drop</span></a><span class="params">(<span name="messageId">messageId: <span class="extype" name="scala.Long">Long</span></span>, <span name="errorCode">errorCode: <span class="extype" name="scala.Byte">Byte</span></span>, <span name="message">message: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="MTProto.html" class="extype" name="im.actor.server.mtproto.transport.MTProto">MTProto</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.transport.package@DropextendsMTProtowithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.transport.Handshake" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="HandshakeextendsMTProtowithProductwithSerializable"></a>
+      <a id="Handshake:Handshake"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Handshake.html"><span class="name">Handshake</span></a><span class="params">(<span name="protoVersion">protoVersion: <span class="extype" name="scala.Byte">Byte</span></span>, <span name="apiMajorVersion">apiMajorVersion: <span class="extype" name="scala.Byte">Byte</span></span>, <span name="apiMinorVersion">apiMinorVersion: <span class="extype" name="scala.Byte">Byte</span></span>, <span name="bytes">bytes: <span class="extype" name="scodec.bits.BitVector">BitVector</span></span>)</span><span class="result"> extends <a href="MTProto.html" class="extype" name="im.actor.server.mtproto.transport.MTProto">MTProto</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.transport.package@HandshakeextendsMTProtowithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.transport.HandshakeHeader" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="HandshakeHeaderextendsProductwithSerializable"></a>
+      <a id="HandshakeHeader:HandshakeHeader"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="HandshakeHeader.html"><span class="name">HandshakeHeader</span></a><span class="params">(<span name="protoVersion">protoVersion: <span class="extype" name="scala.Byte">Byte</span></span>, <span name="apiMajorVersion">apiMajorVersion: <span class="extype" name="scala.Byte">Byte</span></span>, <span name="apiMinorVersion">apiMinorVersion: <span class="extype" name="scala.Byte">Byte</span></span>, <span name="dataLength">dataLength: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.transport.package@HandshakeHeaderextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.transport.HandshakeResponse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="HandshakeResponseextendsMTProtowithProductwithSerializable"></a>
+      <a id="HandshakeResponse:HandshakeResponse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="HandshakeResponse.html"><span class="name">HandshakeResponse</span></a><span class="params">(<span name="protoVersion">protoVersion: <span class="extype" name="scala.Byte">Byte</span></span>, <span name="apiMajorVersion">apiMajorVersion: <span class="extype" name="scala.Byte">Byte</span></span>, <span name="apiMinorVersion">apiMinorVersion: <span class="extype" name="scala.Byte">Byte</span></span>, <span name="sha256">sha256: <span class="extype" name="scodec.bits.BitVector">BitVector</span></span>)</span><span class="result"> extends <a href="MTProto.html" class="extype" name="im.actor.server.mtproto.transport.MTProto">MTProto</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.transport.package@HandshakeResponseextendsMTProtowithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.transport.InternalError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="InternalErrorextendsMTProtowithProductwithSerializable"></a>
+      <a id="InternalError:InternalError"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="InternalError.html"><span class="name">InternalError</span></a><span class="params">(<span name="errorCode">errorCode: <span class="extype" name="scala.Byte">Byte</span></span>, <span name="retryTimeout">retryTimeout: <span class="extype" name="scala.Int">Int</span></span>, <span name="msg">msg: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="MTProto.html" class="extype" name="im.actor.server.mtproto.transport.MTProto">MTProto</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.transport.package@InternalErrorextendsMTProtowithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.transport.MTPackage" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="MTPackageextendsMTProtowithProductwithSerializable"></a>
+      <a id="MTPackage:MTPackage"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="MTPackage.html"><span class="name">MTPackage</span></a><span class="params">(<span name="authId">authId: <span class="extype" name="scala.Long">Long</span></span>, <span name="sessionId">sessionId: <span class="extype" name="scala.Long">Long</span></span>, <span name="messageBytes">messageBytes: <span class="extype" name="scodec.bits.BitVector">BitVector</span></span>)</span><span class="result"> extends <a href="MTProto.html" class="extype" name="im.actor.server.mtproto.transport.MTProto">MTProto</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.transport.package@MTPackageextendsMTProtowithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.transport.MTProto" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MTProtoextendsProductwithSerializable"></a>
+      <a id="MTProto:MTProto"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MTProto.html"><span class="name">MTProto</span></a><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.transport.package@MTProtoextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.transport.MTTransport" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MTTransportextendsAnyRef"></a>
+      <a id="MTTransport:MTTransport"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MTTransport.html"><span class="name">MTTransport</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.transport.package@MTTransportextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.transport.Ping" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="PingextendsMTProtowithProductwithSerializable"></a>
+      <a id="Ping:Ping"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Ping.html"><span class="name">Ping</span></a><span class="params">(<span name="randomBytes">randomBytes: <span class="extype" name="scodec.bits.BitVector">BitVector</span></span>)</span><span class="result"> extends <a href="MTProto.html" class="extype" name="im.actor.server.mtproto.transport.MTProto">MTProto</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.transport.package@PingextendsMTProtowithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.transport.Pong" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="PongextendsMTProtowithProductwithSerializable"></a>
+      <a id="Pong:Pong"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Pong.html"><span class="name">Pong</span></a><span class="params">(<span name="randomBytes">randomBytes: <span class="extype" name="scodec.bits.BitVector">BitVector</span></span>)</span><span class="result"> extends <a href="MTProto.html" class="extype" name="im.actor.server.mtproto.transport.MTProto">MTProto</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.transport.package@PongextendsMTProtowithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.transport.ProtoPackage" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ProtoPackageextendsMTTransportwithProductwithSerializable"></a>
+      <a id="ProtoPackage:ProtoPackage"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ProtoPackage.html"><span class="name">ProtoPackage</span></a><span class="params">(<span name="m">m: <a href="MTProto.html" class="extype" name="im.actor.server.mtproto.transport.MTProto">MTProto</a></span>)</span><span class="result"> extends <a href="MTTransport.html" class="extype" name="im.actor.server.mtproto.transport.MTTransport">MTTransport</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.transport.package@ProtoPackageextendsMTTransportwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.transport.Redirect" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="RedirectextendsMTProtowithProductwithSerializable"></a>
+      <a id="Redirect:Redirect"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Redirect.html"><span class="name">Redirect</span></a><span class="params">(<span name="hostname">hostname: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="port">port: <span class="extype" name="scala.Int">Int</span></span>, <span name="timeout">timeout: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result"> extends <a href="MTProto.html" class="extype" name="im.actor.server.mtproto.transport.MTProto">MTProto</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.transport.package@RedirectextendsMTProtowithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.transport.TransportPackage" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="TransportPackageextendsProductwithSerializable"></a>
+      <a id="TransportPackage:TransportPackage"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="TransportPackage.html"><span class="name">TransportPackage</span></a><span class="params">(<span name="index">index: <span class="extype" name="scala.Int">Int</span></span>, <span name="body">body: <a href="MTProto.html" class="extype" name="im.actor.server.mtproto.transport.MTProto">MTProto</a></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.transport.package@TransportPackageextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="im.actor.server.mtproto.transport.Ack" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Ack"></a>
+      <a id="Ack:Ack"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Ack$.html"><span class="name">Ack</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.transport.package@Ack" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.transport.Drop" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Drop"></a>
+      <a id="Drop:Drop"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Drop$.html"><span class="name">Drop</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.transport.package@Drop" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.transport.Handshake" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Handshake"></a>
+      <a id="Handshake:Handshake"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Handshake$.html"><span class="name">Handshake</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.transport.package@Handshake" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.transport.HandshakeResponse" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="HandshakeResponse"></a>
+      <a id="HandshakeResponse:HandshakeResponse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="HandshakeResponse$.html"><span class="name">HandshakeResponse</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.transport.package@HandshakeResponse" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.transport.InternalError" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InternalError"></a>
+      <a id="InternalError:InternalError"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="InternalError$.html"><span class="name">InternalError</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.transport.package@InternalError" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.transport.MTPackage" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MTPackage"></a>
+      <a id="MTPackage:MTPackage"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MTPackage$.html"><span class="name">MTPackage</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.transport.package@MTPackage" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.transport.Ping" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Ping"></a>
+      <a id="Ping:Ping"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Ping$.html"><span class="name">Ping</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.transport.package@Ping" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.transport.Pong" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Pong"></a>
+      <a id="Pong:Pong"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Pong$.html"><span class="name">Pong</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.transport.package@Pong" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.transport.Redirect" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Redirect"></a>
+      <a id="Redirect:Redirect"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Redirect$.html"><span class="name">Redirect</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.transport.package@Redirect" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.transport.SilentClose" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SilentClose"></a>
+      <a id="SilentClose:SilentClose"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SilentClose$.html"><span class="name">SilentClose</span></a><span class="result"> extends <a href="MTTransport.html" class="extype" name="im.actor.server.mtproto.transport.MTTransport">MTTransport</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.transport.package@SilentClose" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

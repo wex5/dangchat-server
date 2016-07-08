@@ -1,0 +1,2 @@
+actor-persist\src\main\scala\im\actor\server\persist\ClientStateRepo.scala
+添加该类

@@ -1,0 +1,29 @@
+syntax = "proto2";
+
+package im.actor.server;
+
+import "scalapb/scalapb.proto";
+
+message FileLocation {
+    required int64 file_id = 1;
+    required int64 access_hash = 2;
+}
+
+message AvatarImage {
+    required FileLocation file_location = 1;
+    required int32 width = 2;
+    required int32 height = 3;
+    required int64 file_size = 4;
+}
+
+message Avatar {
+    optional AvatarImage smallImage = 1;
+    optional AvatarImage largeImage = 2;
+    optional AvatarImage fullImage = 3;
+}
+
+message UrlBuilderSeed {
+    required int32 version = 1;
+    required int32 expire = 2;
+    required string random_part = 3;
+}

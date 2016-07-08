@@ -1,0 +1,3 @@
+actor-persist/src/main/scala/im/actor/server/persist/UserSignatureRepo.scala
+
+添加该类

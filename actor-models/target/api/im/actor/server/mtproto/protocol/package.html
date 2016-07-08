@@ -1,0 +1,1057 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>protocol - im.actor.server.mtproto.protocol</title>
+          <meta name="description" content="protocol - im.actor.server.mtproto.protocol" />
+          <meta name="keywords" content="protocol im.actor.server.mtproto.protocol" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../index.html';
+            var hash = 'im.actor.server.mtproto.protocol.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="im">im</a>.<a href="../../../package.html" class="extype" name="im.actor">actor</a>.<a href="../../package.html" class="extype" name="im.actor.server">server</a>.<a href="../package.html" class="extype" name="im.actor.server.mtproto">mtproto</a></p>
+        <h1>protocol</h1><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">protocol</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="im.actor.server.mtproto.protocol.AuthIdInvalid" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="AuthIdInvalidextendsProtoMessagewithOutgoingProtoMessage"></a>
+      <a id="AuthIdInvalid:AuthIdInvalid"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="AuthIdInvalid.html"><span class="name">AuthIdInvalid</span></a><span class="result"> extends <a href="ProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.ProtoMessage">ProtoMessage</a> with <a href="OutgoingProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.OutgoingProtoMessage">OutgoingProtoMessage</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@AuthIdInvalidextendsProtoMessagewithOutgoingProtoMessage" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.Container" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ContainerextendsProtoMessagewithProductwithSerializable"></a>
+      <a id="Container:Container"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Container.html"><span class="name">Container</span></a><span class="params">(<span name="messages">messages: <span class="extype" name="scala.Seq">Seq</span>[<a href="MessageBox.html" class="extype" name="im.actor.server.mtproto.protocol.MessageBox">MessageBox</a>]</span>)</span><span class="result"> extends <a href="ProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.ProtoMessage">ProtoMessage</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@ContainerextendsProtoMessagewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.protocol.EncryptedPackage" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="EncryptedPackageextendsProductwithSerializable"></a>
+      <a id="EncryptedPackage:EncryptedPackage"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="EncryptedPackage.html"><span class="name">EncryptedPackage</span></a><span class="params">(<span name="seq">seq: <span class="extype" name="scala.Long">Long</span></span>, <span name="encryptedMessageBytes">encryptedMessageBytes: <span class="extype" name="scodec.bits.BitVector">BitVector</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@EncryptedPackageextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.protocol.EncryptionCBCPackage" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="EncryptionCBCPackageextendsProductwithSerializable"></a>
+      <a id="EncryptionCBCPackage:EncryptionCBCPackage"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="EncryptionCBCPackage.html"><span class="name">EncryptionCBCPackage</span></a><span class="params">(<span name="iv">iv: <span class="extype" name="scodec.bits.BitVector">BitVector</span></span>, <span name="encryptedContent">encryptedContent: <span class="extype" name="scodec.bits.BitVector">BitVector</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@EncryptionCBCPackageextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.protocol.IncomingProtoMessage" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="IncomingProtoMessageextendsAnyRef"></a>
+      <a id="IncomingProtoMessage:IncomingProtoMessage"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="IncomingProtoMessage.html"><span class="name">IncomingProtoMessage</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@IncomingProtoMessageextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.MessageAck" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="MessageAckextendsProtoMessagewithProductwithSerializable"></a>
+      <a id="MessageAck:MessageAck"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="MessageAck.html"><span class="name">MessageAck</span></a><span class="params">(<span name="messageIds">messageIds: <span class="extype" name="scala.Vector">Vector</span>[<span class="extype" name="scala.Long">Long</span>]</span>)</span><span class="result"> extends <a href="ProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.ProtoMessage">ProtoMessage</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@MessageAckextendsProtoMessagewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.protocol.MessageBox" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="MessageBoxextendsProductwithSerializable"></a>
+      <a id="MessageBox:MessageBox"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="MessageBox.html"><span class="name">MessageBox</span></a><span class="params">(<span name="messageId">messageId: <span class="extype" name="scala.Long">Long</span></span>, <span name="body">body: <a href="ProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.ProtoMessage">ProtoMessage</a></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@MessageBoxextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.protocol.NewSession" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="NewSessionextendsProtoMessagewithOutgoingProtoMessagewithResendableProtoMessagewithProductwithSerializable"></a>
+      <a id="NewSession:NewSession"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="NewSession.html"><span class="name">NewSession</span></a><span class="params">(<span name="sessionId">sessionId: <span class="extype" name="scala.Long">Long</span></span>, <span name="messageId">messageId: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result"> extends <a href="ProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.ProtoMessage">ProtoMessage</a> with <a href="OutgoingProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.OutgoingProtoMessage">OutgoingProtoMessage</a> with <a href="ResendableProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.ResendableProtoMessage">ResendableProtoMessage</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@NewSessionextendsProtoMessagewithOutgoingProtoMessagewithResendableProtoMessagewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.protocol.OutgoingProtoMessage" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="OutgoingProtoMessageextendsAnyRef"></a>
+      <a id="OutgoingProtoMessage:OutgoingProtoMessage"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="OutgoingProtoMessage.html"><span class="name">OutgoingProtoMessage</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@OutgoingProtoMessageextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.ProtoMessage" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ProtoMessageextendsProtoMessageWithHeader"></a>
+      <a id="ProtoMessage:ProtoMessage"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ProtoMessage.html"><span class="name">ProtoMessage</span></a><span class="result"> extends <a href="ProtoMessageWithHeader.html" class="extype" name="im.actor.server.mtproto.protocol.ProtoMessageWithHeader">ProtoMessageWithHeader</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@ProtoMessageextendsProtoMessageWithHeader" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.ProtoMessageWithHeader" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ProtoMessageWithHeaderextendsAnyRef"></a>
+      <a id="ProtoMessageWithHeader:ProtoMessageWithHeader"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ProtoMessageWithHeader.html"><span class="name">ProtoMessageWithHeader</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@ProtoMessageWithHeaderextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.ProtoPush" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ProtoPushextendsProtoMessagewithOutgoingProtoMessagewithResendableProtoMessagewithProductwithSerializable"></a>
+      <a id="ProtoPush:ProtoPush"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ProtoPush.html"><span class="name">ProtoPush</span></a><span class="params">(<span name="bodyBytes">bodyBytes: <span class="extype" name="scodec.bits.BitVector">BitVector</span></span>)</span><span class="result"> extends <a href="ProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.ProtoMessage">ProtoMessage</a> with <a href="OutgoingProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.OutgoingProtoMessage">OutgoingProtoMessage</a> with <a href="ResendableProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.ResendableProtoMessage">ResendableProtoMessage</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@ProtoPushextendsProtoMessagewithOutgoingProtoMessagewithResendableProtoMessagewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.protocol.ProtoRpcRequest" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ProtoRpcRequestextendsProtoMessagewithProductwithSerializable"></a>
+      <a id="ProtoRpcRequest:ProtoRpcRequest"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ProtoRpcRequest.html"><span class="name">ProtoRpcRequest</span></a><span class="params">(<span name="bodyBytes">bodyBytes: <span class="extype" name="scodec.bits.BitVector">BitVector</span></span>)</span><span class="result"> extends <a href="ProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.ProtoMessage">ProtoMessage</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@ProtoRpcRequestextendsProtoMessagewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.protocol.ProtoRpcResponse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ProtoRpcResponseextendsProtoMessagewithOutgoingProtoMessagewithResendableProtoMessagewithProductwithSerializable"></a>
+      <a id="ProtoRpcResponse:ProtoRpcResponse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ProtoRpcResponse.html"><span class="name">ProtoRpcResponse</span></a><span class="params">(<span name="messageId">messageId: <span class="extype" name="scala.Long">Long</span></span>, <span name="bodyBytes">bodyBytes: <span class="extype" name="scodec.bits.BitVector">BitVector</span></span>)</span><span class="result"> extends <a href="ProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.ProtoMessage">ProtoMessage</a> with <a href="OutgoingProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.OutgoingProtoMessage">OutgoingProtoMessage</a> with <a href="ResendableProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.ResendableProtoMessage">ResendableProtoMessage</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@ProtoRpcResponseextendsProtoMessagewithOutgoingProtoMessagewithResendableProtoMessagewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.protocol.RequestAuthId" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="RequestAuthIdextendsProtoMessagewithIncomingProtoMessage"></a>
+      <a id="RequestAuthId:RequestAuthId"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="RequestAuthId.html"><span class="name">RequestAuthId</span></a><span class="result"> extends <a href="ProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.ProtoMessage">ProtoMessage</a> with <a href="IncomingProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.IncomingProtoMessage">IncomingProtoMessage</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@RequestAuthIdextendsProtoMessagewithIncomingProtoMessage" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.protocol.RequestDH" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="RequestDHextendsProtoMessagewithIncomingProtoMessagewithProductwithSerializable"></a>
+      <a id="RequestDH:RequestDH"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="RequestDH.html"><span class="name">RequestDH</span></a><span class="params">(<span name="randomId">randomId: <span class="extype" name="scala.Long">Long</span></span>, <span name="keyId">keyId: <span class="extype" name="scala.Long">Long</span></span>, <span name="clientNonce">clientNonce: <span class="extype" name="scodec.bits.BitVector">BitVector</span></span>, <span name="clientKey">clientKey: <span class="extype" name="scodec.bits.BitVector">BitVector</span></span>)</span><span class="result"> extends <a href="ProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.ProtoMessage">ProtoMessage</a> with <a href="IncomingProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.IncomingProtoMessage">IncomingProtoMessage</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@RequestDHextendsProtoMessagewithIncomingProtoMessagewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.protocol.RequestGetServerKey" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="RequestGetServerKeyextendsProtoMessagewithIncomingProtoMessagewithProductwithSerializable"></a>
+      <a id="RequestGetServerKey:RequestGetServerKey"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="RequestGetServerKey.html"><span class="name">RequestGetServerKey</span></a><span class="params">(<span name="keyId">keyId: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result"> extends <a href="ProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.ProtoMessage">ProtoMessage</a> with <a href="IncomingProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.IncomingProtoMessage">IncomingProtoMessage</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@RequestGetServerKeyextendsProtoMessagewithIncomingProtoMessagewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.protocol.RequestResend" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="RequestResendextendsProtoMessagewithProductwithSerializable"></a>
+      <a id="RequestResend:RequestResend"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="RequestResend.html"><span class="name">RequestResend</span></a><span class="params">(<span name="messageId">messageId: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result"> extends <a href="ProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.ProtoMessage">ProtoMessage</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@RequestResendextendsProtoMessagewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.protocol.RequestStartAuth" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="RequestStartAuthextendsProtoMessagewithIncomingProtoMessagewithProductwithSerializable"></a>
+      <a id="RequestStartAuth:RequestStartAuth"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="RequestStartAuth.html"><span class="name">RequestStartAuth</span></a><span class="params">(<span name="randomId">randomId: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result"> extends <a href="ProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.ProtoMessage">ProtoMessage</a> with <a href="IncomingProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.IncomingProtoMessage">IncomingProtoMessage</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@RequestStartAuthextendsProtoMessagewithIncomingProtoMessagewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.protocol.ResendableProtoMessage" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ResendableProtoMessageextendsAnyRef"></a>
+      <a id="ResendableProtoMessage:ResendableProtoMessage"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ResendableProtoMessage.html"><span class="name">ResendableProtoMessage</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@ResendableProtoMessageextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.ResponseAuthId" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ResponseAuthIdextendsProtoMessagewithProductwithSerializable"></a>
+      <a id="ResponseAuthId:ResponseAuthId"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ResponseAuthId.html"><span class="name">ResponseAuthId</span></a><span class="params">(<span name="authId">authId: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result"> extends <a href="ProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.ProtoMessage">ProtoMessage</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@ResponseAuthIdextendsProtoMessagewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.protocol.ResponseDoDH" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ResponseDoDHextendsProtoMessagewithOutgoingProtoMessagewithProductwithSerializable"></a>
+      <a id="ResponseDoDH:ResponseDoDH"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ResponseDoDH.html"><span class="name">ResponseDoDH</span></a><span class="params">(<span name="randomId">randomId: <span class="extype" name="scala.Long">Long</span></span>, <span name="verify">verify: <span class="extype" name="scodec.bits.BitVector">BitVector</span></span>, <span name="verifySign">verifySign: <span class="extype" name="scodec.bits.BitVector">BitVector</span></span>)</span><span class="result"> extends <a href="ProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.ProtoMessage">ProtoMessage</a> with <a href="OutgoingProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.OutgoingProtoMessage">OutgoingProtoMessage</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@ResponseDoDHextendsProtoMessagewithOutgoingProtoMessagewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.protocol.ResponseGetServerKey" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ResponseGetServerKeyextendsProtoMessagewithOutgoingProtoMessagewithProductwithSerializable"></a>
+      <a id="ResponseGetServerKey:ResponseGetServerKey"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ResponseGetServerKey.html"><span class="name">ResponseGetServerKey</span></a><span class="params">(<span name="keyId">keyId: <span class="extype" name="scala.Long">Long</span></span>, <span name="key">key: <span class="extype" name="scodec.bits.BitVector">BitVector</span></span>)</span><span class="result"> extends <a href="ProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.ProtoMessage">ProtoMessage</a> with <a href="OutgoingProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.OutgoingProtoMessage">OutgoingProtoMessage</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@ResponseGetServerKeyextendsProtoMessagewithOutgoingProtoMessagewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.protocol.ResponseStartAuth" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ResponseStartAuthextendsProtoMessagewithOutgoingProtoMessagewithProductwithSerializable"></a>
+      <a id="ResponseStartAuth:ResponseStartAuth"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ResponseStartAuth.html"><span class="name">ResponseStartAuth</span></a><span class="params">(<span name="randomId">randomId: <span class="extype" name="scala.Long">Long</span></span>, <span name="availableKeys">availableKeys: <span class="extype" name="scala.Vector">Vector</span>[<span class="extype" name="scala.Long">Long</span>]</span>, <span name="serverNonce">serverNonce: <span class="extype" name="scodec.bits.BitVector">BitVector</span></span>)</span><span class="result"> extends <a href="ProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.ProtoMessage">ProtoMessage</a> with <a href="OutgoingProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.OutgoingProtoMessage">OutgoingProtoMessage</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@ResponseStartAuthextendsProtoMessagewithOutgoingProtoMessagewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.protocol.RpcRequestMessage" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="RpcRequestMessageextendsProtoMessageWithHeader"></a>
+      <a id="RpcRequestMessage:RpcRequestMessage"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="RpcRequestMessage.html"><span class="name">RpcRequestMessage</span></a><span class="result"> extends <a href="ProtoMessageWithHeader.html" class="extype" name="im.actor.server.mtproto.protocol.ProtoMessageWithHeader">ProtoMessageWithHeader</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@RpcRequestMessageextendsProtoMessageWithHeader" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.RpcResponseMessage" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="RpcResponseMessageextendsProtoMessageWithHeader"></a>
+      <a id="RpcResponseMessage:RpcResponseMessage"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="RpcResponseMessage.html"><span class="name">RpcResponseMessage</span></a><span class="result"> extends <a href="ProtoMessageWithHeader.html" class="extype" name="im.actor.server.mtproto.protocol.ProtoMessageWithHeader">ProtoMessageWithHeader</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@RpcResponseMessageextendsProtoMessageWithHeader" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.SessionHello" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SessionHelloextendsProtoMessagewithIncomingProtoMessage"></a>
+      <a id="SessionHello:SessionHello"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="SessionHello.html"><span class="name">SessionHello</span></a><span class="result"> extends <a href="ProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.ProtoMessage">ProtoMessage</a> with <a href="IncomingProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.IncomingProtoMessage">IncomingProtoMessage</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@SessionHelloextendsProtoMessagewithIncomingProtoMessage" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.SessionLost" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SessionLostextendsProtoMessagewithOutgoingProtoMessage"></a>
+      <a id="SessionLost:SessionLost"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="SessionLost.html"><span class="name">SessionLost</span></a><span class="result"> extends <a href="ProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.ProtoMessage">ProtoMessage</a> with <a href="OutgoingProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.OutgoingProtoMessage">OutgoingProtoMessage</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@SessionLostextendsProtoMessagewithOutgoingProtoMessage" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.UnsentMessage" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="UnsentMessageextendsProtoMessagewithProductwithSerializable"></a>
+      <a id="UnsentMessage:UnsentMessage"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="UnsentMessage.html"><span class="name">UnsentMessage</span></a><span class="params">(<span name="messageId">messageId: <span class="extype" name="scala.Long">Long</span></span>, <span name="length">length: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result"> extends <a href="ProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.ProtoMessage">ProtoMessage</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@UnsentMessageextendsProtoMessagewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.protocol.UnsentResponse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="UnsentResponseextendsProtoMessagewithProductwithSerializable"></a>
+      <a id="UnsentResponse:UnsentResponse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="UnsentResponse.html"><span class="name">UnsentResponse</span></a><span class="params">(<span name="messageId">messageId: <span class="extype" name="scala.Long">Long</span></span>, <span name="requestMessageId">requestMessageId: <span class="extype" name="scala.Long">Long</span></span>, <span name="length">length: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result"> extends <a href="ProtoMessage.html" class="extype" name="im.actor.server.mtproto.protocol.ProtoMessage">ProtoMessage</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@UnsentResponseextendsProtoMessagewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.protocol.UpdateMessage" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="UpdateMessageextendsProtoMessageWithHeader"></a>
+      <a id="UpdateMessage:UpdateMessage"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="UpdateMessage.html"><span class="name">UpdateMessage</span></a><span class="result"> extends <a href="ProtoMessageWithHeader.html" class="extype" name="im.actor.server.mtproto.protocol.ProtoMessageWithHeader">ProtoMessageWithHeader</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@UpdateMessageextendsProtoMessageWithHeader" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="im.actor.server.mtproto.protocol.AuthIdInvalid" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="AuthIdInvalid"></a>
+      <a id="AuthIdInvalid:AuthIdInvalid"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="AuthIdInvalid$.html"><span class="name">AuthIdInvalid</span></a><span class="result"> extends <a href="AuthIdInvalid.html" class="extype" name="im.actor.server.mtproto.protocol.AuthIdInvalid">AuthIdInvalid</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@AuthIdInvalid" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.protocol.Container" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Container"></a>
+      <a id="Container:Container"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Container$.html"><span class="name">Container</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@Container" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.EncryptedPackage" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="EncryptedPackage"></a>
+      <a id="EncryptedPackage:EncryptedPackage"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="EncryptedPackage$.html"><span class="name">EncryptedPackage</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@EncryptedPackage" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.MessageAck" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MessageAck"></a>
+      <a id="MessageAck:MessageAck"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MessageAck$.html"><span class="name">MessageAck</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@MessageAck" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.NewSession" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NewSession"></a>
+      <a id="NewSession:NewSession"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="NewSession$.html"><span class="name">NewSession</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@NewSession" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.ProtoPush" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ProtoPush"></a>
+      <a id="ProtoPush:ProtoPush"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ProtoPush$.html"><span class="name">ProtoPush</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@ProtoPush" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.ProtoRpcRequest" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ProtoRpcRequest"></a>
+      <a id="ProtoRpcRequest:ProtoRpcRequest"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ProtoRpcRequest$.html"><span class="name">ProtoRpcRequest</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@ProtoRpcRequest" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.ProtoRpcResponse" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ProtoRpcResponse"></a>
+      <a id="ProtoRpcResponse:ProtoRpcResponse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ProtoRpcResponse$.html"><span class="name">ProtoRpcResponse</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@ProtoRpcResponse" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.RequestAuthId" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RequestAuthId"></a>
+      <a id="RequestAuthId:RequestAuthId"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="RequestAuthId$.html"><span class="name">RequestAuthId</span></a><span class="result"> extends <a href="RequestAuthId.html" class="extype" name="im.actor.server.mtproto.protocol.RequestAuthId">RequestAuthId</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@RequestAuthId" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.RequestDH" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RequestDH"></a>
+      <a id="RequestDH:RequestDH"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="RequestDH$.html"><span class="name">RequestDH</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@RequestDH" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.RequestGetServerKey" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RequestGetServerKey"></a>
+      <a id="RequestGetServerKey:RequestGetServerKey"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="RequestGetServerKey$.html"><span class="name">RequestGetServerKey</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@RequestGetServerKey" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.RequestResend" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RequestResend"></a>
+      <a id="RequestResend:RequestResend"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="RequestResend$.html"><span class="name">RequestResend</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@RequestResend" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.RequestStartAuth" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RequestStartAuth"></a>
+      <a id="RequestStartAuth:RequestStartAuth"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="RequestStartAuth$.html"><span class="name">RequestStartAuth</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@RequestStartAuth" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.ResponseAuthId" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ResponseAuthId"></a>
+      <a id="ResponseAuthId:ResponseAuthId"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ResponseAuthId$.html"><span class="name">ResponseAuthId</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@ResponseAuthId" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.ResponseDoDH" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ResponseDoDH"></a>
+      <a id="ResponseDoDH:ResponseDoDH"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ResponseDoDH$.html"><span class="name">ResponseDoDH</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@ResponseDoDH" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.ResponseGetServerKey" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ResponseGetServerKey"></a>
+      <a id="ResponseGetServerKey:ResponseGetServerKey"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ResponseGetServerKey$.html"><span class="name">ResponseGetServerKey</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@ResponseGetServerKey" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.ResponseStartAuth" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ResponseStartAuth"></a>
+      <a id="ResponseStartAuth:ResponseStartAuth"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ResponseStartAuth$.html"><span class="name">ResponseStartAuth</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@ResponseStartAuth" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.SessionHello" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SessionHello"></a>
+      <a id="SessionHello:SessionHello"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SessionHello$.html"><span class="name">SessionHello</span></a><span class="result"> extends <a href="SessionHello.html" class="extype" name="im.actor.server.mtproto.protocol.SessionHello">SessionHello</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@SessionHello" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.protocol.SessionLost" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SessionLost"></a>
+      <a id="SessionLost:SessionLost"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SessionLost$.html"><span class="name">SessionLost</span></a><span class="result"> extends <a href="SessionLost.html" class="extype" name="im.actor.server.mtproto.protocol.SessionLost">SessionLost</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@SessionLost" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.mtproto.protocol.UnsentMessage" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="UnsentMessage"></a>
+      <a id="UnsentMessage:UnsentMessage"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="UnsentMessage$.html"><span class="name">UnsentMessage</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@UnsentMessage" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.mtproto.protocol.UnsentResponse" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="UnsentResponse"></a>
+      <a id="UnsentResponse:UnsentResponse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="UnsentResponse$.html"><span class="name">UnsentResponse</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.mtproto.protocol.package@UnsentResponse" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

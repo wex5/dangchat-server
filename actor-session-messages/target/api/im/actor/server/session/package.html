@@ -1,0 +1,687 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>session - im.actor.server.session</title>
+          <meta name="description" content="session - im.actor.server.session" />
+          <meta name="keywords" content="session im.actor.server.session" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'im.actor.server.session.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="im">im</a>.<a href="../../package.html" class="extype" name="im.actor">actor</a>.<a href="../package.html" class="extype" name="im.actor.server">server</a></p>
+        <h1>session</h1><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">session</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="im.actor.server.session.AuthorizeUser" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="AuthorizeUserextendsGeneratedMessagewithMessage[im.actor.server.session.AuthorizeUser]withUpdatable[im.actor.server.session.AuthorizeUser]withSessionMessagewithProductwithSerializable"></a>
+      <a id="AuthorizeUser:AuthorizeUser"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="AuthorizeUser.html"><span class="name">AuthorizeUser</span></a><span class="params">(<span name="userId">userId: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="authSid">authSid: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="appId">appId: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>)</span><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessage">GeneratedMessage</span> with <span class="extype" name="com.trueaccord.scalapb.Message">Message</span>[<a href="AuthorizeUser.html" class="extype" name="im.actor.server.session.AuthorizeUser">AuthorizeUser</a>] with <span class="extype" name="com.trueaccord.lenses.Updatable">Updatable</span>[<a href="AuthorizeUser.html" class="extype" name="im.actor.server.session.AuthorizeUser">AuthorizeUser</a>] with <a href="SessionMessage.html" class="extype" name="im.actor.server.session.SessionMessage">SessionMessage</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@AuthorizeUserextendsGeneratedMessagewithMessage[im.actor.server.session.AuthorizeUser]withUpdatable[im.actor.server.session.AuthorizeUser]withSessionMessagewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.session.AuthorizeUserAck" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="AuthorizeUserAckextendsGeneratedMessagewithMessage[im.actor.server.session.AuthorizeUserAck]withUpdatable[im.actor.server.session.AuthorizeUserAck]withSessionResponsewithProductwithSerializable"></a>
+      <a id="AuthorizeUserAck:AuthorizeUserAck"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="AuthorizeUserAck.html"><span class="name">AuthorizeUserAck</span></a><span class="params">()</span><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessage">GeneratedMessage</span> with <span class="extype" name="com.trueaccord.scalapb.Message">Message</span>[<a href="AuthorizeUserAck.html" class="extype" name="im.actor.server.session.AuthorizeUserAck">AuthorizeUserAck</a>] with <span class="extype" name="com.trueaccord.lenses.Updatable">Updatable</span>[<a href="AuthorizeUserAck.html" class="extype" name="im.actor.server.session.AuthorizeUserAck">AuthorizeUserAck</a>] with <a href="SessionResponse.html" class="extype" name="im.actor.server.session.SessionResponse">SessionResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@AuthorizeUserAckextendsGeneratedMessagewithMessage[im.actor.server.session.AuthorizeUserAck]withUpdatable[im.actor.server.session.AuthorizeUserAck]withSessionResponsewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.session.GetUpdateOptimizations" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="GetUpdateOptimizationsextendsGeneratedMessagewithMessage[im.actor.server.session.GetUpdateOptimizations]withUpdatable[im.actor.server.session.GetUpdateOptimizations]withProductwithSerializable"></a>
+      <a id="GetUpdateOptimizations:GetUpdateOptimizations"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="GetUpdateOptimizations.html"><span class="name">GetUpdateOptimizations</span></a><span class="params">()</span><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessage">GeneratedMessage</span> with <span class="extype" name="com.trueaccord.scalapb.Message">Message</span>[<a href="GetUpdateOptimizations.html" class="extype" name="im.actor.server.session.GetUpdateOptimizations">GetUpdateOptimizations</a>] with <span class="extype" name="com.trueaccord.lenses.Updatable">Updatable</span>[<a href="GetUpdateOptimizations.html" class="extype" name="im.actor.server.session.GetUpdateOptimizations">GetUpdateOptimizations</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@GetUpdateOptimizationsextendsGeneratedMessagewithMessage[im.actor.server.session.GetUpdateOptimizations]withUpdatable[im.actor.server.session.GetUpdateOptimizations]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.session.GetUpdateOptimizationsAck" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="GetUpdateOptimizationsAckextendsGeneratedMessagewithMessage[im.actor.server.session.GetUpdateOptimizationsAck]withUpdatable[im.actor.server.session.GetUpdateOptimizationsAck]withSessionResponsewithProductwithSerializable"></a>
+      <a id="GetUpdateOptimizationsAck:GetUpdateOptimizationsAck"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="GetUpdateOptimizationsAck.html"><span class="name">GetUpdateOptimizationsAck</span></a><span class="params">(<span name="optimizations">optimizations: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">Nil</span></span>)</span><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessage">GeneratedMessage</span> with <span class="extype" name="com.trueaccord.scalapb.Message">Message</span>[<a href="GetUpdateOptimizationsAck.html" class="extype" name="im.actor.server.session.GetUpdateOptimizationsAck">GetUpdateOptimizationsAck</a>] with <span class="extype" name="com.trueaccord.lenses.Updatable">Updatable</span>[<a href="GetUpdateOptimizationsAck.html" class="extype" name="im.actor.server.session.GetUpdateOptimizationsAck">GetUpdateOptimizationsAck</a>] with <a href="SessionResponse.html" class="extype" name="im.actor.server.session.SessionResponse">SessionResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@GetUpdateOptimizationsAckextendsGeneratedMessagewithMessage[im.actor.server.session.GetUpdateOptimizationsAck]withUpdatable[im.actor.server.session.GetUpdateOptimizationsAck]withSessionResponsewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.session.HandleMessageBox" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="HandleMessageBoxextendsGeneratedMessagewithMessage[im.actor.server.session.HandleMessageBox]withUpdatable[im.actor.server.session.HandleMessageBox]withSessionMessagewithProductwithSerializable"></a>
+      <a id="HandleMessageBox:HandleMessageBox"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="HandleMessageBox.html"><span class="name">HandleMessageBox</span></a><span class="params">(<span name="messageBoxBytes">messageBoxBytes: <span class="extype" name="com.google.protobuf.ByteString">ByteString</span> = <span class="defval" name="com.google.protobuf.ByteString.EMPTY">...</span></span>, <span name="remoteAddr">remoteAddr: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.net.InetAddress">InetAddress</span>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessage">GeneratedMessage</span> with <span class="extype" name="com.trueaccord.scalapb.Message">Message</span>[<a href="HandleMessageBox.html" class="extype" name="im.actor.server.session.HandleMessageBox">HandleMessageBox</a>] with <span class="extype" name="com.trueaccord.lenses.Updatable">Updatable</span>[<a href="HandleMessageBox.html" class="extype" name="im.actor.server.session.HandleMessageBox">HandleMessageBox</a>] with <a href="SessionMessage.html" class="extype" name="im.actor.server.session.SessionMessage">SessionMessage</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@HandleMessageBoxextendsGeneratedMessagewithMessage[im.actor.server.session.HandleMessageBox]withUpdatable[im.actor.server.session.HandleMessageBox]withSessionMessagewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.session.SessionEnvelope" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SessionEnvelopeextendsGeneratedMessagewithMessage[im.actor.server.session.SessionEnvelope]withUpdatable[im.actor.server.session.SessionEnvelope]withProductwithSerializable"></a>
+      <a id="SessionEnvelope:SessionEnvelope"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="SessionEnvelope.html"><span class="name">SessionEnvelope</span></a><span class="params">(<span name="authId">authId: <span class="extype" name="scala.Long">Long</span> = <span class="symbol">0L</span></span>, <span name="sessionId">sessionId: <span class="extype" name="scala.Long">Long</span> = <span class="symbol">0L</span></span>, <span name="payload">payload: <a href="SessionEnvelope$$Payload.html" class="extype" name="im.actor.server.session.SessionEnvelope.Payload">Payload</a> = <span class="defval" name='<span class="name"><a href="../../../package.html">im.actor.server.session.SessionEnvelope.Payload.Empty</a></span>'>...</span></span>)</span><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessage">GeneratedMessage</span> with <span class="extype" name="com.trueaccord.scalapb.Message">Message</span>[<a href="SessionEnvelope.html" class="extype" name="im.actor.server.session.SessionEnvelope">SessionEnvelope</a>] with <span class="extype" name="com.trueaccord.lenses.Updatable">Updatable</span>[<a href="SessionEnvelope.html" class="extype" name="im.actor.server.session.SessionEnvelope">SessionEnvelope</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@SessionEnvelopeextendsGeneratedMessagewithMessage[im.actor.server.session.SessionEnvelope]withUpdatable[im.actor.server.session.SessionEnvelope]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.session.SessionMessage" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SessionMessageextendsAnyRef"></a>
+      <a id="SessionMessage:SessionMessage"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="SessionMessage.html"><span class="name">SessionMessage</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@SessionMessageextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.session.SessionRegion" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SessionRegionextendsProductwithSerializable"></a>
+      <a id="SessionRegion:SessionRegion"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="SessionRegion.html"><span class="name">SessionRegion</span></a><span class="params">(<span name="ref">ref: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@SessionRegionextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.session.SessionResponse" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SessionResponseextendsAnyRef"></a>
+      <a id="SessionResponse:SessionResponse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="SessionResponse.html"><span class="name">SessionResponse</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@SessionResponseextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.session.SubscribeCommand" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SubscribeCommandextendsSessionMessage"></a>
+      <a id="SubscribeCommand:SubscribeCommand"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="SubscribeCommand.html"><span class="name">SubscribeCommand</span></a><span class="result"> extends <a href="SessionMessage.html" class="extype" name="im.actor.server.session.SessionMessage">SessionMessage</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@SubscribeCommandextendsSessionMessage" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.session.SubscribeFromGroupOnline" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SubscribeFromGroupOnlineextendsGeneratedMessagewithMessage[im.actor.server.session.SubscribeFromGroupOnline]withUpdatable[im.actor.server.session.SubscribeFromGroupOnline]withSubscribeCommandwithProductwithSerializable"></a>
+      <a id="SubscribeFromGroupOnline:SubscribeFromGroupOnline"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="SubscribeFromGroupOnline.html"><span class="name">SubscribeFromGroupOnline</span></a><span class="params">(<span name="groupIds">groupIds: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">Nil</span></span>)</span><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessage">GeneratedMessage</span> with <span class="extype" name="com.trueaccord.scalapb.Message">Message</span>[<a href="SubscribeFromGroupOnline.html" class="extype" name="im.actor.server.session.SubscribeFromGroupOnline">SubscribeFromGroupOnline</a>] with <span class="extype" name="com.trueaccord.lenses.Updatable">Updatable</span>[<a href="SubscribeFromGroupOnline.html" class="extype" name="im.actor.server.session.SubscribeFromGroupOnline">SubscribeFromGroupOnline</a>] with <a href="SubscribeCommand.html" class="extype" name="im.actor.server.session.SubscribeCommand">SubscribeCommand</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@SubscribeFromGroupOnlineextendsGeneratedMessagewithMessage[im.actor.server.session.SubscribeFromGroupOnline]withUpdatable[im.actor.server.session.SubscribeFromGroupOnline]withSubscribeCommandwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.session.SubscribeFromOnline" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SubscribeFromOnlineextendsGeneratedMessagewithMessage[im.actor.server.session.SubscribeFromOnline]withUpdatable[im.actor.server.session.SubscribeFromOnline]withSubscribeCommandwithProductwithSerializable"></a>
+      <a id="SubscribeFromOnline:SubscribeFromOnline"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="SubscribeFromOnline.html"><span class="name">SubscribeFromOnline</span></a><span class="params">(<span name="userIds">userIds: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">Nil</span></span>)</span><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessage">GeneratedMessage</span> with <span class="extype" name="com.trueaccord.scalapb.Message">Message</span>[<a href="SubscribeFromOnline.html" class="extype" name="im.actor.server.session.SubscribeFromOnline">SubscribeFromOnline</a>] with <span class="extype" name="com.trueaccord.lenses.Updatable">Updatable</span>[<a href="SubscribeFromOnline.html" class="extype" name="im.actor.server.session.SubscribeFromOnline">SubscribeFromOnline</a>] with <a href="SubscribeCommand.html" class="extype" name="im.actor.server.session.SubscribeCommand">SubscribeCommand</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@SubscribeFromOnlineextendsGeneratedMessagewithMessage[im.actor.server.session.SubscribeFromOnline]withUpdatable[im.actor.server.session.SubscribeFromOnline]withSubscribeCommandwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.session.SubscribeToGroupOnline" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SubscribeToGroupOnlineextendsGeneratedMessagewithMessage[im.actor.server.session.SubscribeToGroupOnline]withUpdatable[im.actor.server.session.SubscribeToGroupOnline]withSubscribeCommandwithProductwithSerializable"></a>
+      <a id="SubscribeToGroupOnline:SubscribeToGroupOnline"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="SubscribeToGroupOnline.html"><span class="name">SubscribeToGroupOnline</span></a><span class="params">(<span name="groupIds">groupIds: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">Nil</span></span>)</span><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessage">GeneratedMessage</span> with <span class="extype" name="com.trueaccord.scalapb.Message">Message</span>[<a href="SubscribeToGroupOnline.html" class="extype" name="im.actor.server.session.SubscribeToGroupOnline">SubscribeToGroupOnline</a>] with <span class="extype" name="com.trueaccord.lenses.Updatable">Updatable</span>[<a href="SubscribeToGroupOnline.html" class="extype" name="im.actor.server.session.SubscribeToGroupOnline">SubscribeToGroupOnline</a>] with <a href="SubscribeCommand.html" class="extype" name="im.actor.server.session.SubscribeCommand">SubscribeCommand</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@SubscribeToGroupOnlineextendsGeneratedMessagewithMessage[im.actor.server.session.SubscribeToGroupOnline]withUpdatable[im.actor.server.session.SubscribeToGroupOnline]withSubscribeCommandwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.session.SubscribeToOnline" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SubscribeToOnlineextendsGeneratedMessagewithMessage[im.actor.server.session.SubscribeToOnline]withUpdatable[im.actor.server.session.SubscribeToOnline]withSubscribeCommandwithProductwithSerializable"></a>
+      <a id="SubscribeToOnline:SubscribeToOnline"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="SubscribeToOnline.html"><span class="name">SubscribeToOnline</span></a><span class="params">(<span name="userIds">userIds: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">Nil</span></span>)</span><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessage">GeneratedMessage</span> with <span class="extype" name="com.trueaccord.scalapb.Message">Message</span>[<a href="SubscribeToOnline.html" class="extype" name="im.actor.server.session.SubscribeToOnline">SubscribeToOnline</a>] with <span class="extype" name="com.trueaccord.lenses.Updatable">Updatable</span>[<a href="SubscribeToOnline.html" class="extype" name="im.actor.server.session.SubscribeToOnline">SubscribeToOnline</a>] with <a href="SubscribeCommand.html" class="extype" name="im.actor.server.session.SubscribeCommand">SubscribeCommand</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@SubscribeToOnlineextendsGeneratedMessagewithMessage[im.actor.server.session.SubscribeToOnline]withUpdatable[im.actor.server.session.SubscribeToOnline]withSubscribeCommandwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.session.SubscribeToSeq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SubscribeToSeqextendsGeneratedMessagewithMessage[im.actor.server.session.SubscribeToSeq]withUpdatable[im.actor.server.session.SubscribeToSeq]withSubscribeCommandwithProductwithSerializable"></a>
+      <a id="SubscribeToSeq:SubscribeToSeq"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="SubscribeToSeq.html"><span class="name">SubscribeToSeq</span></a><span class="params">(<span name="optimizations">optimizations: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">Nil</span></span>)</span><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessage">GeneratedMessage</span> with <span class="extype" name="com.trueaccord.scalapb.Message">Message</span>[<a href="SubscribeToSeq.html" class="extype" name="im.actor.server.session.SubscribeToSeq">SubscribeToSeq</a>] with <span class="extype" name="com.trueaccord.lenses.Updatable">Updatable</span>[<a href="SubscribeToSeq.html" class="extype" name="im.actor.server.session.SubscribeToSeq">SubscribeToSeq</a>] with <a href="SubscribeCommand.html" class="extype" name="im.actor.server.session.SubscribeCommand">SubscribeCommand</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@SubscribeToSeqextendsGeneratedMessagewithMessage[im.actor.server.session.SubscribeToSeq]withUpdatable[im.actor.server.session.SubscribeToSeq]withSubscribeCommandwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.session.SubscribeToWeak" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SubscribeToWeakextendsGeneratedMessagewithMessage[im.actor.server.session.SubscribeToWeak]withUpdatable[im.actor.server.session.SubscribeToWeak]withSubscribeCommandwithProductwithSerializable"></a>
+      <a id="SubscribeToWeak:SubscribeToWeak"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="SubscribeToWeak.html"><span class="name">SubscribeToWeak</span></a><span class="params">(<span name="group">group: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessage">GeneratedMessage</span> with <span class="extype" name="com.trueaccord.scalapb.Message">Message</span>[<a href="SubscribeToWeak.html" class="extype" name="im.actor.server.session.SubscribeToWeak">SubscribeToWeak</a>] with <span class="extype" name="com.trueaccord.lenses.Updatable">Updatable</span>[<a href="SubscribeToWeak.html" class="extype" name="im.actor.server.session.SubscribeToWeak">SubscribeToWeak</a>] with <a href="SubscribeCommand.html" class="extype" name="im.actor.server.session.SubscribeCommand">SubscribeCommand</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@SubscribeToWeakextendsGeneratedMessagewithMessage[im.actor.server.session.SubscribeToWeak]withUpdatable[im.actor.server.session.SubscribeToWeak]withSubscribeCommandwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.session.UnsubscribeFromWeak" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="UnsubscribeFromWeakextendsGeneratedMessagewithMessage[im.actor.server.session.UnsubscribeFromWeak]withUpdatable[im.actor.server.session.UnsubscribeFromWeak]withSubscribeCommandwithProductwithSerializable"></a>
+      <a id="UnsubscribeFromWeak:UnsubscribeFromWeak"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="UnsubscribeFromWeak.html"><span class="name">UnsubscribeFromWeak</span></a><span class="params">(<span name="group">group: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessage">GeneratedMessage</span> with <span class="extype" name="com.trueaccord.scalapb.Message">Message</span>[<a href="UnsubscribeFromWeak.html" class="extype" name="im.actor.server.session.UnsubscribeFromWeak">UnsubscribeFromWeak</a>] with <span class="extype" name="com.trueaccord.lenses.Updatable">Updatable</span>[<a href="UnsubscribeFromWeak.html" class="extype" name="im.actor.server.session.UnsubscribeFromWeak">UnsubscribeFromWeak</a>] with <a href="SubscribeCommand.html" class="extype" name="im.actor.server.session.SubscribeCommand">SubscribeCommand</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@UnsubscribeFromWeakextendsGeneratedMessagewithMessage[im.actor.server.session.UnsubscribeFromWeak]withUpdatable[im.actor.server.session.UnsubscribeFromWeak]withSubscribeCommandwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="im.actor.server.session.AuthorizeUser" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AuthorizeUser"></a>
+      <a id="AuthorizeUser:AuthorizeUser"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="AuthorizeUser$.html"><span class="name">AuthorizeUser</span></a><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</span>[<a href="AuthorizeUser.html" class="extype" name="im.actor.server.session.AuthorizeUser">AuthorizeUser</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@AuthorizeUser" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.session.AuthorizeUserAck" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AuthorizeUserAck"></a>
+      <a id="AuthorizeUserAck:AuthorizeUserAck"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="AuthorizeUserAck$.html"><span class="name">AuthorizeUserAck</span></a><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</span>[<a href="AuthorizeUserAck.html" class="extype" name="im.actor.server.session.AuthorizeUserAck">AuthorizeUserAck</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@AuthorizeUserAck" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.session.GetUpdateOptimizations" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GetUpdateOptimizations"></a>
+      <a id="GetUpdateOptimizations:GetUpdateOptimizations"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GetUpdateOptimizations$.html"><span class="name">GetUpdateOptimizations</span></a><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</span>[<a href="GetUpdateOptimizations.html" class="extype" name="im.actor.server.session.GetUpdateOptimizations">GetUpdateOptimizations</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@GetUpdateOptimizations" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.session.GetUpdateOptimizationsAck" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GetUpdateOptimizationsAck"></a>
+      <a id="GetUpdateOptimizationsAck:GetUpdateOptimizationsAck"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GetUpdateOptimizationsAck$.html"><span class="name">GetUpdateOptimizationsAck</span></a><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</span>[<a href="GetUpdateOptimizationsAck.html" class="extype" name="im.actor.server.session.GetUpdateOptimizationsAck">GetUpdateOptimizationsAck</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@GetUpdateOptimizationsAck" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.session.HandleMessageBox" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="HandleMessageBox"></a>
+      <a id="HandleMessageBox:HandleMessageBox"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="HandleMessageBox$.html"><span class="name">HandleMessageBox</span></a><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</span>[<a href="HandleMessageBox.html" class="extype" name="im.actor.server.session.HandleMessageBox">HandleMessageBox</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@HandleMessageBox" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.session.SessionEnvelope" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SessionEnvelope"></a>
+      <a id="SessionEnvelope:SessionEnvelope"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SessionEnvelope$.html"><span class="name">SessionEnvelope</span></a><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</span>[<a href="SessionEnvelope.html" class="extype" name="im.actor.server.session.SessionEnvelope">SessionEnvelope</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@SessionEnvelope" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.session.SessionMessage" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SessionMessage"></a>
+      <a id="SessionMessage:SessionMessage"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SessionMessage$.html"><span class="name">SessionMessage</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@SessionMessage" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.session.SessionProto" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SessionProto"></a>
+      <a id="SessionProto:SessionProto"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SessionProto$.html"><span class="name">SessionProto</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@SessionProto" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.session.SubscribeFromGroupOnline" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SubscribeFromGroupOnline"></a>
+      <a id="SubscribeFromGroupOnline:SubscribeFromGroupOnline"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SubscribeFromGroupOnline$.html"><span class="name">SubscribeFromGroupOnline</span></a><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</span>[<a href="SubscribeFromGroupOnline.html" class="extype" name="im.actor.server.session.SubscribeFromGroupOnline">SubscribeFromGroupOnline</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@SubscribeFromGroupOnline" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.session.SubscribeFromOnline" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SubscribeFromOnline"></a>
+      <a id="SubscribeFromOnline:SubscribeFromOnline"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SubscribeFromOnline$.html"><span class="name">SubscribeFromOnline</span></a><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</span>[<a href="SubscribeFromOnline.html" class="extype" name="im.actor.server.session.SubscribeFromOnline">SubscribeFromOnline</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@SubscribeFromOnline" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.session.SubscribeToGroupOnline" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SubscribeToGroupOnline"></a>
+      <a id="SubscribeToGroupOnline:SubscribeToGroupOnline"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SubscribeToGroupOnline$.html"><span class="name">SubscribeToGroupOnline</span></a><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</span>[<a href="SubscribeToGroupOnline.html" class="extype" name="im.actor.server.session.SubscribeToGroupOnline">SubscribeToGroupOnline</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@SubscribeToGroupOnline" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.session.SubscribeToOnline" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SubscribeToOnline"></a>
+      <a id="SubscribeToOnline:SubscribeToOnline"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SubscribeToOnline$.html"><span class="name">SubscribeToOnline</span></a><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</span>[<a href="SubscribeToOnline.html" class="extype" name="im.actor.server.session.SubscribeToOnline">SubscribeToOnline</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@SubscribeToOnline" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.session.SubscribeToSeq" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SubscribeToSeq"></a>
+      <a id="SubscribeToSeq:SubscribeToSeq"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SubscribeToSeq$.html"><span class="name">SubscribeToSeq</span></a><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</span>[<a href="SubscribeToSeq.html" class="extype" name="im.actor.server.session.SubscribeToSeq">SubscribeToSeq</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@SubscribeToSeq" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.session.SubscribeToWeak" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SubscribeToWeak"></a>
+      <a id="SubscribeToWeak:SubscribeToWeak"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SubscribeToWeak$.html"><span class="name">SubscribeToWeak</span></a><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</span>[<a href="SubscribeToWeak.html" class="extype" name="im.actor.server.session.SubscribeToWeak">SubscribeToWeak</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@SubscribeToWeak" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.session.UnsubscribeFromWeak" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="UnsubscribeFromWeak"></a>
+      <a id="UnsubscribeFromWeak:UnsubscribeFromWeak"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="UnsubscribeFromWeak$.html"><span class="name">UnsubscribeFromWeak</span></a><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</span>[<a href="UnsubscribeFromWeak.html" class="extype" name="im.actor.server.session.UnsubscribeFromWeak">UnsubscribeFromWeak</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.session.package@UnsubscribeFromWeak" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

@@ -1,0 +1,2042 @@
+[info] Updating {file:/D:/Develop/Actor/actor-server-apache-license/}actor-email...
+[debug] :: building artificial module descriptors from im.actor.server#actor-email;1.0.153-SNAPSHOT
+[debug] ::: dd: dependency: org.scala-lang#scala-compiler;2.11.8 {scala-tool=[default, optional(default)]} (artifacts: )
+[debug] ::: dd: sbt.ivyint.MergedDescriptors@2ed1a23f (artifacts: )
+[debug] ::: dd: dependency: im.actor.server#actor-runtime;1.0.153-SNAPSHOT {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: com.google.protobuf#protobuf-java;3.0.0-beta-2 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: sbt.ivyint.MergedDescriptors@218bc44f (artifacts: )
+[debug] ::: dd: dependency: org.eclipse.jetty.alpn#alpn-api;1.1.2.v20150522 {runtime=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: io.netty#netty-tcnative;1.1.33.Fork15 {compile=[default(compile)]} (artifacts: netty-tcnative:jar:jar:{classifier=linux-x86_64})
+[debug] ::: dd: dependency: com.github.kxbmap#configs_2.11;0.3.0 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: im.actor#actor-util_2.11;0.0.15 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: org.scala-lang.modules#scala-java8-compat_2.11;0.7.0 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: ch.qos.logback#logback-classic;1.1.2 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: com.typesafe.scala-logging#scala-logging_2.11;3.1.0 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: tyrex#tyrex;1.0.1 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: io.kamon#kamon-core_2.11;0.5.2 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: io.kamon#kamon-datadog_2.11;0.5.2 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: com.typesafe.akka#akka-actor_2.11;2.4.4 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: org.apache.commons#commons-email;1.4 {compile=[default(compile)]} (artifacts: )
+[debug] no default cache defined: set to C:\Users\Lining\.ivy2\cache
+[debug] :: call customResolve recursively: dependency: im.actor.server#actor-runtime;1.0.153-SNAPSHOT {compile=[default(compile)]}
+[debug] :: building artificial module descriptors from im.actor.server#actor-runtime;1.0.153-SNAPSHOT
+[debug] ::: dd: dependency: org.scala-lang#scala-compiler;2.11.8 {scala-tool=[default, optional(default)]} (artifacts: )
+[debug] ::: dd: sbt.ivyint.MergedDescriptors@65134da0 (artifacts: )
+[debug] ::: dd: dependency: com.google.protobuf#protobuf-java;3.0.0-beta-2 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: sbt.ivyint.MergedDescriptors@712e64b (artifacts: )
+[debug] ::: dd: dependency: org.eclipse.jetty.alpn#alpn-api;1.1.2.v20150522 {runtime=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: io.netty#netty-tcnative;1.1.33.Fork15 {compile=[default(compile)]} (artifacts: netty-tcnative:jar:jar:{classifier=linux-x86_64})
+[debug] ::: dd: dependency: com.github.kxbmap#configs_2.11;0.3.0 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: im.actor#actor-util_2.11;0.0.15 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: org.scala-lang.modules#scala-java8-compat_2.11;0.7.0 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: ch.qos.logback#logback-classic;1.1.2 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: com.typesafe.scala-logging#scala-logging_2.11;3.1.0 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: tyrex#tyrex;1.0.1 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: io.kamon#kamon-core_2.11;0.5.2 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: io.kamon#kamon-datadog_2.11;0.5.2 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: com.typesafe.akka#akka-actor_2.11;2.4.4 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: im.actor#actor-concurrent_2.11;0.0.15 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: com.typesafe.akka#akka-http-experimental_2.11;2.4.4 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: com.typesafe.akka#akka-slf4j_2.11;2.4.4 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: com.typesafe.akka#akka-stream_2.11;2.4.4 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: com.github.dnvriend#akka-persistence-jdbc_2.11;2.2.21 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: commons-codec#commons-codec;1.10 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: com.github.ben-manes.caffeine#caffeine;2.2.7 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: org.spire-math#cats_2.11;0.3.0 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: org.joda#joda-convert;1.7 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: joda-time#joda-time;2.7 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: com.ibm.icu#icu4j;56.1 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: com.googlecode.libphonenumber#libphonenumber;7.0.+ {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: im.actor#akka-scalapb-serialization_2.11;0.1.14 {compile=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: com.typesafe.akka#akka-testkit_2.11;2.4.4 {test=[default(compile)]} (artifacts: )
+[debug] ::: dd: dependency: org.scalatest#scalatest_2.11;2.2.4 {test=[default(compile)]} (artifacts: )
+[debug] :: merging update reports
+[debug] ::: -----------
+[debug] :: compile: loop: List()
+[debug] :: sort result: io.netty:netty-tcnative, com.github.kxbmap:configs_2.11, im.actor:actor-util_2.11, ch.qos.logback:logback-classic, com.typesafe.scala-logging:scala-logging_2.11, tyrex:tyrex, io.kamon:kamon-datadog_2.11, im.actor:actor-concurrent_2.11, com.typesafe.akka:akka-http-experimental_2.11, com.typesafe.akka:akka-slf4j_2.11, com.github.dnvriend:akka-persistence-jdbc_2.11, commons-codec:commons-codec, org.spire-math:cats_2.11, org.joda:joda-convert, joda-time:joda-time, com.ibm.icu:icu4j, com.googlecode.libphonenumber:libphonenumber, im.actor:akka-scalapb-serialization_2.11, com.trueaccord.scalapb:scalapb-runtime_2.11, ch.qos.logback:logback-core, io.kamon:kamon-core_2.11, com.typesafe.akka:akka-http-core_2.11, com.zaxxer:HikariCP, com.typesafe.slick:slick-hikaricp_2.11, com.typesafe.slick:slick-extensions_2.11, com.typesafe.akka:akka-persistence-query-experimental_2.11, com.github.ben-manes.caffeine:caffeine, org.spire-math:cats-jvm_2.11, org.spire-math:cats-state_2.11, org.spire-math:cats-laws_2.11, com.google.protobuf:protobuf-java, com.lihaoyi:fastparse_2.11, com.trueaccord.lenses:lenses_2.11, org.hdrhistogram:HdrHistogram, com.typesafe.akka:akka-parsing_2.11, com.typesafe.slick:slick_2.11, com.typesafe.akka:akka-stream-testkit_2.11, com.typesafe.akka:akka-persistence_2.11, org.spire-math:cats-free_2.11, com.github.inthenow:bricks-platform_2.11, org.spire-math:algebra-laws_2.11, com.github.ben-manes.caffeine:tracing-api, com.lihaoyi:fastparse-utils_2.11, org.slf4j:slf4j-api, com.typesafe.akka:akka-stream_2.11, com.typesafe.akka:akka-protobuf_2.11, com.typesafe.akka:akka-testkit_2.11, com.github.inthenow:bricks-macros_2.11, org.spire-math:algebra-macros_2.11, org.typelevel:discipline_2.11, org.spire-math:cats-core_2.11, com.google.code.findbugs:jsr305, com.typesafe.akka:akka-actor_2.11, org.reactivestreams:reactive-streams, com.typesafe:ssl-config-akka_2.11, org.typelevel:macro-compat_2.11, org.scalacheck:scalacheck_2.11, org.spire-math:cats-macros_2.11, org.scala-lang.modules:scala-java8-compat_2.11, com.typesafe:ssl-config-core_2.11, org.scala-sbt:test-interface, org.typelevel:machinist_2.11, org.spire-math:algebra-std_2.11, com.github.mpilquist:simulacrum_2.11, com.typesafe:config, org.scala-lang:scala-reflect, org.scala-lang.modules:scala-parser-combinators_2.11, org.spire-math:algebra_2.11, org.scala-lang:scala-library
+[debug] :: no conflict compile: io.netty:netty-tcnative
+[debug] :: no conflict compile: com.github.kxbmap:configs_2.11
+[debug] :: no conflict compile: im.actor:actor-util_2.11
+[debug] :: no conflict compile: ch.qos.logback:logback-classic
+[debug] :: no conflict compile: com.typesafe.scala-logging:scala-logging_2.11
+[debug] :: no conflict compile: tyrex:tyrex
+[debug] :: no conflict compile: io.kamon:kamon-datadog_2.11
+[debug] :: no conflict compile: im.actor:actor-concurrent_2.11
+[debug] :: no conflict compile: com.typesafe.akka:akka-http-experimental_2.11
+[debug] :: no conflict compile: com.typesafe.akka:akka-slf4j_2.11
+[debug] :: no conflict compile: com.github.dnvriend:akka-persistence-jdbc_2.11
+[debug] :: no conflict compile: commons-codec:commons-codec
+[debug] :: no conflict compile: org.spire-math:cats_2.11
+[debug] :: no conflict compile: org.joda:joda-convert
+[debug] :: no conflict compile: joda-time:joda-time
+[debug] :: no conflict compile: com.ibm.icu:icu4j
+[debug] :: no conflict compile: com.googlecode.libphonenumber:libphonenumber
+[debug] :: no conflict compile: im.actor:akka-scalapb-serialization_2.11
+[debug] :: merging module reports for compile: com.trueaccord.scalapb:scalapb-runtime_2.11
+[debug] ::: adds com.trueaccord.scalapb:scalapb-runtime_2.11:0.5.21
+[debug] ::: evicted 
+[debug] :: no conflict compile: ch.qos.logback:logback-core
+[debug] :: merging module reports for compile: io.kamon:kamon-core_2.11
+[debug] ::: adds io.kamon:kamon-core_2.11:0.5.2
+[debug] ::: evicted 
+[debug] :: no conflict compile: com.typesafe.akka:akka-http-core_2.11
+[debug] :: no conflict compile: com.zaxxer:HikariCP
+[debug] :: no conflict compile: com.typesafe.slick:slick-hikaricp_2.11
+[debug] :: no conflict compile: com.typesafe.slick:slick-extensions_2.11
+[debug] :: no conflict compile: com.typesafe.akka:akka-persistence-query-experimental_2.11
+[debug] :: merging module reports for compile: com.github.ben-manes.caffeine:caffeine
+[debug] ::: resolving conflict in compile:com.github.ben-manes.caffeine:caffeine (com.github.ben-manes.caffeine:caffeine:2.2.7, com.github.ben-manes.caffeine:caffeine:1.2.0)
+[debug] ::: adds com.github.ben-manes.caffeine:caffeine:2.2.7
+[debug] ::: evicted com.github.ben-manes.caffeine:caffeine:1.2.0
+[debug] :::: transitively evicted compile: com.github.ben-manes.caffeine:tracing-api:1.2.0
+[debug] :: no conflict compile: org.spire-math:cats-jvm_2.11
+[debug] :: no conflict compile: org.spire-math:cats-state_2.11
+[debug] :: no conflict compile: org.spire-math:cats-laws_2.11
+[debug] :: merging module reports for compile: com.google.protobuf:protobuf-java
+[debug] ::: adds com.google.protobuf:protobuf-java:3.0.0-beta-2
+[debug] ::: evicted 
+[debug] :: merging module reports for compile: com.lihaoyi:fastparse_2.11
+[debug] ::: adds com.lihaoyi:fastparse_2.11:0.3.4
+[debug] ::: evicted 
+[debug] :: merging module reports for compile: com.trueaccord.lenses:lenses_2.11
+[debug] ::: adds com.trueaccord.lenses:lenses_2.11:0.4.4
+[debug] ::: evicted 
+[debug] :: merging module reports for compile: org.hdrhistogram:HdrHistogram
+[debug] ::: adds org.hdrhistogram:HdrHistogram:2.1.7
+[debug] ::: evicted 
+[debug] :: no conflict compile: com.typesafe.akka:akka-parsing_2.11
+[debug] :: no conflict compile: com.typesafe.slick:slick_2.11
+[debug] :: no conflict compile: com.typesafe.akka:akka-stream-testkit_2.11
+[debug] :: no conflict compile: com.typesafe.akka:akka-persistence_2.11
+[debug] :: no conflict compile: org.spire-math:cats-free_2.11
+[debug] :: no conflict compile: com.github.inthenow:bricks-platform_2.11
+[debug] :: no conflict compile: org.spire-math:algebra-laws_2.11
+[debug] :: merging module reports for compile: com.github.ben-manes.caffeine:tracing-api
+[debug] ::: adds 
+[debug] ::: evicted com.github.ben-manes.caffeine:tracing-api:1.2.0
+[debug] :: merging module reports for compile: com.lihaoyi:fastparse-utils_2.11
+[debug] ::: adds com.lihaoyi:fastparse-utils_2.11:0.3.4
+[debug] ::: evicted 
+[debug] :: merging module reports for compile: org.slf4j:slf4j-api
+[debug] ::: resolving conflict in compile:org.slf4j:slf4j-api (org.slf4j:slf4j-api:1.7.16, org.slf4j:slf4j-api:1.7.7, org.slf4j:slf4j-api:1.7.6)
+[debug] ::: adds org.slf4j:slf4j-api:1.7.16
+[debug] ::: evicted org.slf4j:slf4j-api:1.7.7, org.slf4j:slf4j-api:1.7.6
+[debug] :: merging module reports for compile: com.typesafe.akka:akka-stream_2.11
+[debug] ::: adds com.typesafe.akka:akka-stream_2.11:2.4.4
+[debug] ::: evicted 
+[debug] :: no conflict compile: com.typesafe.akka:akka-protobuf_2.11
+[debug] :: no conflict compile: com.typesafe.akka:akka-testkit_2.11
+[debug] :: no conflict compile: com.github.inthenow:bricks-macros_2.11
+[debug] :: no conflict compile: org.spire-math:algebra-macros_2.11
+[debug] :: no conflict compile: org.typelevel:discipline_2.11
+[debug] :: no conflict compile: org.spire-math:cats-core_2.11
+[debug] :: no conflict compile: com.google.code.findbugs:jsr305
+[debug] :: merging module reports for compile: com.typesafe.akka:akka-actor_2.11
+[debug] ::: resolving conflict in compile:com.typesafe.akka:akka-actor_2.11 (com.typesafe.akka:akka-actor_2.11:2.4.4, com.typesafe.akka:akka-actor_2.11:2.4.2-RC1, com.typesafe.akka:akka-actor_2.11:2.3.14)
+[debug] ::: adds com.typesafe.akka:akka-actor_2.11:2.4.4
+[debug] ::: evicted com.typesafe.akka:akka-actor_2.11:2.4.2-RC1, com.typesafe.akka:akka-actor_2.11:2.3.14
+[debug] :::: transitively evicted compile: com.typesafe:config:1.3.0
+[debug] :::: transitively evicted compile: org.scala-lang.modules:scala-java8-compat_2.11:0.7.0
+[debug] :: merging module reports for compile: org.reactivestreams:reactive-streams
+[debug] ::: adds org.reactivestreams:reactive-streams:1.0.0
+[debug] ::: evicted 
+[debug] :: merging module reports for compile: com.typesafe:ssl-config-akka_2.11
+[debug] ::: adds com.typesafe:ssl-config-akka_2.11:0.2.1
+[debug] ::: evicted 
+[debug] :: no conflict compile: org.typelevel:macro-compat_2.11
+[debug] :: no conflict compile: org.scalacheck:scalacheck_2.11
+[debug] :: no conflict compile: org.spire-math:cats-macros_2.11
+[debug] :: merging module reports for compile: org.scala-lang.modules:scala-java8-compat_2.11
+[debug] ::: adds org.scala-lang.modules:scala-java8-compat_2.11:0.7.0
+[debug] ::: evicted 
+[debug] :: merging module reports for compile: com.typesafe:ssl-config-core_2.11
+[debug] ::: adds com.typesafe:ssl-config-core_2.11:0.2.1
+[debug] ::: evicted 
+[debug] :: no conflict compile: org.scala-sbt:test-interface
+[debug] :: no conflict compile: org.typelevel:machinist_2.11
+[debug] :: no conflict compile: org.spire-math:algebra-std_2.11
+[debug] :: no conflict compile: com.github.mpilquist:simulacrum_2.11
+[debug] :: merging module reports for compile: com.typesafe:config
+[debug] ::: resolving conflict in compile:com.typesafe:config (com.typesafe:config:1.3.0, com.typesafe:config:1.2.1)
+[debug] ::: adds com.typesafe:config:1.3.0
+[debug] ::: evicted com.typesafe:config:1.2.1
+[debug] :: merging module reports for compile: org.scala-lang:scala-reflect
+[debug] ::: resolving conflict in compile:org.scala-lang:scala-reflect (org.scala-lang:scala-reflect:2.11.1 (), org.scala-lang:scala-reflect:2.11.7 ())
+[debug] ::: adds org.scala-lang:scala-reflect:2.11.7 ()
+[debug] ::: evicted org.scala-lang:scala-reflect:2.11.1 ()
+[debug] :: merging module reports for compile: org.scala-lang.modules:scala-parser-combinators_2.11
+[debug] ::: adds org.scala-lang.modules:scala-parser-combinators_2.11:1.0.4
+[debug] ::: evicted 
+[debug] :: no conflict compile: org.spire-math:algebra_2.11
+[debug] :: merging module reports for compile: org.scala-lang:scala-library
+[debug] ::: resolving conflict in compile:org.scala-lang:scala-library (org.scala-lang:scala-library:2.11.1 (), org.scala-lang:scala-library:2.11.8 (), org.scala-lang:scala-library:2.11.7 (), org.scala-lang:scala-library:2.11.6 ())
+[debug] ::: adds org.scala-lang:scala-library:2.11.8 ()
+[debug] ::: evicted org.scala-lang:scala-library:2.11.1 (), org.scala-lang:scala-library:2.11.7 (), org.scala-lang:scala-library:2.11.6 ()
+[debug] ::: -----------
+[debug] :: runtime: loop: List()
+[debug] :: sort result: org.eclipse.jetty.alpn:alpn-api, io.netty:netty-tcnative, com.github.kxbmap:configs_2.11, im.actor:actor-util_2.11, ch.qos.logback:logback-classic, com.typesafe.scala-logging:scala-logging_2.11, tyrex:tyrex, io.kamon:kamon-datadog_2.11, im.actor:actor-concurrent_2.11, com.typesafe.akka:akka-http-experimental_2.11, com.typesafe.akka:akka-slf4j_2.11, com.github.dnvriend:akka-persistence-jdbc_2.11, commons-codec:commons-codec, org.spire-math:cats_2.11, org.joda:joda-convert, joda-time:joda-time, com.ibm.icu:icu4j, com.googlecode.libphonenumber:libphonenumber, im.actor:akka-scalapb-serialization_2.11, com.trueaccord.scalapb:scalapb-runtime_2.11, ch.qos.logback:logback-core, io.kamon:kamon-core_2.11, com.typesafe.akka:akka-http-core_2.11, com.zaxxer:HikariCP, com.typesafe.slick:slick-hikaricp_2.11, com.typesafe.slick:slick-extensions_2.11, com.typesafe.akka:akka-persistence-query-experimental_2.11, com.github.ben-manes.caffeine:caffeine, org.spire-math:cats-jvm_2.11, org.spire-math:cats-state_2.11, org.spire-math:cats-laws_2.11, com.google.protobuf:protobuf-java, com.lihaoyi:fastparse_2.11, com.trueaccord.lenses:lenses_2.11, org.hdrhistogram:HdrHistogram, com.typesafe.akka:akka-parsing_2.11, com.typesafe.slick:slick_2.11, com.typesafe.akka:akka-stream-testkit_2.11, com.typesafe.akka:akka-persistence_2.11, org.spire-math:cats-free_2.11, com.github.inthenow:bricks-platform_2.11, org.spire-math:algebra-laws_2.11, com.github.ben-manes.caffeine:tracing-api, com.lihaoyi:fastparse-utils_2.11, org.slf4j:slf4j-api, com.typesafe.akka:akka-stream_2.11, com.typesafe.akka:akka-protobuf_2.11, com.typesafe.akka:akka-testkit_2.11, com.github.inthenow:bricks-macros_2.11, org.spire-math:algebra-macros_2.11, org.typelevel:discipline_2.11, org.spire-math:cats-core_2.11, com.google.code.findbugs:jsr305, com.typesafe.akka:akka-actor_2.11, org.reactivestreams:reactive-streams, com.typesafe:ssl-config-akka_2.11, org.typelevel:macro-compat_2.11, org.scalacheck:scalacheck_2.11, org.spire-math:cats-macros_2.11, org.scala-lang.modules:scala-java8-compat_2.11, com.typesafe:ssl-config-core_2.11, org.scala-sbt:test-interface, org.typelevel:machinist_2.11, org.spire-math:algebra-std_2.11, com.github.mpilquist:simulacrum_2.11, com.typesafe:config, org.scala-lang:scala-reflect, org.scala-lang.modules:scala-parser-combinators_2.11, org.spire-math:algebra_2.11, org.scala-lang:scala-library
+[debug] :: no conflict runtime: org.eclipse.jetty.alpn:alpn-api
+[debug] :: no conflict runtime: io.netty:netty-tcnative
+[debug] :: no conflict runtime: com.github.kxbmap:configs_2.11
+[debug] :: no conflict runtime: im.actor:actor-util_2.11
+[debug] :: no conflict runtime: ch.qos.logback:logback-classic
+[debug] :: no conflict runtime: com.typesafe.scala-logging:scala-logging_2.11
+[debug] :: no conflict runtime: tyrex:tyrex
+[debug] :: no conflict runtime: io.kamon:kamon-datadog_2.11
+[debug] :: no conflict runtime: im.actor:actor-concurrent_2.11
+[debug] :: no conflict runtime: com.typesafe.akka:akka-http-experimental_2.11
+[debug] :: no conflict runtime: com.typesafe.akka:akka-slf4j_2.11
+[debug] :: no conflict runtime: com.github.dnvriend:akka-persistence-jdbc_2.11
+[debug] :: no conflict runtime: commons-codec:commons-codec
+[debug] :: no conflict runtime: org.spire-math:cats_2.11
+[debug] :: no conflict runtime: org.joda:joda-convert
+[debug] :: no conflict runtime: joda-time:joda-time
+[debug] :: no conflict runtime: com.ibm.icu:icu4j
+[debug] :: no conflict runtime: com.googlecode.libphonenumber:libphonenumber
+[debug] :: no conflict runtime: im.actor:akka-scalapb-serialization_2.11
+[debug] :: merging module reports for runtime: com.trueaccord.scalapb:scalapb-runtime_2.11
+[debug] ::: adds com.trueaccord.scalapb:scalapb-runtime_2.11:0.5.21
+[debug] ::: evicted 
+[debug] :: no conflict runtime: ch.qos.logback:logback-core
+[debug] :: merging module reports for runtime: io.kamon:kamon-core_2.11
+[debug] ::: adds io.kamon:kamon-core_2.11:0.5.2
+[debug] ::: evicted 
+[debug] :: no conflict runtime: com.typesafe.akka:akka-http-core_2.11
+[debug] :: no conflict runtime: com.zaxxer:HikariCP
+[debug] :: no conflict runtime: com.typesafe.slick:slick-hikaricp_2.11
+[debug] :: no conflict runtime: com.typesafe.slick:slick-extensions_2.11
+[debug] :: no conflict runtime: com.typesafe.akka:akka-persistence-query-experimental_2.11
+[debug] :: merging module reports for runtime: com.github.ben-manes.caffeine:caffeine
+[debug] ::: resolving conflict in runtime:com.github.ben-manes.caffeine:caffeine (com.github.ben-manes.caffeine:caffeine:2.2.7, com.github.ben-manes.caffeine:caffeine:1.2.0)
+[debug] ::: adds com.github.ben-manes.caffeine:caffeine:2.2.7
+[debug] ::: evicted com.github.ben-manes.caffeine:caffeine:1.2.0
+[debug] :::: transitively evicted runtime: com.github.ben-manes.caffeine:tracing-api:1.2.0
+[debug] :: no conflict runtime: org.spire-math:cats-jvm_2.11
+[debug] :: no conflict runtime: org.spire-math:cats-state_2.11
+[debug] :: no conflict runtime: org.spire-math:cats-laws_2.11
+[debug] :: merging module reports for runtime: com.google.protobuf:protobuf-java
+[debug] ::: adds com.google.protobuf:protobuf-java:3.0.0-beta-2
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime: com.lihaoyi:fastparse_2.11
+[debug] ::: adds com.lihaoyi:fastparse_2.11:0.3.4
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime: com.trueaccord.lenses:lenses_2.11
+[debug] ::: adds com.trueaccord.lenses:lenses_2.11:0.4.4
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime: org.hdrhistogram:HdrHistogram
+[debug] ::: adds org.hdrhistogram:HdrHistogram:2.1.7
+[debug] ::: evicted 
+[debug] :: no conflict runtime: com.typesafe.akka:akka-parsing_2.11
+[debug] :: no conflict runtime: com.typesafe.slick:slick_2.11
+[debug] :: no conflict runtime: com.typesafe.akka:akka-stream-testkit_2.11
+[debug] :: no conflict runtime: com.typesafe.akka:akka-persistence_2.11
+[debug] :: no conflict runtime: org.spire-math:cats-free_2.11
+[debug] :: no conflict runtime: com.github.inthenow:bricks-platform_2.11
+[debug] :: no conflict runtime: org.spire-math:algebra-laws_2.11
+[debug] :: merging module reports for runtime: com.github.ben-manes.caffeine:tracing-api
+[debug] ::: adds 
+[debug] ::: evicted com.github.ben-manes.caffeine:tracing-api:1.2.0
+[debug] :: merging module reports for runtime: com.lihaoyi:fastparse-utils_2.11
+[debug] ::: adds com.lihaoyi:fastparse-utils_2.11:0.3.4
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime: org.slf4j:slf4j-api
+[debug] ::: resolving conflict in runtime:org.slf4j:slf4j-api (org.slf4j:slf4j-api:1.7.16, org.slf4j:slf4j-api:1.7.7, org.slf4j:slf4j-api:1.7.6)
+[debug] ::: adds org.slf4j:slf4j-api:1.7.16
+[debug] ::: evicted org.slf4j:slf4j-api:1.7.7, org.slf4j:slf4j-api:1.7.6
+[debug] :: merging module reports for runtime: com.typesafe.akka:akka-stream_2.11
+[debug] ::: adds com.typesafe.akka:akka-stream_2.11:2.4.4
+[debug] ::: evicted 
+[debug] :: no conflict runtime: com.typesafe.akka:akka-protobuf_2.11
+[debug] :: no conflict runtime: com.typesafe.akka:akka-testkit_2.11
+[debug] :: no conflict runtime: com.github.inthenow:bricks-macros_2.11
+[debug] :: no conflict runtime: org.spire-math:algebra-macros_2.11
+[debug] :: no conflict runtime: org.typelevel:discipline_2.11
+[debug] :: no conflict runtime: org.spire-math:cats-core_2.11
+[debug] :: no conflict runtime: com.google.code.findbugs:jsr305
+[debug] :: merging module reports for runtime: com.typesafe.akka:akka-actor_2.11
+[debug] ::: resolving conflict in runtime:com.typesafe.akka:akka-actor_2.11 (com.typesafe.akka:akka-actor_2.11:2.4.4, com.typesafe.akka:akka-actor_2.11:2.4.2-RC1, com.typesafe.akka:akka-actor_2.11:2.3.14)
+[debug] ::: adds com.typesafe.akka:akka-actor_2.11:2.4.4
+[debug] ::: evicted com.typesafe.akka:akka-actor_2.11:2.4.2-RC1, com.typesafe.akka:akka-actor_2.11:2.3.14
+[debug] :::: transitively evicted runtime: com.typesafe:config:1.3.0
+[debug] :::: transitively evicted runtime: org.scala-lang.modules:scala-java8-compat_2.11:0.7.0
+[debug] :: merging module reports for runtime: org.reactivestreams:reactive-streams
+[debug] ::: adds org.reactivestreams:reactive-streams:1.0.0
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime: com.typesafe:ssl-config-akka_2.11
+[debug] ::: adds com.typesafe:ssl-config-akka_2.11:0.2.1
+[debug] ::: evicted 
+[debug] :: no conflict runtime: org.typelevel:macro-compat_2.11
+[debug] :: no conflict runtime: org.scalacheck:scalacheck_2.11
+[debug] :: no conflict runtime: org.spire-math:cats-macros_2.11
+[debug] :: merging module reports for runtime: org.scala-lang.modules:scala-java8-compat_2.11
+[debug] ::: adds org.scala-lang.modules:scala-java8-compat_2.11:0.7.0
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime: com.typesafe:ssl-config-core_2.11
+[debug] ::: adds com.typesafe:ssl-config-core_2.11:0.2.1
+[debug] ::: evicted 
+[debug] :: no conflict runtime: org.scala-sbt:test-interface
+[debug] :: no conflict runtime: org.typelevel:machinist_2.11
+[debug] :: no conflict runtime: org.spire-math:algebra-std_2.11
+[debug] :: no conflict runtime: com.github.mpilquist:simulacrum_2.11
+[debug] :: merging module reports for runtime: com.typesafe:config
+[debug] ::: resolving conflict in runtime:com.typesafe:config (com.typesafe:config:1.3.0, com.typesafe:config:1.2.1)
+[debug] ::: adds com.typesafe:config:1.3.0
+[debug] ::: evicted com.typesafe:config:1.2.1
+[debug] :: merging module reports for runtime: org.scala-lang:scala-reflect
+[debug] ::: resolving conflict in runtime:org.scala-lang:scala-reflect (org.scala-lang:scala-reflect:2.11.1 (), org.scala-lang:scala-reflect:2.11.7 ())
+[debug] ::: adds org.scala-lang:scala-reflect:2.11.7 ()
+[debug] ::: evicted org.scala-lang:scala-reflect:2.11.1 ()
+[debug] :: merging module reports for runtime: org.scala-lang.modules:scala-parser-combinators_2.11
+[debug] ::: adds org.scala-lang.modules:scala-parser-combinators_2.11:1.0.4
+[debug] ::: evicted 
+[debug] :: no conflict runtime: org.spire-math:algebra_2.11
+[debug] :: merging module reports for runtime: org.scala-lang:scala-library
+[debug] ::: resolving conflict in runtime:org.scala-lang:scala-library (org.scala-lang:scala-library:2.11.1 (), org.scala-lang:scala-library:2.11.8 (), org.scala-lang:scala-library:2.11.7 (), org.scala-lang:scala-library:2.11.6 ())
+[debug] ::: adds org.scala-lang:scala-library:2.11.8 ()
+[debug] ::: evicted org.scala-lang:scala-library:2.11.1 (), org.scala-lang:scala-library:2.11.7 (), org.scala-lang:scala-library:2.11.6 ()
+[debug] ::: -----------
+[debug] :: test: loop: List()
+[debug] :: sort result: org.eclipse.jetty.alpn:alpn-api, io.netty:netty-tcnative, com.github.kxbmap:configs_2.11, im.actor:actor-util_2.11, ch.qos.logback:logback-classic, com.typesafe.scala-logging:scala-logging_2.11, tyrex:tyrex, io.kamon:kamon-datadog_2.11, im.actor:actor-concurrent_2.11, com.typesafe.akka:akka-http-experimental_2.11, com.typesafe.akka:akka-slf4j_2.11, com.github.dnvriend:akka-persistence-jdbc_2.11, commons-codec:commons-codec, org.spire-math:cats_2.11, org.joda:joda-convert, joda-time:joda-time, com.ibm.icu:icu4j, com.googlecode.libphonenumber:libphonenumber, im.actor:akka-scalapb-serialization_2.11, org.scalatest:scalatest_2.11, com.trueaccord.scalapb:scalapb-runtime_2.11, ch.qos.logback:logback-core, io.kamon:kamon-core_2.11, com.typesafe.akka:akka-http-core_2.11, com.zaxxer:HikariCP, com.typesafe.slick:slick-hikaricp_2.11, com.typesafe.slick:slick-extensions_2.11, com.typesafe.akka:akka-persistence-query-experimental_2.11, com.github.ben-manes.caffeine:caffeine, org.spire-math:cats-jvm_2.11, org.spire-math:cats-state_2.11, org.spire-math:cats-laws_2.11, org.scala-lang.modules:scala-xml_2.11, com.google.protobuf:protobuf-java, com.lihaoyi:fastparse_2.11, com.trueaccord.lenses:lenses_2.11, org.hdrhistogram:HdrHistogram, com.typesafe.akka:akka-parsing_2.11, com.typesafe.slick:slick_2.11, com.typesafe.akka:akka-stream-testkit_2.11, com.typesafe.akka:akka-persistence_2.11, org.spire-math:cats-free_2.11, com.github.inthenow:bricks-platform_2.11, org.spire-math:algebra-laws_2.11, com.github.ben-manes.caffeine:tracing-api, com.lihaoyi:fastparse-utils_2.11, org.slf4j:slf4j-api, com.typesafe.akka:akka-stream_2.11, com.typesafe.akka:akka-protobuf_2.11, com.typesafe.akka:akka-testkit_2.11, com.github.inthenow:bricks-macros_2.11, org.spire-math:algebra-macros_2.11, org.typelevel:discipline_2.11, org.spire-math:cats-core_2.11, com.google.code.findbugs:jsr305, com.typesafe.akka:akka-actor_2.11, org.reactivestreams:reactive-streams, com.typesafe:ssl-config-akka_2.11, org.typelevel:macro-compat_2.11, org.scalacheck:scalacheck_2.11, org.spire-math:cats-macros_2.11, org.scala-lang.modules:scala-java8-compat_2.11, com.typesafe:ssl-config-core_2.11, org.scala-sbt:test-interface, org.typelevel:machinist_2.11, org.spire-math:algebra-std_2.11, com.github.mpilquist:simulacrum_2.11, com.typesafe:config, org.scala-lang:scala-reflect, org.scala-lang.modules:scala-parser-combinators_2.11, org.spire-math:algebra_2.11, org.scala-lang:scala-library
+[debug] :: no conflict test: org.eclipse.jetty.alpn:alpn-api
+[debug] :: no conflict test: io.netty:netty-tcnative
+[debug] :: no conflict test: com.github.kxbmap:configs_2.11
+[debug] :: no conflict test: im.actor:actor-util_2.11
+[debug] :: no conflict test: ch.qos.logback:logback-classic
+[debug] :: no conflict test: com.typesafe.scala-logging:scala-logging_2.11
+[debug] :: no conflict test: tyrex:tyrex
+[debug] :: no conflict test: io.kamon:kamon-datadog_2.11
+[debug] :: no conflict test: im.actor:actor-concurrent_2.11
+[debug] :: no conflict test: com.typesafe.akka:akka-http-experimental_2.11
+[debug] :: no conflict test: com.typesafe.akka:akka-slf4j_2.11
+[debug] :: no conflict test: com.github.dnvriend:akka-persistence-jdbc_2.11
+[debug] :: no conflict test: commons-codec:commons-codec
+[debug] :: no conflict test: org.spire-math:cats_2.11
+[debug] :: no conflict test: org.joda:joda-convert
+[debug] :: no conflict test: joda-time:joda-time
+[debug] :: no conflict test: com.ibm.icu:icu4j
+[debug] :: no conflict test: com.googlecode.libphonenumber:libphonenumber
+[debug] :: no conflict test: im.actor:akka-scalapb-serialization_2.11
+[debug] :: no conflict test: org.scalatest:scalatest_2.11
+[debug] :: merging module reports for test: com.trueaccord.scalapb:scalapb-runtime_2.11
+[debug] ::: adds com.trueaccord.scalapb:scalapb-runtime_2.11:0.5.21
+[debug] ::: evicted 
+[debug] :: no conflict test: ch.qos.logback:logback-core
+[debug] :: merging module reports for test: io.kamon:kamon-core_2.11
+[debug] ::: adds io.kamon:kamon-core_2.11:0.5.2
+[debug] ::: evicted 
+[debug] :: no conflict test: com.typesafe.akka:akka-http-core_2.11
+[debug] :: no conflict test: com.zaxxer:HikariCP
+[debug] :: no conflict test: com.typesafe.slick:slick-hikaricp_2.11
+[debug] :: no conflict test: com.typesafe.slick:slick-extensions_2.11
+[debug] :: no conflict test: com.typesafe.akka:akka-persistence-query-experimental_2.11
+[debug] :: merging module reports for test: com.github.ben-manes.caffeine:caffeine
+[debug] ::: resolving conflict in test:com.github.ben-manes.caffeine:caffeine (com.github.ben-manes.caffeine:caffeine:2.2.7, com.github.ben-manes.caffeine:caffeine:1.2.0)
+[debug] ::: adds com.github.ben-manes.caffeine:caffeine:2.2.7
+[debug] ::: evicted com.github.ben-manes.caffeine:caffeine:1.2.0
+[debug] :::: transitively evicted test: com.github.ben-manes.caffeine:tracing-api:1.2.0
+[debug] :: no conflict test: org.spire-math:cats-jvm_2.11
+[debug] :: no conflict test: org.spire-math:cats-state_2.11
+[debug] :: no conflict test: org.spire-math:cats-laws_2.11
+[debug] :: no conflict test: org.scala-lang.modules:scala-xml_2.11
+[debug] :: merging module reports for test: com.google.protobuf:protobuf-java
+[debug] ::: adds com.google.protobuf:protobuf-java:3.0.0-beta-2
+[debug] ::: evicted 
+[debug] :: merging module reports for test: com.lihaoyi:fastparse_2.11
+[debug] ::: adds com.lihaoyi:fastparse_2.11:0.3.4
+[debug] ::: evicted 
+[debug] :: merging module reports for test: com.trueaccord.lenses:lenses_2.11
+[debug] ::: adds com.trueaccord.lenses:lenses_2.11:0.4.4
+[debug] ::: evicted 
+[debug] :: merging module reports for test: org.hdrhistogram:HdrHistogram
+[debug] ::: adds org.hdrhistogram:HdrHistogram:2.1.7
+[debug] ::: evicted 
+[debug] :: no conflict test: com.typesafe.akka:akka-parsing_2.11
+[debug] :: no conflict test: com.typesafe.slick:slick_2.11
+[debug] :: no conflict test: com.typesafe.akka:akka-stream-testkit_2.11
+[debug] :: no conflict test: com.typesafe.akka:akka-persistence_2.11
+[debug] :: no conflict test: org.spire-math:cats-free_2.11
+[debug] :: no conflict test: com.github.inthenow:bricks-platform_2.11
+[debug] :: no conflict test: org.spire-math:algebra-laws_2.11
+[debug] :: merging module reports for test: com.github.ben-manes.caffeine:tracing-api
+[debug] ::: adds 
+[debug] ::: evicted com.github.ben-manes.caffeine:tracing-api:1.2.0
+[debug] :: merging module reports for test: com.lihaoyi:fastparse-utils_2.11
+[debug] ::: adds com.lihaoyi:fastparse-utils_2.11:0.3.4
+[debug] ::: evicted 
+[debug] :: merging module reports for test: org.slf4j:slf4j-api
+[debug] ::: resolving conflict in test:org.slf4j:slf4j-api (org.slf4j:slf4j-api:1.7.16, org.slf4j:slf4j-api:1.7.7, org.slf4j:slf4j-api:1.7.6)
+[debug] ::: adds org.slf4j:slf4j-api:1.7.16
+[debug] ::: evicted org.slf4j:slf4j-api:1.7.7, org.slf4j:slf4j-api:1.7.6
+[debug] :: merging module reports for test: com.typesafe.akka:akka-stream_2.11
+[debug] ::: adds com.typesafe.akka:akka-stream_2.11:2.4.4
+[debug] ::: evicted 
+[debug] :: no conflict test: com.typesafe.akka:akka-protobuf_2.11
+[debug] :: merging module reports for test: com.typesafe.akka:akka-testkit_2.11
+[debug] ::: adds com.typesafe.akka:akka-testkit_2.11:2.4.4
+[debug] ::: evicted 
+[debug] :: no conflict test: com.github.inthenow:bricks-macros_2.11
+[debug] :: no conflict test: org.spire-math:algebra-macros_2.11
+[debug] :: no conflict test: org.typelevel:discipline_2.11
+[debug] :: no conflict test: org.spire-math:cats-core_2.11
+[debug] :: no conflict test: com.google.code.findbugs:jsr305
+[debug] :: merging module reports for test: com.typesafe.akka:akka-actor_2.11
+[debug] ::: resolving conflict in test:com.typesafe.akka:akka-actor_2.11 (com.typesafe.akka:akka-actor_2.11:2.4.4, com.typesafe.akka:akka-actor_2.11:2.4.2-RC1, com.typesafe.akka:akka-actor_2.11:2.3.14)
+[debug] ::: adds com.typesafe.akka:akka-actor_2.11:2.4.4
+[debug] ::: evicted com.typesafe.akka:akka-actor_2.11:2.4.2-RC1, com.typesafe.akka:akka-actor_2.11:2.3.14
+[debug] :::: transitively evicted test: com.typesafe:config:1.3.0
+[debug] :::: transitively evicted test: org.scala-lang.modules:scala-java8-compat_2.11:0.7.0
+[debug] :: merging module reports for test: org.reactivestreams:reactive-streams
+[debug] ::: adds org.reactivestreams:reactive-streams:1.0.0
+[debug] ::: evicted 
+[debug] :: merging module reports for test: com.typesafe:ssl-config-akka_2.11
+[debug] ::: adds com.typesafe:ssl-config-akka_2.11:0.2.1
+[debug] ::: evicted 
+[debug] :: no conflict test: org.typelevel:macro-compat_2.11
+[debug] :: no conflict test: org.scalacheck:scalacheck_2.11
+[debug] :: no conflict test: org.spire-math:cats-macros_2.11
+[debug] :: merging module reports for test: org.scala-lang.modules:scala-java8-compat_2.11
+[debug] ::: adds org.scala-lang.modules:scala-java8-compat_2.11:0.7.0
+[debug] ::: evicted 
+[debug] :: merging module reports for test: com.typesafe:ssl-config-core_2.11
+[debug] ::: adds com.typesafe:ssl-config-core_2.11:0.2.1
+[debug] ::: evicted 
+[debug] :: no conflict test: org.scala-sbt:test-interface
+[debug] :: no conflict test: org.typelevel:machinist_2.11
+[debug] :: no conflict test: org.spire-math:algebra-std_2.11
+[debug] :: no conflict test: com.github.mpilquist:simulacrum_2.11
+[debug] :: merging module reports for test: com.typesafe:config
+[debug] ::: resolving conflict in test:com.typesafe:config (com.typesafe:config:1.3.0, com.typesafe:config:1.2.1)
+[debug] ::: adds com.typesafe:config:1.3.0
+[debug] ::: evicted com.typesafe:config:1.2.1
+[debug] :: merging module reports for test: org.scala-lang:scala-reflect
+[debug] ::: resolving conflict in test:org.scala-lang:scala-reflect (org.scala-lang:scala-reflect:2.11.2 (), org.scala-lang:scala-reflect:2.11.1 (), org.scala-lang:scala-reflect:2.11.7 ())
+[debug] ::: adds org.scala-lang:scala-reflect:2.11.7 ()
+[debug] ::: evicted org.scala-lang:scala-reflect:2.11.2 (), org.scala-lang:scala-reflect:2.11.1 ()
+[debug] :: merging module reports for test: org.scala-lang.modules:scala-parser-combinators_2.11
+[debug] ::: adds org.scala-lang.modules:scala-parser-combinators_2.11:1.0.4
+[debug] ::: evicted 
+[debug] :: no conflict test: org.spire-math:algebra_2.11
+[debug] :: merging module reports for test: org.scala-lang:scala-library
+[debug] ::: resolving conflict in test:org.scala-lang:scala-library (org.scala-lang:scala-library:2.11.8 (), org.scala-lang:scala-library:2.11.2 (), org.scala-lang:scala-library:2.11.6 (), org.scala-lang:scala-library:2.11.7 (), org.scala-lang:scala-library:2.11.1 ())
+[debug] ::: adds org.scala-lang:scala-library:2.11.8 ()
+[debug] ::: evicted org.scala-lang:scala-library:2.11.2 (), org.scala-lang:scala-library:2.11.6 (), org.scala-lang:scala-library:2.11.7 (), org.scala-lang:scala-library:2.11.1 ()
+[debug] ::: -----------
+[debug] :: provided: loop: List()
+[debug] :: sort result: 
+[debug] ::: -----------
+[debug] :: optional: loop: List()
+[debug] :: sort result: 
+[debug] ::: -----------
+[debug] :: compile-internal: loop: List()
+[debug] :: sort result: io.netty:netty-tcnative, com.github.kxbmap:configs_2.11, im.actor:actor-util_2.11, ch.qos.logback:logback-classic, com.typesafe.scala-logging:scala-logging_2.11, tyrex:tyrex, io.kamon:kamon-datadog_2.11, im.actor:actor-concurrent_2.11, com.typesafe.akka:akka-http-experimental_2.11, com.typesafe.akka:akka-slf4j_2.11, com.github.dnvriend:akka-persistence-jdbc_2.11, commons-codec:commons-codec, org.spire-math:cats_2.11, org.joda:joda-convert, joda-time:joda-time, com.ibm.icu:icu4j, com.googlecode.libphonenumber:libphonenumber, im.actor:akka-scalapb-serialization_2.11, com.trueaccord.scalapb:scalapb-runtime_2.11, ch.qos.logback:logback-core, io.kamon:kamon-core_2.11, com.typesafe.akka:akka-http-core_2.11, com.zaxxer:HikariCP, com.typesafe.slick:slick-hikaricp_2.11, com.typesafe.slick:slick-extensions_2.11, com.typesafe.akka:akka-persistence-query-experimental_2.11, com.github.ben-manes.caffeine:caffeine, org.spire-math:cats-jvm_2.11, org.spire-math:cats-state_2.11, org.spire-math:cats-laws_2.11, com.google.protobuf:protobuf-java, com.lihaoyi:fastparse_2.11, com.trueaccord.lenses:lenses_2.11, org.hdrhistogram:HdrHistogram, com.typesafe.akka:akka-parsing_2.11, com.typesafe.slick:slick_2.11, com.typesafe.akka:akka-stream-testkit_2.11, com.typesafe.akka:akka-persistence_2.11, org.spire-math:cats-free_2.11, com.github.inthenow:bricks-platform_2.11, org.spire-math:algebra-laws_2.11, com.github.ben-manes.caffeine:tracing-api, com.lihaoyi:fastparse-utils_2.11, org.slf4j:slf4j-api, com.typesafe.akka:akka-stream_2.11, com.typesafe.akka:akka-protobuf_2.11, com.typesafe.akka:akka-testkit_2.11, com.github.inthenow:bricks-macros_2.11, org.spire-math:algebra-macros_2.11, org.typelevel:discipline_2.11, org.spire-math:cats-core_2.11, com.google.code.findbugs:jsr305, com.typesafe.akka:akka-actor_2.11, org.reactivestreams:reactive-streams, com.typesafe:ssl-config-akka_2.11, org.typelevel:macro-compat_2.11, org.scalacheck:scalacheck_2.11, org.spire-math:cats-macros_2.11, org.scala-lang.modules:scala-java8-compat_2.11, com.typesafe:ssl-config-core_2.11, org.scala-sbt:test-interface, org.typelevel:machinist_2.11, org.spire-math:algebra-std_2.11, com.github.mpilquist:simulacrum_2.11, com.typesafe:config, org.scala-lang:scala-reflect, org.scala-lang.modules:scala-parser-combinators_2.11, org.spire-math:algebra_2.11, org.scala-lang:scala-library
+[debug] :: no conflict compile-internal: io.netty:netty-tcnative
+[debug] :: no conflict compile-internal: com.github.kxbmap:configs_2.11
+[debug] :: no conflict compile-internal: im.actor:actor-util_2.11
+[debug] :: no conflict compile-internal: ch.qos.logback:logback-classic
+[debug] :: no conflict compile-internal: com.typesafe.scala-logging:scala-logging_2.11
+[debug] :: no conflict compile-internal: tyrex:tyrex
+[debug] :: no conflict compile-internal: io.kamon:kamon-datadog_2.11
+[debug] :: no conflict compile-internal: im.actor:actor-concurrent_2.11
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-http-experimental_2.11
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-slf4j_2.11
+[debug] :: no conflict compile-internal: com.github.dnvriend:akka-persistence-jdbc_2.11
+[debug] :: no conflict compile-internal: commons-codec:commons-codec
+[debug] :: no conflict compile-internal: org.spire-math:cats_2.11
+[debug] :: no conflict compile-internal: org.joda:joda-convert
+[debug] :: no conflict compile-internal: joda-time:joda-time
+[debug] :: no conflict compile-internal: com.ibm.icu:icu4j
+[debug] :: no conflict compile-internal: com.googlecode.libphonenumber:libphonenumber
+[debug] :: no conflict compile-internal: im.actor:akka-scalapb-serialization_2.11
+[debug] :: merging module reports for compile-internal: com.trueaccord.scalapb:scalapb-runtime_2.11
+[debug] ::: adds com.trueaccord.scalapb:scalapb-runtime_2.11:0.5.21
+[debug] ::: evicted 
+[debug] :: no conflict compile-internal: ch.qos.logback:logback-core
+[debug] :: merging module reports for compile-internal: io.kamon:kamon-core_2.11
+[debug] ::: adds io.kamon:kamon-core_2.11:0.5.2
+[debug] ::: evicted 
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-http-core_2.11
+[debug] :: no conflict compile-internal: com.zaxxer:HikariCP
+[debug] :: no conflict compile-internal: com.typesafe.slick:slick-hikaricp_2.11
+[debug] :: no conflict compile-internal: com.typesafe.slick:slick-extensions_2.11
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-persistence-query-experimental_2.11
+[debug] :: merging module reports for compile-internal: com.github.ben-manes.caffeine:caffeine
+[debug] ::: resolving conflict in compile-internal:com.github.ben-manes.caffeine:caffeine (com.github.ben-manes.caffeine:caffeine:2.2.7, com.github.ben-manes.caffeine:caffeine:1.2.0)
+[debug] ::: adds com.github.ben-manes.caffeine:caffeine:2.2.7
+[debug] ::: evicted com.github.ben-manes.caffeine:caffeine:1.2.0
+[debug] :::: transitively evicted compile-internal: com.github.ben-manes.caffeine:tracing-api:1.2.0
+[debug] :: no conflict compile-internal: org.spire-math:cats-jvm_2.11
+[debug] :: no conflict compile-internal: org.spire-math:cats-state_2.11
+[debug] :: no conflict compile-internal: org.spire-math:cats-laws_2.11
+[debug] :: merging module reports for compile-internal: com.google.protobuf:protobuf-java
+[debug] ::: adds com.google.protobuf:protobuf-java:3.0.0-beta-2
+[debug] ::: evicted 
+[debug] :: merging module reports for compile-internal: com.lihaoyi:fastparse_2.11
+[debug] ::: adds com.lihaoyi:fastparse_2.11:0.3.4
+[debug] ::: evicted 
+[debug] :: merging module reports for compile-internal: com.trueaccord.lenses:lenses_2.11
+[debug] ::: adds com.trueaccord.lenses:lenses_2.11:0.4.4
+[debug] ::: evicted 
+[debug] :: merging module reports for compile-internal: org.hdrhistogram:HdrHistogram
+[debug] ::: adds org.hdrhistogram:HdrHistogram:2.1.7
+[debug] ::: evicted 
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-parsing_2.11
+[debug] :: no conflict compile-internal: com.typesafe.slick:slick_2.11
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-stream-testkit_2.11
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-persistence_2.11
+[debug] :: no conflict compile-internal: org.spire-math:cats-free_2.11
+[debug] :: no conflict compile-internal: com.github.inthenow:bricks-platform_2.11
+[debug] :: no conflict compile-internal: org.spire-math:algebra-laws_2.11
+[debug] :: merging module reports for compile-internal: com.github.ben-manes.caffeine:tracing-api
+[debug] ::: adds 
+[debug] ::: evicted com.github.ben-manes.caffeine:tracing-api:1.2.0
+[debug] :: merging module reports for compile-internal: com.lihaoyi:fastparse-utils_2.11
+[debug] ::: adds com.lihaoyi:fastparse-utils_2.11:0.3.4
+[debug] ::: evicted 
+[debug] :: merging module reports for compile-internal: org.slf4j:slf4j-api
+[debug] ::: resolving conflict in compile-internal:org.slf4j:slf4j-api (org.slf4j:slf4j-api:1.7.16, org.slf4j:slf4j-api:1.7.7, org.slf4j:slf4j-api:1.7.6)
+[debug] ::: adds org.slf4j:slf4j-api:1.7.16
+[debug] ::: evicted org.slf4j:slf4j-api:1.7.7, org.slf4j:slf4j-api:1.7.6
+[debug] :: merging module reports for compile-internal: com.typesafe.akka:akka-stream_2.11
+[debug] ::: adds com.typesafe.akka:akka-stream_2.11:2.4.4
+[debug] ::: evicted 
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-protobuf_2.11
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-testkit_2.11
+[debug] :: no conflict compile-internal: com.github.inthenow:bricks-macros_2.11
+[debug] :: no conflict compile-internal: org.spire-math:algebra-macros_2.11
+[debug] :: no conflict compile-internal: org.typelevel:discipline_2.11
+[debug] :: no conflict compile-internal: org.spire-math:cats-core_2.11
+[debug] :: no conflict compile-internal: com.google.code.findbugs:jsr305
+[debug] :: merging module reports for compile-internal: com.typesafe.akka:akka-actor_2.11
+[debug] ::: resolving conflict in compile-internal:com.typesafe.akka:akka-actor_2.11 (com.typesafe.akka:akka-actor_2.11:2.4.4, com.typesafe.akka:akka-actor_2.11:2.4.2-RC1, com.typesafe.akka:akka-actor_2.11:2.3.14)
+[debug] ::: adds com.typesafe.akka:akka-actor_2.11:2.4.4
+[debug] ::: evicted com.typesafe.akka:akka-actor_2.11:2.4.2-RC1, com.typesafe.akka:akka-actor_2.11:2.3.14
+[debug] :::: transitively evicted compile-internal: com.typesafe:config:1.3.0
+[debug] :::: transitively evicted compile-internal: org.scala-lang.modules:scala-java8-compat_2.11:0.7.0
+[debug] :: merging module reports for compile-internal: org.reactivestreams:reactive-streams
+[debug] ::: adds org.reactivestreams:reactive-streams:1.0.0
+[debug] ::: evicted 
+[debug] :: merging module reports for compile-internal: com.typesafe:ssl-config-akka_2.11
+[debug] ::: adds com.typesafe:ssl-config-akka_2.11:0.2.1
+[debug] ::: evicted 
+[debug] :: no conflict compile-internal: org.typelevel:macro-compat_2.11
+[debug] :: no conflict compile-internal: org.scalacheck:scalacheck_2.11
+[debug] :: no conflict compile-internal: org.spire-math:cats-macros_2.11
+[debug] :: merging module reports for compile-internal: org.scala-lang.modules:scala-java8-compat_2.11
+[debug] ::: adds org.scala-lang.modules:scala-java8-compat_2.11:0.7.0
+[debug] ::: evicted 
+[debug] :: merging module reports for compile-internal: com.typesafe:ssl-config-core_2.11
+[debug] ::: adds com.typesafe:ssl-config-core_2.11:0.2.1
+[debug] ::: evicted 
+[debug] :: no conflict compile-internal: org.scala-sbt:test-interface
+[debug] :: no conflict compile-internal: org.typelevel:machinist_2.11
+[debug] :: no conflict compile-internal: org.spire-math:algebra-std_2.11
+[debug] :: no conflict compile-internal: com.github.mpilquist:simulacrum_2.11
+[debug] :: merging module reports for compile-internal: com.typesafe:config
+[debug] ::: resolving conflict in compile-internal:com.typesafe:config (com.typesafe:config:1.3.0, com.typesafe:config:1.2.1)
+[debug] ::: adds com.typesafe:config:1.3.0
+[debug] ::: evicted com.typesafe:config:1.2.1
+[debug] :: merging module reports for compile-internal: org.scala-lang:scala-reflect
+[debug] ::: resolving conflict in compile-internal:org.scala-lang:scala-reflect (org.scala-lang:scala-reflect:2.11.1 (), org.scala-lang:scala-reflect:2.11.7 ())
+[debug] ::: adds org.scala-lang:scala-reflect:2.11.7 ()
+[debug] ::: evicted org.scala-lang:scala-reflect:2.11.1 ()
+[debug] :: merging module reports for compile-internal: org.scala-lang.modules:scala-parser-combinators_2.11
+[debug] ::: adds org.scala-lang.modules:scala-parser-combinators_2.11:1.0.4
+[debug] ::: evicted 
+[debug] :: no conflict compile-internal: org.spire-math:algebra_2.11
+[debug] :: merging module reports for compile-internal: org.scala-lang:scala-library
+[debug] ::: resolving conflict in compile-internal:org.scala-lang:scala-library (org.scala-lang:scala-library:2.11.1 (), org.scala-lang:scala-library:2.11.8 (), org.scala-lang:scala-library:2.11.7 (), org.scala-lang:scala-library:2.11.6 ())
+[debug] ::: adds org.scala-lang:scala-library:2.11.8 ()
+[debug] ::: evicted org.scala-lang:scala-library:2.11.1 (), org.scala-lang:scala-library:2.11.7 (), org.scala-lang:scala-library:2.11.6 ()
+[debug] ::: -----------
+[debug] :: runtime-internal: loop: List()
+[debug] :: sort result: org.eclipse.jetty.alpn:alpn-api, io.netty:netty-tcnative, com.github.kxbmap:configs_2.11, im.actor:actor-util_2.11, ch.qos.logback:logback-classic, com.typesafe.scala-logging:scala-logging_2.11, tyrex:tyrex, io.kamon:kamon-datadog_2.11, im.actor:actor-concurrent_2.11, com.typesafe.akka:akka-http-experimental_2.11, com.typesafe.akka:akka-slf4j_2.11, com.github.dnvriend:akka-persistence-jdbc_2.11, commons-codec:commons-codec, org.spire-math:cats_2.11, org.joda:joda-convert, joda-time:joda-time, com.ibm.icu:icu4j, com.googlecode.libphonenumber:libphonenumber, im.actor:akka-scalapb-serialization_2.11, com.trueaccord.scalapb:scalapb-runtime_2.11, ch.qos.logback:logback-core, io.kamon:kamon-core_2.11, com.typesafe.akka:akka-http-core_2.11, com.zaxxer:HikariCP, com.typesafe.slick:slick-hikaricp_2.11, com.typesafe.slick:slick-extensions_2.11, com.typesafe.akka:akka-persistence-query-experimental_2.11, com.github.ben-manes.caffeine:caffeine, org.spire-math:cats-jvm_2.11, org.spire-math:cats-state_2.11, org.spire-math:cats-laws_2.11, com.google.protobuf:protobuf-java, com.lihaoyi:fastparse_2.11, com.trueaccord.lenses:lenses_2.11, org.hdrhistogram:HdrHistogram, com.typesafe.akka:akka-parsing_2.11, com.typesafe.slick:slick_2.11, com.typesafe.akka:akka-stream-testkit_2.11, com.typesafe.akka:akka-persistence_2.11, org.spire-math:cats-free_2.11, com.github.inthenow:bricks-platform_2.11, org.spire-math:algebra-laws_2.11, com.github.ben-manes.caffeine:tracing-api, com.lihaoyi:fastparse-utils_2.11, org.slf4j:slf4j-api, com.typesafe.akka:akka-stream_2.11, com.typesafe.akka:akka-protobuf_2.11, com.typesafe.akka:akka-testkit_2.11, com.github.inthenow:bricks-macros_2.11, org.spire-math:algebra-macros_2.11, org.typelevel:discipline_2.11, org.spire-math:cats-core_2.11, com.google.code.findbugs:jsr305, com.typesafe.akka:akka-actor_2.11, org.reactivestreams:reactive-streams, com.typesafe:ssl-config-akka_2.11, org.typelevel:macro-compat_2.11, org.scalacheck:scalacheck_2.11, org.spire-math:cats-macros_2.11, org.scala-lang.modules:scala-java8-compat_2.11, com.typesafe:ssl-config-core_2.11, org.scala-sbt:test-interface, org.typelevel:machinist_2.11, org.spire-math:algebra-std_2.11, com.github.mpilquist:simulacrum_2.11, com.typesafe:config, org.scala-lang:scala-reflect, org.scala-lang.modules:scala-parser-combinators_2.11, org.spire-math:algebra_2.11, org.scala-lang:scala-library
+[debug] :: no conflict runtime-internal: org.eclipse.jetty.alpn:alpn-api
+[debug] :: no conflict runtime-internal: io.netty:netty-tcnative
+[debug] :: no conflict runtime-internal: com.github.kxbmap:configs_2.11
+[debug] :: no conflict runtime-internal: im.actor:actor-util_2.11
+[debug] :: no conflict runtime-internal: ch.qos.logback:logback-classic
+[debug] :: no conflict runtime-internal: com.typesafe.scala-logging:scala-logging_2.11
+[debug] :: no conflict runtime-internal: tyrex:tyrex
+[debug] :: no conflict runtime-internal: io.kamon:kamon-datadog_2.11
+[debug] :: no conflict runtime-internal: im.actor:actor-concurrent_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-http-experimental_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-slf4j_2.11
+[debug] :: no conflict runtime-internal: com.github.dnvriend:akka-persistence-jdbc_2.11
+[debug] :: no conflict runtime-internal: commons-codec:commons-codec
+[debug] :: no conflict runtime-internal: org.spire-math:cats_2.11
+[debug] :: no conflict runtime-internal: org.joda:joda-convert
+[debug] :: no conflict runtime-internal: joda-time:joda-time
+[debug] :: no conflict runtime-internal: com.ibm.icu:icu4j
+[debug] :: no conflict runtime-internal: com.googlecode.libphonenumber:libphonenumber
+[debug] :: no conflict runtime-internal: im.actor:akka-scalapb-serialization_2.11
+[debug] :: merging module reports for runtime-internal: com.trueaccord.scalapb:scalapb-runtime_2.11
+[debug] ::: adds com.trueaccord.scalapb:scalapb-runtime_2.11:0.5.21
+[debug] ::: evicted 
+[debug] :: no conflict runtime-internal: ch.qos.logback:logback-core
+[debug] :: merging module reports for runtime-internal: io.kamon:kamon-core_2.11
+[debug] ::: adds io.kamon:kamon-core_2.11:0.5.2
+[debug] ::: evicted 
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-http-core_2.11
+[debug] :: no conflict runtime-internal: com.zaxxer:HikariCP
+[debug] :: no conflict runtime-internal: com.typesafe.slick:slick-hikaricp_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.slick:slick-extensions_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-persistence-query-experimental_2.11
+[debug] :: merging module reports for runtime-internal: com.github.ben-manes.caffeine:caffeine
+[debug] ::: resolving conflict in runtime-internal:com.github.ben-manes.caffeine:caffeine (com.github.ben-manes.caffeine:caffeine:2.2.7, com.github.ben-manes.caffeine:caffeine:1.2.0)
+[debug] ::: adds com.github.ben-manes.caffeine:caffeine:2.2.7
+[debug] ::: evicted com.github.ben-manes.caffeine:caffeine:1.2.0
+[debug] :::: transitively evicted runtime-internal: com.github.ben-manes.caffeine:tracing-api:1.2.0
+[debug] :: no conflict runtime-internal: org.spire-math:cats-jvm_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:cats-state_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:cats-laws_2.11
+[debug] :: merging module reports for runtime-internal: com.google.protobuf:protobuf-java
+[debug] ::: adds com.google.protobuf:protobuf-java:3.0.0-beta-2
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime-internal: com.lihaoyi:fastparse_2.11
+[debug] ::: adds com.lihaoyi:fastparse_2.11:0.3.4
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime-internal: com.trueaccord.lenses:lenses_2.11
+[debug] ::: adds com.trueaccord.lenses:lenses_2.11:0.4.4
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime-internal: org.hdrhistogram:HdrHistogram
+[debug] ::: adds org.hdrhistogram:HdrHistogram:2.1.7
+[debug] ::: evicted 
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-parsing_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.slick:slick_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-stream-testkit_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-persistence_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:cats-free_2.11
+[debug] :: no conflict runtime-internal: com.github.inthenow:bricks-platform_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:algebra-laws_2.11
+[debug] :: merging module reports for runtime-internal: com.github.ben-manes.caffeine:tracing-api
+[debug] ::: adds 
+[debug] ::: evicted com.github.ben-manes.caffeine:tracing-api:1.2.0
+[debug] :: merging module reports for runtime-internal: com.lihaoyi:fastparse-utils_2.11
+[debug] ::: adds com.lihaoyi:fastparse-utils_2.11:0.3.4
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime-internal: org.slf4j:slf4j-api
+[debug] ::: resolving conflict in runtime-internal:org.slf4j:slf4j-api (org.slf4j:slf4j-api:1.7.16, org.slf4j:slf4j-api:1.7.7, org.slf4j:slf4j-api:1.7.6)
+[debug] ::: adds org.slf4j:slf4j-api:1.7.16
+[debug] ::: evicted org.slf4j:slf4j-api:1.7.7, org.slf4j:slf4j-api:1.7.6
+[debug] :: merging module reports for runtime-internal: com.typesafe.akka:akka-stream_2.11
+[debug] ::: adds com.typesafe.akka:akka-stream_2.11:2.4.4
+[debug] ::: evicted 
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-protobuf_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-testkit_2.11
+[debug] :: no conflict runtime-internal: com.github.inthenow:bricks-macros_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:algebra-macros_2.11
+[debug] :: no conflict runtime-internal: org.typelevel:discipline_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:cats-core_2.11
+[debug] :: no conflict runtime-internal: com.google.code.findbugs:jsr305
+[debug] :: merging module reports for runtime-internal: com.typesafe.akka:akka-actor_2.11
+[debug] ::: resolving conflict in runtime-internal:com.typesafe.akka:akka-actor_2.11 (com.typesafe.akka:akka-actor_2.11:2.4.4, com.typesafe.akka:akka-actor_2.11:2.4.2-RC1, com.typesafe.akka:akka-actor_2.11:2.3.14)
+[debug] ::: adds com.typesafe.akka:akka-actor_2.11:2.4.4
+[debug] ::: evicted com.typesafe.akka:akka-actor_2.11:2.4.2-RC1, com.typesafe.akka:akka-actor_2.11:2.3.14
+[debug] :::: transitively evicted runtime-internal: com.typesafe:config:1.3.0
+[debug] :::: transitively evicted runtime-internal: org.scala-lang.modules:scala-java8-compat_2.11:0.7.0
+[debug] :: merging module reports for runtime-internal: org.reactivestreams:reactive-streams
+[debug] ::: adds org.reactivestreams:reactive-streams:1.0.0
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime-internal: com.typesafe:ssl-config-akka_2.11
+[debug] ::: adds com.typesafe:ssl-config-akka_2.11:0.2.1
+[debug] ::: evicted 
+[debug] :: no conflict runtime-internal: org.typelevel:macro-compat_2.11
+[debug] :: no conflict runtime-internal: org.scalacheck:scalacheck_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:cats-macros_2.11
+[debug] :: merging module reports for runtime-internal: org.scala-lang.modules:scala-java8-compat_2.11
+[debug] ::: adds org.scala-lang.modules:scala-java8-compat_2.11:0.7.0
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime-internal: com.typesafe:ssl-config-core_2.11
+[debug] ::: adds com.typesafe:ssl-config-core_2.11:0.2.1
+[debug] ::: evicted 
+[debug] :: no conflict runtime-internal: org.scala-sbt:test-interface
+[debug] :: no conflict runtime-internal: org.typelevel:machinist_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:algebra-std_2.11
+[debug] :: no conflict runtime-internal: com.github.mpilquist:simulacrum_2.11
+[debug] :: merging module reports for runtime-internal: com.typesafe:config
+[debug] ::: resolving conflict in runtime-internal:com.typesafe:config (com.typesafe:config:1.3.0, com.typesafe:config:1.2.1)
+[debug] ::: adds com.typesafe:config:1.3.0
+[debug] ::: evicted com.typesafe:config:1.2.1
+[debug] :: merging module reports for runtime-internal: org.scala-lang:scala-reflect
+[debug] ::: resolving conflict in runtime-internal:org.scala-lang:scala-reflect (org.scala-lang:scala-reflect:2.11.1 (), org.scala-lang:scala-reflect:2.11.7 ())
+[debug] ::: adds org.scala-lang:scala-reflect:2.11.7 ()
+[debug] ::: evicted org.scala-lang:scala-reflect:2.11.1 ()
+[debug] :: merging module reports for runtime-internal: org.scala-lang.modules:scala-parser-combinators_2.11
+[debug] ::: adds org.scala-lang.modules:scala-parser-combinators_2.11:1.0.4
+[debug] ::: evicted 
+[debug] :: no conflict runtime-internal: org.spire-math:algebra_2.11
+[debug] :: merging module reports for runtime-internal: org.scala-lang:scala-library
+[debug] ::: resolving conflict in runtime-internal:org.scala-lang:scala-library (org.scala-lang:scala-library:2.11.1 (), org.scala-lang:scala-library:2.11.8 (), org.scala-lang:scala-library:2.11.7 (), org.scala-lang:scala-library:2.11.6 ())
+[debug] ::: adds org.scala-lang:scala-library:2.11.8 ()
+[debug] ::: evicted org.scala-lang:scala-library:2.11.1 (), org.scala-lang:scala-library:2.11.7 (), org.scala-lang:scala-library:2.11.6 ()
+[debug] ::: -----------
+[debug] :: test-internal: loop: List()
+[debug] :: sort result: org.eclipse.jetty.alpn:alpn-api, io.netty:netty-tcnative, com.github.kxbmap:configs_2.11, im.actor:actor-util_2.11, ch.qos.logback:logback-classic, com.typesafe.scala-logging:scala-logging_2.11, tyrex:tyrex, io.kamon:kamon-datadog_2.11, im.actor:actor-concurrent_2.11, com.typesafe.akka:akka-http-experimental_2.11, com.typesafe.akka:akka-slf4j_2.11, com.github.dnvriend:akka-persistence-jdbc_2.11, commons-codec:commons-codec, org.spire-math:cats_2.11, org.joda:joda-convert, joda-time:joda-time, com.ibm.icu:icu4j, com.googlecode.libphonenumber:libphonenumber, im.actor:akka-scalapb-serialization_2.11, org.scalatest:scalatest_2.11, com.trueaccord.scalapb:scalapb-runtime_2.11, ch.qos.logback:logback-core, io.kamon:kamon-core_2.11, com.typesafe.akka:akka-http-core_2.11, com.zaxxer:HikariCP, com.typesafe.slick:slick-hikaricp_2.11, com.typesafe.slick:slick-extensions_2.11, com.typesafe.akka:akka-persistence-query-experimental_2.11, com.github.ben-manes.caffeine:caffeine, org.spire-math:cats-jvm_2.11, org.spire-math:cats-state_2.11, org.spire-math:cats-laws_2.11, org.scala-lang.modules:scala-xml_2.11, com.google.protobuf:protobuf-java, com.lihaoyi:fastparse_2.11, com.trueaccord.lenses:lenses_2.11, org.hdrhistogram:HdrHistogram, com.typesafe.akka:akka-parsing_2.11, com.typesafe.slick:slick_2.11, com.typesafe.akka:akka-stream-testkit_2.11, com.typesafe.akka:akka-persistence_2.11, org.spire-math:cats-free_2.11, com.github.inthenow:bricks-platform_2.11, org.spire-math:algebra-laws_2.11, com.github.ben-manes.caffeine:tracing-api, com.lihaoyi:fastparse-utils_2.11, org.slf4j:slf4j-api, com.typesafe.akka:akka-stream_2.11, com.typesafe.akka:akka-protobuf_2.11, com.typesafe.akka:akka-testkit_2.11, com.github.inthenow:bricks-macros_2.11, org.spire-math:algebra-macros_2.11, org.typelevel:discipline_2.11, org.spire-math:cats-core_2.11, com.google.code.findbugs:jsr305, com.typesafe.akka:akka-actor_2.11, org.reactivestreams:reactive-streams, com.typesafe:ssl-config-akka_2.11, org.typelevel:macro-compat_2.11, org.scalacheck:scalacheck_2.11, org.spire-math:cats-macros_2.11, org.scala-lang.modules:scala-java8-compat_2.11, com.typesafe:ssl-config-core_2.11, org.scala-sbt:test-interface, org.typelevel:machinist_2.11, org.spire-math:algebra-std_2.11, com.github.mpilquist:simulacrum_2.11, com.typesafe:config, org.scala-lang:scala-reflect, org.scala-lang.modules:scala-parser-combinators_2.11, org.spire-math:algebra_2.11, org.scala-lang:scala-library
+[debug] :: no conflict test-internal: org.eclipse.jetty.alpn:alpn-api
+[debug] :: no conflict test-internal: io.netty:netty-tcnative
+[debug] :: no conflict test-internal: com.github.kxbmap:configs_2.11
+[debug] :: no conflict test-internal: im.actor:actor-util_2.11
+[debug] :: no conflict test-internal: ch.qos.logback:logback-classic
+[debug] :: no conflict test-internal: com.typesafe.scala-logging:scala-logging_2.11
+[debug] :: no conflict test-internal: tyrex:tyrex
+[debug] :: no conflict test-internal: io.kamon:kamon-datadog_2.11
+[debug] :: no conflict test-internal: im.actor:actor-concurrent_2.11
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-http-experimental_2.11
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-slf4j_2.11
+[debug] :: no conflict test-internal: com.github.dnvriend:akka-persistence-jdbc_2.11
+[debug] :: no conflict test-internal: commons-codec:commons-codec
+[debug] :: no conflict test-internal: org.spire-math:cats_2.11
+[debug] :: no conflict test-internal: org.joda:joda-convert
+[debug] :: no conflict test-internal: joda-time:joda-time
+[debug] :: no conflict test-internal: com.ibm.icu:icu4j
+[debug] :: no conflict test-internal: com.googlecode.libphonenumber:libphonenumber
+[debug] :: no conflict test-internal: im.actor:akka-scalapb-serialization_2.11
+[debug] :: no conflict test-internal: org.scalatest:scalatest_2.11
+[debug] :: merging module reports for test-internal: com.trueaccord.scalapb:scalapb-runtime_2.11
+[debug] ::: adds com.trueaccord.scalapb:scalapb-runtime_2.11:0.5.21
+[debug] ::: evicted 
+[debug] :: no conflict test-internal: ch.qos.logback:logback-core
+[debug] :: merging module reports for test-internal: io.kamon:kamon-core_2.11
+[debug] ::: adds io.kamon:kamon-core_2.11:0.5.2
+[debug] ::: evicted 
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-http-core_2.11
+[debug] :: no conflict test-internal: com.zaxxer:HikariCP
+[debug] :: no conflict test-internal: com.typesafe.slick:slick-hikaricp_2.11
+[debug] :: no conflict test-internal: com.typesafe.slick:slick-extensions_2.11
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-persistence-query-experimental_2.11
+[debug] :: merging module reports for test-internal: com.github.ben-manes.caffeine:caffeine
+[debug] ::: resolving conflict in test-internal:com.github.ben-manes.caffeine:caffeine (com.github.ben-manes.caffeine:caffeine:2.2.7, com.github.ben-manes.caffeine:caffeine:1.2.0)
+[debug] ::: adds com.github.ben-manes.caffeine:caffeine:2.2.7
+[debug] ::: evicted com.github.ben-manes.caffeine:caffeine:1.2.0
+[debug] :::: transitively evicted test-internal: com.github.ben-manes.caffeine:tracing-api:1.2.0
+[debug] :: no conflict test-internal: org.spire-math:cats-jvm_2.11
+[debug] :: no conflict test-internal: org.spire-math:cats-state_2.11
+[debug] :: no conflict test-internal: org.spire-math:cats-laws_2.11
+[debug] :: no conflict test-internal: org.scala-lang.modules:scala-xml_2.11
+[debug] :: merging module reports for test-internal: com.google.protobuf:protobuf-java
+[debug] ::: adds com.google.protobuf:protobuf-java:3.0.0-beta-2
+[debug] ::: evicted 
+[debug] :: merging module reports for test-internal: com.lihaoyi:fastparse_2.11
+[debug] ::: adds com.lihaoyi:fastparse_2.11:0.3.4
+[debug] ::: evicted 
+[debug] :: merging module reports for test-internal: com.trueaccord.lenses:lenses_2.11
+[debug] ::: adds com.trueaccord.lenses:lenses_2.11:0.4.4
+[debug] ::: evicted 
+[debug] :: merging module reports for test-internal: org.hdrhistogram:HdrHistogram
+[debug] ::: adds org.hdrhistogram:HdrHistogram:2.1.7
+[debug] ::: evicted 
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-parsing_2.11
+[debug] :: no conflict test-internal: com.typesafe.slick:slick_2.11
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-stream-testkit_2.11
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-persistence_2.11
+[debug] :: no conflict test-internal: org.spire-math:cats-free_2.11
+[debug] :: no conflict test-internal: com.github.inthenow:bricks-platform_2.11
+[debug] :: no conflict test-internal: org.spire-math:algebra-laws_2.11
+[debug] :: merging module reports for test-internal: com.github.ben-manes.caffeine:tracing-api
+[debug] ::: adds 
+[debug] ::: evicted com.github.ben-manes.caffeine:tracing-api:1.2.0
+[debug] :: merging module reports for test-internal: com.lihaoyi:fastparse-utils_2.11
+[debug] ::: adds com.lihaoyi:fastparse-utils_2.11:0.3.4
+[debug] ::: evicted 
+[debug] :: merging module reports for test-internal: org.slf4j:slf4j-api
+[debug] ::: resolving conflict in test-internal:org.slf4j:slf4j-api (org.slf4j:slf4j-api:1.7.16, org.slf4j:slf4j-api:1.7.7, org.slf4j:slf4j-api:1.7.6)
+[debug] ::: adds org.slf4j:slf4j-api:1.7.16
+[debug] ::: evicted org.slf4j:slf4j-api:1.7.7, org.slf4j:slf4j-api:1.7.6
+[debug] :: merging module reports for test-internal: com.typesafe.akka:akka-stream_2.11
+[debug] ::: adds com.typesafe.akka:akka-stream_2.11:2.4.4
+[debug] ::: evicted 
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-protobuf_2.11
+[debug] :: merging module reports for test-internal: com.typesafe.akka:akka-testkit_2.11
+[debug] ::: adds com.typesafe.akka:akka-testkit_2.11:2.4.4
+[debug] ::: evicted 
+[debug] :: no conflict test-internal: com.github.inthenow:bricks-macros_2.11
+[debug] :: no conflict test-internal: org.spire-math:algebra-macros_2.11
+[debug] :: no conflict test-internal: org.typelevel:discipline_2.11
+[debug] :: no conflict test-internal: org.spire-math:cats-core_2.11
+[debug] :: no conflict test-internal: com.google.code.findbugs:jsr305
+[debug] :: merging module reports for test-internal: com.typesafe.akka:akka-actor_2.11
+[debug] ::: resolving conflict in test-internal:com.typesafe.akka:akka-actor_2.11 (com.typesafe.akka:akka-actor_2.11:2.4.4, com.typesafe.akka:akka-actor_2.11:2.4.2-RC1, com.typesafe.akka:akka-actor_2.11:2.3.14)
+[debug] ::: adds com.typesafe.akka:akka-actor_2.11:2.4.4
+[debug] ::: evicted com.typesafe.akka:akka-actor_2.11:2.4.2-RC1, com.typesafe.akka:akka-actor_2.11:2.3.14
+[debug] :::: transitively evicted test-internal: com.typesafe:config:1.3.0
+[debug] :::: transitively evicted test-internal: org.scala-lang.modules:scala-java8-compat_2.11:0.7.0
+[debug] :: merging module reports for test-internal: org.reactivestreams:reactive-streams
+[debug] ::: adds org.reactivestreams:reactive-streams:1.0.0
+[debug] ::: evicted 
+[debug] :: merging module reports for test-internal: com.typesafe:ssl-config-akka_2.11
+[debug] ::: adds com.typesafe:ssl-config-akka_2.11:0.2.1
+[debug] ::: evicted 
+[debug] :: no conflict test-internal: org.typelevel:macro-compat_2.11
+[debug] :: no conflict test-internal: org.scalacheck:scalacheck_2.11
+[debug] :: no conflict test-internal: org.spire-math:cats-macros_2.11
+[debug] :: merging module reports for test-internal: org.scala-lang.modules:scala-java8-compat_2.11
+[debug] ::: adds org.scala-lang.modules:scala-java8-compat_2.11:0.7.0
+[debug] ::: evicted 
+[debug] :: merging module reports for test-internal: com.typesafe:ssl-config-core_2.11
+[debug] ::: adds com.typesafe:ssl-config-core_2.11:0.2.1
+[debug] ::: evicted 
+[debug] :: no conflict test-internal: org.scala-sbt:test-interface
+[debug] :: no conflict test-internal: org.typelevel:machinist_2.11
+[debug] :: no conflict test-internal: org.spire-math:algebra-std_2.11
+[debug] :: no conflict test-internal: com.github.mpilquist:simulacrum_2.11
+[debug] :: merging module reports for test-internal: com.typesafe:config
+[debug] ::: resolving conflict in test-internal:com.typesafe:config (com.typesafe:config:1.3.0, com.typesafe:config:1.2.1)
+[debug] ::: adds com.typesafe:config:1.3.0
+[debug] ::: evicted com.typesafe:config:1.2.1
+[debug] :: merging module reports for test-internal: org.scala-lang:scala-reflect
+[debug] ::: resolving conflict in test-internal:org.scala-lang:scala-reflect (org.scala-lang:scala-reflect:2.11.2 (), org.scala-lang:scala-reflect:2.11.1 (), org.scala-lang:scala-reflect:2.11.7 ())
+[debug] ::: adds org.scala-lang:scala-reflect:2.11.7 ()
+[debug] ::: evicted org.scala-lang:scala-reflect:2.11.2 (), org.scala-lang:scala-reflect:2.11.1 ()
+[debug] :: merging module reports for test-internal: org.scala-lang.modules:scala-parser-combinators_2.11
+[debug] ::: adds org.scala-lang.modules:scala-parser-combinators_2.11:1.0.4
+[debug] ::: evicted 
+[debug] :: no conflict test-internal: org.spire-math:algebra_2.11
+[debug] :: merging module reports for test-internal: org.scala-lang:scala-library
+[debug] ::: resolving conflict in test-internal:org.scala-lang:scala-library (org.scala-lang:scala-library:2.11.8 (), org.scala-lang:scala-library:2.11.2 (), org.scala-lang:scala-library:2.11.6 (), org.scala-lang:scala-library:2.11.7 (), org.scala-lang:scala-library:2.11.1 ())
+[debug] ::: adds org.scala-lang:scala-library:2.11.8 ()
+[debug] ::: evicted org.scala-lang:scala-library:2.11.2 (), org.scala-lang:scala-library:2.11.6 (), org.scala-lang:scala-library:2.11.7 (), org.scala-lang:scala-library:2.11.1 ()
+[debug] ::: -----------
+[debug] :: plugin: loop: List()
+[debug] :: sort result: 
+[debug] ::: -----------
+[debug] :: sources: loop: List()
+[debug] :: sort result: 
+[debug] ::: -----------
+[debug] :: docs: loop: List()
+[debug] :: sort result: 
+[debug] ::: -----------
+[debug] :: pom: loop: List()
+[debug] :: sort result: 
+[debug] ::: -----------
+[debug] :: scala-tool: loop: List()
+[debug] :: sort result: org.scala-lang:scala-compiler, jline:jline, org.scala-lang.modules:scala-parser-combinators_2.11, org.scala-lang.modules:scala-xml_2.11, org.scala-lang:scala-reflect, org.scala-lang:scala-library
+[debug] :: no conflict scala-tool: org.scala-lang:scala-compiler
+[debug] :: no conflict scala-tool: jline:jline
+[debug] :: no conflict scala-tool: org.scala-lang.modules:scala-parser-combinators_2.11
+[debug] :: no conflict scala-tool: org.scala-lang.modules:scala-xml_2.11
+[debug] :: no conflict scala-tool: org.scala-lang:scala-reflect
+[debug] :: merging module reports for scala-tool: org.scala-lang:scala-library
+[debug] ::: adds org.scala-lang:scala-library:2.11.8 ()
+[debug] ::: evicted 
+[debug] ::: -----------
+[debug] :: protobuf: loop: List()
+[debug] :: sort result: com.trueaccord.scalapb:scalapb-runtime_2.11, com.google.protobuf:protobuf-java, com.lihaoyi:fastparse_2.11, com.trueaccord.lenses:lenses_2.11, com.lihaoyi:fastparse-utils_2.11, org.scala-lang:scala-library
+[debug] :: no conflict protobuf: com.trueaccord.scalapb:scalapb-runtime_2.11
+[debug] :: no conflict protobuf: com.google.protobuf:protobuf-java
+[debug] :: no conflict protobuf: com.lihaoyi:fastparse_2.11
+[debug] :: no conflict protobuf: com.trueaccord.lenses:lenses_2.11
+[debug] :: no conflict protobuf: com.lihaoyi:fastparse-utils_2.11
+[debug] :: no conflict protobuf: org.scala-lang:scala-library
+[debug] ::: remapped configs Map(plugin -> Vector(), pom -> Vector(), test -> Vector(compile), provided -> Vector(), compile-internal -> Vector(compile), docs -> Vector(), optional -> Vector(), protobuf -> Vector(), compile -> Vector(compile), test-internal -> Vector(compile), scala-tool -> Vector(), sources -> Vector(), runtime -> Vector(compile), runtime-internal -> Vector(compile))
+[debug] :: compile: loop: List()
+[debug] :: sort result: io.netty:netty-tcnative, com.github.kxbmap:configs_2.11, im.actor:actor-util_2.11, ch.qos.logback:logback-classic, com.typesafe.scala-logging:scala-logging_2.11, tyrex:tyrex, io.kamon:kamon-datadog_2.11, im.actor:actor-concurrent_2.11, com.typesafe.akka:akka-http-experimental_2.11, com.typesafe.akka:akka-slf4j_2.11, com.github.dnvriend:akka-persistence-jdbc_2.11, commons-codec:commons-codec, org.spire-math:cats_2.11, org.joda:joda-convert, joda-time:joda-time, com.ibm.icu:icu4j, com.googlecode.libphonenumber:libphonenumber, im.actor:akka-scalapb-serialization_2.11, com.github.ben-manes.caffeine:caffeine, com.github.ben-manes.caffeine:tracing-api, com.trueaccord.scalapb:scalapb-runtime_2.11, ch.qos.logback:logback-core, io.kamon:kamon-core_2.11, com.typesafe.akka:akka-http-core_2.11, com.zaxxer:HikariCP, com.typesafe.slick:slick-hikaricp_2.11, com.typesafe.slick:slick-extensions_2.11, com.typesafe.akka:akka-persistence-query-experimental_2.11, org.spire-math:cats-jvm_2.11, org.spire-math:cats-state_2.11, org.spire-math:cats-laws_2.11, com.google.code.findbugs:jsr305, com.google.protobuf:protobuf-java, com.lihaoyi:fastparse_2.11, com.trueaccord.lenses:lenses_2.11, org.hdrhistogram:HdrHistogram, com.typesafe.akka:akka-parsing_2.11, com.typesafe.slick:slick_2.11, com.typesafe.akka:akka-stream-testkit_2.11, com.typesafe.akka:akka-persistence_2.11, org.spire-math:cats-free_2.11, com.github.inthenow:bricks-platform_2.11, org.spire-math:algebra-laws_2.11, com.lihaoyi:fastparse-utils_2.11, org.slf4j:slf4j-api, com.typesafe.akka:akka-stream_2.11, com.typesafe.akka:akka-protobuf_2.11, com.typesafe.akka:akka-testkit_2.11, com.github.inthenow:bricks-macros_2.11, org.spire-math:algebra-macros_2.11, org.typelevel:discipline_2.11, org.spire-math:cats-core_2.11, com.typesafe.akka:akka-actor_2.11, org.reactivestreams:reactive-streams, com.typesafe:ssl-config-akka_2.11, org.typelevel:macro-compat_2.11, org.scalacheck:scalacheck_2.11, org.spire-math:cats-macros_2.11, org.scala-lang.modules:scala-java8-compat_2.11, com.typesafe:ssl-config-core_2.11, org.scala-sbt:test-interface, org.typelevel:machinist_2.11, org.spire-math:algebra-std_2.11, com.github.mpilquist:simulacrum_2.11, com.typesafe:config, org.scala-lang:scala-reflect, org.scala-lang.modules:scala-parser-combinators_2.11, org.spire-math:algebra_2.11, org.scala-lang:scala-library
+[debug] :: no conflict compile: io.netty:netty-tcnative
+[debug] :: no conflict compile: com.github.kxbmap:configs_2.11
+[debug] :: no conflict compile: im.actor:actor-util_2.11
+[debug] :: no conflict compile: ch.qos.logback:logback-classic
+[debug] :: no conflict compile: com.typesafe.scala-logging:scala-logging_2.11
+[debug] :: no conflict compile: tyrex:tyrex
+[debug] :: no conflict compile: io.kamon:kamon-datadog_2.11
+[debug] :: no conflict compile: im.actor:actor-concurrent_2.11
+[debug] :: no conflict compile: com.typesafe.akka:akka-http-experimental_2.11
+[debug] :: no conflict compile: com.typesafe.akka:akka-slf4j_2.11
+[debug] :: no conflict compile: com.github.dnvriend:akka-persistence-jdbc_2.11
+[debug] :: no conflict compile: commons-codec:commons-codec
+[debug] :: no conflict compile: org.spire-math:cats_2.11
+[debug] :: no conflict compile: org.joda:joda-convert
+[debug] :: no conflict compile: joda-time:joda-time
+[debug] :: no conflict compile: com.ibm.icu:icu4j
+[debug] :: no conflict compile: com.googlecode.libphonenumber:libphonenumber
+[debug] :: no conflict compile: im.actor:akka-scalapb-serialization_2.11
+[debug] :: no conflict compile: com.github.ben-manes.caffeine:caffeine
+[debug] :: no conflict compile: com.trueaccord.scalapb:scalapb-runtime_2.11
+[debug] :: no conflict compile: ch.qos.logback:logback-core
+[debug] :: no conflict compile: io.kamon:kamon-core_2.11
+[debug] :: no conflict compile: com.typesafe.akka:akka-http-core_2.11
+[debug] :: no conflict compile: com.zaxxer:HikariCP
+[debug] :: no conflict compile: com.typesafe.slick:slick-hikaricp_2.11
+[debug] :: no conflict compile: com.typesafe.slick:slick-extensions_2.11
+[debug] :: no conflict compile: com.typesafe.akka:akka-persistence-query-experimental_2.11
+[debug] :: no conflict compile: org.spire-math:cats-jvm_2.11
+[debug] :: no conflict compile: org.spire-math:cats-state_2.11
+[debug] :: no conflict compile: org.spire-math:cats-laws_2.11
+[debug] :: no conflict compile: com.google.code.findbugs:jsr305
+[debug] :: no conflict compile: com.google.protobuf:protobuf-java
+[debug] :: no conflict compile: com.lihaoyi:fastparse_2.11
+[debug] :: no conflict compile: com.trueaccord.lenses:lenses_2.11
+[debug] :: no conflict compile: org.hdrhistogram:HdrHistogram
+[debug] :: no conflict compile: com.typesafe.akka:akka-parsing_2.11
+[debug] :: no conflict compile: com.typesafe.slick:slick_2.11
+[debug] :: no conflict compile: com.typesafe.akka:akka-stream-testkit_2.11
+[debug] :: no conflict compile: com.typesafe.akka:akka-persistence_2.11
+[debug] :: no conflict compile: org.spire-math:cats-free_2.11
+[debug] :: no conflict compile: com.github.inthenow:bricks-platform_2.11
+[debug] :: no conflict compile: org.spire-math:algebra-laws_2.11
+[debug] :: no conflict compile: com.lihaoyi:fastparse-utils_2.11
+[debug] :: no conflict compile: org.slf4j:slf4j-api
+[debug] :: no conflict compile: com.typesafe.akka:akka-stream_2.11
+[debug] :: no conflict compile: com.typesafe.akka:akka-protobuf_2.11
+[debug] :: no conflict compile: com.typesafe.akka:akka-testkit_2.11
+[debug] :: no conflict compile: com.github.inthenow:bricks-macros_2.11
+[debug] :: no conflict compile: org.spire-math:algebra-macros_2.11
+[debug] :: no conflict compile: org.typelevel:discipline_2.11
+[debug] :: no conflict compile: org.spire-math:cats-core_2.11
+[debug] :: no conflict compile: com.typesafe.akka:akka-actor_2.11
+[debug] :: no conflict compile: org.reactivestreams:reactive-streams
+[debug] :: no conflict compile: com.typesafe:ssl-config-akka_2.11
+[debug] :: no conflict compile: org.typelevel:macro-compat_2.11
+[debug] :: no conflict compile: org.scalacheck:scalacheck_2.11
+[debug] :: no conflict compile: org.spire-math:cats-macros_2.11
+[debug] :: no conflict compile: org.scala-lang.modules:scala-java8-compat_2.11
+[debug] :: no conflict compile: com.typesafe:ssl-config-core_2.11
+[debug] :: no conflict compile: org.scala-sbt:test-interface
+[debug] :: no conflict compile: org.typelevel:machinist_2.11
+[debug] :: no conflict compile: org.spire-math:algebra-std_2.11
+[debug] :: no conflict compile: com.github.mpilquist:simulacrum_2.11
+[debug] :: no conflict compile: com.typesafe:config
+[debug] :: no conflict compile: org.scala-lang:scala-reflect
+[debug] :: no conflict compile: org.scala-lang.modules:scala-parser-combinators_2.11
+[debug] :: no conflict compile: org.spire-math:algebra_2.11
+[debug] :: no conflict compile: org.scala-lang:scala-library
+[debug] :: runtime: loop: List()
+[debug] :: sort result: io.netty:netty-tcnative, com.github.kxbmap:configs_2.11, im.actor:actor-util_2.11, ch.qos.logback:logback-classic, com.typesafe.scala-logging:scala-logging_2.11, tyrex:tyrex, io.kamon:kamon-datadog_2.11, im.actor:actor-concurrent_2.11, com.typesafe.akka:akka-http-experimental_2.11, com.typesafe.akka:akka-slf4j_2.11, com.github.dnvriend:akka-persistence-jdbc_2.11, commons-codec:commons-codec, org.spire-math:cats_2.11, org.joda:joda-convert, joda-time:joda-time, com.ibm.icu:icu4j, com.googlecode.libphonenumber:libphonenumber, im.actor:akka-scalapb-serialization_2.11, com.github.ben-manes.caffeine:caffeine, com.github.ben-manes.caffeine:tracing-api, com.trueaccord.scalapb:scalapb-runtime_2.11, ch.qos.logback:logback-core, io.kamon:kamon-core_2.11, com.typesafe.akka:akka-http-core_2.11, com.zaxxer:HikariCP, com.typesafe.slick:slick-hikaricp_2.11, com.typesafe.slick:slick-extensions_2.11, com.typesafe.akka:akka-persistence-query-experimental_2.11, org.spire-math:cats-jvm_2.11, org.spire-math:cats-state_2.11, org.spire-math:cats-laws_2.11, com.google.code.findbugs:jsr305, com.google.protobuf:protobuf-java, com.lihaoyi:fastparse_2.11, com.trueaccord.lenses:lenses_2.11, org.hdrhistogram:HdrHistogram, com.typesafe.akka:akka-parsing_2.11, com.typesafe.slick:slick_2.11, com.typesafe.akka:akka-stream-testkit_2.11, com.typesafe.akka:akka-persistence_2.11, org.spire-math:cats-free_2.11, com.github.inthenow:bricks-platform_2.11, org.spire-math:algebra-laws_2.11, com.lihaoyi:fastparse-utils_2.11, org.slf4j:slf4j-api, com.typesafe.akka:akka-stream_2.11, com.typesafe.akka:akka-protobuf_2.11, com.typesafe.akka:akka-testkit_2.11, com.github.inthenow:bricks-macros_2.11, org.spire-math:algebra-macros_2.11, org.typelevel:discipline_2.11, org.spire-math:cats-core_2.11, com.typesafe.akka:akka-actor_2.11, org.reactivestreams:reactive-streams, com.typesafe:ssl-config-akka_2.11, org.typelevel:macro-compat_2.11, org.scalacheck:scalacheck_2.11, org.spire-math:cats-macros_2.11, org.scala-lang.modules:scala-java8-compat_2.11, com.typesafe:ssl-config-core_2.11, org.scala-sbt:test-interface, org.typelevel:machinist_2.11, org.spire-math:algebra-std_2.11, com.github.mpilquist:simulacrum_2.11, com.typesafe:config, org.scala-lang:scala-reflect, org.scala-lang.modules:scala-parser-combinators_2.11, org.spire-math:algebra_2.11, org.scala-lang:scala-library
+[debug] :: no conflict runtime: io.netty:netty-tcnative
+[debug] :: no conflict runtime: com.github.kxbmap:configs_2.11
+[debug] :: no conflict runtime: im.actor:actor-util_2.11
+[debug] :: no conflict runtime: ch.qos.logback:logback-classic
+[debug] :: no conflict runtime: com.typesafe.scala-logging:scala-logging_2.11
+[debug] :: no conflict runtime: tyrex:tyrex
+[debug] :: no conflict runtime: io.kamon:kamon-datadog_2.11
+[debug] :: no conflict runtime: im.actor:actor-concurrent_2.11
+[debug] :: no conflict runtime: com.typesafe.akka:akka-http-experimental_2.11
+[debug] :: no conflict runtime: com.typesafe.akka:akka-slf4j_2.11
+[debug] :: no conflict runtime: com.github.dnvriend:akka-persistence-jdbc_2.11
+[debug] :: no conflict runtime: commons-codec:commons-codec
+[debug] :: no conflict runtime: org.spire-math:cats_2.11
+[debug] :: no conflict runtime: org.joda:joda-convert
+[debug] :: no conflict runtime: joda-time:joda-time
+[debug] :: no conflict runtime: com.ibm.icu:icu4j
+[debug] :: no conflict runtime: com.googlecode.libphonenumber:libphonenumber
+[debug] :: no conflict runtime: im.actor:akka-scalapb-serialization_2.11
+[debug] :: no conflict runtime: com.github.ben-manes.caffeine:caffeine
+[debug] :: no conflict runtime: com.trueaccord.scalapb:scalapb-runtime_2.11
+[debug] :: no conflict runtime: ch.qos.logback:logback-core
+[debug] :: no conflict runtime: io.kamon:kamon-core_2.11
+[debug] :: no conflict runtime: com.typesafe.akka:akka-http-core_2.11
+[debug] :: no conflict runtime: com.zaxxer:HikariCP
+[debug] :: no conflict runtime: com.typesafe.slick:slick-hikaricp_2.11
+[debug] :: no conflict runtime: com.typesafe.slick:slick-extensions_2.11
+[debug] :: no conflict runtime: com.typesafe.akka:akka-persistence-query-experimental_2.11
+[debug] :: no conflict runtime: org.spire-math:cats-jvm_2.11
+[debug] :: no conflict runtime: org.spire-math:cats-state_2.11
+[debug] :: no conflict runtime: org.spire-math:cats-laws_2.11
+[debug] :: no conflict runtime: com.google.code.findbugs:jsr305
+[debug] :: no conflict runtime: com.google.protobuf:protobuf-java
+[debug] :: no conflict runtime: com.lihaoyi:fastparse_2.11
+[debug] :: no conflict runtime: com.trueaccord.lenses:lenses_2.11
+[debug] :: no conflict runtime: org.hdrhistogram:HdrHistogram
+[debug] :: no conflict runtime: com.typesafe.akka:akka-parsing_2.11
+[debug] :: no conflict runtime: com.typesafe.slick:slick_2.11
+[debug] :: no conflict runtime: com.typesafe.akka:akka-stream-testkit_2.11
+[debug] :: no conflict runtime: com.typesafe.akka:akka-persistence_2.11
+[debug] :: no conflict runtime: org.spire-math:cats-free_2.11
+[debug] :: no conflict runtime: com.github.inthenow:bricks-platform_2.11
+[debug] :: no conflict runtime: org.spire-math:algebra-laws_2.11
+[debug] :: no conflict runtime: com.lihaoyi:fastparse-utils_2.11
+[debug] :: no conflict runtime: org.slf4j:slf4j-api
+[debug] :: no conflict runtime: com.typesafe.akka:akka-stream_2.11
+[debug] :: no conflict runtime: com.typesafe.akka:akka-protobuf_2.11
+[debug] :: no conflict runtime: com.typesafe.akka:akka-testkit_2.11
+[debug] :: no conflict runtime: com.github.inthenow:bricks-macros_2.11
+[debug] :: no conflict runtime: org.spire-math:algebra-macros_2.11
+[debug] :: no conflict runtime: org.typelevel:discipline_2.11
+[debug] :: no conflict runtime: org.spire-math:cats-core_2.11
+[debug] :: no conflict runtime: com.typesafe.akka:akka-actor_2.11
+[debug] :: no conflict runtime: org.reactivestreams:reactive-streams
+[debug] :: no conflict runtime: com.typesafe:ssl-config-akka_2.11
+[debug] :: no conflict runtime: org.typelevel:macro-compat_2.11
+[debug] :: no conflict runtime: org.scalacheck:scalacheck_2.11
+[debug] :: no conflict runtime: org.spire-math:cats-macros_2.11
+[debug] :: no conflict runtime: org.scala-lang.modules:scala-java8-compat_2.11
+[debug] :: no conflict runtime: com.typesafe:ssl-config-core_2.11
+[debug] :: no conflict runtime: org.scala-sbt:test-interface
+[debug] :: no conflict runtime: org.typelevel:machinist_2.11
+[debug] :: no conflict runtime: org.spire-math:algebra-std_2.11
+[debug] :: no conflict runtime: com.github.mpilquist:simulacrum_2.11
+[debug] :: no conflict runtime: com.typesafe:config
+[debug] :: no conflict runtime: org.scala-lang:scala-reflect
+[debug] :: no conflict runtime: org.scala-lang.modules:scala-parser-combinators_2.11
+[debug] :: no conflict runtime: org.spire-math:algebra_2.11
+[debug] :: no conflict runtime: org.scala-lang:scala-library
+[debug] :: test: loop: List()
+[debug] :: sort result: io.netty:netty-tcnative, com.github.kxbmap:configs_2.11, im.actor:actor-util_2.11, ch.qos.logback:logback-classic, com.typesafe.scala-logging:scala-logging_2.11, tyrex:tyrex, io.kamon:kamon-datadog_2.11, im.actor:actor-concurrent_2.11, com.typesafe.akka:akka-http-experimental_2.11, com.typesafe.akka:akka-slf4j_2.11, com.github.dnvriend:akka-persistence-jdbc_2.11, commons-codec:commons-codec, org.spire-math:cats_2.11, org.joda:joda-convert, joda-time:joda-time, com.ibm.icu:icu4j, com.googlecode.libphonenumber:libphonenumber, im.actor:akka-scalapb-serialization_2.11, com.github.ben-manes.caffeine:caffeine, com.github.ben-manes.caffeine:tracing-api, com.trueaccord.scalapb:scalapb-runtime_2.11, ch.qos.logback:logback-core, io.kamon:kamon-core_2.11, com.typesafe.akka:akka-http-core_2.11, com.zaxxer:HikariCP, com.typesafe.slick:slick-hikaricp_2.11, com.typesafe.slick:slick-extensions_2.11, com.typesafe.akka:akka-persistence-query-experimental_2.11, org.spire-math:cats-jvm_2.11, org.spire-math:cats-state_2.11, org.spire-math:cats-laws_2.11, com.google.code.findbugs:jsr305, com.google.protobuf:protobuf-java, com.lihaoyi:fastparse_2.11, com.trueaccord.lenses:lenses_2.11, org.hdrhistogram:HdrHistogram, com.typesafe.akka:akka-parsing_2.11, com.typesafe.slick:slick_2.11, com.typesafe.akka:akka-stream-testkit_2.11, com.typesafe.akka:akka-persistence_2.11, org.spire-math:cats-free_2.11, com.github.inthenow:bricks-platform_2.11, org.spire-math:algebra-laws_2.11, com.lihaoyi:fastparse-utils_2.11, org.slf4j:slf4j-api, com.typesafe.akka:akka-stream_2.11, com.typesafe.akka:akka-protobuf_2.11, com.typesafe.akka:akka-testkit_2.11, com.github.inthenow:bricks-macros_2.11, org.spire-math:algebra-macros_2.11, org.typelevel:discipline_2.11, org.spire-math:cats-core_2.11, com.typesafe.akka:akka-actor_2.11, org.reactivestreams:reactive-streams, com.typesafe:ssl-config-akka_2.11, org.typelevel:macro-compat_2.11, org.scalacheck:scalacheck_2.11, org.spire-math:cats-macros_2.11, org.scala-lang.modules:scala-java8-compat_2.11, com.typesafe:ssl-config-core_2.11, org.scala-sbt:test-interface, org.typelevel:machinist_2.11, org.spire-math:algebra-std_2.11, com.github.mpilquist:simulacrum_2.11, com.typesafe:config, org.scala-lang:scala-reflect, org.scala-lang.modules:scala-parser-combinators_2.11, org.spire-math:algebra_2.11, org.scala-lang:scala-library
+[debug] :: no conflict test: io.netty:netty-tcnative
+[debug] :: no conflict test: com.github.kxbmap:configs_2.11
+[debug] :: no conflict test: im.actor:actor-util_2.11
+[debug] :: no conflict test: ch.qos.logback:logback-classic
+[debug] :: no conflict test: com.typesafe.scala-logging:scala-logging_2.11
+[debug] :: no conflict test: tyrex:tyrex
+[debug] :: no conflict test: io.kamon:kamon-datadog_2.11
+[debug] :: no conflict test: im.actor:actor-concurrent_2.11
+[debug] :: no conflict test: com.typesafe.akka:akka-http-experimental_2.11
+[debug] :: no conflict test: com.typesafe.akka:akka-slf4j_2.11
+[debug] :: no conflict test: com.github.dnvriend:akka-persistence-jdbc_2.11
+[debug] :: no conflict test: commons-codec:commons-codec
+[debug] :: no conflict test: org.spire-math:cats_2.11
+[debug] :: no conflict test: org.joda:joda-convert
+[debug] :: no conflict test: joda-time:joda-time
+[debug] :: no conflict test: com.ibm.icu:icu4j
+[debug] :: no conflict test: com.googlecode.libphonenumber:libphonenumber
+[debug] :: no conflict test: im.actor:akka-scalapb-serialization_2.11
+[debug] :: no conflict test: com.github.ben-manes.caffeine:caffeine
+[debug] :: no conflict test: com.trueaccord.scalapb:scalapb-runtime_2.11
+[debug] :: no conflict test: ch.qos.logback:logback-core
+[debug] :: no conflict test: io.kamon:kamon-core_2.11
+[debug] :: no conflict test: com.typesafe.akka:akka-http-core_2.11
+[debug] :: no conflict test: com.zaxxer:HikariCP
+[debug] :: no conflict test: com.typesafe.slick:slick-hikaricp_2.11
+[debug] :: no conflict test: com.typesafe.slick:slick-extensions_2.11
+[debug] :: no conflict test: com.typesafe.akka:akka-persistence-query-experimental_2.11
+[debug] :: no conflict test: org.spire-math:cats-jvm_2.11
+[debug] :: no conflict test: org.spire-math:cats-state_2.11
+[debug] :: no conflict test: org.spire-math:cats-laws_2.11
+[debug] :: no conflict test: com.google.code.findbugs:jsr305
+[debug] :: no conflict test: com.google.protobuf:protobuf-java
+[debug] :: no conflict test: com.lihaoyi:fastparse_2.11
+[debug] :: no conflict test: com.trueaccord.lenses:lenses_2.11
+[debug] :: no conflict test: org.hdrhistogram:HdrHistogram
+[debug] :: no conflict test: com.typesafe.akka:akka-parsing_2.11
+[debug] :: no conflict test: com.typesafe.slick:slick_2.11
+[debug] :: no conflict test: com.typesafe.akka:akka-stream-testkit_2.11
+[debug] :: no conflict test: com.typesafe.akka:akka-persistence_2.11
+[debug] :: no conflict test: org.spire-math:cats-free_2.11
+[debug] :: no conflict test: com.github.inthenow:bricks-platform_2.11
+[debug] :: no conflict test: org.spire-math:algebra-laws_2.11
+[debug] :: no conflict test: com.lihaoyi:fastparse-utils_2.11
+[debug] :: no conflict test: org.slf4j:slf4j-api
+[debug] :: no conflict test: com.typesafe.akka:akka-stream_2.11
+[debug] :: no conflict test: com.typesafe.akka:akka-protobuf_2.11
+[debug] :: no conflict test: com.typesafe.akka:akka-testkit_2.11
+[debug] :: no conflict test: com.github.inthenow:bricks-macros_2.11
+[debug] :: no conflict test: org.spire-math:algebra-macros_2.11
+[debug] :: no conflict test: org.typelevel:discipline_2.11
+[debug] :: no conflict test: org.spire-math:cats-core_2.11
+[debug] :: no conflict test: com.typesafe.akka:akka-actor_2.11
+[debug] :: no conflict test: org.reactivestreams:reactive-streams
+[debug] :: no conflict test: com.typesafe:ssl-config-akka_2.11
+[debug] :: no conflict test: org.typelevel:macro-compat_2.11
+[debug] :: no conflict test: org.scalacheck:scalacheck_2.11
+[debug] :: no conflict test: org.spire-math:cats-macros_2.11
+[debug] :: no conflict test: org.scala-lang.modules:scala-java8-compat_2.11
+[debug] :: no conflict test: com.typesafe:ssl-config-core_2.11
+[debug] :: no conflict test: org.scala-sbt:test-interface
+[debug] :: no conflict test: org.typelevel:machinist_2.11
+[debug] :: no conflict test: org.spire-math:algebra-std_2.11
+[debug] :: no conflict test: com.github.mpilquist:simulacrum_2.11
+[debug] :: no conflict test: com.typesafe:config
+[debug] :: no conflict test: org.scala-lang:scala-reflect
+[debug] :: no conflict test: org.scala-lang.modules:scala-parser-combinators_2.11
+[debug] :: no conflict test: org.spire-math:algebra_2.11
+[debug] :: no conflict test: org.scala-lang:scala-library
+[debug] :: provided: loop: List()
+[debug] :: sort result: 
+[debug] :: optional: loop: List()
+[debug] :: sort result: 
+[debug] :: compile-internal: loop: List()
+[debug] :: sort result: io.netty:netty-tcnative, com.github.kxbmap:configs_2.11, im.actor:actor-util_2.11, ch.qos.logback:logback-classic, com.typesafe.scala-logging:scala-logging_2.11, tyrex:tyrex, io.kamon:kamon-datadog_2.11, im.actor:actor-concurrent_2.11, com.typesafe.akka:akka-http-experimental_2.11, com.typesafe.akka:akka-slf4j_2.11, com.github.dnvriend:akka-persistence-jdbc_2.11, commons-codec:commons-codec, org.spire-math:cats_2.11, org.joda:joda-convert, joda-time:joda-time, com.ibm.icu:icu4j, com.googlecode.libphonenumber:libphonenumber, im.actor:akka-scalapb-serialization_2.11, com.github.ben-manes.caffeine:caffeine, com.github.ben-manes.caffeine:tracing-api, com.trueaccord.scalapb:scalapb-runtime_2.11, ch.qos.logback:logback-core, io.kamon:kamon-core_2.11, com.typesafe.akka:akka-http-core_2.11, com.zaxxer:HikariCP, com.typesafe.slick:slick-hikaricp_2.11, com.typesafe.slick:slick-extensions_2.11, com.typesafe.akka:akka-persistence-query-experimental_2.11, org.spire-math:cats-jvm_2.11, org.spire-math:cats-state_2.11, org.spire-math:cats-laws_2.11, com.google.code.findbugs:jsr305, com.google.protobuf:protobuf-java, com.lihaoyi:fastparse_2.11, com.trueaccord.lenses:lenses_2.11, org.hdrhistogram:HdrHistogram, com.typesafe.akka:akka-parsing_2.11, com.typesafe.slick:slick_2.11, com.typesafe.akka:akka-stream-testkit_2.11, com.typesafe.akka:akka-persistence_2.11, org.spire-math:cats-free_2.11, com.github.inthenow:bricks-platform_2.11, org.spire-math:algebra-laws_2.11, com.lihaoyi:fastparse-utils_2.11, org.slf4j:slf4j-api, com.typesafe.akka:akka-stream_2.11, com.typesafe.akka:akka-protobuf_2.11, com.typesafe.akka:akka-testkit_2.11, com.github.inthenow:bricks-macros_2.11, org.spire-math:algebra-macros_2.11, org.typelevel:discipline_2.11, org.spire-math:cats-core_2.11, com.typesafe.akka:akka-actor_2.11, org.reactivestreams:reactive-streams, com.typesafe:ssl-config-akka_2.11, org.typelevel:macro-compat_2.11, org.scalacheck:scalacheck_2.11, org.spire-math:cats-macros_2.11, org.scala-lang.modules:scala-java8-compat_2.11, com.typesafe:ssl-config-core_2.11, org.scala-sbt:test-interface, org.typelevel:machinist_2.11, org.spire-math:algebra-std_2.11, com.github.mpilquist:simulacrum_2.11, com.typesafe:config, org.scala-lang:scala-reflect, org.scala-lang.modules:scala-parser-combinators_2.11, org.spire-math:algebra_2.11, org.scala-lang:scala-library
+[debug] :: no conflict compile-internal: io.netty:netty-tcnative
+[debug] :: no conflict compile-internal: com.github.kxbmap:configs_2.11
+[debug] :: no conflict compile-internal: im.actor:actor-util_2.11
+[debug] :: no conflict compile-internal: ch.qos.logback:logback-classic
+[debug] :: no conflict compile-internal: com.typesafe.scala-logging:scala-logging_2.11
+[debug] :: no conflict compile-internal: tyrex:tyrex
+[debug] :: no conflict compile-internal: io.kamon:kamon-datadog_2.11
+[debug] :: no conflict compile-internal: im.actor:actor-concurrent_2.11
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-http-experimental_2.11
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-slf4j_2.11
+[debug] :: no conflict compile-internal: com.github.dnvriend:akka-persistence-jdbc_2.11
+[debug] :: no conflict compile-internal: commons-codec:commons-codec
+[debug] :: no conflict compile-internal: org.spire-math:cats_2.11
+[debug] :: no conflict compile-internal: org.joda:joda-convert
+[debug] :: no conflict compile-internal: joda-time:joda-time
+[debug] :: no conflict compile-internal: com.ibm.icu:icu4j
+[debug] :: no conflict compile-internal: com.googlecode.libphonenumber:libphonenumber
+[debug] :: no conflict compile-internal: im.actor:akka-scalapb-serialization_2.11
+[debug] :: no conflict compile-internal: com.github.ben-manes.caffeine:caffeine
+[debug] :: no conflict compile-internal: com.trueaccord.scalapb:scalapb-runtime_2.11
+[debug] :: no conflict compile-internal: ch.qos.logback:logback-core
+[debug] :: no conflict compile-internal: io.kamon:kamon-core_2.11
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-http-core_2.11
+[debug] :: no conflict compile-internal: com.zaxxer:HikariCP
+[debug] :: no conflict compile-internal: com.typesafe.slick:slick-hikaricp_2.11
+[debug] :: no conflict compile-internal: com.typesafe.slick:slick-extensions_2.11
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-persistence-query-experimental_2.11
+[debug] :: no conflict compile-internal: org.spire-math:cats-jvm_2.11
+[debug] :: no conflict compile-internal: org.spire-math:cats-state_2.11
+[debug] :: no conflict compile-internal: org.spire-math:cats-laws_2.11
+[debug] :: no conflict compile-internal: com.google.code.findbugs:jsr305
+[debug] :: no conflict compile-internal: com.google.protobuf:protobuf-java
+[debug] :: no conflict compile-internal: com.lihaoyi:fastparse_2.11
+[debug] :: no conflict compile-internal: com.trueaccord.lenses:lenses_2.11
+[debug] :: no conflict compile-internal: org.hdrhistogram:HdrHistogram
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-parsing_2.11
+[debug] :: no conflict compile-internal: com.typesafe.slick:slick_2.11
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-stream-testkit_2.11
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-persistence_2.11
+[debug] :: no conflict compile-internal: org.spire-math:cats-free_2.11
+[debug] :: no conflict compile-internal: com.github.inthenow:bricks-platform_2.11
+[debug] :: no conflict compile-internal: org.spire-math:algebra-laws_2.11
+[debug] :: no conflict compile-internal: com.lihaoyi:fastparse-utils_2.11
+[debug] :: no conflict compile-internal: org.slf4j:slf4j-api
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-stream_2.11
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-protobuf_2.11
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-testkit_2.11
+[debug] :: no conflict compile-internal: com.github.inthenow:bricks-macros_2.11
+[debug] :: no conflict compile-internal: org.spire-math:algebra-macros_2.11
+[debug] :: no conflict compile-internal: org.typelevel:discipline_2.11
+[debug] :: no conflict compile-internal: org.spire-math:cats-core_2.11
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-actor_2.11
+[debug] :: no conflict compile-internal: org.reactivestreams:reactive-streams
+[debug] :: no conflict compile-internal: com.typesafe:ssl-config-akka_2.11
+[debug] :: no conflict compile-internal: org.typelevel:macro-compat_2.11
+[debug] :: no conflict compile-internal: org.scalacheck:scalacheck_2.11
+[debug] :: no conflict compile-internal: org.spire-math:cats-macros_2.11
+[debug] :: no conflict compile-internal: org.scala-lang.modules:scala-java8-compat_2.11
+[debug] :: no conflict compile-internal: com.typesafe:ssl-config-core_2.11
+[debug] :: no conflict compile-internal: org.scala-sbt:test-interface
+[debug] :: no conflict compile-internal: org.typelevel:machinist_2.11
+[debug] :: no conflict compile-internal: org.spire-math:algebra-std_2.11
+[debug] :: no conflict compile-internal: com.github.mpilquist:simulacrum_2.11
+[debug] :: no conflict compile-internal: com.typesafe:config
+[debug] :: no conflict compile-internal: org.scala-lang:scala-reflect
+[debug] :: no conflict compile-internal: org.scala-lang.modules:scala-parser-combinators_2.11
+[debug] :: no conflict compile-internal: org.spire-math:algebra_2.11
+[debug] :: no conflict compile-internal: org.scala-lang:scala-library
+[debug] :: runtime-internal: loop: List()
+[debug] :: sort result: io.netty:netty-tcnative, com.github.kxbmap:configs_2.11, im.actor:actor-util_2.11, ch.qos.logback:logback-classic, com.typesafe.scala-logging:scala-logging_2.11, tyrex:tyrex, io.kamon:kamon-datadog_2.11, im.actor:actor-concurrent_2.11, com.typesafe.akka:akka-http-experimental_2.11, com.typesafe.akka:akka-slf4j_2.11, com.github.dnvriend:akka-persistence-jdbc_2.11, commons-codec:commons-codec, org.spire-math:cats_2.11, org.joda:joda-convert, joda-time:joda-time, com.ibm.icu:icu4j, com.googlecode.libphonenumber:libphonenumber, im.actor:akka-scalapb-serialization_2.11, com.github.ben-manes.caffeine:caffeine, com.github.ben-manes.caffeine:tracing-api, com.trueaccord.scalapb:scalapb-runtime_2.11, ch.qos.logback:logback-core, io.kamon:kamon-core_2.11, com.typesafe.akka:akka-http-core_2.11, com.zaxxer:HikariCP, com.typesafe.slick:slick-hikaricp_2.11, com.typesafe.slick:slick-extensions_2.11, com.typesafe.akka:akka-persistence-query-experimental_2.11, org.spire-math:cats-jvm_2.11, org.spire-math:cats-state_2.11, org.spire-math:cats-laws_2.11, com.google.code.findbugs:jsr305, com.google.protobuf:protobuf-java, com.lihaoyi:fastparse_2.11, com.trueaccord.lenses:lenses_2.11, org.hdrhistogram:HdrHistogram, com.typesafe.akka:akka-parsing_2.11, com.typesafe.slick:slick_2.11, com.typesafe.akka:akka-stream-testkit_2.11, com.typesafe.akka:akka-persistence_2.11, org.spire-math:cats-free_2.11, com.github.inthenow:bricks-platform_2.11, org.spire-math:algebra-laws_2.11, com.lihaoyi:fastparse-utils_2.11, org.slf4j:slf4j-api, com.typesafe.akka:akka-stream_2.11, com.typesafe.akka:akka-protobuf_2.11, com.typesafe.akka:akka-testkit_2.11, com.github.inthenow:bricks-macros_2.11, org.spire-math:algebra-macros_2.11, org.typelevel:discipline_2.11, org.spire-math:cats-core_2.11, com.typesafe.akka:akka-actor_2.11, org.reactivestreams:reactive-streams, com.typesafe:ssl-config-akka_2.11, org.typelevel:macro-compat_2.11, org.scalacheck:scalacheck_2.11, org.spire-math:cats-macros_2.11, org.scala-lang.modules:scala-java8-compat_2.11, com.typesafe:ssl-config-core_2.11, org.scala-sbt:test-interface, org.typelevel:machinist_2.11, org.spire-math:algebra-std_2.11, com.github.mpilquist:simulacrum_2.11, com.typesafe:config, org.scala-lang:scala-reflect, org.scala-lang.modules:scala-parser-combinators_2.11, org.spire-math:algebra_2.11, org.scala-lang:scala-library
+[debug] :: no conflict runtime-internal: io.netty:netty-tcnative
+[debug] :: no conflict runtime-internal: com.github.kxbmap:configs_2.11
+[debug] :: no conflict runtime-internal: im.actor:actor-util_2.11
+[debug] :: no conflict runtime-internal: ch.qos.logback:logback-classic
+[debug] :: no conflict runtime-internal: com.typesafe.scala-logging:scala-logging_2.11
+[debug] :: no conflict runtime-internal: tyrex:tyrex
+[debug] :: no conflict runtime-internal: io.kamon:kamon-datadog_2.11
+[debug] :: no conflict runtime-internal: im.actor:actor-concurrent_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-http-experimental_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-slf4j_2.11
+[debug] :: no conflict runtime-internal: com.github.dnvriend:akka-persistence-jdbc_2.11
+[debug] :: no conflict runtime-internal: commons-codec:commons-codec
+[debug] :: no conflict runtime-internal: org.spire-math:cats_2.11
+[debug] :: no conflict runtime-internal: org.joda:joda-convert
+[debug] :: no conflict runtime-internal: joda-time:joda-time
+[debug] :: no conflict runtime-internal: com.ibm.icu:icu4j
+[debug] :: no conflict runtime-internal: com.googlecode.libphonenumber:libphonenumber
+[debug] :: no conflict runtime-internal: im.actor:akka-scalapb-serialization_2.11
+[debug] :: no conflict runtime-internal: com.github.ben-manes.caffeine:caffeine
+[debug] :: no conflict runtime-internal: com.trueaccord.scalapb:scalapb-runtime_2.11
+[debug] :: no conflict runtime-internal: ch.qos.logback:logback-core
+[debug] :: no conflict runtime-internal: io.kamon:kamon-core_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-http-core_2.11
+[debug] :: no conflict runtime-internal: com.zaxxer:HikariCP
+[debug] :: no conflict runtime-internal: com.typesafe.slick:slick-hikaricp_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.slick:slick-extensions_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-persistence-query-experimental_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:cats-jvm_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:cats-state_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:cats-laws_2.11
+[debug] :: no conflict runtime-internal: com.google.code.findbugs:jsr305
+[debug] :: no conflict runtime-internal: com.google.protobuf:protobuf-java
+[debug] :: no conflict runtime-internal: com.lihaoyi:fastparse_2.11
+[debug] :: no conflict runtime-internal: com.trueaccord.lenses:lenses_2.11
+[debug] :: no conflict runtime-internal: org.hdrhistogram:HdrHistogram
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-parsing_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.slick:slick_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-stream-testkit_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-persistence_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:cats-free_2.11
+[debug] :: no conflict runtime-internal: com.github.inthenow:bricks-platform_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:algebra-laws_2.11
+[debug] :: no conflict runtime-internal: com.lihaoyi:fastparse-utils_2.11
+[debug] :: no conflict runtime-internal: org.slf4j:slf4j-api
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-stream_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-protobuf_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-testkit_2.11
+[debug] :: no conflict runtime-internal: com.github.inthenow:bricks-macros_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:algebra-macros_2.11
+[debug] :: no conflict runtime-internal: org.typelevel:discipline_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:cats-core_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-actor_2.11
+[debug] :: no conflict runtime-internal: org.reactivestreams:reactive-streams
+[debug] :: no conflict runtime-internal: com.typesafe:ssl-config-akka_2.11
+[debug] :: no conflict runtime-internal: org.typelevel:macro-compat_2.11
+[debug] :: no conflict runtime-internal: org.scalacheck:scalacheck_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:cats-macros_2.11
+[debug] :: no conflict runtime-internal: org.scala-lang.modules:scala-java8-compat_2.11
+[debug] :: no conflict runtime-internal: com.typesafe:ssl-config-core_2.11
+[debug] :: no conflict runtime-internal: org.scala-sbt:test-interface
+[debug] :: no conflict runtime-internal: org.typelevel:machinist_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:algebra-std_2.11
+[debug] :: no conflict runtime-internal: com.github.mpilquist:simulacrum_2.11
+[debug] :: no conflict runtime-internal: com.typesafe:config
+[debug] :: no conflict runtime-internal: org.scala-lang:scala-reflect
+[debug] :: no conflict runtime-internal: org.scala-lang.modules:scala-parser-combinators_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:algebra_2.11
+[debug] :: no conflict runtime-internal: org.scala-lang:scala-library
+[debug] :: test-internal: loop: List()
+[debug] :: sort result: io.netty:netty-tcnative, com.github.kxbmap:configs_2.11, im.actor:actor-util_2.11, ch.qos.logback:logback-classic, com.typesafe.scala-logging:scala-logging_2.11, tyrex:tyrex, io.kamon:kamon-datadog_2.11, im.actor:actor-concurrent_2.11, com.typesafe.akka:akka-http-experimental_2.11, com.typesafe.akka:akka-slf4j_2.11, com.github.dnvriend:akka-persistence-jdbc_2.11, commons-codec:commons-codec, org.spire-math:cats_2.11, org.joda:joda-convert, joda-time:joda-time, com.ibm.icu:icu4j, com.googlecode.libphonenumber:libphonenumber, im.actor:akka-scalapb-serialization_2.11, com.github.ben-manes.caffeine:caffeine, com.github.ben-manes.caffeine:tracing-api, com.trueaccord.scalapb:scalapb-runtime_2.11, ch.qos.logback:logback-core, io.kamon:kamon-core_2.11, com.typesafe.akka:akka-http-core_2.11, com.zaxxer:HikariCP, com.typesafe.slick:slick-hikaricp_2.11, com.typesafe.slick:slick-extensions_2.11, com.typesafe.akka:akka-persistence-query-experimental_2.11, org.spire-math:cats-jvm_2.11, org.spire-math:cats-state_2.11, org.spire-math:cats-laws_2.11, com.google.code.findbugs:jsr305, com.google.protobuf:protobuf-java, com.lihaoyi:fastparse_2.11, com.trueaccord.lenses:lenses_2.11, org.hdrhistogram:HdrHistogram, com.typesafe.akka:akka-parsing_2.11, com.typesafe.slick:slick_2.11, com.typesafe.akka:akka-stream-testkit_2.11, com.typesafe.akka:akka-persistence_2.11, org.spire-math:cats-free_2.11, com.github.inthenow:bricks-platform_2.11, org.spire-math:algebra-laws_2.11, com.lihaoyi:fastparse-utils_2.11, org.slf4j:slf4j-api, com.typesafe.akka:akka-stream_2.11, com.typesafe.akka:akka-protobuf_2.11, com.typesafe.akka:akka-testkit_2.11, com.github.inthenow:bricks-macros_2.11, org.spire-math:algebra-macros_2.11, org.typelevel:discipline_2.11, org.spire-math:cats-core_2.11, com.typesafe.akka:akka-actor_2.11, org.reactivestreams:reactive-streams, com.typesafe:ssl-config-akka_2.11, org.typelevel:macro-compat_2.11, org.scalacheck:scalacheck_2.11, org.spire-math:cats-macros_2.11, org.scala-lang.modules:scala-java8-compat_2.11, com.typesafe:ssl-config-core_2.11, org.scala-sbt:test-interface, org.typelevel:machinist_2.11, org.spire-math:algebra-std_2.11, com.github.mpilquist:simulacrum_2.11, com.typesafe:config, org.scala-lang:scala-reflect, org.scala-lang.modules:scala-parser-combinators_2.11, org.spire-math:algebra_2.11, org.scala-lang:scala-library
+[debug] :: no conflict test-internal: io.netty:netty-tcnative
+[debug] :: no conflict test-internal: com.github.kxbmap:configs_2.11
+[debug] :: no conflict test-internal: im.actor:actor-util_2.11
+[debug] :: no conflict test-internal: ch.qos.logback:logback-classic
+[debug] :: no conflict test-internal: com.typesafe.scala-logging:scala-logging_2.11
+[debug] :: no conflict test-internal: tyrex:tyrex
+[debug] :: no conflict test-internal: io.kamon:kamon-datadog_2.11
+[debug] :: no conflict test-internal: im.actor:actor-concurrent_2.11
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-http-experimental_2.11
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-slf4j_2.11
+[debug] :: no conflict test-internal: com.github.dnvriend:akka-persistence-jdbc_2.11
+[debug] :: no conflict test-internal: commons-codec:commons-codec
+[debug] :: no conflict test-internal: org.spire-math:cats_2.11
+[debug] :: no conflict test-internal: org.joda:joda-convert
+[debug] :: no conflict test-internal: joda-time:joda-time
+[debug] :: no conflict test-internal: com.ibm.icu:icu4j
+[debug] :: no conflict test-internal: com.googlecode.libphonenumber:libphonenumber
+[debug] :: no conflict test-internal: im.actor:akka-scalapb-serialization_2.11
+[debug] :: no conflict test-internal: com.github.ben-manes.caffeine:caffeine
+[debug] :: no conflict test-internal: com.trueaccord.scalapb:scalapb-runtime_2.11
+[debug] :: no conflict test-internal: ch.qos.logback:logback-core
+[debug] :: no conflict test-internal: io.kamon:kamon-core_2.11
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-http-core_2.11
+[debug] :: no conflict test-internal: com.zaxxer:HikariCP
+[debug] :: no conflict test-internal: com.typesafe.slick:slick-hikaricp_2.11
+[debug] :: no conflict test-internal: com.typesafe.slick:slick-extensions_2.11
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-persistence-query-experimental_2.11
+[debug] :: no conflict test-internal: org.spire-math:cats-jvm_2.11
+[debug] :: no conflict test-internal: org.spire-math:cats-state_2.11
+[debug] :: no conflict test-internal: org.spire-math:cats-laws_2.11
+[debug] :: no conflict test-internal: com.google.code.findbugs:jsr305
+[debug] :: no conflict test-internal: com.google.protobuf:protobuf-java
+[debug] :: no conflict test-internal: com.lihaoyi:fastparse_2.11
+[debug] :: no conflict test-internal: com.trueaccord.lenses:lenses_2.11
+[debug] :: no conflict test-internal: org.hdrhistogram:HdrHistogram
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-parsing_2.11
+[debug] :: no conflict test-internal: com.typesafe.slick:slick_2.11
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-stream-testkit_2.11
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-persistence_2.11
+[debug] :: no conflict test-internal: org.spire-math:cats-free_2.11
+[debug] :: no conflict test-internal: com.github.inthenow:bricks-platform_2.11
+[debug] :: no conflict test-internal: org.spire-math:algebra-laws_2.11
+[debug] :: no conflict test-internal: com.lihaoyi:fastparse-utils_2.11
+[debug] :: no conflict test-internal: org.slf4j:slf4j-api
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-stream_2.11
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-protobuf_2.11
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-testkit_2.11
+[debug] :: no conflict test-internal: com.github.inthenow:bricks-macros_2.11
+[debug] :: no conflict test-internal: org.spire-math:algebra-macros_2.11
+[debug] :: no conflict test-internal: org.typelevel:discipline_2.11
+[debug] :: no conflict test-internal: org.spire-math:cats-core_2.11
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-actor_2.11
+[debug] :: no conflict test-internal: org.reactivestreams:reactive-streams
+[debug] :: no conflict test-internal: com.typesafe:ssl-config-akka_2.11
+[debug] :: no conflict test-internal: org.typelevel:macro-compat_2.11
+[debug] :: no conflict test-internal: org.scalacheck:scalacheck_2.11
+[debug] :: no conflict test-internal: org.spire-math:cats-macros_2.11
+[debug] :: no conflict test-internal: org.scala-lang.modules:scala-java8-compat_2.11
+[debug] :: no conflict test-internal: com.typesafe:ssl-config-core_2.11
+[debug] :: no conflict test-internal: org.scala-sbt:test-interface
+[debug] :: no conflict test-internal: org.typelevel:machinist_2.11
+[debug] :: no conflict test-internal: org.spire-math:algebra-std_2.11
+[debug] :: no conflict test-internal: com.github.mpilquist:simulacrum_2.11
+[debug] :: no conflict test-internal: com.typesafe:config
+[debug] :: no conflict test-internal: org.scala-lang:scala-reflect
+[debug] :: no conflict test-internal: org.scala-lang.modules:scala-parser-combinators_2.11
+[debug] :: no conflict test-internal: org.spire-math:algebra_2.11
+[debug] :: no conflict test-internal: org.scala-lang:scala-library
+[debug] :: plugin: loop: List()
+[debug] :: sort result: 
+[debug] :: sources: loop: List()
+[debug] :: sort result: 
+[debug] :: docs: loop: List()
+[debug] :: sort result: 
+[debug] :: pom: loop: List()
+[debug] :: sort result: 
+[debug] :: scala-tool: loop: List()
+[debug] :: sort result: 
+[debug] :: protobuf: loop: List()
+[debug] :: sort result: 
+[debug] saving minigraph to C:\Users\Lining\.sbt\0.13\dependency\module\dynamic\2016-06-28\2959eaa6\im.actor.server\actor-runtime\1.0.153-SNAPSHOT_temp-resolve-8f6da38abd80f6d6654cc3e3220e7959c8b31018\graphs\graph.json
+[debug] parsing C:\Users\Lining\.sbt\0.13\dependency\module\static\org.apache.commons\commons-email\1.4_temp-resolve-7e1021d0b4289e93ba9f29d5d3367c547a028283\graphs\graph.json
+[debug] :: merging update reports
+[debug] ::: -----------
+[debug] :: compile: loop: List()
+[debug] :: sort result: io.netty:netty-tcnative, com.github.kxbmap:configs_2.11, im.actor:actor-util_2.11, ch.qos.logback:logback-classic, com.typesafe.scala-logging:scala-logging_2.11, tyrex:tyrex, io.kamon:kamon-datadog_2.11, im.actor:actor-concurrent_2.11, com.typesafe.akka:akka-http-experimental_2.11, com.typesafe.akka:akka-slf4j_2.11, com.github.dnvriend:akka-persistence-jdbc_2.11, commons-codec:commons-codec, org.spire-math:cats_2.11, org.joda:joda-convert, joda-time:joda-time, com.ibm.icu:icu4j, com.googlecode.libphonenumber:libphonenumber, im.actor:akka-scalapb-serialization_2.11, com.github.ben-manes.caffeine:caffeine, org.apache.commons:commons-email, com.trueaccord.scalapb:scalapb-runtime_2.11, ch.qos.logback:logback-core, io.kamon:kamon-core_2.11, com.typesafe.akka:akka-http-core_2.11, com.zaxxer:HikariCP, com.typesafe.slick:slick-hikaricp_2.11, com.typesafe.slick:slick-extensions_2.11, com.typesafe.akka:akka-persistence-query-experimental_2.11, org.spire-math:cats-jvm_2.11, org.spire-math:cats-state_2.11, org.spire-math:cats-laws_2.11, com.google.code.findbugs:jsr305, com.sun.mail:javax.mail, com.google.protobuf:protobuf-java, com.lihaoyi:fastparse_2.11, com.trueaccord.lenses:lenses_2.11, org.hdrhistogram:HdrHistogram, com.typesafe.akka:akka-parsing_2.11, com.typesafe.slick:slick_2.11, com.typesafe.akka:akka-stream-testkit_2.11, com.typesafe.akka:akka-persistence_2.11, org.spire-math:cats-free_2.11, com.github.inthenow:bricks-platform_2.11, org.spire-math:algebra-laws_2.11, javax.activation:activation, com.lihaoyi:fastparse-utils_2.11, org.slf4j:slf4j-api, com.typesafe.akka:akka-stream_2.11, com.typesafe.akka:akka-protobuf_2.11, com.typesafe.akka:akka-testkit_2.11, com.github.inthenow:bricks-macros_2.11, org.spire-math:algebra-macros_2.11, org.typelevel:discipline_2.11, org.spire-math:cats-core_2.11, com.typesafe.akka:akka-actor_2.11, org.reactivestreams:reactive-streams, com.typesafe:ssl-config-akka_2.11, org.typelevel:macro-compat_2.11, org.scalacheck:scalacheck_2.11, org.spire-math:cats-macros_2.11, org.scala-lang.modules:scala-java8-compat_2.11, com.typesafe:ssl-config-core_2.11, org.scala-sbt:test-interface, org.typelevel:machinist_2.11, org.spire-math:algebra-std_2.11, com.github.mpilquist:simulacrum_2.11, com.typesafe:config, org.scala-lang:scala-reflect, org.scala-lang.modules:scala-parser-combinators_2.11, org.spire-math:algebra_2.11, org.scala-lang:scala-library
+[debug] :: merging module reports for compile: io.netty:netty-tcnative
+[debug] ::: adds io.netty:netty-tcnative:1.1.33.Fork15
+[debug] ::: evicted 
+[debug] :: merging module reports for compile: com.github.kxbmap:configs_2.11
+[debug] ::: adds com.github.kxbmap:configs_2.11:0.3.0
+[debug] ::: evicted 
+[debug] :: merging module reports for compile: im.actor:actor-util_2.11
+[debug] ::: adds im.actor:actor-util_2.11:0.0.15
+[debug] ::: evicted 
+[debug] :: merging module reports for compile: ch.qos.logback:logback-classic
+[debug] ::: adds ch.qos.logback:logback-classic:1.1.2
+[debug] ::: evicted 
+[debug] :: merging module reports for compile: com.typesafe.scala-logging:scala-logging_2.11
+[debug] ::: adds com.typesafe.scala-logging:scala-logging_2.11:3.1.0
+[debug] ::: evicted 
+[debug] :: merging module reports for compile: tyrex:tyrex
+[debug] ::: adds tyrex:tyrex:1.0.1
+[debug] ::: evicted 
+[debug] :: merging module reports for compile: io.kamon:kamon-datadog_2.11
+[debug] ::: adds io.kamon:kamon-datadog_2.11:0.5.2
+[debug] ::: evicted 
+[debug] :: no conflict compile: im.actor:actor-concurrent_2.11
+[debug] :: no conflict compile: com.typesafe.akka:akka-http-experimental_2.11
+[debug] :: no conflict compile: com.typesafe.akka:akka-slf4j_2.11
+[debug] :: no conflict compile: com.github.dnvriend:akka-persistence-jdbc_2.11
+[debug] :: no conflict compile: commons-codec:commons-codec
+[debug] :: no conflict compile: org.spire-math:cats_2.11
+[debug] :: no conflict compile: org.joda:joda-convert
+[debug] :: no conflict compile: joda-time:joda-time
+[debug] :: no conflict compile: com.ibm.icu:icu4j
+[debug] :: no conflict compile: com.googlecode.libphonenumber:libphonenumber
+[debug] :: no conflict compile: im.actor:akka-scalapb-serialization_2.11
+[debug] :: no conflict compile: com.github.ben-manes.caffeine:caffeine
+[debug] :: no conflict compile: org.apache.commons:commons-email
+[debug] :: merging module reports for compile: com.trueaccord.scalapb:scalapb-runtime_2.11
+[debug] ::: adds com.trueaccord.scalapb:scalapb-runtime_2.11:0.5.21
+[debug] ::: evicted 
+[debug] :: merging module reports for compile: ch.qos.logback:logback-core
+[debug] ::: adds ch.qos.logback:logback-core:1.1.2
+[debug] ::: evicted 
+[debug] :: merging module reports for compile: io.kamon:kamon-core_2.11
+[debug] ::: adds io.kamon:kamon-core_2.11:0.5.2
+[debug] ::: evicted 
+[debug] :: no conflict compile: com.typesafe.akka:akka-http-core_2.11
+[debug] :: no conflict compile: com.zaxxer:HikariCP
+[debug] :: no conflict compile: com.typesafe.slick:slick-hikaricp_2.11
+[debug] :: no conflict compile: com.typesafe.slick:slick-extensions_2.11
+[debug] :: no conflict compile: com.typesafe.akka:akka-persistence-query-experimental_2.11
+[debug] :: no conflict compile: org.spire-math:cats-jvm_2.11
+[debug] :: no conflict compile: org.spire-math:cats-state_2.11
+[debug] :: no conflict compile: org.spire-math:cats-laws_2.11
+[debug] :: no conflict compile: com.google.code.findbugs:jsr305
+[debug] :: no conflict compile: com.sun.mail:javax.mail
+[debug] :: merging module reports for compile: com.google.protobuf:protobuf-java
+[debug] ::: adds com.google.protobuf:protobuf-java:3.0.0-beta-2
+[debug] ::: evicted 
+[debug] :: merging module reports for compile: com.lihaoyi:fastparse_2.11
+[debug] ::: adds com.lihaoyi:fastparse_2.11:0.3.4
+[debug] ::: evicted 
+[debug] :: merging module reports for compile: com.trueaccord.lenses:lenses_2.11
+[debug] ::: adds com.trueaccord.lenses:lenses_2.11:0.4.4
+[debug] ::: evicted 
+[debug] :: merging module reports for compile: org.hdrhistogram:HdrHistogram
+[debug] ::: adds org.hdrhistogram:HdrHistogram:2.1.7
+[debug] ::: evicted 
+[debug] :: no conflict compile: com.typesafe.akka:akka-parsing_2.11
+[debug] :: no conflict compile: com.typesafe.slick:slick_2.11
+[debug] :: no conflict compile: com.typesafe.akka:akka-stream-testkit_2.11
+[debug] :: no conflict compile: com.typesafe.akka:akka-persistence_2.11
+[debug] :: no conflict compile: org.spire-math:cats-free_2.11
+[debug] :: no conflict compile: com.github.inthenow:bricks-platform_2.11
+[debug] :: no conflict compile: org.spire-math:algebra-laws_2.11
+[debug] :: no conflict compile: javax.activation:activation
+[debug] :: merging module reports for compile: com.lihaoyi:fastparse-utils_2.11
+[debug] ::: adds com.lihaoyi:fastparse-utils_2.11:0.3.4
+[debug] ::: evicted 
+[debug] :: merging module reports for compile: org.slf4j:slf4j-api
+[debug] ::: resolving conflict in compile:org.slf4j:slf4j-api (org.slf4j:slf4j-api:1.7.16, org.slf4j:slf4j-api:1.7.7, org.slf4j:slf4j-api:1.7.6)
+[debug] ::: adds org.slf4j:slf4j-api:1.7.16
+[debug] ::: evicted org.slf4j:slf4j-api:1.7.7, org.slf4j:slf4j-api:1.7.6
+[debug] :: no conflict compile: com.typesafe.akka:akka-stream_2.11
+[debug] :: no conflict compile: com.typesafe.akka:akka-protobuf_2.11
+[debug] :: no conflict compile: com.typesafe.akka:akka-testkit_2.11
+[debug] :: no conflict compile: com.github.inthenow:bricks-macros_2.11
+[debug] :: no conflict compile: org.spire-math:algebra-macros_2.11
+[debug] :: no conflict compile: org.typelevel:discipline_2.11
+[debug] :: no conflict compile: org.spire-math:cats-core_2.11
+[debug] :: merging module reports for compile: com.typesafe.akka:akka-actor_2.11
+[debug] ::: resolving conflict in compile:com.typesafe.akka:akka-actor_2.11 (com.typesafe.akka:akka-actor_2.11:2.4.4, com.typesafe.akka:akka-actor_2.11:2.3.14)
+[debug] ::: adds com.typesafe.akka:akka-actor_2.11:2.4.4
+[debug] ::: evicted com.typesafe.akka:akka-actor_2.11:2.3.14
+[debug] :: no conflict compile: org.reactivestreams:reactive-streams
+[debug] :: no conflict compile: com.typesafe:ssl-config-akka_2.11
+[debug] :: no conflict compile: org.typelevel:macro-compat_2.11
+[debug] :: no conflict compile: org.scalacheck:scalacheck_2.11
+[debug] :: no conflict compile: org.spire-math:cats-macros_2.11
+[debug] :: merging module reports for compile: org.scala-lang.modules:scala-java8-compat_2.11
+[debug] ::: adds org.scala-lang.modules:scala-java8-compat_2.11:0.7.0
+[debug] ::: evicted 
+[debug] :: no conflict compile: com.typesafe:ssl-config-core_2.11
+[debug] :: no conflict compile: org.scala-sbt:test-interface
+[debug] :: no conflict compile: org.typelevel:machinist_2.11
+[debug] :: no conflict compile: org.spire-math:algebra-std_2.11
+[debug] :: no conflict compile: com.github.mpilquist:simulacrum_2.11
+[debug] :: merging module reports for compile: com.typesafe:config
+[debug] ::: resolving conflict in compile:com.typesafe:config (com.typesafe:config:1.3.0, com.typesafe:config:1.2.1)
+[debug] ::: adds com.typesafe:config:1.3.0
+[debug] ::: evicted com.typesafe:config:1.2.1
+[debug] :: merging module reports for compile: org.scala-lang:scala-reflect
+[debug] ::: resolving conflict in compile:org.scala-lang:scala-reflect (org.scala-lang:scala-reflect:2.11.1 (), org.scala-lang:scala-reflect:2.11.7 ())
+[debug] ::: adds org.scala-lang:scala-reflect:2.11.7 ()
+[debug] ::: evicted org.scala-lang:scala-reflect:2.11.1 ()
+[debug] :: no conflict compile: org.scala-lang.modules:scala-parser-combinators_2.11
+[debug] :: no conflict compile: org.spire-math:algebra_2.11
+[debug] :: merging module reports for compile: org.scala-lang:scala-library
+[debug] ::: resolving conflict in compile:org.scala-lang:scala-library (org.scala-lang:scala-library:2.11.1 (), org.scala-lang:scala-library:2.11.8 (), org.scala-lang:scala-library:2.11.7 (), org.scala-lang:scala-library:2.11.6 ())
+[debug] ::: adds org.scala-lang:scala-library:2.11.8 ()
+[debug] ::: evicted org.scala-lang:scala-library:2.11.1 (), org.scala-lang:scala-library:2.11.7 (), org.scala-lang:scala-library:2.11.6 ()
+[debug] ::: -----------
+[debug] :: runtime: loop: List()
+[debug] :: sort result: io.netty:netty-tcnative, com.github.kxbmap:configs_2.11, im.actor:actor-util_2.11, ch.qos.logback:logback-classic, com.typesafe.scala-logging:scala-logging_2.11, tyrex:tyrex, io.kamon:kamon-datadog_2.11, im.actor:actor-concurrent_2.11, com.typesafe.akka:akka-http-experimental_2.11, com.typesafe.akka:akka-slf4j_2.11, com.github.dnvriend:akka-persistence-jdbc_2.11, commons-codec:commons-codec, org.spire-math:cats_2.11, org.joda:joda-convert, joda-time:joda-time, com.ibm.icu:icu4j, com.googlecode.libphonenumber:libphonenumber, im.actor:akka-scalapb-serialization_2.11, com.github.ben-manes.caffeine:caffeine, org.eclipse.jetty.alpn:alpn-api, org.apache.commons:commons-email, com.trueaccord.scalapb:scalapb-runtime_2.11, ch.qos.logback:logback-core, io.kamon:kamon-core_2.11, com.typesafe.akka:akka-http-core_2.11, com.zaxxer:HikariCP, com.typesafe.slick:slick-hikaricp_2.11, com.typesafe.slick:slick-extensions_2.11, com.typesafe.akka:akka-persistence-query-experimental_2.11, org.spire-math:cats-jvm_2.11, org.spire-math:cats-state_2.11, org.spire-math:cats-laws_2.11, com.google.code.findbugs:jsr305, com.sun.mail:javax.mail, com.google.protobuf:protobuf-java, com.lihaoyi:fastparse_2.11, com.trueaccord.lenses:lenses_2.11, org.hdrhistogram:HdrHistogram, com.typesafe.akka:akka-parsing_2.11, com.typesafe.slick:slick_2.11, com.typesafe.akka:akka-stream-testkit_2.11, com.typesafe.akka:akka-persistence_2.11, org.spire-math:cats-free_2.11, com.github.inthenow:bricks-platform_2.11, org.spire-math:algebra-laws_2.11, javax.activation:activation, com.lihaoyi:fastparse-utils_2.11, org.slf4j:slf4j-api, com.typesafe.akka:akka-stream_2.11, com.typesafe.akka:akka-protobuf_2.11, com.typesafe.akka:akka-testkit_2.11, com.github.inthenow:bricks-macros_2.11, org.spire-math:algebra-macros_2.11, org.typelevel:discipline_2.11, org.spire-math:cats-core_2.11, com.typesafe.akka:akka-actor_2.11, org.reactivestreams:reactive-streams, com.typesafe:ssl-config-akka_2.11, org.typelevel:macro-compat_2.11, org.scalacheck:scalacheck_2.11, org.spire-math:cats-macros_2.11, org.scala-lang.modules:scala-java8-compat_2.11, com.typesafe:ssl-config-core_2.11, org.scala-sbt:test-interface, org.typelevel:machinist_2.11, org.spire-math:algebra-std_2.11, com.github.mpilquist:simulacrum_2.11, com.typesafe:config, org.scala-lang:scala-reflect, org.scala-lang.modules:scala-parser-combinators_2.11, org.spire-math:algebra_2.11, org.scala-lang:scala-library
+[debug] :: merging module reports for runtime: io.netty:netty-tcnative
+[debug] ::: adds io.netty:netty-tcnative:1.1.33.Fork15
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime: com.github.kxbmap:configs_2.11
+[debug] ::: adds com.github.kxbmap:configs_2.11:0.3.0
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime: im.actor:actor-util_2.11
+[debug] ::: adds im.actor:actor-util_2.11:0.0.15
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime: ch.qos.logback:logback-classic
+[debug] ::: adds ch.qos.logback:logback-classic:1.1.2
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime: com.typesafe.scala-logging:scala-logging_2.11
+[debug] ::: adds com.typesafe.scala-logging:scala-logging_2.11:3.1.0
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime: tyrex:tyrex
+[debug] ::: adds tyrex:tyrex:1.0.1
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime: io.kamon:kamon-datadog_2.11
+[debug] ::: adds io.kamon:kamon-datadog_2.11:0.5.2
+[debug] ::: evicted 
+[debug] :: no conflict runtime: im.actor:actor-concurrent_2.11
+[debug] :: no conflict runtime: com.typesafe.akka:akka-http-experimental_2.11
+[debug] :: no conflict runtime: com.typesafe.akka:akka-slf4j_2.11
+[debug] :: no conflict runtime: com.github.dnvriend:akka-persistence-jdbc_2.11
+[debug] :: no conflict runtime: commons-codec:commons-codec
+[debug] :: no conflict runtime: org.spire-math:cats_2.11
+[debug] :: no conflict runtime: org.joda:joda-convert
+[debug] :: no conflict runtime: joda-time:joda-time
+[debug] :: no conflict runtime: com.ibm.icu:icu4j
+[debug] :: no conflict runtime: com.googlecode.libphonenumber:libphonenumber
+[debug] :: no conflict runtime: im.actor:akka-scalapb-serialization_2.11
+[debug] :: no conflict runtime: com.github.ben-manes.caffeine:caffeine
+[debug] :: no conflict runtime: org.eclipse.jetty.alpn:alpn-api
+[debug] :: no conflict runtime: org.apache.commons:commons-email
+[debug] :: merging module reports for runtime: com.trueaccord.scalapb:scalapb-runtime_2.11
+[debug] ::: adds com.trueaccord.scalapb:scalapb-runtime_2.11:0.5.21
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime: ch.qos.logback:logback-core
+[debug] ::: adds ch.qos.logback:logback-core:1.1.2
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime: io.kamon:kamon-core_2.11
+[debug] ::: adds io.kamon:kamon-core_2.11:0.5.2
+[debug] ::: evicted 
+[debug] :: no conflict runtime: com.typesafe.akka:akka-http-core_2.11
+[debug] :: no conflict runtime: com.zaxxer:HikariCP
+[debug] :: no conflict runtime: com.typesafe.slick:slick-hikaricp_2.11
+[debug] :: no conflict runtime: com.typesafe.slick:slick-extensions_2.11
+[debug] :: no conflict runtime: com.typesafe.akka:akka-persistence-query-experimental_2.11
+[debug] :: no conflict runtime: org.spire-math:cats-jvm_2.11
+[debug] :: no conflict runtime: org.spire-math:cats-state_2.11
+[debug] :: no conflict runtime: org.spire-math:cats-laws_2.11
+[debug] :: no conflict runtime: com.google.code.findbugs:jsr305
+[debug] :: no conflict runtime: com.sun.mail:javax.mail
+[debug] :: merging module reports for runtime: com.google.protobuf:protobuf-java
+[debug] ::: adds com.google.protobuf:protobuf-java:3.0.0-beta-2
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime: com.lihaoyi:fastparse_2.11
+[debug] ::: adds com.lihaoyi:fastparse_2.11:0.3.4
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime: com.trueaccord.lenses:lenses_2.11
+[debug] ::: adds com.trueaccord.lenses:lenses_2.11:0.4.4
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime: org.hdrhistogram:HdrHistogram
+[debug] ::: adds org.hdrhistogram:HdrHistogram:2.1.7
+[debug] ::: evicted 
+[debug] :: no conflict runtime: com.typesafe.akka:akka-parsing_2.11
+[debug] :: no conflict runtime: com.typesafe.slick:slick_2.11
+[debug] :: no conflict runtime: com.typesafe.akka:akka-stream-testkit_2.11
+[debug] :: no conflict runtime: com.typesafe.akka:akka-persistence_2.11
+[debug] :: no conflict runtime: org.spire-math:cats-free_2.11
+[debug] :: no conflict runtime: com.github.inthenow:bricks-platform_2.11
+[debug] :: no conflict runtime: org.spire-math:algebra-laws_2.11
+[debug] :: no conflict runtime: javax.activation:activation
+[debug] :: merging module reports for runtime: com.lihaoyi:fastparse-utils_2.11
+[debug] ::: adds com.lihaoyi:fastparse-utils_2.11:0.3.4
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime: org.slf4j:slf4j-api
+[debug] ::: resolving conflict in runtime:org.slf4j:slf4j-api (org.slf4j:slf4j-api:1.7.16, org.slf4j:slf4j-api:1.7.7, org.slf4j:slf4j-api:1.7.6)
+[debug] ::: adds org.slf4j:slf4j-api:1.7.16
+[debug] ::: evicted org.slf4j:slf4j-api:1.7.7, org.slf4j:slf4j-api:1.7.6
+[debug] :: no conflict runtime: com.typesafe.akka:akka-stream_2.11
+[debug] :: no conflict runtime: com.typesafe.akka:akka-protobuf_2.11
+[debug] :: no conflict runtime: com.typesafe.akka:akka-testkit_2.11
+[debug] :: no conflict runtime: com.github.inthenow:bricks-macros_2.11
+[debug] :: no conflict runtime: org.spire-math:algebra-macros_2.11
+[debug] :: no conflict runtime: org.typelevel:discipline_2.11
+[debug] :: no conflict runtime: org.spire-math:cats-core_2.11
+[debug] :: merging module reports for runtime: com.typesafe.akka:akka-actor_2.11
+[debug] ::: resolving conflict in runtime:com.typesafe.akka:akka-actor_2.11 (com.typesafe.akka:akka-actor_2.11:2.4.4, com.typesafe.akka:akka-actor_2.11:2.3.14)
+[debug] ::: adds com.typesafe.akka:akka-actor_2.11:2.4.4
+[debug] ::: evicted com.typesafe.akka:akka-actor_2.11:2.3.14
+[debug] :: no conflict runtime: org.reactivestreams:reactive-streams
+[debug] :: no conflict runtime: com.typesafe:ssl-config-akka_2.11
+[debug] :: no conflict runtime: org.typelevel:macro-compat_2.11
+[debug] :: no conflict runtime: org.scalacheck:scalacheck_2.11
+[debug] :: no conflict runtime: org.spire-math:cats-macros_2.11
+[debug] :: merging module reports for runtime: org.scala-lang.modules:scala-java8-compat_2.11
+[debug] ::: adds org.scala-lang.modules:scala-java8-compat_2.11:0.7.0
+[debug] ::: evicted 
+[debug] :: no conflict runtime: com.typesafe:ssl-config-core_2.11
+[debug] :: no conflict runtime: org.scala-sbt:test-interface
+[debug] :: no conflict runtime: org.typelevel:machinist_2.11
+[debug] :: no conflict runtime: org.spire-math:algebra-std_2.11
+[debug] :: no conflict runtime: com.github.mpilquist:simulacrum_2.11
+[debug] :: merging module reports for runtime: com.typesafe:config
+[debug] ::: resolving conflict in runtime:com.typesafe:config (com.typesafe:config:1.3.0, com.typesafe:config:1.2.1)
+[debug] ::: adds com.typesafe:config:1.3.0
+[debug] ::: evicted com.typesafe:config:1.2.1
+[debug] :: merging module reports for runtime: org.scala-lang:scala-reflect
+[debug] ::: resolving conflict in runtime:org.scala-lang:scala-reflect (org.scala-lang:scala-reflect:2.11.1 (), org.scala-lang:scala-reflect:2.11.7 ())
+[debug] ::: adds org.scala-lang:scala-reflect:2.11.7 ()
+[debug] ::: evicted org.scala-lang:scala-reflect:2.11.1 ()
+[debug] :: no conflict runtime: org.scala-lang.modules:scala-parser-combinators_2.11
+[debug] :: no conflict runtime: org.spire-math:algebra_2.11
+[debug] :: merging module reports for runtime: org.scala-lang:scala-library
+[debug] ::: resolving conflict in runtime:org.scala-lang:scala-library (org.scala-lang:scala-library:2.11.1 (), org.scala-lang:scala-library:2.11.8 (), org.scala-lang:scala-library:2.11.7 (), org.scala-lang:scala-library:2.11.6 ())
+[debug] ::: adds org.scala-lang:scala-library:2.11.8 ()
+[debug] ::: evicted org.scala-lang:scala-library:2.11.1 (), org.scala-lang:scala-library:2.11.7 (), org.scala-lang:scala-library:2.11.6 ()
+[debug] ::: -----------
+[debug] :: test: loop: List()
+[debug] :: sort result: io.netty:netty-tcnative, com.github.kxbmap:configs_2.11, im.actor:actor-util_2.11, ch.qos.logback:logback-classic, com.typesafe.scala-logging:scala-logging_2.11, tyrex:tyrex, io.kamon:kamon-datadog_2.11, im.actor:actor-concurrent_2.11, com.typesafe.akka:akka-http-experimental_2.11, com.typesafe.akka:akka-slf4j_2.11, com.github.dnvriend:akka-persistence-jdbc_2.11, commons-codec:commons-codec, org.spire-math:cats_2.11, org.joda:joda-convert, joda-time:joda-time, com.ibm.icu:icu4j, com.googlecode.libphonenumber:libphonenumber, im.actor:akka-scalapb-serialization_2.11, com.github.ben-manes.caffeine:caffeine, org.eclipse.jetty.alpn:alpn-api, org.apache.commons:commons-email, com.trueaccord.scalapb:scalapb-runtime_2.11, ch.qos.logback:logback-core, io.kamon:kamon-core_2.11, com.typesafe.akka:akka-http-core_2.11, com.zaxxer:HikariCP, com.typesafe.slick:slick-hikaricp_2.11, com.typesafe.slick:slick-extensions_2.11, com.typesafe.akka:akka-persistence-query-experimental_2.11, org.spire-math:cats-jvm_2.11, org.spire-math:cats-state_2.11, org.spire-math:cats-laws_2.11, com.google.code.findbugs:jsr305, com.sun.mail:javax.mail, com.google.protobuf:protobuf-java, com.lihaoyi:fastparse_2.11, com.trueaccord.lenses:lenses_2.11, org.hdrhistogram:HdrHistogram, com.typesafe.akka:akka-parsing_2.11, com.typesafe.slick:slick_2.11, com.typesafe.akka:akka-stream-testkit_2.11, com.typesafe.akka:akka-persistence_2.11, org.spire-math:cats-free_2.11, com.github.inthenow:bricks-platform_2.11, org.spire-math:algebra-laws_2.11, javax.activation:activation, com.lihaoyi:fastparse-utils_2.11, org.slf4j:slf4j-api, com.typesafe.akka:akka-stream_2.11, com.typesafe.akka:akka-protobuf_2.11, com.typesafe.akka:akka-testkit_2.11, com.github.inthenow:bricks-macros_2.11, org.spire-math:algebra-macros_2.11, org.typelevel:discipline_2.11, org.spire-math:cats-core_2.11, com.typesafe.akka:akka-actor_2.11, org.reactivestreams:reactive-streams, com.typesafe:ssl-config-akka_2.11, org.typelevel:macro-compat_2.11, org.scalacheck:scalacheck_2.11, org.spire-math:cats-macros_2.11, org.scala-lang.modules:scala-java8-compat_2.11, com.typesafe:ssl-config-core_2.11, org.scala-sbt:test-interface, org.typelevel:machinist_2.11, org.spire-math:algebra-std_2.11, com.github.mpilquist:simulacrum_2.11, com.typesafe:config, org.scala-lang:scala-reflect, org.scala-lang.modules:scala-parser-combinators_2.11, org.spire-math:algebra_2.11, org.scala-lang:scala-library
+[debug] :: merging module reports for test: io.netty:netty-tcnative
+[debug] ::: adds io.netty:netty-tcnative:1.1.33.Fork15
+[debug] ::: evicted 
+[debug] :: merging module reports for test: com.github.kxbmap:configs_2.11
+[debug] ::: adds com.github.kxbmap:configs_2.11:0.3.0
+[debug] ::: evicted 
+[debug] :: merging module reports for test: im.actor:actor-util_2.11
+[debug] ::: adds im.actor:actor-util_2.11:0.0.15
+[debug] ::: evicted 
+[debug] :: merging module reports for test: ch.qos.logback:logback-classic
+[debug] ::: adds ch.qos.logback:logback-classic:1.1.2
+[debug] ::: evicted 
+[debug] :: merging module reports for test: com.typesafe.scala-logging:scala-logging_2.11
+[debug] ::: adds com.typesafe.scala-logging:scala-logging_2.11:3.1.0
+[debug] ::: evicted 
+[debug] :: merging module reports for test: tyrex:tyrex
+[debug] ::: adds tyrex:tyrex:1.0.1
+[debug] ::: evicted 
+[debug] :: merging module reports for test: io.kamon:kamon-datadog_2.11
+[debug] ::: adds io.kamon:kamon-datadog_2.11:0.5.2
+[debug] ::: evicted 
+[debug] :: no conflict test: im.actor:actor-concurrent_2.11
+[debug] :: no conflict test: com.typesafe.akka:akka-http-experimental_2.11
+[debug] :: no conflict test: com.typesafe.akka:akka-slf4j_2.11
+[debug] :: no conflict test: com.github.dnvriend:akka-persistence-jdbc_2.11
+[debug] :: no conflict test: commons-codec:commons-codec
+[debug] :: no conflict test: org.spire-math:cats_2.11
+[debug] :: no conflict test: org.joda:joda-convert
+[debug] :: no conflict test: joda-time:joda-time
+[debug] :: no conflict test: com.ibm.icu:icu4j
+[debug] :: no conflict test: com.googlecode.libphonenumber:libphonenumber
+[debug] :: no conflict test: im.actor:akka-scalapb-serialization_2.11
+[debug] :: no conflict test: com.github.ben-manes.caffeine:caffeine
+[debug] :: no conflict test: org.eclipse.jetty.alpn:alpn-api
+[debug] :: no conflict test: org.apache.commons:commons-email
+[debug] :: merging module reports for test: com.trueaccord.scalapb:scalapb-runtime_2.11
+[debug] ::: adds com.trueaccord.scalapb:scalapb-runtime_2.11:0.5.21
+[debug] ::: evicted 
+[debug] :: merging module reports for test: ch.qos.logback:logback-core
+[debug] ::: adds ch.qos.logback:logback-core:1.1.2
+[debug] ::: evicted 
+[debug] :: merging module reports for test: io.kamon:kamon-core_2.11
+[debug] ::: adds io.kamon:kamon-core_2.11:0.5.2
+[debug] ::: evicted 
+[debug] :: no conflict test: com.typesafe.akka:akka-http-core_2.11
+[debug] :: no conflict test: com.zaxxer:HikariCP
+[debug] :: no conflict test: com.typesafe.slick:slick-hikaricp_2.11
+[debug] :: no conflict test: com.typesafe.slick:slick-extensions_2.11
+[debug] :: no conflict test: com.typesafe.akka:akka-persistence-query-experimental_2.11
+[debug] :: no conflict test: org.spire-math:cats-jvm_2.11
+[debug] :: no conflict test: org.spire-math:cats-state_2.11
+[debug] :: no conflict test: org.spire-math:cats-laws_2.11
+[debug] :: no conflict test: com.google.code.findbugs:jsr305
+[debug] :: no conflict test: com.sun.mail:javax.mail
+[debug] :: merging module reports for test: com.google.protobuf:protobuf-java
+[debug] ::: adds com.google.protobuf:protobuf-java:3.0.0-beta-2
+[debug] ::: evicted 
+[debug] :: merging module reports for test: com.lihaoyi:fastparse_2.11
+[debug] ::: adds com.lihaoyi:fastparse_2.11:0.3.4
+[debug] ::: evicted 
+[debug] :: merging module reports for test: com.trueaccord.lenses:lenses_2.11
+[debug] ::: adds com.trueaccord.lenses:lenses_2.11:0.4.4
+[debug] ::: evicted 
+[debug] :: merging module reports for test: org.hdrhistogram:HdrHistogram
+[debug] ::: adds org.hdrhistogram:HdrHistogram:2.1.7
+[debug] ::: evicted 
+[debug] :: no conflict test: com.typesafe.akka:akka-parsing_2.11
+[debug] :: no conflict test: com.typesafe.slick:slick_2.11
+[debug] :: no conflict test: com.typesafe.akka:akka-stream-testkit_2.11
+[debug] :: no conflict test: com.typesafe.akka:akka-persistence_2.11
+[debug] :: no conflict test: org.spire-math:cats-free_2.11
+[debug] :: no conflict test: com.github.inthenow:bricks-platform_2.11
+[debug] :: no conflict test: org.spire-math:algebra-laws_2.11
+[debug] :: no conflict test: javax.activation:activation
+[debug] :: merging module reports for test: com.lihaoyi:fastparse-utils_2.11
+[debug] ::: adds com.lihaoyi:fastparse-utils_2.11:0.3.4
+[debug] ::: evicted 
+[debug] :: merging module reports for test: org.slf4j:slf4j-api
+[debug] ::: resolving conflict in test:org.slf4j:slf4j-api (org.slf4j:slf4j-api:1.7.16, org.slf4j:slf4j-api:1.7.7, org.slf4j:slf4j-api:1.7.6)
+[debug] ::: adds org.slf4j:slf4j-api:1.7.16
+[debug] ::: evicted org.slf4j:slf4j-api:1.7.7, org.slf4j:slf4j-api:1.7.6
+[debug] :: no conflict test: com.typesafe.akka:akka-stream_2.11
+[debug] :: no conflict test: com.typesafe.akka:akka-protobuf_2.11
+[debug] :: no conflict test: com.typesafe.akka:akka-testkit_2.11
+[debug] :: no conflict test: com.github.inthenow:bricks-macros_2.11
+[debug] :: no conflict test: org.spire-math:algebra-macros_2.11
+[debug] :: no conflict test: org.typelevel:discipline_2.11
+[debug] :: no conflict test: org.spire-math:cats-core_2.11
+[debug] :: merging module reports for test: com.typesafe.akka:akka-actor_2.11
+[debug] ::: resolving conflict in test:com.typesafe.akka:akka-actor_2.11 (com.typesafe.akka:akka-actor_2.11:2.4.4, com.typesafe.akka:akka-actor_2.11:2.3.14)
+[debug] ::: adds com.typesafe.akka:akka-actor_2.11:2.4.4
+[debug] ::: evicted com.typesafe.akka:akka-actor_2.11:2.3.14
+[debug] :: no conflict test: org.reactivestreams:reactive-streams
+[debug] :: no conflict test: com.typesafe:ssl-config-akka_2.11
+[debug] :: no conflict test: org.typelevel:macro-compat_2.11
+[debug] :: no conflict test: org.scalacheck:scalacheck_2.11
+[debug] :: no conflict test: org.spire-math:cats-macros_2.11
+[debug] :: merging module reports for test: org.scala-lang.modules:scala-java8-compat_2.11
+[debug] ::: adds org.scala-lang.modules:scala-java8-compat_2.11:0.7.0
+[debug] ::: evicted 
+[debug] :: no conflict test: com.typesafe:ssl-config-core_2.11
+[debug] :: no conflict test: org.scala-sbt:test-interface
+[debug] :: no conflict test: org.typelevel:machinist_2.11
+[debug] :: no conflict test: org.spire-math:algebra-std_2.11
+[debug] :: no conflict test: com.github.mpilquist:simulacrum_2.11
+[debug] :: merging module reports for test: com.typesafe:config
+[debug] ::: resolving conflict in test:com.typesafe:config (com.typesafe:config:1.3.0, com.typesafe:config:1.2.1)
+[debug] ::: adds com.typesafe:config:1.3.0
+[debug] ::: evicted com.typesafe:config:1.2.1
+[debug] :: merging module reports for test: org.scala-lang:scala-reflect
+[debug] ::: resolving conflict in test:org.scala-lang:scala-reflect (org.scala-lang:scala-reflect:2.11.1 (), org.scala-lang:scala-reflect:2.11.7 ())
+[debug] ::: adds org.scala-lang:scala-reflect:2.11.7 ()
+[debug] ::: evicted org.scala-lang:scala-reflect:2.11.1 ()
+[debug] :: no conflict test: org.scala-lang.modules:scala-parser-combinators_2.11
+[debug] :: no conflict test: org.spire-math:algebra_2.11
+[debug] :: merging module reports for test: org.scala-lang:scala-library
+[debug] ::: resolving conflict in test:org.scala-lang:scala-library (org.scala-lang:scala-library:2.11.1 (), org.scala-lang:scala-library:2.11.8 (), org.scala-lang:scala-library:2.11.7 (), org.scala-lang:scala-library:2.11.6 ())
+[debug] ::: adds org.scala-lang:scala-library:2.11.8 ()
+[debug] ::: evicted org.scala-lang:scala-library:2.11.1 (), org.scala-lang:scala-library:2.11.7 (), org.scala-lang:scala-library:2.11.6 ()
+[debug] ::: -----------
+[debug] :: provided: loop: List()
+[debug] :: sort result: 
+[debug] ::: -----------
+[debug] :: optional: loop: List()
+[debug] :: sort result: 
+[debug] ::: -----------
+[debug] :: compile-internal: loop: List()
+[debug] :: sort result: io.netty:netty-tcnative, com.github.kxbmap:configs_2.11, im.actor:actor-util_2.11, ch.qos.logback:logback-classic, com.typesafe.scala-logging:scala-logging_2.11, tyrex:tyrex, io.kamon:kamon-datadog_2.11, im.actor:actor-concurrent_2.11, com.typesafe.akka:akka-http-experimental_2.11, com.typesafe.akka:akka-slf4j_2.11, com.github.dnvriend:akka-persistence-jdbc_2.11, commons-codec:commons-codec, org.spire-math:cats_2.11, org.joda:joda-convert, joda-time:joda-time, com.ibm.icu:icu4j, com.googlecode.libphonenumber:libphonenumber, im.actor:akka-scalapb-serialization_2.11, com.github.ben-manes.caffeine:caffeine, org.apache.commons:commons-email, com.trueaccord.scalapb:scalapb-runtime_2.11, ch.qos.logback:logback-core, io.kamon:kamon-core_2.11, com.typesafe.akka:akka-http-core_2.11, com.zaxxer:HikariCP, com.typesafe.slick:slick-hikaricp_2.11, com.typesafe.slick:slick-extensions_2.11, com.typesafe.akka:akka-persistence-query-experimental_2.11, org.spire-math:cats-jvm_2.11, org.spire-math:cats-state_2.11, org.spire-math:cats-laws_2.11, com.google.code.findbugs:jsr305, com.sun.mail:javax.mail, com.google.protobuf:protobuf-java, com.lihaoyi:fastparse_2.11, com.trueaccord.lenses:lenses_2.11, org.hdrhistogram:HdrHistogram, com.typesafe.akka:akka-parsing_2.11, com.typesafe.slick:slick_2.11, com.typesafe.akka:akka-stream-testkit_2.11, com.typesafe.akka:akka-persistence_2.11, org.spire-math:cats-free_2.11, com.github.inthenow:bricks-platform_2.11, org.spire-math:algebra-laws_2.11, javax.activation:activation, com.lihaoyi:fastparse-utils_2.11, org.slf4j:slf4j-api, com.typesafe.akka:akka-stream_2.11, com.typesafe.akka:akka-protobuf_2.11, com.typesafe.akka:akka-testkit_2.11, com.github.inthenow:bricks-macros_2.11, org.spire-math:algebra-macros_2.11, org.typelevel:discipline_2.11, org.spire-math:cats-core_2.11, com.typesafe.akka:akka-actor_2.11, org.reactivestreams:reactive-streams, com.typesafe:ssl-config-akka_2.11, org.typelevel:macro-compat_2.11, org.scalacheck:scalacheck_2.11, org.spire-math:cats-macros_2.11, org.scala-lang.modules:scala-java8-compat_2.11, com.typesafe:ssl-config-core_2.11, org.scala-sbt:test-interface, org.typelevel:machinist_2.11, org.spire-math:algebra-std_2.11, com.github.mpilquist:simulacrum_2.11, com.typesafe:config, org.scala-lang:scala-reflect, org.scala-lang.modules:scala-parser-combinators_2.11, org.spire-math:algebra_2.11, org.scala-lang:scala-library
+[debug] :: merging module reports for compile-internal: io.netty:netty-tcnative
+[debug] ::: adds io.netty:netty-tcnative:1.1.33.Fork15
+[debug] ::: evicted 
+[debug] :: merging module reports for compile-internal: com.github.kxbmap:configs_2.11
+[debug] ::: adds com.github.kxbmap:configs_2.11:0.3.0
+[debug] ::: evicted 
+[debug] :: merging module reports for compile-internal: im.actor:actor-util_2.11
+[debug] ::: adds im.actor:actor-util_2.11:0.0.15
+[debug] ::: evicted 
+[debug] :: merging module reports for compile-internal: ch.qos.logback:logback-classic
+[debug] ::: adds ch.qos.logback:logback-classic:1.1.2
+[debug] ::: evicted 
+[debug] :: merging module reports for compile-internal: com.typesafe.scala-logging:scala-logging_2.11
+[debug] ::: adds com.typesafe.scala-logging:scala-logging_2.11:3.1.0
+[debug] ::: evicted 
+[debug] :: merging module reports for compile-internal: tyrex:tyrex
+[debug] ::: adds tyrex:tyrex:1.0.1
+[debug] ::: evicted 
+[debug] :: merging module reports for compile-internal: io.kamon:kamon-datadog_2.11
+[debug] ::: adds io.kamon:kamon-datadog_2.11:0.5.2
+[debug] ::: evicted 
+[debug] :: no conflict compile-internal: im.actor:actor-concurrent_2.11
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-http-experimental_2.11
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-slf4j_2.11
+[debug] :: no conflict compile-internal: com.github.dnvriend:akka-persistence-jdbc_2.11
+[debug] :: no conflict compile-internal: commons-codec:commons-codec
+[debug] :: no conflict compile-internal: org.spire-math:cats_2.11
+[debug] :: no conflict compile-internal: org.joda:joda-convert
+[debug] :: no conflict compile-internal: joda-time:joda-time
+[debug] :: no conflict compile-internal: com.ibm.icu:icu4j
+[debug] :: no conflict compile-internal: com.googlecode.libphonenumber:libphonenumber
+[debug] :: no conflict compile-internal: im.actor:akka-scalapb-serialization_2.11
+[debug] :: no conflict compile-internal: com.github.ben-manes.caffeine:caffeine
+[debug] :: no conflict compile-internal: org.apache.commons:commons-email
+[debug] :: merging module reports for compile-internal: com.trueaccord.scalapb:scalapb-runtime_2.11
+[debug] ::: adds com.trueaccord.scalapb:scalapb-runtime_2.11:0.5.21
+[debug] ::: evicted 
+[debug] :: merging module reports for compile-internal: ch.qos.logback:logback-core
+[debug] ::: adds ch.qos.logback:logback-core:1.1.2
+[debug] ::: evicted 
+[debug] :: merging module reports for compile-internal: io.kamon:kamon-core_2.11
+[debug] ::: adds io.kamon:kamon-core_2.11:0.5.2
+[debug] ::: evicted 
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-http-core_2.11
+[debug] :: no conflict compile-internal: com.zaxxer:HikariCP
+[debug] :: no conflict compile-internal: com.typesafe.slick:slick-hikaricp_2.11
+[debug] :: no conflict compile-internal: com.typesafe.slick:slick-extensions_2.11
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-persistence-query-experimental_2.11
+[debug] :: no conflict compile-internal: org.spire-math:cats-jvm_2.11
+[debug] :: no conflict compile-internal: org.spire-math:cats-state_2.11
+[debug] :: no conflict compile-internal: org.spire-math:cats-laws_2.11
+[debug] :: no conflict compile-internal: com.google.code.findbugs:jsr305
+[debug] :: no conflict compile-internal: com.sun.mail:javax.mail
+[debug] :: merging module reports for compile-internal: com.google.protobuf:protobuf-java
+[debug] ::: adds com.google.protobuf:protobuf-java:3.0.0-beta-2
+[debug] ::: evicted 
+[debug] :: merging module reports for compile-internal: com.lihaoyi:fastparse_2.11
+[debug] ::: adds com.lihaoyi:fastparse_2.11:0.3.4
+[debug] ::: evicted 
+[debug] :: merging module reports for compile-internal: com.trueaccord.lenses:lenses_2.11
+[debug] ::: adds com.trueaccord.lenses:lenses_2.11:0.4.4
+[debug] ::: evicted 
+[debug] :: merging module reports for compile-internal: org.hdrhistogram:HdrHistogram
+[debug] ::: adds org.hdrhistogram:HdrHistogram:2.1.7
+[debug] ::: evicted 
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-parsing_2.11
+[debug] :: no conflict compile-internal: com.typesafe.slick:slick_2.11
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-stream-testkit_2.11
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-persistence_2.11
+[debug] :: no conflict compile-internal: org.spire-math:cats-free_2.11
+[debug] :: no conflict compile-internal: com.github.inthenow:bricks-platform_2.11
+[debug] :: no conflict compile-internal: org.spire-math:algebra-laws_2.11
+[debug] :: no conflict compile-internal: javax.activation:activation
+[debug] :: merging module reports for compile-internal: com.lihaoyi:fastparse-utils_2.11
+[debug] ::: adds com.lihaoyi:fastparse-utils_2.11:0.3.4
+[debug] ::: evicted 
+[debug] :: merging module reports for compile-internal: org.slf4j:slf4j-api
+[debug] ::: resolving conflict in compile-internal:org.slf4j:slf4j-api (org.slf4j:slf4j-api:1.7.16, org.slf4j:slf4j-api:1.7.7, org.slf4j:slf4j-api:1.7.6)
+[debug] ::: adds org.slf4j:slf4j-api:1.7.16
+[debug] ::: evicted org.slf4j:slf4j-api:1.7.7, org.slf4j:slf4j-api:1.7.6
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-stream_2.11
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-protobuf_2.11
+[debug] :: no conflict compile-internal: com.typesafe.akka:akka-testkit_2.11
+[debug] :: no conflict compile-internal: com.github.inthenow:bricks-macros_2.11
+[debug] :: no conflict compile-internal: org.spire-math:algebra-macros_2.11
+[debug] :: no conflict compile-internal: org.typelevel:discipline_2.11
+[debug] :: no conflict compile-internal: org.spire-math:cats-core_2.11
+[debug] :: merging module reports for compile-internal: com.typesafe.akka:akka-actor_2.11
+[debug] ::: resolving conflict in compile-internal:com.typesafe.akka:akka-actor_2.11 (com.typesafe.akka:akka-actor_2.11:2.4.4, com.typesafe.akka:akka-actor_2.11:2.3.14)
+[debug] ::: adds com.typesafe.akka:akka-actor_2.11:2.4.4
+[debug] ::: evicted com.typesafe.akka:akka-actor_2.11:2.3.14
+[debug] :: no conflict compile-internal: org.reactivestreams:reactive-streams
+[debug] :: no conflict compile-internal: com.typesafe:ssl-config-akka_2.11
+[debug] :: no conflict compile-internal: org.typelevel:macro-compat_2.11
+[debug] :: no conflict compile-internal: org.scalacheck:scalacheck_2.11
+[debug] :: no conflict compile-internal: org.spire-math:cats-macros_2.11
+[debug] :: merging module reports for compile-internal: org.scala-lang.modules:scala-java8-compat_2.11
+[debug] ::: adds org.scala-lang.modules:scala-java8-compat_2.11:0.7.0
+[debug] ::: evicted 
+[debug] :: no conflict compile-internal: com.typesafe:ssl-config-core_2.11
+[debug] :: no conflict compile-internal: org.scala-sbt:test-interface
+[debug] :: no conflict compile-internal: org.typelevel:machinist_2.11
+[debug] :: no conflict compile-internal: org.spire-math:algebra-std_2.11
+[debug] :: no conflict compile-internal: com.github.mpilquist:simulacrum_2.11
+[debug] :: merging module reports for compile-internal: com.typesafe:config
+[debug] ::: resolving conflict in compile-internal:com.typesafe:config (com.typesafe:config:1.3.0, com.typesafe:config:1.2.1)
+[debug] ::: adds com.typesafe:config:1.3.0
+[debug] ::: evicted com.typesafe:config:1.2.1
+[debug] :: merging module reports for compile-internal: org.scala-lang:scala-reflect
+[debug] ::: resolving conflict in compile-internal:org.scala-lang:scala-reflect (org.scala-lang:scala-reflect:2.11.1 (), org.scala-lang:scala-reflect:2.11.7 ())
+[debug] ::: adds org.scala-lang:scala-reflect:2.11.7 ()
+[debug] ::: evicted org.scala-lang:scala-reflect:2.11.1 ()
+[debug] :: no conflict compile-internal: org.scala-lang.modules:scala-parser-combinators_2.11
+[debug] :: no conflict compile-internal: org.spire-math:algebra_2.11
+[debug] :: merging module reports for compile-internal: org.scala-lang:scala-library
+[debug] ::: resolving conflict in compile-internal:org.scala-lang:scala-library (org.scala-lang:scala-library:2.11.1 (), org.scala-lang:scala-library:2.11.8 (), org.scala-lang:scala-library:2.11.7 (), org.scala-lang:scala-library:2.11.6 ())
+[debug] ::: adds org.scala-lang:scala-library:2.11.8 ()
+[debug] ::: evicted org.scala-lang:scala-library:2.11.1 (), org.scala-lang:scala-library:2.11.7 (), org.scala-lang:scala-library:2.11.6 ()
+[debug] ::: -----------
+[debug] :: runtime-internal: loop: List()
+[debug] :: sort result: io.netty:netty-tcnative, com.github.kxbmap:configs_2.11, im.actor:actor-util_2.11, ch.qos.logback:logback-classic, com.typesafe.scala-logging:scala-logging_2.11, tyrex:tyrex, io.kamon:kamon-datadog_2.11, im.actor:actor-concurrent_2.11, com.typesafe.akka:akka-http-experimental_2.11, com.typesafe.akka:akka-slf4j_2.11, com.github.dnvriend:akka-persistence-jdbc_2.11, commons-codec:commons-codec, org.spire-math:cats_2.11, org.joda:joda-convert, joda-time:joda-time, com.ibm.icu:icu4j, com.googlecode.libphonenumber:libphonenumber, im.actor:akka-scalapb-serialization_2.11, com.github.ben-manes.caffeine:caffeine, org.eclipse.jetty.alpn:alpn-api, org.apache.commons:commons-email, com.trueaccord.scalapb:scalapb-runtime_2.11, ch.qos.logback:logback-core, io.kamon:kamon-core_2.11, com.typesafe.akka:akka-http-core_2.11, com.zaxxer:HikariCP, com.typesafe.slick:slick-hikaricp_2.11, com.typesafe.slick:slick-extensions_2.11, com.typesafe.akka:akka-persistence-query-experimental_2.11, org.spire-math:cats-jvm_2.11, org.spire-math:cats-state_2.11, org.spire-math:cats-laws_2.11, com.google.code.findbugs:jsr305, com.sun.mail:javax.mail, com.google.protobuf:protobuf-java, com.lihaoyi:fastparse_2.11, com.trueaccord.lenses:lenses_2.11, org.hdrhistogram:HdrHistogram, com.typesafe.akka:akka-parsing_2.11, com.typesafe.slick:slick_2.11, com.typesafe.akka:akka-stream-testkit_2.11, com.typesafe.akka:akka-persistence_2.11, org.spire-math:cats-free_2.11, com.github.inthenow:bricks-platform_2.11, org.spire-math:algebra-laws_2.11, javax.activation:activation, com.lihaoyi:fastparse-utils_2.11, org.slf4j:slf4j-api, com.typesafe.akka:akka-stream_2.11, com.typesafe.akka:akka-protobuf_2.11, com.typesafe.akka:akka-testkit_2.11, com.github.inthenow:bricks-macros_2.11, org.spire-math:algebra-macros_2.11, org.typelevel:discipline_2.11, org.spire-math:cats-core_2.11, com.typesafe.akka:akka-actor_2.11, org.reactivestreams:reactive-streams, com.typesafe:ssl-config-akka_2.11, org.typelevel:macro-compat_2.11, org.scalacheck:scalacheck_2.11, org.spire-math:cats-macros_2.11, org.scala-lang.modules:scala-java8-compat_2.11, com.typesafe:ssl-config-core_2.11, org.scala-sbt:test-interface, org.typelevel:machinist_2.11, org.spire-math:algebra-std_2.11, com.github.mpilquist:simulacrum_2.11, com.typesafe:config, org.scala-lang:scala-reflect, org.scala-lang.modules:scala-parser-combinators_2.11, org.spire-math:algebra_2.11, org.scala-lang:scala-library
+[debug] :: merging module reports for runtime-internal: io.netty:netty-tcnative
+[debug] ::: adds io.netty:netty-tcnative:1.1.33.Fork15
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime-internal: com.github.kxbmap:configs_2.11
+[debug] ::: adds com.github.kxbmap:configs_2.11:0.3.0
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime-internal: im.actor:actor-util_2.11
+[debug] ::: adds im.actor:actor-util_2.11:0.0.15
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime-internal: ch.qos.logback:logback-classic
+[debug] ::: adds ch.qos.logback:logback-classic:1.1.2
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime-internal: com.typesafe.scala-logging:scala-logging_2.11
+[debug] ::: adds com.typesafe.scala-logging:scala-logging_2.11:3.1.0
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime-internal: tyrex:tyrex
+[debug] ::: adds tyrex:tyrex:1.0.1
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime-internal: io.kamon:kamon-datadog_2.11
+[debug] ::: adds io.kamon:kamon-datadog_2.11:0.5.2
+[debug] ::: evicted 
+[debug] :: no conflict runtime-internal: im.actor:actor-concurrent_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-http-experimental_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-slf4j_2.11
+[debug] :: no conflict runtime-internal: com.github.dnvriend:akka-persistence-jdbc_2.11
+[debug] :: no conflict runtime-internal: commons-codec:commons-codec
+[debug] :: no conflict runtime-internal: org.spire-math:cats_2.11
+[debug] :: no conflict runtime-internal: org.joda:joda-convert
+[debug] :: no conflict runtime-internal: joda-time:joda-time
+[debug] :: no conflict runtime-internal: com.ibm.icu:icu4j
+[debug] :: no conflict runtime-internal: com.googlecode.libphonenumber:libphonenumber
+[debug] :: no conflict runtime-internal: im.actor:akka-scalapb-serialization_2.11
+[debug] :: no conflict runtime-internal: com.github.ben-manes.caffeine:caffeine
+[debug] :: no conflict runtime-internal: org.eclipse.jetty.alpn:alpn-api
+[debug] :: no conflict runtime-internal: org.apache.commons:commons-email
+[debug] :: merging module reports for runtime-internal: com.trueaccord.scalapb:scalapb-runtime_2.11
+[debug] ::: adds com.trueaccord.scalapb:scalapb-runtime_2.11:0.5.21
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime-internal: ch.qos.logback:logback-core
+[debug] ::: adds ch.qos.logback:logback-core:1.1.2
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime-internal: io.kamon:kamon-core_2.11
+[debug] ::: adds io.kamon:kamon-core_2.11:0.5.2
+[debug] ::: evicted 
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-http-core_2.11
+[debug] :: no conflict runtime-internal: com.zaxxer:HikariCP
+[debug] :: no conflict runtime-internal: com.typesafe.slick:slick-hikaricp_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.slick:slick-extensions_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-persistence-query-experimental_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:cats-jvm_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:cats-state_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:cats-laws_2.11
+[debug] :: no conflict runtime-internal: com.google.code.findbugs:jsr305
+[debug] :: no conflict runtime-internal: com.sun.mail:javax.mail
+[debug] :: merging module reports for runtime-internal: com.google.protobuf:protobuf-java
+[debug] ::: adds com.google.protobuf:protobuf-java:3.0.0-beta-2
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime-internal: com.lihaoyi:fastparse_2.11
+[debug] ::: adds com.lihaoyi:fastparse_2.11:0.3.4
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime-internal: com.trueaccord.lenses:lenses_2.11
+[debug] ::: adds com.trueaccord.lenses:lenses_2.11:0.4.4
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime-internal: org.hdrhistogram:HdrHistogram
+[debug] ::: adds org.hdrhistogram:HdrHistogram:2.1.7
+[debug] ::: evicted 
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-parsing_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.slick:slick_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-stream-testkit_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-persistence_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:cats-free_2.11
+[debug] :: no conflict runtime-internal: com.github.inthenow:bricks-platform_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:algebra-laws_2.11
+[debug] :: no conflict runtime-internal: javax.activation:activation
+[debug] :: merging module reports for runtime-internal: com.lihaoyi:fastparse-utils_2.11
+[debug] ::: adds com.lihaoyi:fastparse-utils_2.11:0.3.4
+[debug] ::: evicted 
+[debug] :: merging module reports for runtime-internal: org.slf4j:slf4j-api
+[debug] ::: resolving conflict in runtime-internal:org.slf4j:slf4j-api (org.slf4j:slf4j-api:1.7.16, org.slf4j:slf4j-api:1.7.7, org.slf4j:slf4j-api:1.7.6)
+[debug] ::: adds org.slf4j:slf4j-api:1.7.16
+[debug] ::: evicted org.slf4j:slf4j-api:1.7.7, org.slf4j:slf4j-api:1.7.6
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-stream_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-protobuf_2.11
+[debug] :: no conflict runtime-internal: com.typesafe.akka:akka-testkit_2.11
+[debug] :: no conflict runtime-internal: com.github.inthenow:bricks-macros_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:algebra-macros_2.11
+[debug] :: no conflict runtime-internal: org.typelevel:discipline_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:cats-core_2.11
+[debug] :: merging module reports for runtime-internal: com.typesafe.akka:akka-actor_2.11
+[debug] ::: resolving conflict in runtime-internal:com.typesafe.akka:akka-actor_2.11 (com.typesafe.akka:akka-actor_2.11:2.4.4, com.typesafe.akka:akka-actor_2.11:2.3.14)
+[debug] ::: adds com.typesafe.akka:akka-actor_2.11:2.4.4
+[debug] ::: evicted com.typesafe.akka:akka-actor_2.11:2.3.14
+[debug] :: no conflict runtime-internal: org.reactivestreams:reactive-streams
+[debug] :: no conflict runtime-internal: com.typesafe:ssl-config-akka_2.11
+[debug] :: no conflict runtime-internal: org.typelevel:macro-compat_2.11
+[debug] :: no conflict runtime-internal: org.scalacheck:scalacheck_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:cats-macros_2.11
+[debug] :: merging module reports for runtime-internal: org.scala-lang.modules:scala-java8-compat_2.11
+[debug] ::: adds org.scala-lang.modules:scala-java8-compat_2.11:0.7.0
+[debug] ::: evicted 
+[debug] :: no conflict runtime-internal: com.typesafe:ssl-config-core_2.11
+[debug] :: no conflict runtime-internal: org.scala-sbt:test-interface
+[debug] :: no conflict runtime-internal: org.typelevel:machinist_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:algebra-std_2.11
+[debug] :: no conflict runtime-internal: com.github.mpilquist:simulacrum_2.11
+[debug] :: merging module reports for runtime-internal: com.typesafe:config
+[debug] ::: resolving conflict in runtime-internal:com.typesafe:config (com.typesafe:config:1.3.0, com.typesafe:config:1.2.1)
+[debug] ::: adds com.typesafe:config:1.3.0
+[debug] ::: evicted com.typesafe:config:1.2.1
+[debug] :: merging module reports for runtime-internal: org.scala-lang:scala-reflect
+[debug] ::: resolving conflict in runtime-internal:org.scala-lang:scala-reflect (org.scala-lang:scala-reflect:2.11.1 (), org.scala-lang:scala-reflect:2.11.7 ())
+[debug] ::: adds org.scala-lang:scala-reflect:2.11.7 ()
+[debug] ::: evicted org.scala-lang:scala-reflect:2.11.1 ()
+[debug] :: no conflict runtime-internal: org.scala-lang.modules:scala-parser-combinators_2.11
+[debug] :: no conflict runtime-internal: org.spire-math:algebra_2.11
+[debug] :: merging module reports for runtime-internal: org.scala-lang:scala-library
+[debug] ::: resolving conflict in runtime-internal:org.scala-lang:scala-library (org.scala-lang:scala-library:2.11.1 (), org.scala-lang:scala-library:2.11.8 (), org.scala-lang:scala-library:2.11.7 (), org.scala-lang:scala-library:2.11.6 ())
+[debug] ::: adds org.scala-lang:scala-library:2.11.8 ()
+[debug] ::: evicted org.scala-lang:scala-library:2.11.1 (), org.scala-lang:scala-library:2.11.7 (), org.scala-lang:scala-library:2.11.6 ()
+[debug] ::: -----------
+[debug] :: test-internal: loop: List()
+[debug] :: sort result: io.netty:netty-tcnative, com.github.kxbmap:configs_2.11, im.actor:actor-util_2.11, ch.qos.logback:logback-classic, com.typesafe.scala-logging:scala-logging_2.11, tyrex:tyrex, io.kamon:kamon-datadog_2.11, im.actor:actor-concurrent_2.11, com.typesafe.akka:akka-http-experimental_2.11, com.typesafe.akka:akka-slf4j_2.11, com.github.dnvriend:akka-persistence-jdbc_2.11, commons-codec:commons-codec, org.spire-math:cats_2.11, org.joda:joda-convert, joda-time:joda-time, com.ibm.icu:icu4j, com.googlecode.libphonenumber:libphonenumber, im.actor:akka-scalapb-serialization_2.11, com.github.ben-manes.caffeine:caffeine, org.eclipse.jetty.alpn:alpn-api, org.apache.commons:commons-email, com.trueaccord.scalapb:scalapb-runtime_2.11, ch.qos.logback:logback-core, io.kamon:kamon-core_2.11, com.typesafe.akka:akka-http-core_2.11, com.zaxxer:HikariCP, com.typesafe.slick:slick-hikaricp_2.11, com.typesafe.slick:slick-extensions_2.11, com.typesafe.akka:akka-persistence-query-experimental_2.11, org.spire-math:cats-jvm_2.11, org.spire-math:cats-state_2.11, org.spire-math:cats-laws_2.11, com.google.code.findbugs:jsr305, com.sun.mail:javax.mail, com.google.protobuf:protobuf-java, com.lihaoyi:fastparse_2.11, com.trueaccord.lenses:lenses_2.11, org.hdrhistogram:HdrHistogram, com.typesafe.akka:akka-parsing_2.11, com.typesafe.slick:slick_2.11, com.typesafe.akka:akka-stream-testkit_2.11, com.typesafe.akka:akka-persistence_2.11, org.spire-math:cats-free_2.11, com.github.inthenow:bricks-platform_2.11, org.spire-math:algebra-laws_2.11, javax.activation:activation, com.lihaoyi:fastparse-utils_2.11, org.slf4j:slf4j-api, com.typesafe.akka:akka-stream_2.11, com.typesafe.akka:akka-protobuf_2.11, com.typesafe.akka:akka-testkit_2.11, com.github.inthenow:bricks-macros_2.11, org.spire-math:algebra-macros_2.11, org.typelevel:discipline_2.11, org.spire-math:cats-core_2.11, com.typesafe.akka:akka-actor_2.11, org.reactivestreams:reactive-streams, com.typesafe:ssl-config-akka_2.11, org.typelevel:macro-compat_2.11, org.scalacheck:scalacheck_2.11, org.spire-math:cats-macros_2.11, org.scala-lang.modules:scala-java8-compat_2.11, com.typesafe:ssl-config-core_2.11, org.scala-sbt:test-interface, org.typelevel:machinist_2.11, org.spire-math:algebra-std_2.11, com.github.mpilquist:simulacrum_2.11, com.typesafe:config, org.scala-lang:scala-reflect, org.scala-lang.modules:scala-parser-combinators_2.11, org.spire-math:algebra_2.11, org.scala-lang:scala-library
+[debug] :: merging module reports for test-internal: io.netty:netty-tcnative
+[debug] ::: adds io.netty:netty-tcnative:1.1.33.Fork15
+[debug] ::: evicted 
+[debug] :: merging module reports for test-internal: com.github.kxbmap:configs_2.11
+[debug] ::: adds com.github.kxbmap:configs_2.11:0.3.0
+[debug] ::: evicted 
+[debug] :: merging module reports for test-internal: im.actor:actor-util_2.11
+[debug] ::: adds im.actor:actor-util_2.11:0.0.15
+[debug] ::: evicted 
+[debug] :: merging module reports for test-internal: ch.qos.logback:logback-classic
+[debug] ::: adds ch.qos.logback:logback-classic:1.1.2
+[debug] ::: evicted 
+[debug] :: merging module reports for test-internal: com.typesafe.scala-logging:scala-logging_2.11
+[debug] ::: adds com.typesafe.scala-logging:scala-logging_2.11:3.1.0
+[debug] ::: evicted 
+[debug] :: merging module reports for test-internal: tyrex:tyrex
+[debug] ::: adds tyrex:tyrex:1.0.1
+[debug] ::: evicted 
+[debug] :: merging module reports for test-internal: io.kamon:kamon-datadog_2.11
+[debug] ::: adds io.kamon:kamon-datadog_2.11:0.5.2
+[debug] ::: evicted 
+[debug] :: no conflict test-internal: im.actor:actor-concurrent_2.11
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-http-experimental_2.11
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-slf4j_2.11
+[debug] :: no conflict test-internal: com.github.dnvriend:akka-persistence-jdbc_2.11
+[debug] :: no conflict test-internal: commons-codec:commons-codec
+[debug] :: no conflict test-internal: org.spire-math:cats_2.11
+[debug] :: no conflict test-internal: org.joda:joda-convert
+[debug] :: no conflict test-internal: joda-time:joda-time
+[debug] :: no conflict test-internal: com.ibm.icu:icu4j
+[debug] :: no conflict test-internal: com.googlecode.libphonenumber:libphonenumber
+[debug] :: no conflict test-internal: im.actor:akka-scalapb-serialization_2.11
+[debug] :: no conflict test-internal: com.github.ben-manes.caffeine:caffeine
+[debug] :: no conflict test-internal: org.eclipse.jetty.alpn:alpn-api
+[debug] :: no conflict test-internal: org.apache.commons:commons-email
+[debug] :: merging module reports for test-internal: com.trueaccord.scalapb:scalapb-runtime_2.11
+[debug] ::: adds com.trueaccord.scalapb:scalapb-runtime_2.11:0.5.21
+[debug] ::: evicted 
+[debug] :: merging module reports for test-internal: ch.qos.logback:logback-core
+[debug] ::: adds ch.qos.logback:logback-core:1.1.2
+[debug] ::: evicted 
+[debug] :: merging module reports for test-internal: io.kamon:kamon-core_2.11
+[debug] ::: adds io.kamon:kamon-core_2.11:0.5.2
+[debug] ::: evicted 
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-http-core_2.11
+[debug] :: no conflict test-internal: com.zaxxer:HikariCP
+[debug] :: no conflict test-internal: com.typesafe.slick:slick-hikaricp_2.11
+[debug] :: no conflict test-internal: com.typesafe.slick:slick-extensions_2.11
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-persistence-query-experimental_2.11
+[debug] :: no conflict test-internal: org.spire-math:cats-jvm_2.11
+[debug] :: no conflict test-internal: org.spire-math:cats-state_2.11
+[debug] :: no conflict test-internal: org.spire-math:cats-laws_2.11
+[debug] :: no conflict test-internal: com.google.code.findbugs:jsr305
+[debug] :: no conflict test-internal: com.sun.mail:javax.mail
+[debug] :: merging module reports for test-internal: com.google.protobuf:protobuf-java
+[debug] ::: adds com.google.protobuf:protobuf-java:3.0.0-beta-2
+[debug] ::: evicted 
+[debug] :: merging module reports for test-internal: com.lihaoyi:fastparse_2.11
+[debug] ::: adds com.lihaoyi:fastparse_2.11:0.3.4
+[debug] ::: evicted 
+[debug] :: merging module reports for test-internal: com.trueaccord.lenses:lenses_2.11
+[debug] ::: adds com.trueaccord.lenses:lenses_2.11:0.4.4
+[debug] ::: evicted 
+[debug] :: merging module reports for test-internal: org.hdrhistogram:HdrHistogram
+[debug] ::: adds org.hdrhistogram:HdrHistogram:2.1.7
+[debug] ::: evicted 
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-parsing_2.11
+[debug] :: no conflict test-internal: com.typesafe.slick:slick_2.11
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-stream-testkit_2.11
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-persistence_2.11
+[debug] :: no conflict test-internal: org.spire-math:cats-free_2.11
+[debug] :: no conflict test-internal: com.github.inthenow:bricks-platform_2.11
+[debug] :: no conflict test-internal: org.spire-math:algebra-laws_2.11
+[debug] :: no conflict test-internal: javax.activation:activation
+[debug] :: merging module reports for test-internal: com.lihaoyi:fastparse-utils_2.11
+[debug] ::: adds com.lihaoyi:fastparse-utils_2.11:0.3.4
+[debug] ::: evicted 
+[debug] :: merging module reports for test-internal: org.slf4j:slf4j-api
+[debug] ::: resolving conflict in test-internal:org.slf4j:slf4j-api (org.slf4j:slf4j-api:1.7.16, org.slf4j:slf4j-api:1.7.7, org.slf4j:slf4j-api:1.7.6)
+[debug] ::: adds org.slf4j:slf4j-api:1.7.16
+[debug] ::: evicted org.slf4j:slf4j-api:1.7.7, org.slf4j:slf4j-api:1.7.6
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-stream_2.11
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-protobuf_2.11
+[debug] :: no conflict test-internal: com.typesafe.akka:akka-testkit_2.11
+[debug] :: no conflict test-internal: com.github.inthenow:bricks-macros_2.11
+[debug] :: no conflict test-internal: org.spire-math:algebra-macros_2.11
+[debug] :: no conflict test-internal: org.typelevel:discipline_2.11
+[debug] :: no conflict test-internal: org.spire-math:cats-core_2.11
+[debug] :: merging module reports for test-internal: com.typesafe.akka:akka-actor_2.11
+[debug] ::: resolving conflict in test-internal:com.typesafe.akka:akka-actor_2.11 (com.typesafe.akka:akka-actor_2.11:2.4.4, com.typesafe.akka:akka-actor_2.11:2.3.14)
+[debug] ::: adds com.typesafe.akka:akka-actor_2.11:2.4.4
+[debug] ::: evicted com.typesafe.akka:akka-actor_2.11:2.3.14
+[debug] :: no conflict test-internal: org.reactivestreams:reactive-streams
+[debug] :: no conflict test-internal: com.typesafe:ssl-config-akka_2.11
+[debug] :: no conflict test-internal: org.typelevel:macro-compat_2.11
+[debug] :: no conflict test-internal: org.scalacheck:scalacheck_2.11
+[debug] :: no conflict test-internal: org.spire-math:cats-macros_2.11
+[debug] :: merging module reports for test-internal: org.scala-lang.modules:scala-java8-compat_2.11
+[debug] ::: adds org.scala-lang.modules:scala-java8-compat_2.11:0.7.0
+[debug] ::: evicted 
+[debug] :: no conflict test-internal: com.typesafe:ssl-config-core_2.11
+[debug] :: no conflict test-internal: org.scala-sbt:test-interface
+[debug] :: no conflict test-internal: org.typelevel:machinist_2.11
+[debug] :: no conflict test-internal: org.spire-math:algebra-std_2.11
+[debug] :: no conflict test-internal: com.github.mpilquist:simulacrum_2.11
+[debug] :: merging module reports for test-internal: com.typesafe:config
+[debug] ::: resolving conflict in test-internal:com.typesafe:config (com.typesafe:config:1.3.0, com.typesafe:config:1.2.1)
+[debug] ::: adds com.typesafe:config:1.3.0
+[debug] ::: evicted com.typesafe:config:1.2.1
+[debug] :: merging module reports for test-internal: org.scala-lang:scala-reflect
+[debug] ::: resolving conflict in test-internal:org.scala-lang:scala-reflect (org.scala-lang:scala-reflect:2.11.1 (), org.scala-lang:scala-reflect:2.11.7 ())
+[debug] ::: adds org.scala-lang:scala-reflect:2.11.7 ()
+[debug] ::: evicted org.scala-lang:scala-reflect:2.11.1 ()
+[debug] :: no conflict test-internal: org.scala-lang.modules:scala-parser-combinators_2.11
+[debug] :: no conflict test-internal: org.spire-math:algebra_2.11
+[debug] :: merging module reports for test-internal: org.scala-lang:scala-library
+[debug] ::: resolving conflict in test-internal:org.scala-lang:scala-library (org.scala-lang:scala-library:2.11.1 (), org.scala-lang:scala-library:2.11.8 (), org.scala-lang:scala-library:2.11.7 (), org.scala-lang:scala-library:2.11.6 ())
+[debug] ::: adds org.scala-lang:scala-library:2.11.8 ()
+[debug] ::: evicted org.scala-lang:scala-library:2.11.1 (), org.scala-lang:scala-library:2.11.7 (), org.scala-lang:scala-library:2.11.6 ()
+[debug] ::: -----------
+[debug] :: plugin: loop: List()
+[debug] :: sort result: 
+[debug] ::: -----------
+[debug] :: sources: loop: List()
+[debug] :: sort result: 
+[debug] ::: -----------
+[debug] :: docs: loop: List()
+[debug] :: sort result: 
+[debug] ::: -----------
+[debug] :: pom: loop: List()
+[debug] :: sort result: 
+[debug] ::: -----------
+[debug] :: scala-tool: loop: List()
+[debug] :: sort result: org.scala-lang:scala-compiler, jline:jline, org.scala-lang.modules:scala-parser-combinators_2.11, org.scala-lang.modules:scala-xml_2.11, org.scala-lang:scala-reflect, org.scala-lang:scala-library
+[debug] :: no conflict scala-tool: org.scala-lang:scala-compiler
+[debug] :: no conflict scala-tool: jline:jline
+[debug] :: no conflict scala-tool: org.scala-lang.modules:scala-parser-combinators_2.11
+[debug] :: no conflict scala-tool: org.scala-lang.modules:scala-xml_2.11
+[debug] :: no conflict scala-tool: org.scala-lang:scala-reflect
+[debug] :: merging module reports for scala-tool: org.scala-lang:scala-library
+[debug] ::: adds org.scala-lang:scala-library:2.11.8 ()
+[debug] ::: evicted 
+[debug] ::: -----------
+[debug] :: protobuf: loop: List()
+[debug] :: sort result: com.trueaccord.scalapb:scalapb-runtime_2.11, com.google.protobuf:protobuf-java, com.lihaoyi:fastparse_2.11, com.trueaccord.lenses:lenses_2.11, com.lihaoyi:fastparse-utils_2.11, org.scala-lang:scala-library
+[debug] :: no conflict protobuf: com.trueaccord.scalapb:scalapb-runtime_2.11
+[debug] :: no conflict protobuf: com.google.protobuf:protobuf-java
+[debug] :: no conflict protobuf: com.lihaoyi:fastparse_2.11
+[debug] :: no conflict protobuf: com.trueaccord.lenses:lenses_2.11
+[debug] :: no conflict protobuf: com.lihaoyi:fastparse-utils_2.11
+[debug] :: no conflict protobuf: org.scala-lang:scala-library
+[info] Done updating.
+[warn] There may be incompatibilities among your library dependencies.
+[warn] Here are some of the libraries that were evicted:
+[warn] 	* com.typesafe.akka:akka-actor_2.11:2.3.14 -> 2.4.4
+[warn] Run 'evicted' to see detailed eviction warnings

@@ -1,0 +1,21 @@
+[0m[[0minfo[0m] [0mPackaging D:\Develop\Actor\actor-server-apache-license\actor-sms\target\actor-sms-1.0.153-SNAPSHOT-sources.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\sms\TwilioSmsEngine.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-sms\src\main\scala\im\actor\server\sms\TwilioSmsEngine.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\sms\AuthSmsEngine.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-sms\src\main\scala\im\actor\server\sms\AuthSmsEngine.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\sms\ClickatellSmsEngine.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-sms\src\main\scala\im\actor\server\sms\ClickatellSmsEngine.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\sms\SmsEngine.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-sms\src\main\scala\im\actor\server\sms\SmsEngine.scala[0m
+[0m[[0mdebug[0m] [0m	reference.conf[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-sms\src\main\resources\reference.conf[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\sms\TelesignClient.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-sms\src\main\scala\im\actor\server\sms\TelesignClient.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\sms\TelesignSmsEngine.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-sms\src\main\scala\im\actor\server\sms\TelesignSmsEngine.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\sms\AuthCallEngine.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-sms\src\main\scala\im\actor\server\sms\AuthCallEngine.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\sms\TelesignCallEngine.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-sms\src\main\scala\im\actor\server\sms\TelesignCallEngine.scala[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m

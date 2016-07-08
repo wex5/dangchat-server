@@ -1,0 +1,223 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>enrich - im.actor.server.enrich</title>
+          <meta name="description" content="enrich - im.actor.server.enrich" />
+          <meta name="keywords" content="enrich im.actor.server.enrich" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'im.actor.server.enrich.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="im">im</a>.<a href="../../package.html" class="extype" name="im.actor">actor</a>.<a href="../package.html" class="extype" name="im.actor.server">server</a></p>
+        <h1>enrich</h1><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.enrich.package" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">enrich</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="im.actor.server.enrich.PreviewHelpers" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="PreviewHelpersextendsAnyRef"></a>
+      <a id="PreviewHelpers:PreviewHelpers"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="PreviewHelpers.html"><span class="name">PreviewHelpers</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.enrich.package@PreviewHelpersextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.enrich.PreviewMaker" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PreviewMakerextendsActorwithActorLoggingwithPreviewHelpers"></a>
+      <a id="PreviewMaker:PreviewMaker"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="PreviewMaker.html"><span class="name">PreviewMaker</span></a><span class="result"> extends <span class="extype" name="akka.actor.Actor">Actor</span> with <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span> with <a href="PreviewHelpers.html" class="extype" name="im.actor.server.enrich.PreviewHelpers">PreviewHelpers</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.enrich.package@PreviewMakerextendsActorwithActorLoggingwithPreviewHelpers" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.enrich.RichMessageConfig" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RichMessageConfigextendsProductwithSerializable"></a>
+      <a id="RichMessageConfig:RichMessageConfig"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="RichMessageConfig.html"><span class="name">RichMessageConfig</span></a><span class="params">(<span name="maxSize">maxSize: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.enrich.package@RichMessageConfigextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.enrich.RichMessageWorker" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RichMessageWorkerextendsActorwithActorLoggingwithMessageUpdating"></a>
+      <a id="RichMessageWorker:RichMessageWorker"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="RichMessageWorker.html"><span class="name">RichMessageWorker</span></a><span class="result"> extends <span class="extype" name="akka.actor.Actor">Actor</span> with <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span> with <span class="extype" name="im.actor.server.messaging.MessageUpdating">MessageUpdating</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.enrich.package@RichMessageWorkerextendsActorwithActorLoggingwithMessageUpdating" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="im.actor.server.enrich.PreviewMaker" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PreviewMaker"></a>
+      <a id="PreviewMaker:PreviewMaker"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="PreviewMaker$.html"><span class="name">PreviewMaker</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.enrich.package@PreviewMaker" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.enrich.RichMessageConfig" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RichMessageConfig"></a>
+      <a id="RichMessageConfig:RichMessageConfig"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="RichMessageConfig$.html"><span class="name">RichMessageConfig</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.enrich.package@RichMessageConfig" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.enrich.RichMessageWorker" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RichMessageWorker"></a>
+      <a id="RichMessageWorker:RichMessageWorker"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="RichMessageWorker$.html"><span class="name">RichMessageWorker</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.enrich.package@RichMessageWorker" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

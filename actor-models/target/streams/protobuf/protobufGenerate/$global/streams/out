@@ -1,0 +1,9 @@
+[0m[[0minfo[0m] [0mCompiling 4 protobuf files to D:\Develop\Actor\actor-server-apache-license\actor-models\target\src_managed\main\compiled_protobuf[0m
+[0m[[0mdebug[0m] [0mprotoc options:[0m
+[0m[[0mdebug[0m] [0m	--scala_out=grpc:D:\Develop\Actor\actor-server-apache-license\actor-models\target\src_managed\main\compiled_protobuf[0m
+[0m[[0minfo[0m] [0mCompiling schema D:\Develop\Actor\actor-server-apache-license\actor-models\src\main\protobuf\model.proto[0m
+[0m[[0minfo[0m] [0mCompiling schema D:\Develop\Actor\actor-server-apache-license\actor-models\src\main\protobuf\model\encryption.proto[0m
+[0m[[0minfo[0m] [0mCompiling schema D:\Develop\Actor\actor-server-apache-license\actor-models\src\main\protobuf\model\push.proto[0m
+[0m[[0minfo[0m] [0mCompiling schema D:\Develop\Actor\actor-server-apache-license\actor-models\src\main\protobuf\model\webrtc.proto[0m
+[0m[[0minfo[0m] [0mCompiling protobuf[0m
+[0m[[0minfo[0m] [0mProtoc target directory: D:\Develop\Actor\actor-server-apache-license\actor-models\target\src_managed\main\compiled_protobuf[0m

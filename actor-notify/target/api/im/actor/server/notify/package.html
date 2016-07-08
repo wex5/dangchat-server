@@ -1,0 +1,314 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>notify - im.actor.server.notify</title>
+          <meta name="description" content="notify - im.actor.server.notify" />
+          <meta name="keywords" content="notify im.actor.server.notify" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'im.actor.server.notify.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="im">im</a>.<a href="../../package.html" class="extype" name="im.actor">actor</a>.<a href="../package.html" class="extype" name="im.actor.server">server</a></p>
+        <h1>notify</h1><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.notify.package" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="im.actor.server.notify.NotificationTemplate" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NotificationTemplateextendsProductwithSerializable"></a>
+      <a id="NotificationTemplate:NotificationTemplate"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="NotificationTemplate.html"><span class="name">NotificationTemplate</span></a><span class="params">(<span name="templatePath">templatePath: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.notify.package@NotificationTemplateextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.notify.NotifyExtension" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="NotifyExtensionextendsExtension"></a>
+      <a id="NotifyExtension:NotifyExtension"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="NotifyExtension.html"><span class="name">NotifyExtension</span></a><span class="result"> extends <span class="extype" name="akka.actor.Extension">Extension</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.notify.package@NotifyExtensionextendsExtension" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.notify.NotifyExtensionImpl" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NotifyExtensionImplextendsNotifyExtension"></a>
+      <a id="NotifyExtensionImpl:NotifyExtensionImpl"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="NotifyExtensionImpl.html"><span class="name">NotifyExtensionImpl</span></a><span class="result"> extends <a href="NotifyExtension.html" class="extype" name="im.actor.server.notify.NotifyExtension">NotifyExtension</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.notify.package@NotifyExtensionImplextendsNotifyExtension" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.notify.NotifyPriorityMailbox" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NotifyPriorityMailboxextendsUnboundedPriorityMailbox"></a>
+      <a id="NotifyPriorityMailbox:NotifyPriorityMailbox"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="NotifyPriorityMailbox.html"><span class="name">NotifyPriorityMailbox</span></a><span class="result"> extends <span class="extype" name="akka.dispatch.UnboundedPriorityMailbox">UnboundedPriorityMailbox</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.notify.package@NotifyPriorityMailboxextendsUnboundedPriorityMailbox" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.notify.NotifyProcessorCommand" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="NotifyProcessorCommandextendsAnyRef"></a>
+      <a id="NotifyProcessorCommand:NotifyProcessorCommand"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="NotifyProcessorCommand.html"><span class="name">NotifyProcessorCommand</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.notify.package@NotifyProcessorCommandextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.notify.NotifyProcessorCommands" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="NotifyProcessorCommandsextendsGeneratedMessagewithMessage[im.actor.server.notify.NotifyProcessorCommands]withUpdatable[im.actor.server.notify.NotifyProcessorCommands]withProductwithSerializable"></a>
+      <a id="NotifyProcessorCommands:NotifyProcessorCommands"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="NotifyProcessorCommands.html"><span class="name">NotifyProcessorCommands</span></a><span class="params">()</span><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessage">GeneratedMessage</span> with <span class="extype" name="com.trueaccord.scalapb.Message">Message</span>[<a href="NotifyProcessorCommands.html" class="extype" name="im.actor.server.notify.NotifyProcessorCommands">NotifyProcessorCommands</a>] with <span class="extype" name="com.trueaccord.lenses.Updatable">Updatable</span>[<a href="NotifyProcessorCommands.html" class="extype" name="im.actor.server.notify.NotifyProcessorCommands">NotifyProcessorCommands</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.notify.package@NotifyProcessorCommandsextendsGeneratedMessagewithMessage[im.actor.server.notify.NotifyProcessorCommands]withUpdatable[im.actor.server.notify.NotifyProcessorCommands]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="im.actor.server.notify.NotifyProcessorEvent" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="NotifyProcessorEventextendsTaggedEvent"></a>
+      <a id="NotifyProcessorEvent:NotifyProcessorEvent"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="NotifyProcessorEvent.html"><span class="name">NotifyProcessorEvent</span></a><span class="result"> extends <span class="extype" name="im.actor.server.cqrs.TaggedEvent">TaggedEvent</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.notify.package@NotifyProcessorEventextendsTaggedEvent" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.notify.NotifyProcessorEvents" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="NotifyProcessorEventsextendsGeneratedMessagewithMessage[im.actor.server.notify.NotifyProcessorEvents]withUpdatable[im.actor.server.notify.NotifyProcessorEvents]withProductwithSerializable"></a>
+      <a id="NotifyProcessorEvents:NotifyProcessorEvents"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="NotifyProcessorEvents.html"><span class="name">NotifyProcessorEvents</span></a><span class="params">()</span><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessage">GeneratedMessage</span> with <span class="extype" name="com.trueaccord.scalapb.Message">Message</span>[<a href="NotifyProcessorEvents.html" class="extype" name="im.actor.server.notify.NotifyProcessorEvents">NotifyProcessorEvents</a>] with <span class="extype" name="com.trueaccord.lenses.Updatable">Updatable</span>[<a href="NotifyProcessorEvents.html" class="extype" name="im.actor.server.notify.NotifyProcessorEvents">NotifyProcessorEvents</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.notify.package@NotifyProcessorEventsextendsGeneratedMessagewithMessage[im.actor.server.notify.NotifyProcessorEvents]withUpdatable[im.actor.server.notify.NotifyProcessorEvents]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="im.actor.server.notify.NotifyExtension" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NotifyExtension"></a>
+      <a id="NotifyExtension:NotifyExtension"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="NotifyExtension$.html"><span class="name">NotifyExtension</span></a><span class="result"> extends <span class="extype" name="akka.actor.ExtensionId">ExtensionId</span>[<a href="NotifyExtensionImpl.html" class="extype" name="im.actor.server.notify.NotifyExtensionImpl">NotifyExtensionImpl</a>] with <span class="extype" name="akka.actor.ExtensionIdProvider">ExtensionIdProvider</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.notify.package@NotifyExtension" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.notify.NotifyProcessorCommands" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NotifyProcessorCommands"></a>
+      <a id="NotifyProcessorCommands:NotifyProcessorCommands"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="NotifyProcessorCommands$.html"><span class="name">NotifyProcessorCommands</span></a><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</span>[<a href="NotifyProcessorCommands.html" class="extype" name="im.actor.server.notify.NotifyProcessorCommands">NotifyProcessorCommands</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.notify.package@NotifyProcessorCommands" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.notify.NotifyProcessorEvents" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NotifyProcessorEvents"></a>
+      <a id="NotifyProcessorEvents:NotifyProcessorEvents"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="NotifyProcessorEvents$.html"><span class="name">NotifyProcessorEvents</span></a><span class="result"> extends <span class="extype" name="com.trueaccord.scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</span>[<a href="NotifyProcessorEvents.html" class="extype" name="im.actor.server.notify.NotifyProcessorEvents">NotifyProcessorEvents</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.notify.package@NotifyProcessorEvents" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.notify.NotifyProto" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NotifyProto"></a>
+      <a id="NotifyProto:NotifyProto"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="NotifyProto$.html"><span class="name">NotifyProto</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#im.actor.server.notify.package@NotifyProto" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

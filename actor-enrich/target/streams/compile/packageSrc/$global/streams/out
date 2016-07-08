@@ -1,0 +1,13 @@
+[0m[[0minfo[0m] [0mPackaging D:\Develop\Actor\actor-server-apache-license\actor-enrich\target\actor-enrich-1.0.153-SNAPSHOT-sources.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	reference.conf[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-enrich\src\main\resources\reference.conf[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\enrich\RichMessageWorker.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-enrich\src\main\scala\im\actor\server\enrich\RichMessageWorker.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\enrich\PreviewMaker.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-enrich\src\main\scala\im\actor\server\enrich\PreviewMaker.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\enrich\PreviewHelpers.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-enrich\src\main\scala\im\actor\server\enrich\PreviewHelpers.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\enrich\RichMessageConfig.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-enrich\src\main\scala\im\actor\server\enrich\RichMessageConfig.scala[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m

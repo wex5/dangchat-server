@@ -1,0 +1,478 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>common - im.actor.server.activation.common</title>
+          <meta name="description" content="common - im.actor.server.activation.common" />
+          <meta name="keywords" content="common im.actor.server.activation.common" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../index.html';
+            var hash = 'im.actor.server.activation.common.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="im">im</a>.<a href="../../../package.html" class="extype" name="im.actor">actor</a>.<a href="../../package.html" class="extype" name="im.actor.server">server</a>.<a href="../package.html" class="extype" name="im.actor.server.activation">activation</a></p>
+        <h1>common</h1><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.activation.common.package" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">common</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="im.actor.server.activation.common.ActivationConfig" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ActivationConfigextendsProductwithSerializable"></a>
+      <a id="ActivationConfig:ActivationConfig"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActivationConfig.html"><span class="name">ActivationConfig</span></a><span class="params">(<span name="repeatLimit">repeatLimit: <span class="extype" name="scala.concurrent.duration.Duration">Duration</span></span>, <span name="expiration">expiration: <span class="extype" name="scala.concurrent.duration.Duration">Duration</span></span>, <span name="attempts">attempts: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.activation.common.package@ActivationConfigextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.activation.common.ActivationProvider" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ActivationProviderextendsAnyRef"></a>
+      <a id="ActivationProvider:ActivationProvider"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ActivationProvider.html"><span class="name">ActivationProvider</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.activation.common.package@ActivationProviderextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.activation.common.BadRequest" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BadRequestextendsCodeResponsewithCodeFailurewithProductwithSerializable"></a>
+      <a id="BadRequest:BadRequest"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="BadRequest.html"><span class="name">BadRequest</span></a><span class="params">(<span name="message">message: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="CodeResponse.html" class="extype" name="im.actor.server.activation.common.CodeResponse">CodeResponse</a> with <a href="CodeFailure.html" class="extype" name="im.actor.server.activation.common.CodeFailure">CodeFailure</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.activation.common.package@BadRequestextendsCodeResponsewithCodeFailurewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.activation.common.CallCode" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CallCodeextendsCodewithProductwithSerializable"></a>
+      <a id="CallCode:CallCode"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="CallCode.html"><span class="name">CallCode</span></a><span class="params">(<span name="phone">phone: <span class="extype" name="scala.Long">Long</span></span>, <span name="language">language: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="code">code: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>)</span><span class="result"> extends <a href="Code.html" class="extype" name="im.actor.server.activation.common.Code">Code</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.activation.common.package@CallCodeextendsCodewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.activation.common.Code" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="CodeextendsAnyRef"></a>
+      <a id="Code:Code"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Code.html"><span class="name">Code</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.activation.common.package@CodeextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.activation.common.CodeFailure" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="CodeFailureextendsAnyRef"></a>
+      <a id="CodeFailure:CodeFailure"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="CodeFailure.html"><span class="name">CodeFailure</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.activation.common.package@CodeFailureextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.activation.common.CodeHash" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CodeHashextendsCodeResponsewithProductwithSerializable"></a>
+      <a id="CodeHash:CodeHash"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="CodeHash.html"><span class="name">CodeHash</span></a><span class="params">(<span name="hash">hash: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="CodeResponse.html" class="extype" name="im.actor.server.activation.common.CodeResponse">CodeResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.activation.common.package@CodeHashextendsCodeResponsewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.activation.common.CodeResponse" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="CodeResponseextendsAnyRef"></a>
+      <a id="CodeResponse:CodeResponse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="CodeResponse.html"><span class="name">CodeResponse</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.activation.common.package@CodeResponseextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.activation.common.CommonAuthCodes" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="CommonAuthCodesextendsAnyRef"></a>
+      <a id="CommonAuthCodes:CommonAuthCodes"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="CommonAuthCodes.html"><span class="name">CommonAuthCodes</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.activation.common.package@CommonAuthCodesextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.activation.common.EmailCode" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="EmailCodeextendsCodewithProductwithSerializable"></a>
+      <a id="EmailCode:EmailCode"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="EmailCode.html"><span class="name">EmailCode</span></a><span class="params">(<span name="email">email: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="code">code: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>)</span><span class="result"> extends <a href="Code.html" class="extype" name="im.actor.server.activation.common.Code">Code</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.activation.common.package@EmailCodeextendsCodewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.activation.common.SendFailure" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SendFailureextendsCodeResponsewithCodeFailurewithProductwithSerializable"></a>
+      <a id="SendFailure:SendFailure"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="SendFailure.html"><span class="name">SendFailure</span></a><span class="params">(<span name="message">message: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="CodeResponse.html" class="extype" name="im.actor.server.activation.common.CodeResponse">CodeResponse</a> with <a href="CodeFailure.html" class="extype" name="im.actor.server.activation.common.CodeFailure">CodeFailure</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.activation.common.package@SendFailureextendsCodeResponsewithCodeFailurewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.activation.common.SmsCode" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SmsCodeextendsCodewithProductwithSerializable"></a>
+      <a id="SmsCode:SmsCode"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="SmsCode.html"><span class="name">SmsCode</span></a><span class="params">(<span name="phone">phone: <span class="extype" name="scala.Long">Long</span></span>, <span name="code">code: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>)</span><span class="result"> extends <a href="Code.html" class="extype" name="im.actor.server.activation.common.Code">Code</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.activation.common.package@SmsCodeextendsCodewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.activation.common.ValidationResponse" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ValidationResponseextendsAnyRef"></a>
+      <a id="ValidationResponse:ValidationResponse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ValidationResponse.html"><span class="name">ValidationResponse</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.activation.common.package@ValidationResponseextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="im.actor.server.activation.common.ActivationConfig" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ActivationConfig"></a>
+      <a id="ActivationConfig:ActivationConfig"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ActivationConfig$.html"><span class="name">ActivationConfig</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.activation.common.package@ActivationConfig" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.activation.common.ActivationProviders" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ActivationProviders"></a>
+      <a id="ActivationProviders:ActivationProviders"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ActivationProviders$.html"><span class="name">ActivationProviders</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.activation.common.package@ActivationProviders" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.activation.common.ActivationStateActor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ActivationStateActor"></a>
+      <a id="ActivationStateActor:ActivationStateActor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ActivationStateActor$.html"><span class="name">ActivationStateActor</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.activation.common.package@ActivationStateActor" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.activation.common.ExpiredCode" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ExpiredCode"></a>
+      <a id="ExpiredCode:ExpiredCode"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ExpiredCode$.html"><span class="name">ExpiredCode</span></a><span class="result"> extends <a href="ValidationResponse.html" class="extype" name="im.actor.server.activation.common.ValidationResponse">ValidationResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.activation.common.package@ExpiredCode" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.activation.common.InternalError" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InternalError"></a>
+      <a id="InternalError:InternalError"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="InternalError$.html"><span class="name">InternalError</span></a><span class="result"> extends <a href="ValidationResponse.html" class="extype" name="im.actor.server.activation.common.ValidationResponse">ValidationResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.activation.common.package@InternalError" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.activation.common.InvalidCode" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InvalidCode"></a>
+      <a id="InvalidCode:InvalidCode"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="InvalidCode$.html"><span class="name">InvalidCode</span></a><span class="result"> extends <a href="ValidationResponse.html" class="extype" name="im.actor.server.activation.common.ValidationResponse">ValidationResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.activation.common.package@InvalidCode" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.activation.common.InvalidHash" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InvalidHash"></a>
+      <a id="InvalidHash:InvalidHash"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="InvalidHash$.html"><span class="name">InvalidHash</span></a><span class="result"> extends <a href="ValidationResponse.html" class="extype" name="im.actor.server.activation.common.ValidationResponse">ValidationResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.activation.common.package@InvalidHash" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.activation.common.InvalidResponse" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InvalidResponse"></a>
+      <a id="InvalidResponse:InvalidResponse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="InvalidResponse$.html"><span class="name">InvalidResponse</span></a><span class="result"> extends <a href="ValidationResponse.html" class="extype" name="im.actor.server.activation.common.ValidationResponse">ValidationResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.activation.common.package@InvalidResponse" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="im.actor.server.activation.common.Validated" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Validated"></a>
+      <a id="Validated:Validated"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Validated$.html"><span class="name">Validated</span></a><span class="result"> extends <a href="ValidationResponse.html" class="extype" name="im.actor.server.activation.common.ValidationResponse">ValidationResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#im.actor.server.activation.common.package@Validated" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

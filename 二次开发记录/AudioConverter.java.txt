@@ -1,0 +1,3 @@
+添加该类
+
+actor-fs-adapters/src/main/java/com/justep/x5/sound/converter/AudioConverter.java

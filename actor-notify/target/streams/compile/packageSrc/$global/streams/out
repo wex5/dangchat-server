@@ -1,0 +1,15 @@
+[0m[[0minfo[0m] [0mPackaging D:\Develop\Actor\actor-server-apache-license\actor-notify\target\actor-notify-1.0.153-SNAPSHOT-sources.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\notify\NotificationTemplate.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-notify\src\main\scala\im\actor\server\notify\NotificationTemplate.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\notify\NotifyPriorityMailBox.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-notify\src\main\scala\im\actor\server\notify\NotifyPriorityMailBox.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\notify\NotifyConfig.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-notify\src\main\scala\im\actor\server\notify\NotifyConfig.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\notify\NotifyExtension.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-notify\src\main\scala\im\actor\server\notify\NotifyExtension.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\notify\NotifyProcessor.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-notify\src\main\scala\im\actor\server\notify\NotifyProcessor.scala[0m
+[0m[[0mdebug[0m] [0m	reference.conf[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-notify\src\main\resources\reference.conf[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m

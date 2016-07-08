@@ -1,0 +1,6 @@
+Bug fixes
+===
+
+* Await ActorSystem termination
+* Wrap google push send into blocking {}
+* Major fixes in file storage including security one - path traversal

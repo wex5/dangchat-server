@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/scala"/>
+	<classpathentry kind="src" path="target/src_managed/main"/>
+	<classpathentry kind="src" path="target/src_managed/main/compiled_protobuf"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="src" path="src/test/scala"/>
+	<classpathentry kind="src" path="target/src_managed/test"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="src" path="target/resource_managed/main"/>
+	<classpathentry kind="src" path="src/test/resources"/>
+	<classpathentry kind="src" path="target/resource_managed/test"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/actor-models"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: tyrex:tyrex:1.0.1:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.slf4j:slf4j-api:1.7.10:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.scodec:scodec-core_2.11:1.8.1:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.scodec:scodec-bits_2.11:1.0.9:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.scala-lang.modules:scala-java8-compat_2.11:0.7.0:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.scala-lang:scala-reflect:2.11.7:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.scala-lang:scala-library:2.11.8:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.reactivestreams:reactive-streams:1.0.0:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.postgresql:postgresql:9.4-1201-jdbc41:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.joda:joda-convert:1.7:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.hdrhistogram:HdrHistogram:2.1.7:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.eclipse.jetty.alpn:alpn-api:1.1.2.v20150522:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: joda-time:joda-time:2.7:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: io.netty:netty-tcnative:1.1.33.Fork15:linux-x86_64:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: io.kamon:kamon-datadog_2.11:0.5.2:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: io.kamon:kamon-core_2.11:0.5.2:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: im.actor:actor-util_2.11:0.0.15:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.typesafe.slick:slick_2.11:3.1.0:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.typesafe.scala-logging:scala-logging_2.11:3.1.0:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.typesafe.akka:akka-actor_2.11:2.3.14:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.typesafe:config:1.3.0:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.trueaccord.scalapb:scalapb-runtime_2.11:0.5.21:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.trueaccord.lenses:lenses_2.11:0.4.4:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.lihaoyi:fastparse_2.11:0.3.4:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.lihaoyi:fastparse-utils_2.11:0.3.4:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.google.protobuf:protobuf-java:3.0.0-beta-2:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.github.tminglei:slick-pg_core_2.11:0.10.2:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.github.tminglei:slick-pg_2.11:0.10.2:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.github.kxbmap:configs_2.11:0.3.0:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.chuusai:shapeless_2.11:2.2.4:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: ch.qos.logback:logback-core:1.1.2:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: ch.qos.logback:logback-classic:1.1.2:jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

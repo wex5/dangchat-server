@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
+	<info organisation="default"
+		module="actor-server-apache-license-build"
+		revision="0.1-SNAPSHOT"
+		status="integration"
+		publication="20160628115813"
+		e:sbtVersion="0.13" e:scalaVersion="2.10"
+	>
+		<description>
+		actor-server-apache-license-build
+		</description>
+	</info>
+	<configurations>
+		<conf name="compile" visibility="public" description=""/>
+		<conf name="runtime" visibility="public" description="" extends="compile"/>
+		<conf name="test" visibility="public" description="" extends="runtime"/>
+		<conf name="provided" visibility="public" description=""/>
+		<conf name="optional" visibility="public" description=""/>
+		<conf name="compile-internal" visibility="private" description="" extends="compile,optional,provided"/>
+		<conf name="runtime-internal" visibility="private" description="" extends="runtime,optional"/>
+		<conf name="test-internal" visibility="private" description="" extends="test,optional,provided"/>
+		<conf name="plugin" visibility="private" description=""/>
+		<conf name="sources" visibility="public" description=""/>
+		<conf name="docs" visibility="public" description=""/>
+		<conf name="pom" visibility="public" description=""/>
+		<conf name="scala-tool" visibility="private" description=""/>
+	</configurations>
+	<publications>
+		<artifact name="actor-server-apache-license-build" type="pom" ext="pom" conf="pom"/>
+		<artifact name="actor-server-apache-license-build" type="jar" ext="jar" conf="compile"/>
+		<artifact name="actor-server-apache-license-build" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		<artifact name="actor-server-apache-license-build" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+	</publications>
+	<dependencies>
+		<dependency org="org.scala-lang" name="scala-compiler" rev="2.10.6" conf="scala-tool->default,optional(default)"/>
+		<dependency org="org.scala-lang" name="scala-library" rev="2.10.6" conf="scala-tool->default,optional(default);provided->default(compile)"/>
+		<dependency org="org.scala-sbt" name="sbt" rev="0.13.11" conf="provided->default(compile)"/>
+		<dependency org="net.virtual-void" name="sbt-dependency-graph" rev="0.7.5" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10"/>
+		<dependency org="io.spray" name="sbt-revolver" rev="0.7.2" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10"/>
+		<dependency org="im.actor" name="sbt-actor-api" rev="0.7.18" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10"/>
+		<dependency org="com.trueaccord.scalapb" name="sbt-scalapb" rev="0.5.21" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10"/>
+		<dependency org="com.jsuereth" name="sbt-pgp" rev="1.0.0" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10"/>
+		<dependency org="org.xerial.sbt" name="sbt-sonatype" rev="0.5.1" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10"/>
+		<dependency org="com.github.gseitz" name="sbt-release" rev="1.0.0" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10"/>
+		<dependency org="com.typesafe.sbt" name="sbt-native-packager" rev="1.0.6" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10"/>
+		<dependency org="ohnosequences" name="sbt-github-release" rev="0.3.0" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10"/>
+		<dependency org="com.typesafe.sbt" name="sbt-aspectj" rev="0.10.0" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10"/>
+		<dependency org="im.actor" name="actor-sbt-houserules" rev="0.1.9" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10"/>
+		<dependency org="com.typesafe.sbt" name="sbt-multi-jvm" rev="0.3.8" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10"/>
+		<dependency org="com.github.os72" name="protoc-jar" rev="3.0.0-b2.1" conf="compile->default(compile)"/>
+		<override org="org.scala-lang" module="scala-library" matcher="exact" rev="2.10.6"/>
+		<override org="org.scala-lang" module="scala-compiler" matcher="exact" rev="2.10.6"/>
+		<override org="org.scala-lang" module="scala-reflect" matcher="exact" rev="2.10.6"/>
+	</dependencies>
+</ivy-module>

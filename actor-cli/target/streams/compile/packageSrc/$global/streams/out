@@ -1,0 +1,19 @@
+[0m[[0minfo[0m] [0mPackaging D:\Develop\Actor\actor-server-apache-license\actor-cli\target\actor-cli-1.0.153-SNAPSHOT-sources.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\cli\HttpHandlers.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-cli\src\main\scala\im\actor\server\cli\HttpHandlers.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\cli\MigrationHandlers.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-cli\src\main\scala\im\actor\server\cli\MigrationHandlers.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\cli\BotHandlers.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-cli\src\main\scala\im\actor\server\cli\BotHandlers.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\cli\ActorCli.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-cli\src\main\scala\im\actor\server\cli\ActorCli.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\cli\UsersHandlers.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-cli\src\main\scala\im\actor\server\cli\UsersHandlers.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\cli\SecurityHandlers.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-cli\src\main\scala\im\actor\server\cli\SecurityHandlers.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\cli\BotCreator.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-cli\src\main\scala\im\actor\server\cli\BotCreator.scala[0m
+[0m[[0mdebug[0m] [0m	cli.conf[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-cli\src\main\resources\cli.conf[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m

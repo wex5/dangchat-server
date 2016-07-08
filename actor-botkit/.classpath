@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/scala"/>
+	<classpathentry kind="src" path="target/src_managed/main"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="src" path="src/test/scala"/>
+	<classpathentry kind="src" path="target/src_managed/test"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="src" path="target/resource_managed/main"/>
+	<classpathentry kind="src" path="src/test/resources"/>
+	<classpathentry kind="src" path="target/resource_managed/test"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/actor-bots-shared"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.spire-math:jawn-parser_2.11:0.7.0:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.slf4j:slf4j-api:1.7.16:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.scala-lang.modules:scala-xml_2.11:1.0.2:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.scala-lang.modules:scala-parser-combinators_2.11:1.0.4:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.scala-lang.modules:scala-java8-compat_2.11:0.7.0:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.scala-lang:scala-reflect:2.11.8:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.scala-lang:scala-library:2.11.8:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.reactivestreams:reactive-streams:1.0.0:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.parboiled:parboiled-scala_2.11:1.1.6:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.parboiled:parboiled-core:1.1.6:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.jvnet.mimepull:mimepull:1.9.4:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: io.spray:spray-util_2.11:1.3.2:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: io.spray:spray-routing-shapeless2_2.11:1.3.2:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: io.spray:spray-io_2.11:1.3.2:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: io.spray:spray-httpx_2.11:1.3.2:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: io.spray:spray-http_2.11:1.3.2:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: io.spray:spray-can_2.11:1.3.2:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: im.actor:actor-concurrent_2.11:0.0.15:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.wandoulabs.akka:spray-websocket_2.11:0.1.4:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.typesafe.akka:akka-stream_2.11:2.4.4:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.typesafe.akka:akka-slf4j_2.11:2.4.4:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.typesafe.akka:akka-parsing_2.11:2.4.4:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.typesafe.akka:akka-http-experimental_2.11:2.4.4:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.typesafe.akka:akka-http-core_2.11:2.4.4:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.typesafe.akka:akka-actor_2.11:2.4.4:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.typesafe:ssl-config-core_2.11:0.2.1:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.typesafe:ssl-config-akka_2.11:0.2.1:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.typesafe:config:1.3.0:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.lihaoyi:upickle_2.11:0.3.6:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.lihaoyi:derive_2.11:0.3.6:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.chuusai:shapeless_2.11:2.0.0:jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

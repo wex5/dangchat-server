@@ -1,0 +1,10 @@
+Bug fixes
+===
+
+* Reduce GC overhead caused by Http Routes controlled by hooks
+* Don't create temp file on each file download
+
+Packaging
+===
+
+Save heap dump in logs dir on OutOfMemoryError

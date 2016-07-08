@@ -1,0 +1,31 @@
+[0m[[0minfo[0m] [0mPackaging D:\Develop\Actor\actor-server-apache-license\actor-http-api\target\actor-http-api-1.0.153-SNAPSHOT-sources.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\api\http\HttpApiHook.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-http-api\src\main\scala\im\actor\server\api\http\HttpApiHook.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\api\http\HttpHandler.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-http-api\src\main\scala\im\actor\server\api\http\HttpHandler.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\api\http\app\AppFilesHttpHandler.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-http-api\src\main\scala\im\actor\server\api\http\app\AppFilesHttpHandler.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\api\http\status\StatusHttpHandler.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-http-api\src\main\scala\im\actor\server\api\http\status\StatusHttpHandler.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\api\http\HttpApiConfig.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-http-api\src\main\scala\im\actor\server\api\http\HttpApiConfig.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\api\http\json\models.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-http-api\src\main\scala\im\actor\server\api\http\json\models.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\api\http\HttpApiFrontend.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-http-api\src\main\scala\im\actor\server\api\http\HttpApiFrontend.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\api\http\json\JsonEncoders.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-http-api\src\main\scala\im\actor\server\api\http\json\JsonEncoders.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\api\http\info\AboutHttpHandler.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-http-api\src\main\scala\im\actor\server\api\http\info\AboutHttpHandler.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\api\http\HttpApiHelpers.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-http-api\src\main\scala\im\actor\server\api\http\HttpApiHelpers.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\api\http\json\JsonFormatters.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-http-api\src\main\scala\im\actor\server\api\http\json\JsonFormatters.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\api\http\json\unmarshallers.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-http-api\src\main\scala\im\actor\server\api\http\json\unmarshallers.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\api\http\model\DataEntity.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-http-api\src\main\scala\im\actor\server\api\http\model\DataEntity.scala[0m
+[0m[[0mdebug[0m] [0m	reference.conf[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-http-api\src\main\resources\reference.conf[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="var" path="USER_HOME/.ivy2/cache/aopalliance/aopalliance/jars/aopalliance-1.0.jar"/>
+	<classpathentry kind="output" path="target/idea-classes"/>
+</classpath>

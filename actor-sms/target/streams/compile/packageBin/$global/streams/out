@@ -1,0 +1,35 @@
+[0m[[0minfo[0m] [0mPackaging D:\Develop\Actor\actor-server-apache-license\actor-sms\target\actor-sms-1.0.153-SNAPSHOT.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	im[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-sms\target\classes\im[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\sms\TwilioSmsEngine$$anonfun$$nestedInanonfun$1$1.class[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-sms\target\classes\im\actor\server\sms\TwilioSmsEngine$$anonfun$$nestedInanonfun$1$1.class[0m
+[0m[[0mdebug[0m] [0m	im\actor[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-sms\target\classes\im\actor[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\sms[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-sms\target\classes\im\actor\server\sms[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\sms\SmsEngine.class[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-sms\target\classes\im\actor\server\sms\SmsEngine.class[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\sms\TelesignClient$$anonfun$postRequest$1.class[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-sms\target\classes\im\actor\server\sms\TelesignClient$$anonfun$postRequest$1.class[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\sms\TwilioSmsEngine.class[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-sms\target\classes\im\actor\server\sms\TwilioSmsEngine.class[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\sms\ClickatellSmsEngine.class[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-sms\target\classes\im\actor\server\sms\ClickatellSmsEngine.class[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\sms\AuthCallEngine.class[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-sms\target\classes\im\actor\server\sms\AuthCallEngine.class[0m
+[0m[[0mdebug[0m] [0m	im\actor\server[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-sms\target\classes\im\actor\server[0m
+[0m[[0mdebug[0m] [0m	reference.conf[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-sms\target\classes\reference.conf[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\sms\TelesignClient.class[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-sms\target\classes\im\actor\server\sms\TelesignClient.class[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\sms\TelesignClient$.class[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-sms\target\classes\im\actor\server\sms\TelesignClient$.class[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\sms\TelesignSmsEngine.class[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-sms\target\classes\im\actor\server\sms\TelesignSmsEngine.class[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\sms\AuthSmsEngine.class[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-sms\target\classes\im\actor\server\sms\AuthSmsEngine.class[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\sms\TelesignCallEngine.class[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-sms\target\classes\im\actor\server\sms\TelesignCallEngine.class[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m

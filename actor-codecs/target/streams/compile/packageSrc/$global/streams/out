@@ -1,0 +1,35 @@
+[0m[[0minfo[0m] [0mPackaging D:\Develop\Actor\actor-server-apache-license\actor-codecs\target\actor-codecs-1.0.153-SNAPSHOT-sources.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\mtproto\codecs\protocol\RpcRequestMessageCodec.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-codecs\src\main\scala\im\actor\server\mtproto\codecs\protocol\RpcRequestMessageCodec.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\mtproto\codecs\protocol\package.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-codecs\src\main\scala\im\actor\server\mtproto\codecs\protocol\package.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\mtproto\codecs\VarIntCodec.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-codecs\src\main\scala\im\actor\server\mtproto\codecs\VarIntCodec.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\mtproto\codecs\protocol\ContainerCodec.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-codecs\src\main\scala\im\actor\server\mtproto\codecs\protocol\ContainerCodec.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\mtproto\codecs\transport\IntLengthStringCodec.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-codecs\src\main\scala\im\actor\server\mtproto\codecs\transport\IntLengthStringCodec.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\mtproto\codecs\DiscriminatedErrorCodec.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-codecs\src\main\scala\im\actor\server\mtproto\codecs\DiscriminatedErrorCodec.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\mtproto\codecs\BooleanCodec.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-codecs\src\main\scala\im\actor\server\mtproto\codecs\BooleanCodec.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\mtproto\codecs\transport\package.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-codecs\src\main\scala\im\actor\server\mtproto\codecs\transport\package.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\mtproto\codecs\LongsCodec.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-codecs\src\main\scala\im\actor\server\mtproto\codecs\LongsCodec.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\mtproto\codecs\transport\TransportPackageCodec.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-codecs\src\main\scala\im\actor\server\mtproto\codecs\transport\TransportPackageCodec.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\mtproto\codecs\PayloadCodec.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-codecs\src\main\scala\im\actor\server\mtproto\codecs\PayloadCodec.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\mtproto\codecs\protocol\MessageBoxCodec.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-codecs\src\main\scala\im\actor\server\mtproto\codecs\protocol\MessageBoxCodec.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\mtproto\codecs\package.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-codecs\src\main\scala\im\actor\server\mtproto\codecs\package.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\mtproto\codecs\transport\IntLengthBitsCodec.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-codecs\src\main\scala\im\actor\server\mtproto\codecs\transport\IntLengthBitsCodec.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\mtproto\codecs\StringCodec.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-codecs\src\main\scala\im\actor\server\mtproto\codecs\StringCodec.scala[0m
+[0m[[0mdebug[0m] [0m	im\actor\server\mtproto\codecs\BytesCodec.scala[0m
+[0m[[0mdebug[0m] [0m	  D:\Develop\Actor\actor-server-apache-license\actor-codecs\src\main\scala\im\actor\server\mtproto\codecs\BytesCodec.scala[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m

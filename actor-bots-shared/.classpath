@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/scala"/>
+	<classpathentry kind="src" path="target/src_managed/main"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="src" path="src/test/scala"/>
+	<classpathentry kind="src" path="target/src_managed/test"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="src" path="target/resource_managed/main"/>
+	<classpathentry kind="src" path="src/test/resources"/>
+	<classpathentry kind="src" path="target/resource_managed/test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.lihaoyi:derive_2.11:0.3.6:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.spire-math:jawn-parser_2.11:0.7.0:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.scala-lang.modules:scala-java8-compat_2.11:0.7.0:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.scala-lang:scala-reflect:2.11.8:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: org.scala-lang:scala-library:2.11.8:jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SBT: com.lihaoyi:upickle_2.11:0.3.6:jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
