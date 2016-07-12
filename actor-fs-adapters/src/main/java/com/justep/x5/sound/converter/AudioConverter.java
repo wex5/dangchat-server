@@ -86,7 +86,7 @@ public class AudioConverter {
 	 */
 	private boolean osIsWindows() {
 		String osName = System.getProperty("os.name").toLowerCase();
-		return osName.indexOf("win") >= 0
+		return osName.indexOf("win") >= 0;
 	}
 	
 }
