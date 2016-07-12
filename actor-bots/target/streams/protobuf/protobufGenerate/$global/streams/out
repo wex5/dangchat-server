@@ -1,6 +1,0 @@
-[0m[[0minfo[0m] [0mCompiling 1 protobuf files to D:\Develop\Actor\actor-server-apache-license\actor-bots\target\src_managed\main\compiled_protobuf[0m
-[0m[[0mdebug[0m] [0mprotoc options:[0m
-[0m[[0mdebug[0m] [0m	--scala_out=grpc:D:\Develop\Actor\actor-server-apache-license\actor-bots\target\src_managed\main\compiled_protobuf[0m
-[0m[[0minfo[0m] [0mCompiling schema D:\Develop\Actor\actor-server-apache-license\actor-bots\src\main\protobuf\bot.proto[0m
-[0m[[0minfo[0m] [0mCompiling protobuf[0m
-[0m[[0minfo[0m] [0mProtoc target directory: D:\Develop\Actor\actor-server-apache-license\actor-bots\target\src_managed\main\compiled_protobuf[0m
