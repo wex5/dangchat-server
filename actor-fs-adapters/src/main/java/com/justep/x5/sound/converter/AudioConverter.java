@@ -48,8 +48,11 @@ public class AudioConverter {
 	public void encodeWavToOgg(File source, File target){		
 		AudioAttributes audio = new AudioAttributes();
 		//windows下使用libvorbis，linux下使用vorbis
-		//audio.setCodec("libvorbis");
-		audio.setCodec("vorbis");
+		if(this.osIsWindows()) {
+			audio.setCodec("libvorbis");
+		} else {
+			audio.setCodec("vorbis");
+		}
 		audio.setBitRate(new Integer(12800));    
 		audio.setChannels(new Integer(2));
 		audio.setSamplingRate(new Integer(44100));   
@@ -75,6 +78,15 @@ public class AudioConverter {
 		String fileName = sourceFile.getAbsolutePath();
 		String withoutExtensionFileName = fileName.substring(0, fileName.lastIndexOf("."));
 		return withoutExtensionFileName + "." + fileExtension;
+	}
+	
+	/**
+	 * 判断运行环境是否为Windows操作系统
+	 * @return
+	 */
+	private boolean osIsWindows() {
+		String osName = System.getProperty("os.name").toLowerCase();
+		return osName.indexOf("win") >= 0
 	}
 	
 }
