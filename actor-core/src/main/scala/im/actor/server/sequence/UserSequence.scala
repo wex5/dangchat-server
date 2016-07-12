@@ -52,7 +52,7 @@ private[sequence] final class UserSequence extends Actor with ActorLogging with 
 
   private val deliveryCache = Caffeine.newBuilder().maximumSize(100).executor(context.dispatcher).build[String, SeqState]()
 
-  private lazy val vendorPush = context.actorOf(VendorPush.props(userId), "vendor-push")
+  //private lazy val vendorPush = context.actorOf(VendorPush.props(userId), "vendor-push")
 
   init()
 
@@ -68,7 +68,7 @@ private[sequence] final class UserSequence extends Actor with ActorLogging with 
   }
 
   def initialized: Receive = {
-    case cmd: VendorPushCommand ⇒ vendorPush forward cmd
+    //case cmd: VendorPushCommand ⇒ vendorPush forward cmd
     case DeliverUpdate(mappingOpt, pushRules, reduceKey, deliveryId) ⇒
       mappingOpt match {
         case Some(mapping) ⇒ deliver(mapping, pushRules, reduceKey, deliveryId)
@@ -99,7 +99,7 @@ private[sequence] final class UserSequence extends Actor with ActorLogging with 
       writeToDb(seqUpdate) map (_ ⇒ SeqState(seq)) andThen {
         case Success(_) ⇒
           pubSubExt.publish(Publish(topic(userId), UserSequenceEvents.NewUpdate(Some(seqUpdate), pushRules, None, ByteString.EMPTY)))
-          vendorPush ! DeliverPush(seq, pushRules)
+        //vendorPush ! DeliverPush(seq, pushRules)
       }
     }
   }
