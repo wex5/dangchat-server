@@ -84,7 +84,7 @@ final class S3StorageAdapter(_system: ActorSystem) extends FileStorageAdapter {
       dirFile ← DBIO.from(FileUtils.createTempDir())
       file = dirFile.toPath.resolve("file").toFile
       _ ← DBIO.from(FutureTransfer.listenFor(transferManager.download(bucketName, s3Key(id, name), file)) map (_.waitForCompletion()))
-      data ← DBIO.from(FileIO.fromPath(file).runFold(ByteString.empty)(_ ++ _))
+      data ← DBIO.from(FileIO.fromFile(file).runFold(ByteString.empty)(_ ++ _))
     } yield data.toArray
   }
 
