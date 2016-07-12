@@ -47,7 +47,8 @@ public class AudioConverter {
 	
 	public void encodeWavToOgg(File source, File target){		
 		AudioAttributes audio = new AudioAttributes();
-		//windows下使用libvorbis
+		//windows下使用libvorbis，linux下使用vorbis
+		//audio.setCodec("libvorbis");
 		audio.setCodec("vorbis");
 		audio.setBitRate(new Integer(12800));    
 		audio.setChannels(new Integer(2));
