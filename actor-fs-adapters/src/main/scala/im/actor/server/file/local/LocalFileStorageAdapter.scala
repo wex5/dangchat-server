@@ -129,7 +129,7 @@ final class LocalFileStorageAdapter(_system: ActorSystem)
    * @param audioFile
    */
   private def convertAudio(audioFile: java.io.File): Future[Int] = Future {
-    val audioConverter = new com.justep.x5.sound.converter.AudioConverter
+    val audioConverter = new com.justep.dangchat.media.converter.audio.AudioConverter
     if (audioConverter.isWavFile(audioFile)) {
       audioConverter.encodeWavToOgg(audioFile)
       audioConverter.encodeWavToAac(audioFile)
@@ -143,7 +143,7 @@ final class LocalFileStorageAdapter(_system: ActorSystem)
    * @return
    */
   private def convertVideo(videoFile: java.io.File): Future[Int] = Future {
-    val videoConverter = new com.justep.x5.sound.converter.VideoConverter
+    val videoConverter = new com.justep.dangchat.media.converter.video.VideoConverter
     videoConverter.toOggVideo(videoFile)
     1
   }
