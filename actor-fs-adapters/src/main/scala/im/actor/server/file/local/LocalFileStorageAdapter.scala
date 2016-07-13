@@ -115,7 +115,9 @@ final class LocalFileStorageAdapter(_system: ActorSystem)
       result ← concatFiles(fileDir, partNames, fileName.safe, fileSize)
       _ ← if (isComplete) deleteUploadedParts(fileDir, partNames) else Future.successful(())
       //添加音频转换支持  by Lining  2016-6-20
-      _ ← if (isComplete && result.name.endsWith("voice.opus")) convertAudio(result.toJava) else Future { 0 }
+      _ ← if (result.name.endsWith("voice.opus")) convertAudio(result.toJava) else Future { 0 }
+      //添加视频转换支持  by Lining  2016-7-13
+      _ ← if (result.name.startsWith("VID_") && result.name.endsWith(".mp4")) convertVideo(result.toJava) else Future { 0 }
       _ ← db.run(FileRepo.setUploaded(fileId, fileName.safe))
     } yield ()
   }
@@ -132,6 +134,17 @@ final class LocalFileStorageAdapter(_system: ActorSystem)
       audioConverter.encodeWavToOgg(audioFile)
       audioConverter.encodeWavToAac(audioFile)
     }
+    1
+  }
+
+  /**
+   * 转换视频文件（mp4->ogg） by Lining 2016-7-13
+   * @param videoFile
+   * @return
+   */
+  private def convertVideo(videoFile: java.io.File): Future[Int] = Future {
+    val videoConverter = new com.justep.x5.sound.converter.VideoConverter
+    videoConverter.toOggVideo(videoFile)
     1
   }
 
