@@ -117,7 +117,9 @@ final class LocalFileStorageAdapter(_system: ActorSystem)
       //添加音频转换支持  by Lining  2016-6-20
       _ ← if (result.name.endsWith("voice.opus")) convertAudio(result.toJava) else Future.successful(())
       //添加视频转换支持  by Lining  2016-7-13
-      _ ← if (result.name.startsWith("VID_") && result.name.endsWith(".mp4")) convertVideo(result.toJava) else Future.successful(())
+      //_ ← if (result.name.startsWith("VID_") && result.name.endsWith(".mp4")) convertVideo(result.toJava) else Future.successful(())
+      //_ ← if (result.name.startsWith("VID_") && result.name.endsWith(".mov")) convertVideo(result.toJava) else Future.successful(())
+      _ ← if (result.name.toLowerCase.endsWith(".mp4") || result.name.toLowerCase.endsWith(".mov")) convertVideo(result.toJava) else Future.successful(())
       _ ← db.run(FileRepo.setUploaded(fileId, fileName.safe))
     } yield ()
   }
