@@ -115,9 +115,9 @@ final class LocalFileStorageAdapter(_system: ActorSystem)
       result ← concatFiles(fileDir, partNames, fileName.safe, fileSize)
       _ ← if (isComplete) deleteUploadedParts(fileDir, partNames) else Future.successful(())
       //添加音频转换支持  by Lining  2016-6-20
-      _ ← if (result.name.endsWith("voice.opus")) convertAudio(result.toJava) else Future { 0 }
+      _ ← if (result.name.endsWith("voice.opus")) convertAudio(result.toJava) else Future.successful(())
       //添加视频转换支持  by Lining  2016-7-13
-      _ ← if (result.name.startsWith("VID_") && result.name.endsWith(".mp4")) convertVideo(result.toJava) else Future { 0 }
+      _ ← if (result.name.startsWith("VID_") && result.name.endsWith(".mp4")) convertVideo(result.toJava) else Future.successful(())
       _ ← db.run(FileRepo.setUploaded(fileId, fileName.safe))
     } yield ()
   }
@@ -128,13 +128,12 @@ final class LocalFileStorageAdapter(_system: ActorSystem)
    *
    * @param audioFile
    */
-  private def convertAudio(audioFile: java.io.File): Future[Int] = Future {
+  private def convertAudio(audioFile: java.io.File): Future[Unit] = Future {
     val audioConverter = new com.justep.dangchat.media.converter.audio.AudioConverter
     if (audioConverter.isWavFile(audioFile)) {
       audioConverter.encodeWavToOgg(audioFile)
       audioConverter.encodeWavToAac(audioFile)
     }
-    1
   }
 
   /**
@@ -142,10 +141,9 @@ final class LocalFileStorageAdapter(_system: ActorSystem)
    * @param videoFile
    * @return
    */
-  private def convertVideo(videoFile: java.io.File): Future[Int] = Future {
+  private def convertVideo(videoFile: java.io.File): Future[Unit] = Future {
     val videoConverter = new com.justep.dangchat.media.converter.video.VideoConverter
     videoConverter.toOggVideo(videoFile)
-    1
   }
 
   override def downloadFile(id: Long): DBIO[Option[Array[Byte]]] = DBIO.from(downloadFileF(id))
