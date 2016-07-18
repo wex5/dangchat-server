@@ -64,9 +64,10 @@ object HistoryMessageRepo {
 
   val withoutServiceMessages = notDeletedMessages.filter(_.messageContentHeader =!= 2)
 
-  def byUserIdPeer(userId: Rep[Int], peerType: Rep[Int], peerId: Rep[Int]) =
+  def byUserIdPeer(userId: Rep[Int], peerType: Rep[Int], peerId: Rep[Int]) = {
     notDeletedMessages
       .filter(m ⇒ m.userId === userId && m.peerType === peerType && m.peerId === peerId)
+  }
 
   def create(message: HistoryMessage): FixedSqlAction[Int, NoStream, Write] =
     messagesC += message
@@ -75,11 +76,21 @@ object HistoryMessageRepo {
     messagesC ++= newMessages
 
   def find(userId: Int, peer: Peer, dateOpt: Option[DateTime], limit: Int): FixedSqlStreamingAction[Seq[HistoryMessage], HistoryMessage, Read] = {
-    val baseQuery = notDeletedMessages
-      .filter(m ⇒
-        m.userId === userId &&
-          m.peerType === peer.typ.value &&
-          m.peerId === peer.id)
+    val baseQuery = (
+      if (peer.typ == PeerType.Group && userId == 0) {
+        //peer为群组，判断群是否为共享群，如果是共享群（userId==0为共享），则可以查看所有消息。
+        notDeletedMessages
+          .filter(m ⇒
+            m.peerType === peer.typ.value &&
+              m.peerId === peer.id)
+      } else {
+        notDeletedMessages
+          .filter(m ⇒
+            m.userId === userId &&
+              m.peerType === peer.typ.value &&
+              m.peerId === peer.id)
+      }
+    )
 
     val query = dateOpt match {
       case Some(date) ⇒
@@ -100,6 +111,28 @@ object HistoryMessageRepo {
 
   def findAfter(userId: Int, peer: Peer, date: DateTime, limit: Long) =
     afterC((userId, peer.typ.value, peer.id, date, limit)).result
+
+  /**
+   * 查询历史消息（扩展方法）  by Lining 2016/7/18
+   * @param userId
+   * @param peer
+   * @param date
+   * @param limit
+   */
+  def findAfterExt(userId: Int, peer: Peer, date: DateTime, limit: Long) = {
+    if (peer.typ.isGroup && userId == 0) {
+      //peer为群组，判断群是否为共享群，如果是共享群，则可以查看所有消息。
+      (notDeletedMessages
+        .filter(m ⇒ m.peerType === peer.typ.value && m.peerId === peer.id).filter(_.date >= date)
+        .sortBy(_.date.asc)
+        .take(limit)).result
+    } else {
+      (notDeletedMessages
+        .filter(m ⇒ m.userId === userId && m.peerType === peer.typ.value && m.peerId === peer.id).filter(_.date >= date)
+        .sortBy(_.date.asc)
+        .take(limit)).result
+    }
+  }
 
   private val metaAfterC = Compiled { (userId: Rep[Int], peerType: Rep[Int], peerId: Rep[Int], date: Rep[DateTime], limit: ConstColumn[Long]) ⇒
     byUserIdPeer(userId, peerType, peerId)
@@ -136,9 +169,62 @@ object HistoryMessageRepo {
   def findBefore(userId: Int, peer: Peer, date: DateTime, limit: Long) =
     beforeC((userId, peer.typ.value, peer.id, date, limit)).result
 
+  /**
+   * 查询历史消息（扩展方法）  by Lining 2016/7/18
+   * @param userId
+   * @param peer
+   * @param date
+   * @param limit
+   */
+  def findBeforeExt(userId: Int, peer: Peer, date: DateTime, limit: Long) = {
+    if (peer.typ.isGroup && userId == 0) {
+      //peer为群组，判断群是否为共享群，如果是共享群，则可以查看所有消息。
+      (notDeletedMessages
+        .filter(m ⇒ m.peerType === peer.typ.value && m.peerId === peer.id).filter(_.date <= date)
+        .sortBy(_.date.asc)
+        .take(limit)).result
+    } else {
+      (notDeletedMessages
+        .filter(m ⇒ m.userId === userId && m.peerType === peer.typ.value && m.peerId === peer.id).filter(_.date <= date)
+        .sortBy(_.date.asc)
+        .take(limit)).result
+    }
+  }
+
   def findBidi(userId: Int, peer: Peer, date: DateTime, limit: Long) =
     (beforeExclC.applied((userId, peer.typ.value, peer.id, date, limit)) ++
       afterC.applied((userId, peer.typ.value, peer.id, date, limit))).result
+
+  /**
+    * 查询历史消息（扩展方法）  by Lining 2016/7/18
+    * @param userId
+    * @param peer
+    * @param date
+    * @param limit
+    * @return
+    */
+  def findBidiExt(userId: Int, peer: Peer, date: DateTime, limit: Long) = {
+    if (peer.typ.isGroup && userId == 0) {
+      //peer为群组，判断群是否为共享群，如果是共享群，则可以查看所有消息。
+      ((notDeletedMessages
+        .filter(m ⇒ m.peerType === peer.typ.value && m.peerId === peer.id).filter(_.date < date)
+        .sortBy(_.date.asc)
+        .take(limit)) ++
+        (notDeletedMessages
+          .filter(m ⇒ m.peerType === peer.typ.value && m.peerId === peer.id).filter(_.date >= date)
+          .sortBy(_.date.asc)
+          .take(limit))).result
+    } else {
+      ((notDeletedMessages
+        .filter(m ⇒ m.userId === userId && m.peerType === peer.typ.value && m.peerId === peer.id).filter(_.date < date)
+        .sortBy(_.date.asc)
+        .take(limit)) ++
+        (notDeletedMessages
+          .filter(m ⇒ m.userId === userId && m.peerType === peer.typ.value && m.peerId === peer.id).filter(_.date >= date)
+          .sortBy(_.date.asc)
+          .take(limit))).result
+    }
+  }
 
   def findBySender(senderUserId: Int, peer: Peer, randomId: Long): FixedSqlStreamingAction[Seq[HistoryMessage], HistoryMessage, Read] =
     notDeletedMessages.filter(m ⇒ m.senderUserId === senderUserId && m.peerType === peer.typ.value && m.peerId === peer.id && m.randomId === randomId).result
@@ -176,14 +262,16 @@ object HistoryMessageRepo {
       .headOption
   }
 
-  def find(userId: Int, peer: Peer): FixedSqlStreamingAction[Seq[HistoryMessage], HistoryMessage, Read] =
+  def find(userId: Int, peer: Peer): FixedSqlStreamingAction[Seq[HistoryMessage], HistoryMessage, Read] = {
     notDeletedMessages
       .filter(m ⇒ m.userId === userId && m.peerType === peer.typ.value && m.peerId === peer.id)
       .sortBy(_.date.desc)
       .result
+  }
 
-  def find(userId: Int, peer: Peer, randomIds: Set[Long]): FixedSqlStreamingAction[Seq[HistoryMessage], HistoryMessage, Read] =
+  def find(userId: Int, peer: Peer, randomIds: Set[Long]): FixedSqlStreamingAction[Seq[HistoryMessage], HistoryMessage, Read] = {
     notDeletedMessages.filter(m ⇒ m.userId === userId && m.peerType === peer.typ.value && m.peerId === peer.id && (m.randomId inSet randomIds)).result
+  }
 
   def updateContentAll(userIds: Set[Int], randomId: Long, peerType: PeerType, peerIds: Set[Int],
                        messageContentHeader: Int, messageContentData: Array[Byte]): FixedSqlAction[Int, NoStream, Write] =

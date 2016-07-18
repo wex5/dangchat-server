@@ -36,6 +36,8 @@ final class FullGroupTable(tag: Tag) extends Table[FullGroup](tag, "groups") {
 
   def isHidden = column[Boolean]("is_hidden")
 
+  def isShare = column[Boolean]("is_share")
+
   def * =
     (
       id,
@@ -52,10 +54,11 @@ final class FullGroupTable(tag: Tag) extends Table[FullGroup](tag, "groups") {
       avatarChangerUserId,
       avatarChangedAt,
       avatarChangeRandomId,
-      isHidden
+      isHidden,
+      isShare
     ) <> (FullGroup.tupled, FullGroup.unapply)
 
-  def asGroup = (id, creatorUserId, accessHash, title, isPublic, createdAt, about, topic) <> ((Group.apply _).tupled, Group.unapply)
+  def asGroup = (id, creatorUserId, accessHash, title, isPublic, createdAt, about, topic, isShare) <> ((Group.apply _).tupled, Group.unapply)
 }
 
 object GroupRepo {
@@ -88,7 +91,8 @@ object GroupRepo {
       avatarChangerUserId = group.creatorUserId,
       avatarChangedAt = group.createdAt,
       avatarChangeRandomId = randomId,
-      isHidden = isHidden
+      isHidden = isHidden,
+      isShare = group.isShare
     )
   }
 
@@ -114,10 +118,23 @@ object GroupRepo {
   def updateTopic(id: Int, topic: Option[String]) =
     byIdC.applied(id).map(_.topic).update(topic)
 
-  def updateAbout(id: Int, about: Option[String]) =
-    byIdC.applied(id).map(_.about).update(about)
+  //二次开发修改，支持共享群设置  by Lining 2016/7/18
+  def updateAbout(id: Int, about: Option[String]) = {
+    if (about.getOrElse("").startsWith("#|$,0") || about.getOrElse("").startsWith("#|$,1")) {
+      byIdC.applied(id).map(_.isShare).update(about.get.startsWith("#|$,1"))
+    } else {
+      byIdC.applied(id).map(_.about).update(about)
+    }
+  }
 
   def makePublic(id: Int) = byIdC.applied(id).map(_.isPublic).update(true)
 
   def makeHidden(id: Int) = byIdC.applied(id).map(_.isHidden).update(true)
+
+  //二次开发加入的方法 by Lining 2016/7/15
+  def groupIsShared(id: Int) =
+    groups.filter(g ⇒ g.id === id && g.isShare === true).exists.result
+
+  def makeShare(id: Int) = byIdC.applied(id).map(_.isShare).update(true)
+  def makeNotShare(id: Int) = byIdC.applied(id).map(_.isShare).update(false)
 }
