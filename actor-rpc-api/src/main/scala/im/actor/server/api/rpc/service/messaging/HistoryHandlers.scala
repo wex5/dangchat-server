@@ -198,9 +198,10 @@ trait HistoryHandlers {
           historyOwner ← DBIO.from(getHistoryOwner(modelPeer, client.userId))
           (lastReceivedAt, lastReadAt) ← getLastReceiveReadDates(modelPeer)
           messageModels ← mode match {
-            case Some(ApiListLoadMode.Forward)  ⇒ HistoryMessageRepo.findAfter(historyOwner, modelPeer, dateTimeFrom(date), limit.toLong)
-            case Some(ApiListLoadMode.Backward) ⇒ HistoryMessageRepo.findBefore(historyOwner, modelPeer, dateTimeFrom(date), limit.toLong)
-            case Some(ApiListLoadMode.Both)     ⇒ HistoryMessageRepo.findBidi(historyOwner, modelPeer, dateTimeFrom(date), limit.toLong)
+            //二次开发，调用扩展方法，实现共享群功能。 by Lining 2016/7/18
+            case Some(ApiListLoadMode.Forward)  ⇒ HistoryMessageRepo.findAfterExt(historyOwner, modelPeer, dateTimeFrom(date), limit.toLong)
+            case Some(ApiListLoadMode.Backward) ⇒ HistoryMessageRepo.findBeforeExt(historyOwner, modelPeer, dateTimeFrom(date), limit.toLong)
+            case Some(ApiListLoadMode.Both)     ⇒ HistoryMessageRepo.findBidiExt(historyOwner, modelPeer, dateTimeFrom(date), limit.toLong)
             case _                              ⇒ HistoryMessageRepo.find(historyOwner, modelPeer, endDateTimeFrom(date), limit)
           }
           reactions ← dialogExt.fetchReactions(modelPeer, client.userId, messageModels.map(_.randomId).toSet)
