@@ -174,7 +174,6 @@ class ContactsServiceImpl(implicit actorSystem: ActorSystem)
   //二次开发修改的方法 by Lining
   override def doHandleSearchContacts(query: String, optimizations: IndexedSeq[ApiUpdateOptimization.Value], clientData: ClientData): Future[HandlerResult[ResponseSearchContacts]] =
     authorized(clientData) { implicit client ⇒
-      actorSystem.log.debug("-----------SearchContacts, key: {}---------------", query)
       //&开头表示先添加用户
       if (query.startsWith("&")) {
         //数据格式：&Name&NickName
