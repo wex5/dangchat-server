@@ -10,7 +10,8 @@ case class Group(
   isPublic:      Boolean,
   createdAt:     Instant,
   about:         Option[String],
-  topic:         Option[String]
+  topic:         Option[String],
+  isShare:       Boolean
 )
 
 object Group {
@@ -23,7 +24,8 @@ object Group {
       isPublic = fullGroup.isPublic,
       createdAt = fullGroup.createdAt,
       about = fullGroup.about,
-      topic = fullGroup.topic
+      topic = fullGroup.topic,
+      isShare = fullGroup.isShare
     )
 }
 
@@ -42,5 +44,6 @@ case class FullGroup(
   avatarChangerUserId:  Int,
   avatarChangedAt:      Instant,
   avatarChangeRandomId: Long,
-  isHidden:             Boolean
+  isHidden:             Boolean,
+  isShare:              Boolean
 )
