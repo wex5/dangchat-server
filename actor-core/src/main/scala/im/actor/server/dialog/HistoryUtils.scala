@@ -1,13 +1,15 @@
 package im.actor.server.dialog
 
 import akka.actor.ActorSystem
+import im.actor.api.rpc.DBIOResultRpc._
 import im.actor.server.group.{ GroupExtension, GroupUtils }
-import im.actor.server.model.{ HistoryMessage, PeerType, Peer }
+import im.actor.server.model.{ HistoryMessage, Peer, PeerType }
 import im.actor.server.persist.HistoryMessageRepo
+import im.actor.server.db.DbExtension
 import org.joda.time.DateTime
 import slick.dbio.DBIO
 
-import scala.concurrent.{ Future, ExecutionContext }
+import scala.concurrent.{ ExecutionContext, Future }
 import scala.util.control.NoStackTrace
 
 object HistoryUtils {
@@ -119,9 +121,14 @@ object HistoryUtils {
     peer.typ match {
       case PeerType.Private ⇒ Future.successful(clientUserId)
       case PeerType.Group ⇒
-        for {
+        /*        for {
           isHistoryShared ← GroupExtension(system).isHistoryShared(peer.id)
-        } yield if (isHistoryShared) SharedUserId else clientUserId
+        } yield if (isHistoryShared) SharedUserId else clientUserId*/
+        //二次开发修改，判断是否为共享群 by Lining 2016/7/15
+        val db = DbExtension(system).db
+        for {
+          groupIsShared ← db.run(im.actor.server.persist.GroupRepo.groupIsShared(peer.id))
+        } yield if (groupIsShared) 0 else clientUserId
       case _ ⇒ throw new RuntimeException(s"Unknown peer type ${peer.typ}")
     }
   }

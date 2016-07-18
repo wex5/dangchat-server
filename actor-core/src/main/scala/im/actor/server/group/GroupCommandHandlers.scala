@@ -103,7 +103,8 @@ private[group] trait GroupCommandHandlers extends GroupsImplicits with GroupComm
               isPublic = state.typ == GroupType.Public,
               createdAt = state.createdAt,
               about = None,
-              topic = None
+              topic = None,
+              isShare = false
             ),
             randomId,
             isHidden = false
@@ -485,7 +486,8 @@ private[group] trait GroupCommandHandlers extends GroupsImplicits with GroupComm
         isPublic = state.typ == GroupType.Public,
         createdAt = state.createdAt,
         about = None,
-        topic = None
+        topic = None,
+        isShare = false
       ),
       randomId,
       state.isHidden
