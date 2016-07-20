@@ -4,10 +4,10 @@ import java.time.{ Duration, Instant }
 
 import akka.actor.ActorSystem
 import akka.event.Logging
-import akka.http.scaladsl.model.{ HttpResponse, StatusCodes }
+import akka.http.scaladsl.model.{ ContentType, HttpResponse, MediaTypes, StatusCodes }
 import akka.http.scaladsl.model.StatusCodes.OK
 import akka.http.scaladsl.model.headers.ContentDispositionTypes.attachment
-import akka.http.scaladsl.model.headers.`Content-Disposition`
+import akka.http.scaladsl.model.headers.{ `Content-Disposition`, `Content-Type` }
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server._
 import akka.stream.ActorMaterializer
@@ -67,13 +67,23 @@ private[local] final class FilesHttpHandler(storageConfig: LocalFileStorageConfi
                 onComplete(getFile(fileId, fileName)) {
                   case Success(Some(file)) =>
                     log.debug("Serving fileId: {}, file: {} parts", fileId, file)
-                    respondWithDefaultHeader(
-                      //二次开发，对文件名编码，使中文文件名的文件可正确下载  by Lining  2016-6-14
-                      //`Content-Disposition`(attachment, Map("filename" -> file.name))
-                      `Content-Disposition`(attachment, Map("filename" -> java.net.URLEncoder.encode(file.name, "UTF-8")))
-                    ) {
-                      //TODO: remove as soon, as https://github.com/akka/akka/issues/20338 get fixed
-                      getFromFile(file.toJava)
+                    //二次开发，如果是音频或视频，则没有Content-Disposition
+                    if(isAudioOrVideo(file.name)) {
+                      respondWithDefaultHeader(
+                        `Content-Type`(getContentType(file.name))
+                      ) {
+                        //TODO: remove as soon, as https://github.com/akka/akka/issues/20338 get fixed
+                        getFromFile(file.toJava)
+                      }
+                    } else {
+                      respondWithDefaultHeader(
+                        //二次开发，对文件名编码，使中文文件名的文件可正确下载  by Lining  2016-6-14
+                        //`Content-Disposition`(attachment, Map("filename" -> file.name))
+                        `Content-Disposition`(attachment, Map("filename" -> java.net.URLEncoder.encode(file.name, "UTF-8")))
+                      ) {
+                        //TODO: remove as soon, as https://github.com/akka/akka/issues/20338 get fixed
+                        getFromFile(file.toJava)
+                      }
                     }
                   case Success(None) =>
                     complete(HttpResponse(StatusCodes.NotFound))
@@ -108,6 +118,49 @@ private[local] final class FilesHttpHandler(storageConfig: LocalFileStorageConfi
       }
     }
   // format: ON
+
+  /**
+   * 断文件是否是音频或视频 by Lining 2016/7/20
+   *
+   * @param fileName
+   * @return
+   */
+  private def isAudioOrVideo(fileName: String): Boolean = {
+    if (fileName.toLowerCase.endsWith("voice.opus") || fileName.toLowerCase.endsWith("voice.ogg") || fileName.toLowerCase.endsWith("voice.aac")) {
+      true
+    } else if (fileName.toLowerCase.startsWith("vid_") && (fileName.toLowerCase.endsWith(".mp4") || fileName.toLowerCase.endsWith(".mov") || fileName.toLowerCase.endsWith(".ogg"))) {
+      true
+    } else {
+      false
+    }
+  }
+
+  /**
+   * 得到http content type
+   * by Lining 2016/7/20
+   *
+   * @param fileName
+   * @return
+   */
+  private def getContentType(fileName: String): ContentType = {
+    if (fileName.toLowerCase.endsWith(".opus")) {
+      ContentType(MediaTypes.`audio/ogg`)
+    } else if (fileName.toLowerCase.endsWith("voice.ogg")) {
+      ContentType(MediaTypes.`audio/ogg`)
+    } else if (fileName.toLowerCase.endsWith(".aac")) {
+      ContentType(MediaTypes.`audio/vorbis`)
+    } else if (fileName.toLowerCase.startsWith("vid_")) {
+      if (fileName.toLowerCase.endsWith(".mp4")) {
+        ContentType(MediaTypes.`video/mp4`)
+      } else if (fileName.toLowerCase.endsWith(".mov")) {
+        ContentType(MediaTypes.`video/mpeg`)
+      } else {
+        ContentType(MediaTypes.`video/ogg`)
+      }
+    } else {
+      ContentType(MediaTypes.`application/octet-stream`)
+    }
+  }
 
   /**
    * 得到音频文件名称
