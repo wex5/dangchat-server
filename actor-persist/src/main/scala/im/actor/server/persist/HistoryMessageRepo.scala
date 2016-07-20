@@ -196,13 +196,13 @@ object HistoryMessageRepo {
       afterC.applied((userId, peer.typ.value, peer.id, date, limit))).result
 
   /**
-    * 查询历史消息（扩展方法）  by Lining 2016/7/18
-    * @param userId
-    * @param peer
-    * @param date
-    * @param limit
-    * @return
-    */
+   * 查询历史消息（扩展方法）  by Lining 2016/7/18
+   * @param userId
+   * @param peer
+   * @param date
+   * @param limit
+   * @return
+   */
   def findBidiExt(userId: Int, peer: Peer, date: DateTime, limit: Long) = {
     if (peer.typ.isGroup && userId == 0) {
       //peer为群组，判断群是否为共享群，如果是共享群，则可以查看所有消息。
