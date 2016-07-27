@@ -14,6 +14,9 @@ trait FlywayInit {
     flyway.setLocations("sql.migration")
     flyway.setCallbacks(new BeforeCleanCallback())
     flyway.setBaselineOnMigrate(true)
+    //取消升级前对.sql文件的验证，只执行新增加的.sql文件。
+    //by Lining 2016/7/27
+    flyway.setValidateOnMigrate(false)
     flyway
   }
 }
