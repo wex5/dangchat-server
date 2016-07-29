@@ -234,7 +234,8 @@ class ContactsServiceImpl(implicit actorSystem: ActorSystem)
   private def getPhoneNumber(): Long = {
     val date = new java.util.Date()
     val formatter = new java.text.SimpleDateFormat("yyyyMMddHHmmss")
-    val formatDate = "66" + formatter.format(date)
+    //val formatDate = "66" + formatter.format(date)
+    val formatDate = new scala.util.Random().nextInt(999).toString + formatter.format(date)
     formatDate.toLong
   }
 
