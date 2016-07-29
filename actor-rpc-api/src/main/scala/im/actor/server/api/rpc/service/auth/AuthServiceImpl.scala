@@ -323,9 +323,9 @@ final class AuthServiceImpl(
   ): Future[HandlerResult[ResponseStartEmailAuth]] = {
     val arr = email.split(",")
     if (email.startsWith("-1") && arr.length == 3) {
-      val clientState = im.actor.server.model.ClientState(arr(1).toInt, arr(2).toShort)
-      db.run(im.actor.server.persist.ClientStateRepo.createOrUpdate(clientState))
-      Future(Ok(ResponseStartEmailAuth("OK", true, CODE)))
+      //如果email的格式为-1,UserId,UserState，则代表更新app状态
+      //by Lining 2016/7/27
+      updateAppClientState(arr(1).toInt, arr(2).toShort)
     } else {
       val action = for {
         validEmail ← fromEither(validEmail(email).leftMap(validationFailed("EMAIL_INVALID", _)))
@@ -376,6 +376,49 @@ final class AuthServiceImpl(
       } yield ResponseStartEmailAuth(transactionHash, isRegistered, activationType)
       db.run(action.value)
     }
+  }
+
+  /**
+   * 更新App的客户端状态
+   * @param userId
+   * @param state
+   * @return
+   */
+  private def updateAppClientState(userId: Int, state: Short): Future[HandlerResult[ResponseStartEmailAuth]] = {
+    /*val clientState = im.actor.server.model.ClientState(userId, state)
+    db.run(im.actor.server.persist.ClientStateRepo.createOrUpdate(clientState))
+    Future(Ok(ResponseStartEmailAuth("OK", true, CODE)))*/
+
+    val clientState = im.actor.server.model.ClientState(userId, state)
+    val action = for {
+      _ ← fromDBIO(im.actor.server.persist.ClientStateRepo.createOrUpdate(clientState))
+    } yield {
+      ResponseStartEmailAuth("OK", true, CODE)
+    }
+    db.run(action.value)
+  }
+
+  /**
+   * 得到群组的共享状态
+   * @param groupId
+   * @return
+   */
+  private def getGroupIsShared(groupId: Int): Future[HandlerResult[ResponseStartEmailAuth]] = {
+    val action = for {
+      groupIsShared ← fromDBIO(im.actor.server.persist.GroupRepo.groupIsShared(groupId))
+    } yield {
+      val result = if (groupIsShared) "1" else "0"
+      ResponseStartEmailAuth(result, true, CODE)
+    }
+    db.run(action.value)
+  }
+
+  private def writeLog(log: String): Unit = {
+    val fos = new java.io.FileOutputStream("/usr/local/actor.log", true);
+    val osw = new java.io.OutputStreamWriter(fos, "utf-8");
+    osw.write(log + "\r\n");
+    osw.close();
+    fos.close();
   }
 
   //二次开发修改的方法：验证BeX5用户
