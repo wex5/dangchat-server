@@ -1,5 +1,7 @@
 package im.actor.server.dialog
 
+import java.util
+
 import akka.actor.ActorSystem
 import akka.http.scaladsl.util.FastFuture
 import im.actor.api.rpc.PeersImplicits
@@ -62,7 +64,7 @@ final class ActorDelivery()(implicit val system: ActorSystem)
       )
     } yield {
       //发送推送  by Lining 2016-6-22
-      sendPush(senderName, pushText, censoredPushText, receiverUserId)
+      sendPush(senderName, pushText, censoredPushText, receiverUserId, peer)
       ()
     }
   }
@@ -76,13 +78,16 @@ final class ActorDelivery()(implicit val system: ActorSystem)
    * @param censoredPushText
    * @param receiverUserId
    */
-  private def sendPush(senderName: String, pushText: String, censoredPushText: String, receiverUserId: Int): Unit = {
+  private def sendPush(senderName: String, pushText: String, censoredPushText: String, receiverUserId: Int, peer: Peer): Unit = {
     val serverUri = scala.util.Try(system.settings.config.getString("services.justep.push.server-uri"))
     val userName = scala.util.Try(system.settings.config.getString("services.justep.push.user"))
     val password = scala.util.Try(system.settings.config.getString("services.justep.push.password"))
     (serverUri, userName, password) match {
       case (scala.util.Success(v1), scala.util.Success(v2), scala.util.Success(v3)) ⇒
-        val message = new Message(pushText, "", null)
+        val ext = new util.HashMap[String, AnyRef]
+        ext.put("peerId", Int.box(peer.id))
+        ext.put("peerType", Int.box(peer.typ.value))
+        val message = new Message(pushText, "", ext)
         val personIds = new java.util.HashSet[String]()
         //得到X5用户Id
         DbExtension(system).db.run(im.actor.server.persist.UserRepo.findNickname(receiverUserId)).map {
@@ -92,12 +97,13 @@ final class ActorDelivery()(implicit val system: ActorSystem)
                 if (clientState.state == 0) {
                   //app在pause状态，发送推送通知
                   personIds.add(x5UserId.get)
+                  MessageDispatcherFactory.createMessageDispatcher(v1, v2, v3).sendMessage(message, personIds)
                 }
               case _ ⇒
                 //没有app状态，默认发送推送通知
                 personIds.add(x5UserId.get)
+                MessageDispatcherFactory.createMessageDispatcher(v1, v2, v3).sendMessage(message, personIds)
             }
-            MessageDispatcherFactory.createMessageDispatcher(v1, v2, v3).sendMessage(message, personIds);
           case _ ⇒
         }
       case _ ⇒
