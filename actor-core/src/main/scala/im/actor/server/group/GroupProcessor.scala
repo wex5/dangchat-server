@@ -9,14 +9,12 @@ import akka.persistence.RecoveryCompleted
 import akka.stream.{ ActorMaterializer, ActorMaterializerSettings, Materializer }
 import akka.util.Timeout
 import im.actor.api.rpc.collections.ApiMapValue
-import im.actor.api.rpc.groups.ApiMember
 import im.actor.serialization.ActorSerializer
 import im.actor.server.KeyValueMappings
 import im.actor.server.cqrs.TaggedEvent
 import im.actor.server.db.DbExtension
-import im.actor.server.dialog.{ DialogEnvelope, DialogExtension, DirectDialogCommand }
+import im.actor.server.dialog.{ DialogEnvelope, DialogExtension }
 import im.actor.server.file.{ Avatar, FileStorageAdapter, FileStorageExtension }
-import im.actor.server.model.Group
 import im.actor.server.office.{ PeerProcessor, ProcessorState, StopOffice }
 import im.actor.server.sequence.SeqUpdatesExtension
 import im.actor.server.user.UserExtension
@@ -54,7 +52,8 @@ private[group] case class GroupState(
   topic:           Option[String],
   isHidden:        Boolean,
   isHistoryShared: Boolean,
-  extensions:      Seq[ApiMapValue]
+  extensions:      Seq[ApiMapValue],
+  isShare:         Boolean
 ) extends ProcessorState
 
 trait GroupCommand {
@@ -198,9 +197,11 @@ private[group] final class GroupProcessor
   }
 
   override def handleQuery(state: GroupState): Receive = {
-    case GroupQueries.GetIntegrationToken(_, userId)              ⇒ getIntegrationToken(state, userId)
-    case GroupQueries.GetIntegrationTokenInternal(_)              ⇒ getIntegrationToken(state)
-    case GroupQueries.GetApiStruct(_, userId)                     ⇒ getApiStruct(state, userId)
+    case GroupQueries.GetIntegrationToken(_, userId) ⇒ getIntegrationToken(state, userId)
+    case GroupQueries.GetIntegrationTokenInternal(_) ⇒ getIntegrationToken(state)
+    case GroupQueries.GetApiStruct(_, userId) ⇒
+      val groupIsShare = scala.concurrent.Await.result(getGroupIsShared(state.id), Duration.Inf)
+      getApiStruct(state, userId, groupIsShare)
     case GroupQueries.GetApiFullStruct(_, userId)                 ⇒ getApiFullStruct(state, userId)
     case GroupQueries.CheckAccessHash(_, accessHash)              ⇒ checkAccessHash(state, accessHash)
     case GroupQueries.GetMembers(_)                               ⇒ getMembers(state)
@@ -295,13 +296,27 @@ private[group] final class GroupProcessor
       topic = None,
       isHidden = evt.isHidden.getOrElse(false),
       isHistoryShared = evt.isHistoryShared.getOrElse(false),
-      extensions = Vector.empty
+      extensions = Vector.empty,
+      isShare = evt.isShare.getOrElse(false)
     )
   }
 
   private def groupPeer: ActorRef = {
     val groupPeer = "GroupPeer"
     context.child(groupPeer).getOrElse(context.actorOf(GroupPeer.props(groupId), groupPeer))
+  }
+
+  /**
+   * 得到群组的共享状态
+   *
+   * @param groupId
+   * @return
+   */
+  private def getGroupIsShared(groupId: Int): scala.concurrent.Future[Boolean] = {
+    val action = for {
+      result ← im.actor.server.persist.GroupRepo.groupIsShared(groupId)
+    } yield result
+    db.run(action.value)
   }
 
   protected def hasMember(group: GroupState, userId: Int): Boolean = group.members.keySet.contains(userId)
