@@ -8054,6 +8054,11 @@
                 "name": "canSendMessage"
               },
               {
+                "type": bool,
+                "id": 27,
+                "name": "isShare"
+              },              
+              {
                 "type": {
                   "type": "opt",
                   "childType": {
