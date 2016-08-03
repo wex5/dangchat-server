@@ -8054,7 +8054,7 @@
                 "name": "canSendMessage"
               },
               {
-                "type": bool,
+                "type": "bool",
                 "id": 27,
                 "name": "isShare"
               },              
