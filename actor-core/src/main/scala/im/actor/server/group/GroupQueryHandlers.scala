@@ -23,7 +23,7 @@ private[group] trait GroupQueryHandlers extends GroupCommandHelpers {
     sender() ! GetIntegrationTokenResponse(group.bot.map(_.token))
   }
 
-  def getApiStruct(group: GroupState, clientUserId: Int): Unit = {
+  def getApiStruct(group: GroupState, clientUserId: Int, groupIsShared: Boolean): Unit = {
     val isMember = hasMember(group, clientUserId)
     val apiMembers = getApiMembers(group, clientUserId)
 
@@ -46,7 +46,8 @@ private[group] trait GroupQueryHandlers extends GroupCommandHelpers {
         case GroupType.Channel ⇒ ApiGroupType.CHANNEL
         case GroupType.General | GroupType.Public | GroupType.Unrecognized(_) ⇒ ApiGroupType.GROUP
       }),
-      canSendMessage = None
+      canSendMessage = None,
+      isShare = groupIsShared
     )
 
     sender() ! GetApiStructResponse(struct)
