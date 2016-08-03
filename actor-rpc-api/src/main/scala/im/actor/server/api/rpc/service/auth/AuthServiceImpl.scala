@@ -398,29 +398,6 @@ final class AuthServiceImpl(
     db.run(action.value)
   }
 
-  /**
-   * 得到群组的共享状态
-   * @param groupId
-   * @return
-   */
-  private def getGroupIsShared(groupId: Int): Future[HandlerResult[ResponseStartEmailAuth]] = {
-    val action = for {
-      groupIsShared ← fromDBIO(im.actor.server.persist.GroupRepo.groupIsShared(groupId))
-    } yield {
-      val result = if (groupIsShared) "1" else "0"
-      ResponseStartEmailAuth(result, true, CODE)
-    }
-    db.run(action.value)
-  }
-
-  private def writeLog(log: String): Unit = {
-    val fos = new java.io.FileOutputStream("/usr/local/actor.log", true);
-    val osw = new java.io.OutputStreamWriter(fos, "utf-8");
-    osw.write(log + "\r\n");
-    osw.close();
-    fos.close();
-  }
-
   //二次开发修改的方法：验证BeX5用户
   override def doHandleValidateCode(transactionHash: String, code: String, clientData: ClientData): Future[HandlerResult[ResponseAuth]] = {
     val action: Result[ResponseAuth] =
