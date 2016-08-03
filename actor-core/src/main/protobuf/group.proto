@@ -316,6 +316,7 @@ message GroupEvents {
         optional bool is_hidden = 8;
         optional bool is_history_shared = 9;
         repeated bytes extensions = 7  [(scalapb.field).type = "im.actor.api.rpc.misc.ApiExtension"];
+        optional bool is_share = 11;
     }
 
     message UserInvited {
