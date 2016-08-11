@@ -109,6 +109,7 @@ object Dependencies {
     val alpn                    = "org.eclipse.jetty.alpn"        % "alpn-api"                       % "1.1.2.v20150522" % "runtime"
     val tcnative                = "io.netty"                      % "netty-tcnative"                 % "1.1.33.Fork15" classifier "linux-x86_64"
 
+    //引入最新版本
     val jansi                   = "org.fusesource.jansi"          %  "jansi"                         % "1.13"
   }
 
