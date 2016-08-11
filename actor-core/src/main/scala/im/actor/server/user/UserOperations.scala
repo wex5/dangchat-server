@@ -1,14 +1,13 @@
 package im.actor.server.user
 
-import akka.actor.{ ActorRef, ActorSystem }
-import akka.cluster.pubsub.DistributedPubSub
-import akka.event.{ Logging, LoggingAdapter }
+import akka.actor.ActorSystem
+import akka.event.LoggingAdapter
 import akka.pattern.ask
 import akka.util.Timeout
 import com.google.protobuf.ByteString
 import im.actor.api.rpc.misc.ApiExtension
 import im.actor.api.rpc.{ AuthorizedClientData, Update }
-import im.actor.api.rpc.users.{ ApiFullUser, ApiSex, ApiUser }
+import im.actor.api.rpc.users.{ ApiFullUser, ApiRegisteredUser, ApiSex, ApiUser }
 import im.actor.server.auth.DeviceInfo
 import im.actor.server.bots.BotCommand
 import im.actor.server.db.DbExtension
@@ -266,6 +265,9 @@ private[user] sealed trait Queries {
 
   def getApiFullStruct(userId: Int, clientUserId: Int, clientAuthId: Long): Future[ApiFullUser] =
     (viewRegion.ref ? GetApiFullStruct(userId, clientUserId, clientAuthId)).mapTo[GetApiFullStructResponse] map (_.struct)
+
+  def getApiRegisteredStruct(userId: Int, nickname: String): Future[ApiRegisteredUser] =
+    (viewRegion.ref ? GetApiRegisteredStruct(userId, nickname)).mapTo[GetApiRegisteredStructResponse] map (_.struct)
 
   def getLocalName(ownerUserId: Int, contactUserId: Int): Future[Option[String]] =
     (viewRegion.ref ? GetLocalName(ownerUserId, contactUserId)).mapTo[GetLocalNameResponse] map (_.localName)
