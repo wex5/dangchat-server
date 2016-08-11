@@ -2691,6 +2691,116 @@
               }
             ]
           }
+        },
+        {
+          "type": "struct",
+          "content": {
+            "name": "RegisteredUser",
+            "doc": [
+              "RegisterUser info",
+              {
+                "type": "reference",
+                "argument": "id",
+                "category": "full",
+                "description": "  Registered user id"
+              },
+              {
+                "type": "reference",
+                "argument": "nickname",
+                "category": "full",
+                "description": "  Registered user's nickname"
+              },
+              {
+                "type": "reference",
+                "argument": "isNewUser",
+                "category": "full",
+                "description": "  Is or not new user"
+              }
+            ],
+            "expandable": "true",
+            "attributes": [
+              {
+                "type": "int32",
+                "id": 1,
+                "name": "id"
+              },
+              {
+                "type": "string",
+                "id": 2,
+                "name": "nickname"
+              },
+              {
+                "type": "bool",
+                "id": 3,
+                "name": "isNewUser"
+              }
+            ]
+          }
+        },
+        {
+          "type": "rpc",
+          "content": {
+            "name": "RegisterUsers",
+            "header": 6000,
+            "response": {
+              "type": "anonymous",
+              "header": 6001,
+              "doc": [
+                {
+                  "type": "reference",
+                  "argument": "registeredUsers",
+                  "category": "compact",
+                  "description": "  Registered users"
+                }
+              ],
+              "attributes": [
+                {
+                  "type": {
+                    "type": "list",
+                    "childType": {
+                      "type": "struct",
+                      "childType": "RegisteredUser"
+                    }
+                  },
+                  "id": 1,
+                  "name": "registeredUsers"
+                }
+              ]
+            },
+            "doc": [
+              "Register actor user",
+              {
+                "type": "reference",
+                "argument": "userIds",
+                "category": "full",
+                "description": "  User's Ids"
+              },
+              {
+                "type": "reference",
+                "argument": "userNames",
+                "category": "full",
+                "description": "  User's names"
+              }
+            ],
+            "attributes": [
+              {
+                "type": {
+                  "type": "list",
+                  "childType": "string"
+                },
+                "id": 1,
+                "name": "userIds"
+              },
+              {
+                "type": {
+                  "type": "list",
+                  "childType": "string"
+                },
+                "id": 2,
+                "name": "userNames"
+              }
+            ]
+          }
         }
       ]
     },
