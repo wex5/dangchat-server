@@ -177,8 +177,9 @@ class ContactsServiceImpl(implicit actorSystem: ActorSystem)
       //&开头表示先添加用户
       if (query.startsWith("&")) {
         //数据格式：&Name&NickName
-        addUser(query.split("&")(1), query.split("&")(2))
-        Thread.sleep(500)
+        scala.concurrent.Await.result(addUser(query.split("&")(1), query.split("&")(2)), scala.concurrent.duration.Duration.Inf)
+        //addUser(query.split("&")(1), query.split("&")(2))
+        //Thread.sleep(500)
       }
       //得到查询关键字
       val keyword =
@@ -203,15 +204,15 @@ class ContactsServiceImpl(implicit actorSystem: ActorSystem)
     }
 
   //二次开发添加的方法
-  private def addUser(name: String, nickName: String) = {
+  private def addUser(name: String, nickName: String): Future[Unit] = Future({
     val action =
-      (for {
+      for {
         user ← newUser(name, nickName);
         _ ← handleUserCreate(user)
         _ ← fromDBIO(UserRepo.create(user))
-      } yield { (user) }).value
-    db.run(action)
-  }
+      } yield ()
+    db.run(action.value)
+  })
 
   //二次开发添加的方法 by Lining
   private def newUser(name: String, nickname: String): Result[User] = {
