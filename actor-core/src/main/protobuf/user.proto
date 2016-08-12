@@ -362,6 +362,17 @@ message UserQueries {
     message GetNameResponse {
         required string name = 1;
     }
+
+    message GetApiRegisteredStruct {
+        option (scalapb.message).extends = "im.actor.server.user.UserQuery";
+
+        required int32 user_id = 1;
+        required string name = 2;
+    }
+
+    message GetApiRegisteredStructResponse {
+        required bytes struct = 1 [(scalapb.field).type = "im.actor.api.rpc.users.ApiRegisteredUser"];
+    }
 }
 
 // TODO: put UserCommands and UserQueries inside
