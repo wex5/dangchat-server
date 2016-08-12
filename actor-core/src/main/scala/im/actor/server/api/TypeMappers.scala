@@ -15,7 +15,7 @@ import im.actor.api.rpc.misc.ApiExtension
 import im.actor.api.rpc.peers.ApiPeer
 import im.actor.api.rpc.sequence.SeqUpdate
 import im.actor.api.rpc.users.ApiSex.ApiSex
-import im.actor.api.rpc.users.{ ApiFullUser, ApiUser, ApiSex ⇒ S }
+import im.actor.api.rpc.users.{ ApiFullUser, ApiRegisteredUser, ApiUser, ApiSex ⇒ S }
 import im.actor.serialization.ActorSerializer
 import org.joda.time.DateTime
 
@@ -77,6 +77,19 @@ private[api] trait MessageMapper {
   }
 
   private def unapplyFullUser(user: ApiFullUser): ByteString = {
+    ByteString.copyFrom(user.toByteArray)
+  }
+
+  private def applyRegisteredUser(bytes: ByteString): ApiRegisteredUser = {
+    if (bytes.size() > 0) {
+      val res = ApiRegisteredUser.parseFrom(CodedInputStream.newInstance(bytes.toByteArray))
+      get(res)
+    } else {
+      null
+    }
+  }
+
+  private def unapplyRegisteredUser(user: ApiRegisteredUser): ByteString = {
     ByteString.copyFrom(user.toByteArray)
   }
 
@@ -187,6 +200,8 @@ private[api] trait MessageMapper {
   implicit val userMapper: TypeMapper[ByteString, ApiUser] = TypeMapper(applyUser)(unapplyUser)
 
   implicit val fullUserMapper: TypeMapper[ByteString, ApiFullUser] = TypeMapper(applyFullUser)(unapplyFullUser)
+
+  implicit val registeredUserMapper: TypeMapper[ByteString, ApiRegisteredUser] = TypeMapper(applyRegisteredUser)(unapplyRegisteredUser)
 
   implicit val groupMapper: TypeMapper[ByteString, ApiGroup] = TypeMapper(applyGroup)(unapplyGroup)
 
