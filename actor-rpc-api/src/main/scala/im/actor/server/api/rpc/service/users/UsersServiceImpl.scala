@@ -20,6 +20,7 @@ import im.actor.util.misc.StringUtils
 import im.actor.server.model._
 import im.actor.util.ThreadLocalSecureRandom
 import im.actor.util.misc.IdUtils._
+import slick.dbio.{ DBIO ⇒ _, _ }
 import slick.driver.PostgresDriver.api._
 
 import scala.concurrent.duration._
@@ -135,19 +136,29 @@ final class UsersServiceImpl(implicit actorSystem: ActorSystem) extends UsersSer
    * @param random
    * @return
    */
-  private def handleRegisterUser(name: String, nickname: String, random: ThreadLocalSecureRandom): Future[ApiRegisteredUser] = {
+  private def handleRegisterUser(name: String, nickname: String, ownerUserId: Int, random: ThreadLocalSecureRandom): Future[ApiRegisteredUser] = {
     val optUser = scala.concurrent.Await.result(db.run(UserRepo.findByNickname(nickname)), Duration.Inf)
     optUser match {
       case Some(user) ⇒
-        //userExt.getApiRegisteredStruct(user.id, nickname)
         Future.successful(ApiRegisteredUser(user.id, nickname, false))
       case None ⇒
-        val userModel = newUser(name, nickname)
-        db.run(UserRepo.create(userModel))
-        db.run(UserPhoneRepo.create(random.nextInt(), userModel.id, ACLUtils.nextAccessSalt(random), getPhoneNumber, "Mobile phone"))
-        //userExt.getApiRegisteredStruct(userModel.id, nickname)
+        val userModel = addUser(name, nickname)
         Future.successful(ApiRegisteredUser(userModel.id, nickname, true))
     }
+  }
+
+  private def addUser(name: String, nickName: String): User = {
+    val user = newUser(name, nickName)
+    handleUserCreate(user)
+    fromDBIO(UserRepo.create(user))
+    user
+  }
+
+  //二次开发记录：添加新方法  by Lining
+  private def handleUserCreate(user: User) = {
+    DBIO.from(userExt.create(user.id, user.accessSalt, user.nickname, user.name, user.countryCode, im.actor.api.rpc.users.ApiSex(user.sex.toInt), isBot = false))
+    fromDBIO(im.actor.server.persist.AvatarDataRepo.create(AvatarData.empty(AvatarData.OfUser, user.id.toLong)))
+    DBIO.from(userExt.addPhone(user.id, getPhoneNumber()))
   }
 
   /**
@@ -163,11 +174,11 @@ final class UsersServiceImpl(implicit actorSystem: ActorSystem) extends UsersSer
     userNames:  IndexedSeq[String],
     clientData: ClientData
   ): Future[HandlerResult[ResponseRegisterUsers]] =
-    {
+    authorized(clientData) { implicit client ⇒
       val userMap = (userIds zip userNames)
       val rng = ThreadLocalSecureRandom.current()
       for {
-        users ← Future.sequence(userMap map (kv ⇒ handleRegisterUser(kv._2, kv._1, rng)))
+        users ← Future.sequence(userMap map (kv ⇒ handleRegisterUser(kv._2, kv._1, client.userId, rng)))
       } yield Ok(ResponseRegisterUsers(users.toVector))
     }
 
