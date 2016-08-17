@@ -1,15 +1,11 @@
 package im.actor.server.sequence
 
+import akka.NotUsed
 import akka.actor._
 import akka.event.Logging
-import akka.http.scaladsl.Http
-import akka.http.scaladsl.model._
-import akka.http.scaladsl.settings.ConnectionPoolSettings
-import akka.http.scaladsl.util.FastFuture
-import akka.stream.{ ActorMaterializer, Materializer }
-import akka.stream.actor.ActorPublisher
-import akka.stream.scaladsl.Source
-import akka.util.ByteString
+import akka.stream.{ ActorMaterializer, ActorMaterializerSettings, Supervision }
+import akka.stream.actor.{ ActorPublisher, ActorPublisherMessage }
+import akka.stream.scaladsl.{ Flow, Source }
 import cats.data.Xor
 import com.github.kxbmap.configs.syntax._
 import com.typesafe.config.Config
@@ -19,14 +15,17 @@ import im.actor.server.persist.push.GooglePushCredentialsRepo
 import io.circe.generic.auto._
 import io.circe.jawn._
 import io.circe.syntax._
+import spray.client.pipelining._
+import spray.http.HttpHeaders.Authorization
+import spray.http._
 
 import scala.annotation.tailrec
-import scala.concurrent.Future
+import scala.concurrent.{ Future, TimeoutException }
 import scala.util.{ Failure, Success, Try }
 
-case class GooglePushKey(projectId: Long, key: String)
+private final case class GooglePushKey(projectId: Long, key: String)
 
-object GooglePushKey {
+private object GooglePushKey {
   def load(config: Config): Try[GooglePushKey] = {
     for {
       projectId ← config.get[Try[Long]]("project-id")
@@ -35,9 +34,9 @@ object GooglePushKey {
   }
 }
 
-case class GooglePushManagerConfig(keys: List[GooglePushKey])
+private final case class GooglePushManagerConfig(keys: List[GooglePushKey])
 
-object GooglePushManagerConfig {
+private object GooglePushManagerConfig {
   def load(googlePushConfig: Config): Try[GooglePushManagerConfig] =
     for {
       keyConfigs ← googlePushConfig.get[Try[List[Config]]]("keys")
@@ -62,29 +61,32 @@ final class GooglePushExtension(system: ActorSystem) extends Extension {
 
   import system.dispatcher
 
-  private implicit val mat = ActorMaterializer()(system)
   private implicit val _system = system
-
   private val log = Logging(system, getClass)
   private val db = DbExtension(system).db
+
+  private val streamDecider: Supervision.Decider = {
+    case e: TimeoutException ⇒
+      log.warning("Got timeout exception in stream, RESUME {}", e)
+      Supervision.Resume
+    case e: RuntimeException ⇒
+      log.warning("Got runtime exception in stream, RESUME {}", e)
+      Supervision.Resume
+    case e ⇒
+      log.error(e, "Got exception in stream, STOP")
+      Supervision.Stop
+  }
+  private implicit val mat = ActorMaterializer(ActorMaterializerSettings(system).withSupervisionStrategy(streamDecider))
 
   private val config = GooglePushManagerConfig.load(system.settings.config.getConfig("services.google.push")).get
   private val deliveryPublisher = system.actorOf(GooglePushDelivery.props, "google-push-delivery")
 
   Source.fromPublisher(ActorPublisher[(HttpRequest, GooglePushDelivery.Delivery)](deliveryPublisher))
     .via(GooglePushDelivery.flow)
-    .mapAsync(1) {
-      case (Success(resp), delivery) ⇒
-        if (resp.status == StatusCodes.OK) {
-          resp.entity.dataBytes.runFold(ByteString.empty)(_ ++ _) map (bs ⇒ Xor.Right(bs → delivery))
-        } else FastFuture.successful(Xor.Left(new RuntimeException(s"Failed to deliver message, StatusCode was not OK: ${resp.status}")))
-      case (Failure(e), delivery) ⇒
-        FastFuture.successful(Xor.Left(e))
-    }
     .runForeach {
       // TODO: flatten
-      case Xor.Right((bs, delivery)) ⇒
-        parse(new String(bs.toArray, "UTF-8")) match {
+      case Xor.Right((body, delivery)) ⇒
+        parse(body) match {
           case Xor.Right(json) ⇒
             json.asObject match {
               case Some(obj) ⇒
@@ -108,7 +110,8 @@ final class GooglePushExtension(system: ActorSystem) extends Extension {
       case Xor.Left(e) ⇒
         log.error(e, "Failed to make request")
     } onComplete {
-      case Failure(e) ⇒ log.error(e, "Failure in stream")
+      case Failure(e) ⇒
+        log.error(e, "Failure in stream, continue with next element")
       case Success(_) ⇒ log.debug("Stream completed")
     }
 
@@ -141,34 +144,44 @@ private object GooglePushDelivery {
 
   def props = Props(classOf[GooglePushDelivery])
 
-  def flow(implicit system: ActorSystem, mat: Materializer) = {
-    val maxConnections = system.settings.config.getInt("services.google.push.max-connections")
-
-    Http(system)
-      .cachedHostConnectionPoolHttps[GooglePushDelivery.Delivery](
-        "gcm-http.googleapis.com",
-        settings = ConnectionPoolSettings(system).withMaxConnections(maxConnections)
-      )
+  def flow(implicit system: ActorSystem): Flow[(HttpRequest, Delivery), Xor[RuntimeException, (String, Delivery)], NotUsed] = {
+    import system.dispatcher
+    val pipeline = sendReceive
+    Flow[(HttpRequest, GooglePushDelivery.Delivery)].mapAsync(2) {
+      case (req, del) ⇒
+        pipeline(req) map { resp ⇒
+          if (resp.status == StatusCodes.OK)
+            Xor.Right(resp.entity.data.asString(HttpCharsets.`UTF-8`) → del)
+          else
+            Xor.Left(new RuntimeException(s"Failed to deliver message, StatusCode was not OK: ${resp.status}"))
+        }
+    }
   }
 }
 
 private final class GooglePushDelivery extends ActorPublisher[(HttpRequest, GooglePushDelivery.Delivery)] with ActorLogging {
 
   import GooglePushDelivery._
+  import ActorPublisherMessage._
 
   private[this] var buf = Vector.empty[(HttpRequest, Delivery)]
-  private val uri = Uri("/gcm/send")
+  private val uri = Uri("https://gcm-http.googleapis.com/gcm/send")
 
   def receive = {
     case d: Delivery if buf.size == MaxQueue ⇒
-      log.error("Current queue is already at size MaxQueue: {}, ignoring delivery", MaxQueue)
+      log.error("Current queue is already at size MaxQueue: {}, totalDemand: {}, ignoring delivery", MaxQueue, totalDemand)
+      deliverBuf()
     case d: Delivery ⇒
-      if (buf.isEmpty && totalDemand > 0)
+      log.debug("Trying to deliver google push. Queue size: {}, totalDemand: {}", buf.size, totalDemand)
+      if (buf.isEmpty && totalDemand > 0) {
         onNext(mkJob(d))
-      else {
+      } else {
         this.buf :+= mkJob(d)
         deliverBuf()
       }
+    case Request(n) ⇒
+      log.debug("Trying to deliver google push. Queue size: {}, totalDemand: {}, subscriber requests {} elements", buf.size, totalDemand, n)
+      deliverBuf()
   }
 
   @tailrec def deliverBuf(): Unit =
@@ -189,7 +202,7 @@ private final class GooglePushDelivery extends ActorPublisher[(HttpRequest, Goog
     HttpRequest(
       method = HttpMethods.POST,
       uri = uri,
-      headers = List(headers.Authorization(headers.GenericHttpCredentials(s"key=${d.key}", Map.empty[String, String]))),
+      headers = List(Authorization(GenericHttpCredentials(s"key=${d.key}", Map.empty[String, String]))),
       entity = HttpEntity(ContentTypes.`application/json`, d.m.asJson.noSpaces)
     ) → d
   }

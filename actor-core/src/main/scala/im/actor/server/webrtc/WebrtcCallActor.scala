@@ -3,7 +3,7 @@ package im.actor.server.webrtc
 import akka.actor._
 import akka.http.scaladsl.util.FastFuture
 import akka.pattern.pipe
-import com.relayrides.pushy.apns.util.{ ApnsPayloadBuilder, SimpleApnsPushNotification, TokenUtil }
+import com.relayrides.pushy.apns.util.ApnsPayloadBuilder
 import im.actor.api.rpc._
 import im.actor.api.rpc.messaging.{ ApiServiceExPhoneCall, ApiServiceExPhoneMissed, ApiServiceMessage }
 import im.actor.api.rpc.peers.{ ApiPeer, ApiPeerType }
@@ -19,7 +19,6 @@ import im.actor.server.user.UserExtension
 import im.actor.server.values.ValuesExtension
 import im.actor.types._
 
-import scala.collection.concurrent.TrieMap
 import scala.concurrent.Future
 import scala.concurrent.duration._
 import scala.concurrent.forkjoin.ThreadLocalRandom
@@ -33,12 +32,21 @@ object WebrtcCallErrors {
   object CallAlreadyStarted extends WebrtcCallError("Call already started")
   object NotJoinedToEventBus extends WebrtcCallError("Not joined to EventBus")
   object CallForbidden extends WebrtcCallError("You are forbidden to call this user")
+  object GroupTooBig extends WebrtcCallError("Group is too big for group call")
 }
 
 private[webrtc] sealed trait WebrtcCallMessage
 
 private[webrtc] object WebrtcCallMessages {
-  final case class StartCall(callerUserId: UserId, callerAuthId: AuthId, peer: Peer, timeout: Option[Long]) extends WebrtcCallMessage
+  final case class StartCall(
+    callerUserId:     UserId,
+    callerAuthId:     AuthId,
+    peer:             Peer,
+    isAudioOnlyCall:  Option[Boolean],
+    isVideoOnlyCall:  Option[Boolean],
+    isVideoPreferred: Option[Boolean],
+    timeout:          Option[Long]
+  ) extends WebrtcCallMessage
   final case class StartCallAck(eventBusId: String, callerDeviceId: EventBus.DeviceId)
 
   final case class JoinCall(calleeUserId: UserId, authId: AuthId) extends WebrtcCallMessage
@@ -48,8 +56,15 @@ private[webrtc] object WebrtcCallMessages {
   case object RejectCallAck
 
   case object GetInfo extends WebrtcCallMessage
-  final case class GetInfoAck(eventBusId: String, peer: Peer, participantUserIds: Seq[UserId]) {
-    val tupled = (eventBusId, peer, participantUserIds)
+  final case class GetInfoAck(
+    eventBusId:         String,
+    peer:               Peer,
+    participantUserIds: Seq[UserId],
+    isAudioOnlyCall:    Option[Boolean],
+    isVideoOnlyCall:    Option[Boolean],
+    isVideoPreferred:   Option[Boolean]
+  ) {
+    val tupled = (eventBusId, peer, participantUserIds, isAudioOnlyCall, isVideoOnlyCall, isVideoPreferred)
   }
 
   private[webrtc] case class SendIncomingCall(userId: UserId)
@@ -200,6 +215,10 @@ private final class WebrtcCallActor extends StashingActor with ActorLogging with
   private var peer = Peer()
   private var callerUserId: Int = _
 
+  private var isAudioOnlyCall: Option[Boolean] = None
+  private var isVideoOnlyCall: Option[Boolean] = None
+  private var isVideoPreferred: Option[Boolean] = None
+
   def receive = waitForStart
 
   // FIXME: set receive timeout
@@ -209,6 +228,9 @@ private final class WebrtcCallActor extends StashingActor with ActorLogging with
       case class Res(eventBusId: String, callees: Seq[Int], callerDeviceId: EventBus.DeviceId)
       this.peer = s.peer
       this.callerUserId = s.callerUserId
+      this.isAudioOnlyCall = s.isAudioOnlyCall
+      this.isVideoOnlyCall = s.isVideoOnlyCall
+      this.isVideoPreferred = s.isVideoPreferred
 
       (for {
         callees ← fetchMembers(callerUserId, peer) map (_ filterNot (_ == callerUserId))
@@ -254,19 +276,16 @@ private final class WebrtcCallActor extends StashingActor with ActorLogging with
       log.debug("Senfing smsg {} {}", smsg, memberUserIds)
 
       (for {
-        _ ← if (peer.`type`.isPrivate) FutureExt.ftraverse(memberUserIds.toSeq)(userId ⇒ dialogExt.sendMessage(
-          peer = ApiPeer(ApiPeerType.Private, (memberUserIds - userId).head),
-          senderUserId = callerUserId,
-          senderAuthId = None,
-          senderAuthSid = 0,
-          randomId = randomId,
-          message = smsg
-        ))
-        else dialogExt.sendMessage(
+        _ ← if (peer.`type`.isPrivate) FutureExt.ftraverse(memberUserIds.toSeq)(userId ⇒
+          dialogExt.sendMessageInternal(
+            peer = ApiPeer(ApiPeerType.Private, (memberUserIds - userId).head),
+            senderUserId = callerUserId,
+            randomId = randomId,
+            message = smsg
+          ))
+        else dialogExt.sendMessageInternal(
           peer = peer.asStruct,
           senderUserId = callerUserId,
-          senderAuthId = None,
-          senderAuthSid = 0,
           randomId = randomId,
           message = smsg
         )
@@ -364,60 +383,77 @@ private final class WebrtcCallActor extends StashingActor with ActorLogging with
         }
       case GetInfo ⇒
         if (peer.typ.isPrivate) {
-          sender() ! GetInfoAck(eventBusId, Peer(PeerType.Private, memberUserIds.filterNot(_ == peer.id).head), memberUserIds.toSeq)
+          sender() ! GetInfoAck(
+            eventBusId = eventBusId,
+            peer = Peer(PeerType.Private, memberUserIds.filterNot(_ == peer.id).head),
+            participantUserIds = memberUserIds.toSeq,
+            isAudioOnlyCall = isAudioOnlyCall,
+            isVideoOnlyCall = isVideoOnlyCall,
+            isVideoPreferred = isVideoPreferred
+          )
         } else {
-          sender() ! GetInfoAck(eventBusId, peer, memberUserIds.toSeq)
+          sender() ! GetInfoAck(
+            eventBusId = eventBusId,
+            peer = peer,
+            participantUserIds = memberUserIds.toSeq,
+            isAudioOnlyCall = isAudioOnlyCall,
+            isVideoOnlyCall = isVideoOnlyCall,
+            isVideoPreferred = isVideoPreferred
+          )
         }
       case EventBus.Joined(_, client, deviceId) ⇒
         if (client.isExternal)
           advertiseMaster(eventBusId, deviceId)
       case ebMessage: EventBus.Message ⇒
-        ApiWebRTCSignaling.parseFrom(ebMessage.message).right foreach {
-          case msg: ApiAdvertiseSelf ⇒
-            log.debug("AdvertiseSelf {}", msg)
-            for (deviceId ← ebMessage.deviceId) yield {
-              val newDevice = Device(deviceId, ebMessage.client, msg.peerSettings, isJoined = deviceId == callerDeviceId)
-              log.debug(s"newDevice ${newDevice.deviceId} ${newDevice.peerSettings}")
-              devices.values.view filterNot (_.deviceId == newDevice.deviceId) foreach { pairDevice ⇒
-                if (pairDevice.canPreConnect(newDevice)) {
-                  log.debug(s"canPreConnect is true for device ${pairDevice.deviceId} ${pairDevice.peerSettings}")
-                  connect(newDevice, pairDevice)
+        ApiWebRTCSignaling.parseFrom(ebMessage.message) match {
+          case Left(e) ⇒ log.warning("Failed to parse message from event bus: {}", e)
+          case Right(m) ⇒ m match {
+            case msg: ApiAdvertiseSelf ⇒
+              log.debug("AdvertiseSelf {}", msg)
+              for (deviceId ← ebMessage.deviceId) yield {
+                val newDevice = Device(deviceId, ebMessage.client, msg.peerSettings, isJoined = deviceId == callerDeviceId)
+                log.debug(s"newDevice ${newDevice.deviceId} ${newDevice.peerSettings}")
+                devices.values.view filterNot (_.deviceId == newDevice.deviceId) foreach { pairDevice ⇒
+                  if (pairDevice.canPreConnect(newDevice)) {
+                    log.debug(s"canPreConnect is true for device ${pairDevice.deviceId} ${pairDevice.peerSettings}")
+                    connect(newDevice, pairDevice)
+                  }
+                }
+                putDevice(deviceId, ebMessage.client, newDevice)
+
+                for {
+                  userId ← ebMessage.client.externalUserId
+                  member ← getMember(userId)
+                } yield {
+                  if (member.state == MemberStates.Ringing)
+                    setMemberState(userId, MemberStates.RingingReached)
                 }
               }
-              putDevice(deviceId, ebMessage.client, newDevice)
-
+            case msg: ApiNegotinationSuccessful ⇒
+              ebMessage.client.externalUserId foreach { userId ⇒
+                setMemberState(userId, MemberStates.Connected)
+                broadcastSyncedSet()
+              }
+            case msg: ApiOnRenegotiationNeeded ⇒
+              // TODO: #perf remove sessions.find and sessions.filterNot
               for {
-                userId ← ebMessage.client.externalUserId
-                member ← getMember(userId)
+                deviceId ← ebMessage.deviceId
+                (pair, sessionId) ← sessions find (_._2 == msg.sessionId)
+                leftDevice ← devices get pair.left
+                rightDevice ← devices get pair.right
               } yield {
-                if (member.state == MemberStates.Ringing)
-                  setMemberState(userId, MemberStates.RingingReached)
+                if (deviceId != msg.device) {
+                  val chkPair = Pair.buildUnsafe(deviceId, msg.device)
+                  if (pair.left == chkPair.left && pair.right == chkPair.right) {
+                    sessions = sessions filterNot (_ == sessionId)
+                    eventBusExt.post(EventBus.InternalClient(self), eventBusId, Seq(pair.left), ApiCloseSession(pair.right, sessionId).toByteArray)
+                    eventBusExt.post(EventBus.InternalClient(self), eventBusId, Seq(pair.right), ApiCloseSession(pair.left, sessionId).toByteArray)
+                    connect(leftDevice, rightDevice)
+                  } else log.warning("Received OnRenegotiationNeeded for a wrong deviceId")
+                }
               }
-            }
-          case msg: ApiNegotinationSuccessful ⇒
-            ebMessage.client.externalUserId foreach { userId ⇒
-              setMemberState(userId, MemberStates.Connected)
-              broadcastSyncedSet()
-            }
-          case msg: ApiOnRenegotiationNeeded ⇒
-            // TODO: #perf remove sessions.find and sessions.filterNot
-            for {
-              deviceId ← ebMessage.deviceId
-              (pair, sessionId) ← sessions find (_._2 == msg.sessionId)
-              leftDevice ← devices get pair.left
-              rightDevice ← devices get pair.right
-            } yield {
-              if (deviceId != msg.device) {
-                val chkPair = Pair.buildUnsafe(deviceId, msg.device)
-                if (pair.left == chkPair.left && pair.right == chkPair.right) {
-                  sessions = sessions filterNot (_ == sessionId)
-                  eventBusExt.post(EventBus.InternalClient(self), eventBusId, Seq(pair.left), ApiCloseSession(pair.right, sessionId).toByteArray)
-                  eventBusExt.post(EventBus.InternalClient(self), eventBusId, Seq(pair.right), ApiCloseSession(pair.left, sessionId).toByteArray)
-                  connect(leftDevice, rightDevice)
-                } else log.warning("Received OnRenegotiationNeeded for a wrong deviceId")
-              }
-            }
-          case _ ⇒
+            case _ ⇒
+          }
         }
       case EventBus.Disconnected(_, client, deviceId) ⇒
         removeDevice(deviceId)
@@ -497,77 +533,69 @@ private final class WebrtcCallActor extends StashingActor with ActorLogging with
           default = FastFuture.successful(Seq(callerUserId, userId)),
           failed = FastFuture.failed(WebrtcCallErrors.CallForbidden)
         )
-      case Peer(PeerType.Group, groupId) ⇒ groupExt.getMemberIds(groupId) map (_._1)
-      case _                             ⇒ FastFuture.failed(new RuntimeException(s"Unknown peer type: ${peer.`type`}"))
+      case Peer(PeerType.Group, groupId) ⇒
+        groupExt.getMemberIds(groupId) flatMap {
+          case (memberIds, _, _) if memberIds.length <= 25 ⇒ FastFuture.successful(memberIds)
+          case _ ⇒ FastFuture.failed(WebrtcCallErrors.GroupTooBig)
+        }
+      case _ ⇒ FastFuture.failed(new RuntimeException(s"Unknown peer type: ${peer.`type`}"))
     }
 
   private def scheduleIncomingCallUpdates(callees: Seq[UserId]): Future[Unit] = {
-    for {
+    val pushCredsFu = for {
       authIdsMap ← userExt.getAuthIdsMap(callees.toSet)
-      membersMap = authIdsMap flatMap {
-        case (userId, authIds) ⇒ getMember(userId) map (_ → authIds)
+      acredsMap ← FutureExt.ftraverse(authIdsMap.toSeq) {
+        case (userId, authIds) ⇒
+          apnsExt.fetchVoipCreds(authIds.toSet) map (userId → _)
       }
-      acredsMap ← FutureExt.ftraverse(membersMap.toSeq) {
-        case (member, authIds) ⇒
-          apnsExt.fetchVoipCreds(authIds.toSet) map (member → _)
+      gcredsMap ← FutureExt.ftraverse(authIdsMap.toSeq) {
+        case (userId, authIds) ⇒
+          gcmExt.fetchCreds(authIds.toSet) map (userId → _)
       }
-      gcredsMap ← FutureExt.ftraverse(membersMap.toSeq) {
-        case (member, authIds) ⇒
-          gcmExt.fetchCreds(authIds.toSet) map (member → _)
+      actorCredsMap ← FutureExt.ftraverse(authIdsMap.toSeq) {
+        case (userId, authIds) ⇒
+          actorPush.fetchCreds(userId) map (userId → _)
       }
-      ourCredsMap ← FutureExt.ftraverse(membersMap.toSeq) {
-        case (member, authIds) ⇒
-          actorPush.fetchCreds(member.userId) map (member → _)
-      }
-    } yield {
-      for {
-        (member, credsList) ← acredsMap
-        creds ← credsList
-        credsId = extractCredsId(creds)
-        clientFu ← apnsExt.voipClient(credsId)
-      } yield {
-        val payload =
-          (new ApnsPayloadBuilder)
+    } yield (acredsMap, gcredsMap, actorCredsMap)
+
+    pushCredsFu map {
+      case (appleCreds, googleCreds, actorCreds) ⇒
+        for {
+          (userId, credsList) ← appleCreds
+          creds ← credsList
+          credsId = extractCredsId(creds)
+          clientFu ← apnsExt.voipClient(credsId)
+          payload = (new ApnsPayloadBuilder)
             .addCustomProperty("callId", id)
-            .addCustomProperty("attemptIndex", member.callAttempts)
+            .addCustomProperty("attemptIndex", 1)
             .buildWithDefaultMaximumLength()
+          _ = clientFu foreach { implicit c ⇒ sendNotification(payload, creds, userId) }
+        } yield ()
 
-        clientFu foreach { implicit client ⇒
-          sendNotification(payload, creds, member.userId)
-        }
-      }
-
-      for {
-        (member, creds) ← gcredsMap
-        cred ← creds
-      } yield {
-        val message = new GooglePushMessage(
-          cred.regId,
-          None,
-          Some(Map("callId" → id.toString, "attemptIndex" → member.callAttempts.toString)),
-          time_to_live = Some(0)
-        )
-        gcmExt.send(cred.projectId, message)
-      }
-
-      for {
-        (member, creds) ← ourCredsMap
-        cred ← creds
-      } yield {
-        actorPush.deliver(ActorPushMessage(
-          "callId" → id.toString,
-          "attemptIndex" → member.callAttempts.toString
-        ), cred)
-      }
-
-      scheduledUpds =
-        callees.map { userId ⇒
-          (
-            userId,
-            system.scheduler.schedule(0.seconds, 5.seconds, self, SendIncomingCall(userId))
+        for {
+          (member, creds) ← googleCreds
+          cred ← creds
+          message = new GooglePushMessage(
+            cred.regId,
+            None,
+            Some(Map("callId" → id.toString, "attemptIndex" → "1")),
+            time_to_live = Some(0)
           )
-        }
-          .toMap
+          _ = gcmExt.send(cred.projectId, message)
+        } yield ()
+
+        for {
+          (member, creds) ← actorCreds
+          cred ← creds
+          _ = actorPush.deliver(ActorPushMessage(
+            "callId" → id.toString,
+            "attemptIndex" → "1"
+          ), cred)
+        } yield ()
+
+        scheduledUpds = (callees map { userId ⇒
+          userId → system.scheduler.schedule(0.seconds, 5.seconds, self, SendIncomingCall(userId))
+        }).toMap
     }
   }
 

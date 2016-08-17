@@ -14,9 +14,9 @@ import scala.util.Random
 
 final class ActorBotSpec
   extends BaseAppSuite
-  with ServiceSpecHelpers
-  with ImplicitAuthService
-  with ImplicitSessionRegion {
+    with ServiceSpecHelpers
+    with ImplicitAuthService
+    with ImplicitSessionRegion {
   it should "create other bots" in rcv
   it should "report about taken username" in takenUsername // TODO: make it independent from rcv
   it should "be found by username" in username
@@ -34,14 +34,11 @@ final class ActorBotSpec
 
     Thread.sleep(1000)
 
-    whenReady(dialogExt.sendMessage(
+    whenReady(dialogExt.sendMessageInternal(
       peer = ActorBot.ApiPeer,
       senderUserId = user.id,
-      senderAuthSid = authSid,
-      senderAuthId = None,
       randomId = Random.nextLong(),
-      message = ApiTextMessage("/bot new mybot MyBotName", Vector.empty, None),
-      isFat = false
+      message = ApiTextMessage("/bot new mybot MyBotName", Vector.empty, None)
     ))(identity)
 
     Thread.sleep(2000)
@@ -65,14 +62,11 @@ final class ActorBotSpec
 
     Thread.sleep(1000)
 
-    whenReady(dialogExt.sendMessage(
+    whenReady(dialogExt.sendMessageInternal(
       peer = ActorBot.ApiPeer,
       senderUserId = user.id,
-      senderAuthSid = authSid,
-      senderAuthId = None,
       randomId = Random.nextLong(),
-      message = ApiTextMessage("/bot new mybot MyBotName", Vector.empty, None),
-      isFat = false
+      message = ApiTextMessage("/bot new mybot MyBotName", Vector.empty, None)
     ))(identity)
 
     Thread.sleep(1000)

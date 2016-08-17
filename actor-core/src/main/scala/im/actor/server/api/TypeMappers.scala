@@ -5,16 +5,17 @@ import java.time.Instant
 
 import akka.actor.{ ActorRef, ActorSystem, ExtendedActorSystem }
 import akka.serialization.Serialization
-import com.google.protobuf.wrappers.Int64Value
+import com.google.protobuf.wrappers.{ BytesValue, Int64Value }
 import com.google.protobuf.{ ByteString, CodedInputStream }
 import com.trueaccord.scalapb.TypeMapper
 import im.actor.api.rpc.files.ApiAvatar
-import im.actor.api.rpc.groups.{ ApiGroup, ApiGroupFull }
+import im.actor.api.rpc.groups.{ ApiAdminSettings, ApiGroup, ApiGroupFull }
 import im.actor.api.rpc.messaging.ApiMessage
 import im.actor.api.rpc.misc.ApiExtension
 import im.actor.api.rpc.peers.ApiPeer
 import im.actor.api.rpc.sequence.SeqUpdate
 import im.actor.api.rpc.users.ApiSex.ApiSex
+//添加ApiRegisteredUser by Lining 2016/8/17
 import im.actor.api.rpc.users.{ ApiFullUser, ApiRegisteredUser, ApiUser, ApiSex ⇒ S }
 import im.actor.serialization.ActorSerializer
 import org.joda.time.DateTime
@@ -80,6 +81,7 @@ private[api] trait MessageMapper {
     ByteString.copyFrom(user.toByteArray)
   }
 
+  //添加ApiRegisteredUser相关方法 by Lining 2016/8/17
   private def applyRegisteredUser(bytes: ByteString): ApiRegisteredUser = {
     if (bytes.size() > 0) {
       val res = ApiRegisteredUser.parseFrom(CodedInputStream.newInstance(bytes.toByteArray))
@@ -89,6 +91,7 @@ private[api] trait MessageMapper {
     }
   }
 
+  //添加ApiRegisteredUser相关方法 by Lining 2016/8/17
   private def unapplyRegisteredUser(user: ApiRegisteredUser): ByteString = {
     ByteString.copyFrom(user.toByteArray)
   }
@@ -148,6 +151,12 @@ private[api] trait MessageMapper {
   private def unapplyAvatar(avatar: ApiAvatar): ByteString =
     ByteString.copyFrom(avatar.toByteArray)
 
+  private def applyBytesAvatar(buf: BytesValue): ApiAvatar =
+    applyAvatar(buf.value)
+
+  private def unapplyBytesAvatar(avatar: ApiAvatar): BytesValue =
+    BytesValue(unapplyAvatar(avatar))
+
   private def applySex(i: Int): ApiSex = i match {
     case 2 ⇒ S.Male
     case 3 ⇒ S.Female
@@ -191,6 +200,18 @@ private[api] trait MessageMapper {
   def unapplyExtension(ext: ApiExtension): ByteString =
     ByteString.copyFrom(ext.toByteArray)
 
+  private def applyAdminSettings(bytes: ByteString): ApiAdminSettings = {
+    if (bytes.size() > 0) {
+      val res = ApiAdminSettings.parseFrom(CodedInputStream.newInstance(bytes.toByteArray))
+      get(res)
+    } else {
+      null
+    }
+  }
+
+  private def unapplyAdminSettings(settings: ApiAdminSettings): ByteString =
+    ByteString.copyFrom(settings.toByteArray)
+
   implicit val seqUpdMapper: TypeMapper[ByteString, SeqUpdate] = TypeMapper(applySeqUpdate)(unapplySeqUpdate)
 
   implicit val anyRefMapper: TypeMapper[ByteString, AnyRef] = TypeMapper(applyAnyRef)(unapplyAnyRef)
@@ -201,6 +222,7 @@ private[api] trait MessageMapper {
 
   implicit val fullUserMapper: TypeMapper[ByteString, ApiFullUser] = TypeMapper(applyFullUser)(unapplyFullUser)
 
+  //添加ApiRegisteredUser相关方法 by Lining 2016/8/17
   implicit val registeredUserMapper: TypeMapper[ByteString, ApiRegisteredUser] = TypeMapper(applyRegisteredUser)(unapplyRegisteredUser)
 
   implicit val groupMapper: TypeMapper[ByteString, ApiGroup] = TypeMapper(applyGroup)(unapplyGroup)
@@ -219,9 +241,13 @@ private[api] trait MessageMapper {
 
   implicit val avatarMapper: TypeMapper[ByteString, ApiAvatar] = TypeMapper(applyAvatar)(unapplyAvatar)
 
+  implicit val avatarBytesMapper: TypeMapper[BytesValue, ApiAvatar] = TypeMapper(applyBytesAvatar)(unapplyBytesAvatar)
+
   implicit val sexMapper: TypeMapper[Int, ApiSex] = TypeMapper(applySex)(unapplySex)
 
   implicit val extensionMapper: TypeMapper[ByteString, ApiExtension] = TypeMapper(applyExtension)(unapplyExtension)
+
+  implicit val adminSettingsMapper: TypeMapper[ByteString, ApiAdminSettings] = TypeMapper(applyAdminSettings)(unapplyAdminSettings)
 
   implicit def actorRefMapper(implicit system: ActorSystem): TypeMapper[String, ActorRef] =
     new ActorSystemMapper[String, ActorRef]() {

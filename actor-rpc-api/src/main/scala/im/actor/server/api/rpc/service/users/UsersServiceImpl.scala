@@ -3,6 +3,7 @@ package im.actor.server.api.rpc.service.users
 import java.time.{ LocalDateTime, ZoneOffset }
 
 import akka.actor._
+import akka.http.scaladsl.util.FastFuture
 import akka.util.Timeout
 import cats.data.Xor
 import im.actor.api.rpc.DBIOResultRpc._
@@ -12,10 +13,12 @@ import im.actor.api.rpc.misc.ResponseSeq
 import im.actor.api.rpc.peers.ApiUserOutPeer
 import im.actor.api.rpc.users.{ ApiRegisteredUser, ResponseLoadFullUsers, ResponseRegisterUsers, UsersService }
 import im.actor.server.acl.ACLUtils
+import im.actor.server.api.rpc.service.auth.AuthErrors
 import im.actor.server.db.DbExtension
 import im.actor.server.persist.{ UserEmailRepo, UserPhoneRepo, UserRepo }
 import im.actor.server.persist.contact.UserContactRepo
 import im.actor.server.user.UserExtension
+import im.actor.server.names.GlobalNamesStorageKeyValueStorage
 import im.actor.util.misc.StringUtils
 import im.actor.server.model._
 import im.actor.util.ThreadLocalSecureRandom
@@ -47,30 +50,31 @@ final class UsersServiceImpl(implicit actorSystem: ActorSystem) extends UsersSer
               if (accessHash == ACLUtils.userAccessHash(client.authId, user)) {
                 val seqstateF = db.run(UserContactRepo.find(client.userId, userId)) flatMap {
                   case Some(contact) ⇒
-                    userExt.editLocalName(client.userId, userId, Some(validName))
+                    userExt.editLocalName(client.userId, client.authId, userId, Some(validName))
                   case None ⇒
                     for {
                       optPhone ← db.run(UserPhoneRepo.findByUserId(userId).headOption)
                       optEmail ← db.run(UserEmailRepo.findByUserId(userId).headOption)
-                      seqstate ← userExt.addContact(
+                      seqState ← userExt.addContact(
                         userId = client.userId,
+                        authId = client.authId,
                         contactUserId = userId,
                         localName = Some(validName),
                         phone = optPhone map (_.number),
                         email = optEmail map (_.email)
                       )
-                    } yield seqstate
+                    } yield seqState
                 }
 
                 for {
-                  seqstate ← seqstateF
-                } yield Ok(ResponseSeq(seqstate.seq, seqstate.state.toByteArray))
+                  seqState ← seqstateF
+                } yield Ok(ResponseSeq(seqState.seq, seqState.state.toByteArray))
               } else {
-                Future.successful(Error(CommonRpcErrors.InvalidAccessHash))
+                FastFuture.successful(Error(CommonRpcErrors.InvalidAccessHash))
               }
-            case None ⇒ Future.successful(Error(CommonRpcErrors.UserNotFound))
+            case None ⇒ FastFuture.successful(Error(CommonRpcErrors.UserNotFound))
           }
-        case Xor.Left(err) ⇒ Future.successful(Error(UserErrors.NameInvalid))
+        case Xor.Left(err) ⇒ FastFuture.successful(Error(UserErrors.NameInvalid))
       }
     }
   }
@@ -85,7 +89,7 @@ final class UsersServiceImpl(implicit actorSystem: ActorSystem) extends UsersSer
     clientData: ClientData
   ): Future[HandlerResult[ResponseLoadFullUsers]] =
     authorized(clientData) { implicit client ⇒
-      withUserOutPeersF(userPeers) {
+      withUserOutPeers(userPeers) {
         for {
           fullUsers ← Future.sequence(userPeers map (u ⇒ userExt.getApiFullStruct(u.userId, client.userId, client.authId)))
         } yield Ok(ResponseLoadFullUsers(fullUsers.toVector))
@@ -129,7 +133,29 @@ final class UsersServiceImpl(implicit actorSystem: ActorSystem) extends UsersSer
   }
 
   /**
-   * 处理用户注册
+   * 处理用户注册 by Lining 2016/8/17
+   *
+   * @param name
+   * @param nickname
+   * @param random
+   * @return
+   */
+  /*  private def handleRegisterUser(name: String, nickname: String, ownerUserId: Int, random: ThreadLocalSecureRandom): Future[ApiRegisteredUser] = {
+    //val optUser = scala.concurrent.Await.result(db.run(UserRepo.findByNickname(nickname)), Duration.Inf)
+    val globalNamesStorage = new GlobalNamesStorageKeyValueStorage
+    val futureResult = fromFutureOption(AuthErrors.UsernameUnoccupied)(globalNamesStorage.getUserId(nickname))
+    val optUserId = scala.concurrent.Await.result(futureResult, Duration.Inf)
+    optUserId match {
+      case Some(userId) ⇒
+        Future.successful(ApiRegisteredUser(userId, nickname, false))
+      case None ⇒
+        val userModel = addUser(name, nickname)
+        Future.successful(ApiRegisteredUser(userModel.id, nickname, true))
+    }
+  }*/
+
+  /**
+   * 处理用户注册 by Lining 2016/8/17
    *
    * @param name
    * @param nickname
@@ -137,14 +163,16 @@ final class UsersServiceImpl(implicit actorSystem: ActorSystem) extends UsersSer
    * @return
    */
   private def handleRegisterUser(name: String, nickname: String, ownerUserId: Int, random: ThreadLocalSecureRandom): Future[ApiRegisteredUser] = {
-    val optUser = scala.concurrent.Await.result(db.run(UserRepo.findByNickname(nickname)), Duration.Inf)
-    optUser match {
-      case Some(user) ⇒
-        Future.successful(ApiRegisteredUser(user.id, nickname, false))
-      case None ⇒
-        val userModel = addUser(name, nickname)
-        Future.successful(ApiRegisteredUser(userModel.id, nickname, true))
-    }
+    val globalNamesStorage = new GlobalNamesStorageKeyValueStorage
+    for {
+      optUserId ← globalNamesStorage.getUserId(name)
+      result ← optUserId match {
+        case Some(id) ⇒ FastFuture.successful(ApiRegisteredUser(id, nickname, false))
+        case None ⇒
+          val userModel = addUser(name, nickname)
+          FastFuture.successful(ApiRegisteredUser(userModel.id, nickname, true))
+      }
+    } yield result
   }
 
   private def addUser(name: String, nickName: String): User = {

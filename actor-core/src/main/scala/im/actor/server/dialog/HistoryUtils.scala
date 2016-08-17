@@ -1,11 +1,12 @@
 package im.actor.server.dialog
 
 import akka.actor.ActorSystem
-import im.actor.api.rpc.DBIOResultRpc._
+import akka.http.scaladsl.util.FastFuture
 import im.actor.server.group.{ GroupExtension, GroupUtils }
 import im.actor.server.model.{ HistoryMessage, Peer, PeerType }
 import im.actor.server.persist.HistoryMessageRepo
 import im.actor.server.db.DbExtension
+import im.actor.api.rpc.DBIOResultRpc._
 import org.joda.time.DateTime
 import slick.dbio.DBIO
 
@@ -22,7 +23,7 @@ object HistoryUtils {
   private[dialog] def writeHistoryMessage(
     fromPeer:             Peer,
     toPeer:               Peer,
-    date:                 DateTime,
+    dateMillis:           Long,
     randomId:             Long,
     messageContentHeader: Int,
     messageContentData:   Array[Byte]
@@ -30,6 +31,8 @@ object HistoryUtils {
     import system.dispatcher
     requirePrivatePeer(fromPeer)
     // requireDifferentPeers(fromPeer, toPeer)
+
+    val date = new DateTime(dateMillis)
 
     if (toPeer.typ == PeerType.Private) {
       val outMessage = HistoryMessage(
@@ -80,7 +83,7 @@ object HistoryUtils {
     userId:               Int,
     toPeer:               Peer,
     senderUserId:         Int,
-    date:                 DateTime,
+    dateMillis:           Long,
     randomId:             Long,
     messageContentHeader: Int,
     messageContentData:   Array[Byte]
@@ -89,7 +92,7 @@ object HistoryUtils {
       _ ← HistoryMessageRepo.create(HistoryMessage(
         userId = userId,
         peer = toPeer,
-        date = date,
+        date = new DateTime(dateMillis),
         senderUserId = senderUserId,
         randomId = randomId,
         messageContentHeader = messageContentHeader,
@@ -99,27 +102,10 @@ object HistoryUtils {
     } yield ()
   }
 
-  // todo: remove this in favor of getHistoryOwner
-  def withHistoryOwner[A](peer: Peer, clientUserId: Int)(f: Int ⇒ DBIO[A])(implicit system: ActorSystem): DBIO[A] = {
-    import system.dispatcher
-    (peer.typ match {
-      case PeerType.Private ⇒ DBIO.successful(clientUserId)
-      case PeerType.Group ⇒
-        DBIO.from(GroupExtension(system).isHistoryShared(peer.id)) flatMap { isHistoryShared ⇒
-          if (isHistoryShared) {
-            DBIO.successful(SharedUserId)
-          } else {
-            DBIO.successful(clientUserId)
-          }
-        }
-      case _ ⇒ throw new RuntimeException(s"Unknown peer type ${peer.typ}")
-    }) flatMap f
-  }
-
   def getHistoryOwner(peer: Peer, clientUserId: Int)(implicit system: ActorSystem): Future[Int] = {
     import system.dispatcher
     peer.typ match {
-      case PeerType.Private ⇒ Future.successful(clientUserId)
+      case PeerType.Private ⇒ FastFuture.successful(clientUserId)
       case PeerType.Group ⇒
         /*        for {
           isHistoryShared ← GroupExtension(system).isHistoryShared(peer.id)
@@ -137,6 +123,6 @@ object HistoryUtils {
 
   private def requirePrivatePeer(peer: Peer) = {
     if (peer.typ != PeerType.Private)
-      throw new Exception("peer should be Private")
+      throw new RuntimeException("sender should be Private peer")
   }
 }

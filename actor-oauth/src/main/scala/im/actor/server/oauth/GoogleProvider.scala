@@ -9,7 +9,6 @@ import im.actor.server.persist.OAuth2TokenRepo
 import scala.concurrent.forkjoin.ThreadLocalRandom
 import scala.concurrent.{ ExecutionContext, Future }
 import scala.util.Try
-
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.marshalling.Marshal
@@ -17,18 +16,15 @@ import akka.http.scaladsl.model.HttpMethods._
 import akka.http.scaladsl.model._
 import akka.http.scaladsl.model.headers.{ Authorization, OAuth2BearerToken }
 import akka.http.scaladsl.unmarshalling._
-import akka.stream.Materializer
+import akka.http.scaladsl.util.FastFuture
+import akka.stream.{ ActorMaterializer, Materializer }
 import slick.dbio.DBIO
-
 import im.actor.server.model.OAuth2Token
 
-class GoogleProvider(googleConfig: OAuth2GoogleConfig)(
-  implicit
-  system:           ActorSystem,
-  val materializer: Materializer
-) extends OAuth2Provider with Implicits {
+class GoogleProvider(googleConfig: OAuth2GoogleConfig)(implicit system: ActorSystem) extends OAuth2Provider with Implicits {
+  import system.dispatcher
 
-  implicit val ec: ExecutionContext = system.dispatcher
+  implicit val materializer: Materializer = ActorMaterializer()
 
   private val Utf8Encoding = "UTF-8"
 
@@ -61,13 +57,13 @@ class GoogleProvider(googleConfig: OAuth2GoogleConfig)(
   def getAuthUrl(redirectUrl: String, userId: String): Option[String] = {
     Try(Uri(redirectUrl)).map { _ ⇒
       s"""${googleConfig.authUri}
-          |?redirect_uri=${URLEncoder.encode(redirectUrl, Utf8Encoding)}
-          |&response_type=code
-          |&client_id=${googleConfig.clientId}
-          |&scope=${URLEncoder.encode(googleConfig.scope, Utf8Encoding)}
-          |&approval_prompt=force
-          |&access_type=offline
-          |&user_id=$userId""".stripMargin.replaceAll("\n", "")
+         |?redirect_uri=${URLEncoder.encode(redirectUrl, Utf8Encoding)}
+         |&response_type=code
+         |&client_id=${googleConfig.clientId}
+         |&scope=${URLEncoder.encode(googleConfig.scope, Utf8Encoding)}
+         |&approval_prompt=force
+         |&access_type=offline
+         |&user_id=$userId""".stripMargin.replaceAll("\n", "")
     }.toOption
   }
 
@@ -93,7 +89,7 @@ class GoogleProvider(googleConfig: OAuth2GoogleConfig)(
   private def fetchToken(form: FormData, userId: String): Future[Option[OAuth2Token]] =
     for {
       optToken ← requestToken(form)
-      result ← Future.successful(optToken.map(makeModel(_, userId)))
+      result ← FastFuture.successful(optToken.map(makeModel(_, userId)))
     } yield result
 
   private def requestToken(form: FormData): Future[Option[Token]] = for {

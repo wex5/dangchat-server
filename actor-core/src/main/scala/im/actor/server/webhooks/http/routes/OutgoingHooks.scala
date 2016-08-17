@@ -42,27 +42,27 @@ trait OutgoingHooks extends ReverseHookUnmarshaler with PlayJsonSupport {
           }
         }
       } ~
-      get {
-        onSuccess(list(token)) {
-          case Xor.Left((status, message)) ⇒ complete(status → Errors(message))
-          case Xor.Right(hooks) ⇒ complete(hooks)
+        get {
+          onSuccess(list(token)) {
+            case Xor.Left((status, message)) ⇒ complete(status → Errors(message))
+            case Xor.Right(hooks) ⇒ complete(hooks)
+          }
         }
-      }
     } ~
-    path(Segment / "reverse" / IntNumber) { (token, id) ⇒
-      get {
-        onSuccess(findHook(token, id)) {
-          case Some(_) ⇒ complete(OK → Status("Ok"))
-          case None    ⇒ complete(Gone → Status(OutgoingHooksErrors.WebhookGone))
-        }
-      } ~
-      delete {
-        onSuccess(unregister(token, id)) {
-          case Xor.Left((status, message)) ⇒ complete(status → Errors(message))
-          case Xor.Right(_)                ⇒ complete(Accepted → Status("Ok"))
-        }
+      path(Segment / "reverse" / IntNumber) { (token, id) ⇒
+        get {
+          onSuccess(findHook(token, id)) {
+            case Some(_) ⇒ complete(OK → Status("Ok"))
+            case None    ⇒ complete(Gone → Status(OutgoingHooksErrors.WebhookGone))
+          }
+        } ~
+          delete {
+            onSuccess(unregister(token, id)) {
+              case Xor.Left((status, message)) ⇒ complete(status → Errors(message))
+              case Xor.Right(_)                ⇒ complete(Accepted → Status("Ok"))
+            }
+          }
       }
-    }
   // format: ON
 
   def findHook(token: String, id: Int): Future[Option[Int]] = {
@@ -73,7 +73,7 @@ trait OutgoingHooks extends ReverseHookUnmarshaler with PlayJsonSupport {
 
   def register(token: String, uri: String): Future[(StatusCode, String) Xor Int] = {
     (for {
-      groupId ← fromFutureOption(NotFound → OutgoingHooksErrors.WrongIntegrationToken)(integrationTokensKv.get(token))
+      groupId ← fromFutureOption(NotFound → OutgoingHooksErrors.WrongIntegrationToken)(integrationTokensKV.getGroupId(token))
       uri ← fromXor((e: Throwable) ⇒ BadRequest → OutgoingHooksErrors.MalformedUri)(Xor.fromTry(Try(Uri(uri))))
       strUri = uri.toString()
 
@@ -87,7 +87,7 @@ trait OutgoingHooks extends ReverseHookUnmarshaler with PlayJsonSupport {
 
   def unregister(token: String, id: Int): Future[(StatusCode, String) Xor Unit] = {
     (for {
-      groupId ← fromFutureOption(NotFound → OutgoingHooksErrors.WrongIntegrationToken)(integrationTokensKv.get(token))
+      groupId ← fromFutureOption(NotFound → OutgoingHooksErrors.WrongIntegrationToken)(integrationTokensKV.getGroupId(token))
       _ ← fromFutureOption(Gone → OutgoingHooksErrors.WebhookGone)(findHook(token, id))
       _ ← fromFuture(getTokenKv(token).delete(id.toString))
     } yield ()).value
@@ -95,7 +95,7 @@ trait OutgoingHooks extends ReverseHookUnmarshaler with PlayJsonSupport {
 
   def list(token: String): Future[(StatusCode, String) Xor Seq[ReverseHookResponse]] = {
     (for {
-      groupId ← fromFutureOption(NotFound → OutgoingHooksErrors.WrongIntegrationToken)(integrationTokensKv.get(token))
+      groupId ← fromFutureOption(NotFound → OutgoingHooksErrors.WrongIntegrationToken)(integrationTokensKV.getGroupId(token))
       hooks ← fromFuture(getHooks(token))
       result = hooks.map(h ⇒ ReverseHookResponse(h._1, Some(h._2)))
     } yield result).value

@@ -6,6 +6,7 @@ import java.time.{ Duration, Instant }
 
 import akka.actor.ActorSystem
 import akka.http.scaladsl.model.{ HttpMethods, Uri }
+import akka.http.scaladsl.util.FastFuture
 import akka.stream.{ ActorMaterializer, Materializer }
 import better.files._
 import im.actor.acl.ACLFiles
@@ -105,7 +106,7 @@ final class LocalFileStorageAdapter(_system: ActorSystem)
     val query = baseUri
       .withPath(Uri.Path(s"/v1/files/$fileId"))
       .withQuery(Uri.Query("expires" → expiresAt().toString))
-    Future.successful(LocalUploadKey.fileKey(fileId) → signRequest(HttpMethods.PUT, query, ACLFiles.secretKey()).toString)
+    FastFuture.successful(LocalUploadKey.fileKey(fileId) → signRequest(HttpMethods.PUT, query, ACLFiles.secretKey()).toString)
   }
 
   override def completeFileUpload(fileId: Long, fileSize: Long, fileName: UnsafeFileName, partNames: Seq[String]): Future[Unit] = {
@@ -113,13 +114,11 @@ final class LocalFileStorageAdapter(_system: ActorSystem)
     for {
       isComplete ← haveAllParts(fileDir, partNames, fileSize)
       result ← concatFiles(fileDir, partNames, fileName.safe, fileSize)
-      _ ← if (isComplete) deleteUploadedParts(fileDir, partNames) else Future.successful(())
+      _ ← if (isComplete) deleteUploadedParts(fileDir, partNames) else FastFuture.successful(())
       //添加音频转换支持  by Lining  2016-6-20
-      _ ← if (result.name.endsWith("voice.opus")) convertAudio(result.toJava) else Future.successful(())
+      _ ← if (result.name.endsWith("voice.opus")) convertAudio(result.toJava) else FastFuture.successful(())
       //添加视频转换支持  by Lining  2016-7-13
-      //_ ← if (result.name.startsWith("VID_") && result.name.endsWith(".mp4")) convertVideo(result.toJava) else Future.successful(())
-      //_ ← if (result.name.startsWith("VID_") && result.name.endsWith(".mov")) convertVideo(result.toJava) else Future.successful(())
-      _ ← if (result.name.toLowerCase.endsWith(".mp4") || result.name.toLowerCase.endsWith(".mov")) convertVideo(result.toJava) else Future.successful(())
+      _ ← if (result.name.toLowerCase.endsWith(".mp4") || result.name.toLowerCase.endsWith(".mov")) convertVideo(result.toJava) else FastFuture.successful(())
       _ ← db.run(FileRepo.setUploaded(fileId, fileName.safe))
     } yield ()
   }
@@ -186,7 +185,7 @@ final class LocalFileStorageAdapter(_system: ActorSystem)
       baseUri
         .withPath(Uri.Path(s"/v1/files/$fileId/$partNumber"))
         .withQuery(Uri.Query("expires" → expiresAt().toString))
-    Future.successful(LocalUploadKey.partKey(fileId, partNumber) → signRequest(HttpMethods.PUT, query, ACLFiles.secretKey()).toString)
+    FastFuture.successful(LocalUploadKey.partKey(fileId, partNumber) → signRequest(HttpMethods.PUT, query, ACLFiles.secretKey()).toString)
   }
 
   def parseKey(bytes: Array[Byte]): UploadKey = LocalUploadKey.parseFrom(bytes)

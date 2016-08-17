@@ -22,6 +22,7 @@ case object StopOffice
 
 trait ProcessorState
 
+// TODO: replace with im.actor.server.cqrs.Processor
 trait Processor[State, Event <: AnyRef] extends PersistentActor with ActorFutures with AlertingActor {
 
   case class BreakStashing(ts: Instant, evts: Seq[Event], state: State)
@@ -67,21 +68,23 @@ trait Processor[State, Event <: AnyRef] extends PersistentActor with ActorFuture
 
   final def receiveCommand = initializing
 
-  protected final def initializing: Receive = handleInitCommand orElse unstashing orElse {
-    case msg ⇒
-      log.debug("Entity not found while processing {}", msg)
-      sender() ! Status.Failure(notFoundError)
-  }
+  protected final def initializing: Receive =
+    handleInitCommand orElse unstashing orElse {
+      case msg ⇒
+        log.debug("Entity not found while processing {}", msg)
+        sender() ! Status.Failure(notFoundError)
+    }
 
   protected final def working(state: State): Receive = handleCommand(state) orElse handleQuery(state) orElse {
     case unmatched ⇒ log.warning("Unmatched message: {}, {}, sender: {}", unmatched.getClass.getName, unmatched, sender())
   }
 
-  protected final def stashingBehavior: Receive = unstashing orElse {
-    case msg ⇒
-      log.warning("Stashing: {}", msg)
-      stash()
-  }
+  protected final def stashingBehavior: Receive =
+    unstashing orElse {
+      case msg ⇒
+        log.warning("Stashing: {}", msg)
+        stash()
+    }
 
   private final def unstashing: Receive = {
     case BreakStashing(ts, evts, state) ⇒

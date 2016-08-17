@@ -37,10 +37,10 @@ final class EchoBot extends InternalBot(EchoBot.UserId, "echo", "Echo Bot", isAd
 
 final class EchoBotSpec
   extends BaseAppSuite
-  with ServiceSpecHelpers
-  with GroupsServiceHelpers
-  with ImplicitAuthService
-  with ImplicitSessionRegion {
+    with ServiceSpecHelpers
+    with GroupsServiceHelpers
+    with ImplicitAuthService
+    with ImplicitSessionRegion {
   it should "reply with the same message (private)" in replyPrivate
   it should "reply with the same message (group)" in replyGroup
 
@@ -57,14 +57,11 @@ final class EchoBotSpec
 
     Thread.sleep(1000)
 
-    whenReady(dialogExt.sendMessage(
+    whenReady(dialogExt.sendMessageInternal(
       peer = ApiPeer(ApiPeerType.Private, EchoBot.UserId),
       senderUserId = user.id,
-      senderAuthSid = authSid,
-      senderAuthId = None,
       randomId = Random.nextLong(),
-      message = ApiTextMessage("Hello", Vector.empty, None),
-      isFat = false
+      message = ApiTextMessage("Hello", Vector.empty, None)
     ))(identity)
 
     Thread.sleep(2000)
@@ -89,14 +86,11 @@ final class EchoBotSpec
     val groupPeer = createGroup("Echo group", Set(EchoBot.UserId)).groupPeer
     val outPeer = ApiOutPeer(ApiPeerType.Group, groupPeer.groupId, groupPeer.accessHash)
 
-    whenReady(dialogExt.sendMessage(
+    whenReady(dialogExt.sendMessageInternal(
       peer = ApiPeer(ApiPeerType.Group, groupPeer.groupId),
       senderUserId = user.id,
-      senderAuthSid = authSid,
-      senderAuthId = None,
       randomId = Random.nextLong(),
-      message = ApiTextMessage("Hello", Vector.empty, None),
-      isFat = false
+      message = ApiTextMessage("Hello", Vector.empty, None)
     ))(identity)
 
     Thread.sleep(2000)
