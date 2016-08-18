@@ -75,9 +75,23 @@ object ParameterRepo {
             peerStr.split("_").toList match {
               //如果此处出现异常，则需要做捕捉处理。
               case "GROUP" :: id :: Nil ⇒
-                Some((Peer(PeerType.Group, id.toInt), boolValue(value)))
+                //Some((Peer(PeerType.Group, id.toInt), boolValue(value)))
+                try {
+                  Some((Peer(PeerType.Group, id.toInt), boolValue(value)))
+                } catch {
+                  case ex: Exception ⇒ {
+                    None
+                  }
+                }
               case "PRIVATE" :: id :: Nil ⇒
-                Some((Peer(PeerType.Private, id.toInt), boolValue(value)))
+                //Some((Peer(PeerType.Private, id.toInt), boolValue(value)))
+                try {
+                  Some((Peer(PeerType.Private, id.toInt), boolValue(value)))
+                } catch {
+                  case ex: Exception ⇒ {
+                    None
+                  }
+                }
               case _ ⇒ None
             }
           case _ ⇒ None
