@@ -13,12 +13,10 @@ import im.actor.api.rpc.misc.ResponseSeq
 import im.actor.api.rpc.peers.ApiUserOutPeer
 import im.actor.api.rpc.users.{ ApiRegisteredUser, ResponseLoadFullUsers, ResponseRegisterUsers, UsersService }
 import im.actor.server.acl.ACLUtils
-import im.actor.server.api.rpc.service.auth.AuthErrors
 import im.actor.server.db.DbExtension
 import im.actor.server.persist.{ UserEmailRepo, UserPhoneRepo, UserRepo }
 import im.actor.server.persist.contact.UserContactRepo
 import im.actor.server.user.UserExtension
-import im.actor.server.names.GlobalNamesStorageKeyValueStorage
 import im.actor.util.misc.StringUtils
 import im.actor.server.model._
 import im.actor.util.ThreadLocalSecureRandom
@@ -140,36 +138,17 @@ final class UsersServiceImpl(implicit actorSystem: ActorSystem) extends UsersSer
    * @param random
    * @return
    */
-  /*  private def handleRegisterUser(name: String, nickname: String, ownerUserId: Int, random: ThreadLocalSecureRandom): Future[ApiRegisteredUser] = {
-    //val optUser = scala.concurrent.Await.result(db.run(UserRepo.findByNickname(nickname)), Duration.Inf)
-    val globalNamesStorage = new GlobalNamesStorageKeyValueStorage
-    val futureResult = fromFutureOption(AuthErrors.UsernameUnoccupied)(globalNamesStorage.getUserId(nickname))
-    val optUserId = scala.concurrent.Await.result(futureResult, Duration.Inf)
-    optUserId match {
-      case Some(userId) ⇒
-        Future.successful(ApiRegisteredUser(userId, nickname, false))
-      case None ⇒
-        val userModel = addUser(name, nickname)
-        Future.successful(ApiRegisteredUser(userModel.id, nickname, true))
-    }
-  }*/
-
-  /**
-   * 处理用户注册 by Lining 2016/8/17
-   *
-   * @param name
-   * @param nickname
-   * @param random
-   * @return
-   */
-  private def handleRegisterUser(name: String, nickname: String, ownerUserId: Int, random: ThreadLocalSecureRandom): Future[ApiRegisteredUser] = {
-    val globalNamesStorage = new GlobalNamesStorageKeyValueStorage
+  private def handleRegisterUser(client: AuthorizedClientData, name: String, nickname: String,
+                                 ownerUserId: Int, random: ThreadLocalSecureRandom): Future[ApiRegisteredUser] = {
     for {
-      optUserId ← globalNamesStorage.getUserId(name)
-      result ← optUserId match {
-        case Some(id) ⇒ FastFuture.successful(ApiRegisteredUser(id, nickname, false))
+      optUser ← db.run(UserRepo.findByNickname(nickname))
+      result ← optUser match {
+        case Some(user) ⇒
+          addContact(client, user.id)
+          FastFuture.successful(ApiRegisteredUser(user.id, nickname, false))
         case None ⇒
           val userModel = addUser(name, nickname)
+          addContact(client, userModel.id)
           FastFuture.successful(ApiRegisteredUser(userModel.id, nickname, true))
       }
     } yield result
@@ -189,6 +168,29 @@ final class UsersServiceImpl(implicit actorSystem: ActorSystem) extends UsersSer
     DBIO.from(userExt.addPhone(user.id, getPhoneNumber()))
   }
 
+  //添加联系人 by Lining 2016/8/19
+  private def addContact(client: AuthorizedClientData, contactUserId: Int): Unit = {
+    val contactExists = scala.concurrent.Await.result(
+      db.run(UserContactRepo.exists(ownerUserId = client.userId, contactUserId = contactUserId)),
+      scala.concurrent.duration.Duration.Inf
+    )
+    if (!contactExists) {
+      val action = for {
+        optPhone ← fromDBIO(UserPhoneRepo.findByUserId(contactUserId).headOption)
+        optEmail ← fromDBIO(UserEmailRepo.findByUserId(contactUserId).headOption)
+        seqState ← fromFuture(userExt.addContact(
+          userId = client.userId,
+          authId = client.authId,
+          contactUserId = contactUserId,
+          localName = None,
+          phone = optPhone map (_.number),
+          email = optEmail map (_.email)
+        ))
+      } yield ()
+      db.run(action.value)
+    }
+  }
+
   /**
    * 注册用户
    *
@@ -206,7 +208,7 @@ final class UsersServiceImpl(implicit actorSystem: ActorSystem) extends UsersSer
       val userMap = (userIds zip userNames)
       val rng = ThreadLocalSecureRandom.current()
       for {
-        users ← Future.sequence(userMap map (kv ⇒ handleRegisterUser(kv._2, kv._1, client.userId, rng)))
+        users ← Future.sequence(userMap map (kv ⇒ handleRegisterUser(client, kv._2, kv._1, client.userId, rng)))
       } yield Ok(ResponseRegisterUsers(users.toVector))
     }
 
