@@ -108,7 +108,6 @@ object UserRepo {
   def findSalts(ids: Set[Int]) =
     users.filter(_.id inSet ids).map(u ⇒ (u.id, u.accessSalt)).result
 
-  @deprecated("user GlobalNamesStorageKeyValueStorage instead", "2016-07-17")
   def findByNickname(query: String): DBIO[Option[User]] = {
     val nickname =
       if (query.startsWith("@")) query.drop(1) else query
