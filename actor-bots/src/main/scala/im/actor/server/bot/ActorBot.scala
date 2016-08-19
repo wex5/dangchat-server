@@ -36,7 +36,8 @@ final class ActorBot extends InternalBot(ActorBot.UserId, ActorBot.Username, Act
             case nickname :: name :: Nil ⇒
               log.warning("Creating new bot")
 
-              requestCreateBot(nickname, name) onComplete {
+              //支持创建中文昵称的机器人  by Lining 2016/8/19
+              requestCreateBot(nickname replaceAll ("\"", ""), name replaceAll ("\"", "")) onComplete {
                 case Success(token) ⇒ requestSendMessage(m.peer, nextRandomId(), TextMessage(s"Yay! Bot created, bot token: ${token.token}, bot id: ${token.userId}", None))
                 case Failure(BotError(_, "USERNAME_TAKEN", _, _)) ⇒
                   requestSendMessage(m.peer, nextRandomId(), TextMessage("Username already taken", None))
