@@ -56,7 +56,10 @@ abstract class BotServiceBase(system: ActorSystem) extends BotServiceTypes with 
       if (isAdmin)
         f
       else
-        FastFuture.successful(Left(BotError(403, "FORBIDDEN")))
+        //去掉是否为bot admin的验证
+        //by Lining 2016/8/19
+        //FastFuture.successful(Left(BotError(403, "FORBIDDEN")))
+        f
     }
   }
 }
