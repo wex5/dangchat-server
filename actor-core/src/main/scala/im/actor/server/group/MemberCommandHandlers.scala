@@ -427,8 +427,10 @@ private[group] trait MemberCommandHandlers extends GroupsImplicits {
   protected def leave(cmd: Leave): Unit = {
     if (state.nonMember(cmd.userId)) {
       sender() ! notMember
-    } else if (!state.permissions.canLeave(cmd.userId)) {
-      sender() ! Status.Failure(CantLeaveGroup)
+      //去掉创建人不能删除群组的限制
+      //by Lining 2016/8/23
+      /*    } else if (!state.permissions.canLeave(cmd.userId)) {
+      sender() ! Status.Failure(CantLeaveGroup)*/
     } else {
       val leftEvent = UserLeft(Instant.now, cmd.userId)
       persist(leftEvent) { evt ⇒
