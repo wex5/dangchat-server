@@ -1,5 +1,5 @@
 CREATE TABLE "public"."auth_tokens" (
-"user_id" int4 NOT NULL,
+"user_id" varchar(32) COLLATE "default" NOT NULL,
 "token" varchar(255) COLLATE "default" NOT NULL,
 "created_at" timestamp(6) NOT NULL,
 "attempts" int4 DEFAULT 0 NOT NULL,
