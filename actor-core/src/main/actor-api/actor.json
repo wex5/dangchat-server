@@ -571,7 +571,7 @@
             ],
             "attributes": [
               {
-                "type": "int64",
+                "type": "string",
                 "id": 1,
                 "name": "token"
               },

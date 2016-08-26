@@ -62,6 +62,8 @@
           </set>
         </option>
         <option name="sbtVersion" value="0.13.11" />
+        <option name="useAutoImport" value="true" />
+        <option name="useOurOwnAutoImport" value="true" />
       </SbtProjectSettings>
     </option>
     <option name="maximumHeapSize" value="1024" />

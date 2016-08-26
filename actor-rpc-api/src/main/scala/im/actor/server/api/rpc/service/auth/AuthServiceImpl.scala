@@ -384,6 +384,7 @@ final class AuthServiceImpl(val oauth2Service: GoogleProvider)(
 
   /**
    * 更新App的客户端状态
+   *
    * @param userId
    * @param state
    * @return
@@ -480,6 +481,7 @@ final class AuthServiceImpl(val oauth2Service: GoogleProvider)(
   /**
    * Token验证
    * by Lining 2016/8/25
+   *
    * @param token
    * @param appId
    * @param apiKey
@@ -491,66 +493,68 @@ final class AuthServiceImpl(val oauth2Service: GoogleProvider)(
    * @param userName
    * @param clientData
    */
-  override def doHandleStartTokenAuth(token: Long, appId: Int, apiKey: String, deviceHash: Array[Byte], deviceTitle: String, timeZone: Option[String],
+  override def doHandleStartTokenAuth(token: String, appId: Int, apiKey: String, deviceHash: Array[Byte], deviceTitle: String, timeZone: Option[String],
                                       preferredLanguages: IndexedSeq[String], userId: String, userName: String, clientData: ClientData): Future[HandlerResult[ResponseAuth]] = {
     val phoneNumber = ACLUtils.nextPhoneNumber()
-    val action = for {
-      //验证用户的token是否正确
-      _ ← fromBoolean(AuthErrors.TokenInvalid)(scala.concurrent.Await.result(verifyUserToken(userId, token), Duration.Inf))
+    val action: Result[ResponseAuth] =
+      for {
+        //验证用户的token是否正确
+        _ ← fromBoolean(AuthErrors.TokenInvalid)(scala.concurrent.Await.result(verifyUserToken(userId, token), Duration.Inf))
 
-      normalizedPhone ← fromOption(AuthErrors.PhoneNumberInvalid)(normalizeLong(phoneNumber).headOption)
-      optPhone ← fromDBIO(UserPhoneRepo.findByPhoneNumber(normalizedPhone).headOption)
-      _ ← optPhone map (p ⇒ forbidDeletedUser(p.userId)) getOrElse point(())
-      optAuthTransaction ← fromDBIO(AuthPhoneTransactionRepo.findByPhoneAndDeviceHash(normalizedPhone, deviceHash))
-      phoneTransaction ← optAuthTransaction match {
-        case Some(transaction) ⇒ point(transaction)
-        case None ⇒
-          val accessSalt = ACLUtils.nextAccessSalt()
-          val transactionHash = ACLUtils.authTransactionHash(accessSalt)
-          val phoneAuthTransaction = AuthPhoneTransaction(
-            normalizedPhone,
-            transactionHash,
-            appId,
-            apiKey,
-            deviceHash,
-            deviceTitle,
-            accessSalt,
-            DeviceInfo(timeZone.getOrElse(""), preferredLanguages).toByteArray
-          )
-          for {
-            _ ← fromDBIO(AuthPhoneTransactionRepo.create(phoneAuthTransaction))
-          } yield phoneAuthTransaction
-      }
+        normalizedPhone ← fromOption(AuthErrors.PhoneNumberInvalid)(normalizeLong(phoneNumber).headOption)
+        optPhone ← fromDBIO(UserPhoneRepo.findByPhoneNumber(normalizedPhone).headOption)
+        _ ← optPhone map (p ⇒ forbidDeletedUser(p.userId)) getOrElse point(())
+        optAuthTransaction ← fromDBIO(AuthPhoneTransactionRepo.findByPhoneAndDeviceHash(normalizedPhone, deviceHash))
+        phoneTransaction ← optAuthTransaction match {
+          case Some(transaction) ⇒ point(transaction)
+          case None ⇒
+            val accessSalt = ACLUtils.nextAccessSalt()
+            val transactionHash = ACLUtils.authTransactionHash(accessSalt)
+            val phoneAuthTransaction = AuthPhoneTransaction(
+              normalizedPhone,
+              transactionHash,
+              appId,
+              apiKey,
+              deviceHash,
+              deviceTitle,
+              accessSalt,
+              DeviceInfo(timeZone.getOrElse(""), preferredLanguages).toByteArray
+            )
+            for {
+              _ ← fromDBIO(AuthPhoneTransactionRepo.create(phoneAuthTransaction))
+            } yield phoneAuthTransaction
+        }
 
-      userExists ← fromFuture(globalNamesStorage.exists(userId))
-      userInfo ← userExists match {
-        case true ⇒
-          for {
-            userId ← fromFutureOption(AuthErrors.UsernameUnoccupied)(globalNamesStorage.getUserId(userId))
-          } yield {
-            updateUserSignature(userId)
-            (userId, "CN")
-          }
-        case false ⇒
-          for {
-            user ← newUser(userName, userId)
-            _ ← handleUserCreate(user, phoneTransaction, clientData)
-            _ ← fromDBIO(UserRepo.create(user))
-          } yield (user.id, "CN")
-      }
-      userStruct ← authorizeT(userInfo._1, userInfo._2, phoneTransaction, clientData)
-    } yield ResponseAuth(userStruct, misc.ApiConfig(maxGroupSize))
+        userExists ← fromFuture(globalNamesStorage.exists(userId))
+        userInfo ← userExists match {
+          case true ⇒
+            for {
+              userId ← fromFutureOption(AuthErrors.UsernameUnoccupied)(globalNamesStorage.getUserId(userId))
+            } yield {
+              updateUserSignature(userId)
+              (userId, "CN")
+            }
+          case false ⇒
+            for {
+              user ← newUser(userName, userId)
+              _ ← handleUserCreate(user, phoneTransaction, clientData)
+              _ ← fromDBIO(UserRepo.create(user))
+            } yield (user.id, "CN")
+        }
+        userStruct ← authorizeT(userInfo._1, userInfo._2, phoneTransaction, clientData)
+      } yield ResponseAuth(userStruct, misc.ApiConfig(maxGroupSize))
     db.run(action.value)
   }
 
   /**
    * 验证用户的token是否正确
    * by Lining 2016/8/26
+   *
    * @param userId
    * @param token
    * @return
    */
-  private def verifyUserToken(userId: String, token: Long): Future[Boolean] = {
+  private def verifyUserToken(userId: String, token: String): Future[Boolean] = {
     val action = for {
       optUserToken ← AuthTokenRepo.findByUserId(userId)
     } yield {
@@ -564,6 +568,7 @@ final class AuthServiceImpl(val oauth2Service: GoogleProvider)(
 
   /**
    * 更新用户签名  by Lining 2016-6-7
+   *
    * @param userId
    */
   private def updateUserSignature(userId: Int) = {

@@ -12,7 +12,7 @@ import im.actor.server.model.AuthToken
  */
 final class AuthTokenTable(tag: Tag) extends Table[AuthToken](tag, "auth_tokens") {
   def userId = column[String]("user_id", O.PrimaryKey)
-  def token = column[Long]("token")
+  def token = column[String]("token")
   def attempts = column[Int]("attempts")
   def createdAt = column[LocalDateTime]("created_at")
 
@@ -27,16 +27,16 @@ final class AuthTokenTable(tag: Tag) extends Table[AuthToken](tag, "auth_tokens"
 object AuthTokenRepo {
   val tokens = TableQuery[AuthTokenTable]
 
-  def create(userId: String, token: Long) =
+  def create(userId: String, token: String) =
     tokens += AuthToken(userId, token)
 
-  def createOrUpdate(userId: String, token: Long) =
+  def createOrUpdate(userId: String, token: String) =
     tokens.insertOrUpdate(AuthToken(userId, token))
 
   def findByUserId(userId: String) =
     tokens.filter(t ⇒ t.userId === userId).result.headOption
 
-  def findByToken(token: Long) =
+  def findByToken(token: String) =
     tokens.filter(t ⇒ t.token === token).result.headOption
 
   def incrementAttempts(userId: String, currentValue: Int) =

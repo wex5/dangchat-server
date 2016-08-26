@@ -13,7 +13,7 @@ import java.time.{ LocalDateTime, ZoneOffset }
 @SerialVersionUID(1L)
 case class AuthToken(
   userId:    String,
-  token:     Long,
+  token:     String,
   attempts:  Int           = 0,
   createdAt: LocalDateTime = LocalDateTime.now(ZoneOffset.UTC)
 )
