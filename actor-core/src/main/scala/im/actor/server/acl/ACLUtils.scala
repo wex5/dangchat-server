@@ -155,4 +155,16 @@ object ACLUtils extends ACLBase with ACLFiles {
         ByteString.copyFrom(hashPassword(password, salt.toByteArray)) == hash
       case None ⇒ false
     }
+
+  /**
+   * 生成电话号码
+   * @return
+   */
+  def nextPhoneNumber(): Long = {
+    val date = new java.util.Date()
+    val formatter = new java.text.SimpleDateFormat("yyyyMMddHHmmss")
+    //val formatDate = "66" + formatter.format(date)
+    val formatDate = new scala.util.Random().nextInt(999).toString + formatter.format(date)
+    formatDate.toLong
+  }
 }
