@@ -555,11 +555,23 @@
                 "argument": "preferredLanguages",
                 "category": "full",
                 "description": "Preferred languages"
+              },
+              {
+                "type": "reference",
+                "argument": "userId",
+                "category": "full",
+                "description": "User Id"
+              },
+              {
+                "type": "reference",
+                "argument": "userName",
+                "category": "full",
+                "description": "User Name"
               }
             ],
             "attributes": [
               {
-                "type": "string",
+                "type": "int64",
                 "id": 1,
                 "name": "token"
               },
@@ -598,6 +610,16 @@
                 },
                 "id": 7,
                 "name": "preferredLanguages"
+              },
+              {
+                "type": "string",
+                "id": 8,
+                "name": "userId"
+              },
+              {
+                "type": "string",
+                "id": 9,
+                "name": "userName"
               }
             ]
           }

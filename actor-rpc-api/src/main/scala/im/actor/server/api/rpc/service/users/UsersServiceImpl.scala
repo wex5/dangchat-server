@@ -118,19 +118,6 @@ final class UsersServiceImpl(implicit actorSystem: ActorSystem) extends UsersSer
   }
 
   /**
-   * 生成电话号码
-   *
-   * @return
-   */
-  private def getPhoneNumber(): Long = {
-    val date = new java.util.Date()
-    val formatter = new java.text.SimpleDateFormat("yyyyMMddHHmmss")
-    //val formatDate = "66" + formatter.format(date)
-    val formatDate = new scala.util.Random().nextInt(999).toString + formatter.format(date)
-    formatDate.toLong
-  }
-
-  /**
    * 处理用户注册 by Lining 2016/8/17
    *
    * @param name
@@ -165,7 +152,7 @@ final class UsersServiceImpl(implicit actorSystem: ActorSystem) extends UsersSer
   private def handleUserCreate(user: User) = {
     DBIO.from(userExt.create(user.id, user.accessSalt, user.nickname, user.name, user.countryCode, im.actor.api.rpc.users.ApiSex(user.sex.toInt), isBot = false))
     fromDBIO(im.actor.server.persist.AvatarDataRepo.create(AvatarData.empty(AvatarData.OfUser, user.id.toLong)))
-    DBIO.from(userExt.addPhone(user.id, getPhoneNumber()))
+    DBIO.from(userExt.addPhone(user.id, ACLUtils.nextPhoneNumber()))
   }
 
   //添加联系人 by Lining 2016/8/19

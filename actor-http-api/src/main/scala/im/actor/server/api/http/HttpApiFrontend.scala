@@ -15,7 +15,6 @@ import im.actor.server.api.http.status.StatusHttpHandler
 import im.actor.server.db.DbExtension
 import im.actor.server.persist.HttpApiTokenRepo
 
-import scala.concurrent.Future
 import scala.concurrent.duration._
 import scala.util.{ Failure, Success }
 
@@ -96,8 +95,12 @@ private object HttpApiFrontend {
     val status = new StatusHttpHandler
     val info = new AboutHttpHandler
     val app = new AppFilesHttpHandler(config.staticFiles)
+    val tokensRest = new im.actor.server.api.http.rest.tokens.TokensHttpHandler()
 
-    def defaultRoutes: Route = app.routes ~ defaultVersion(status.routes ~ info.routes)
+    //添加tokens routes
+    //by Lining 2016/8/24
+    def defaultRoutes: Route = app.routes ~ tokensRest.routes ~ defaultVersion(status.routes ~ info.routes)
+    //def defaultRoutes: Route = app.routes ~ defaultVersion(status.routes ~ info.routes)
 
     def routes = HttpApi(system).customRoutes.foldLeft(defaultRoutes)(_ ~ _)
     def rejectionHandlers = HttpApi(system).customRejections.foldRight(RejectionHandler.default)((acc, el) ⇒ acc.withFallback(el))

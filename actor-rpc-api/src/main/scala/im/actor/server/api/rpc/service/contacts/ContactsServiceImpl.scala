@@ -233,21 +233,12 @@ class ContactsServiceImpl(implicit actorSystem: ActorSystem)
     point(user)
   }
 
-  //二次开发记录：添加新方法 by Lining
-  private def getPhoneNumber(): Long = {
-    val date = new java.util.Date()
-    val formatter = new java.text.SimpleDateFormat("yyyyMMddHHmmss")
-    //val formatDate = "66" + formatter.format(date)
-    val formatDate = new scala.util.Random().nextInt(999).toString + formatter.format(date)
-    formatDate.toLong
-  }
-
   //二次开发记录：添加新方法  by Lining
   private def handleUserCreate(user: User): Result[Unit] = {
     for {
       _ ← fromFuture(userExt.create(user.id, user.accessSalt, user.nickname, user.name, user.countryCode, im.actor.api.rpc.users.ApiSex(user.sex.toInt), isBot = false))
       _ ← fromDBIO(im.actor.server.persist.AvatarDataRepo.create(AvatarData.empty(AvatarData.OfUser, user.id.toLong)))
-      _ ← fromFuture(userExt.addPhone(user.id, getPhoneNumber()))
+      _ ← fromFuture(userExt.addPhone(user.id, ACLUtils.nextPhoneNumber()))
     } yield ()
   }
 

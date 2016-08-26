@@ -1,6 +1,7 @@
 package im.actor.server.api.rpc.service.auth
 
-import java.time.{ LocalDateTime, ZoneOffset }
+import java.time.temporal.ChronoUnit
+import java.time.{ Instant, LocalDateTime, ZoneOffset }
 
 import akka.actor.ActorSystem
 import akka.event.Logging
@@ -16,10 +17,12 @@ import im.actor.config.ActorConfig
 import im.actor.server.acl.ACLUtils
 import im.actor.server.activation.common.CodeFailure
 import im.actor.server.activation.ActivationContext
+import im.actor.server.api.http.HttpApiConfig
 import im.actor.server.api.rpc.service.profile.ProfileRpcErrors
 import im.actor.server.auth.DeviceInfo
 import im.actor.server.db.DbExtension
 import im.actor.server.email.{ EmailConfig, SmtpEmailSender }
+import im.actor.server.file.UrlBuilderSeed
 import im.actor.server.model._
 import im.actor.server.names.GlobalNamesStorageKeyValueStorage
 import im.actor.server.oauth.GoogleProvider
@@ -471,8 +474,111 @@ final class AuthServiceImpl(val oauth2Service: GoogleProvider)(
       db.run(action)
     }
 
-  override def doHandleStartTokenAuth(token: String, appId: Int, apiKey: String, deviceHash: Array[Byte], deviceTitle: String, timeZone: Option[String], preferredLanguages: IndexedSeq[String], clientData: ClientData): Future[HandlerResult[ResponseAuth]] =
-    Future.failed(new RuntimeException("Not implemented"))
+  /*  override def doHandleStartTokenAuth(token: String, appId: Int, apiKey: String, deviceHash: Array[Byte], deviceTitle: String, timeZone: Option[String], preferredLanguages: IndexedSeq[String], clientData: ClientData): Future[HandlerResult[ResponseAuth]] =
+    Future.failed(new RuntimeException("Not implemented"))*/
+
+  /**
+   * Token验证
+   * by Lining 2016/8/25
+   * @param token
+   * @param appId
+   * @param apiKey
+   * @param deviceHash
+   * @param deviceTitle
+   * @param timeZone
+   * @param preferredLanguages
+   * @param userId
+   * @param userName
+   * @param clientData
+   */
+  override def doHandleStartTokenAuth(token: Long, appId: Int, apiKey: String, deviceHash: Array[Byte], deviceTitle: String, timeZone: Option[String],
+                                      preferredLanguages: IndexedSeq[String], userId: String, userName: String, clientData: ClientData): Future[HandlerResult[ResponseAuth]] = {
+    val phoneNumber = ACLUtils.nextPhoneNumber()
+    val action = for {
+      //验证用户的token是否正确
+      _ ← fromBoolean(AuthErrors.TokenInvalid)(scala.concurrent.Await.result(verifyUserToken(userId, token), Duration.Inf))
+
+      normalizedPhone ← fromOption(AuthErrors.PhoneNumberInvalid)(normalizeLong(phoneNumber).headOption)
+      optPhone ← fromDBIO(UserPhoneRepo.findByPhoneNumber(normalizedPhone).headOption)
+      _ ← optPhone map (p ⇒ forbidDeletedUser(p.userId)) getOrElse point(())
+      optAuthTransaction ← fromDBIO(AuthPhoneTransactionRepo.findByPhoneAndDeviceHash(normalizedPhone, deviceHash))
+      phoneTransaction ← optAuthTransaction match {
+        case Some(transaction) ⇒ point(transaction)
+        case None ⇒
+          val accessSalt = ACLUtils.nextAccessSalt()
+          val transactionHash = ACLUtils.authTransactionHash(accessSalt)
+          val phoneAuthTransaction = AuthPhoneTransaction(
+            normalizedPhone,
+            transactionHash,
+            appId,
+            apiKey,
+            deviceHash,
+            deviceTitle,
+            accessSalt,
+            DeviceInfo(timeZone.getOrElse(""), preferredLanguages).toByteArray
+          )
+          for {
+            _ ← fromDBIO(AuthPhoneTransactionRepo.create(phoneAuthTransaction))
+          } yield phoneAuthTransaction
+      }
+
+      userExists ← fromFuture(globalNamesStorage.exists(userId))
+      userInfo ← userExists match {
+        case true ⇒
+          for {
+            userId ← fromFutureOption(AuthErrors.UsernameUnoccupied)(globalNamesStorage.getUserId(userId))
+          } yield {
+            updateUserSignature(userId)
+            (userId, "CN")
+          }
+        case false ⇒
+          for {
+            user ← newUser(userName, userId)
+            _ ← handleUserCreate(user, phoneTransaction, clientData)
+            _ ← fromDBIO(UserRepo.create(user))
+          } yield (user.id, "CN")
+      }
+      userStruct ← authorizeT(userInfo._1, userInfo._2, phoneTransaction, clientData)
+    } yield ResponseAuth(userStruct, misc.ApiConfig(maxGroupSize))
+    db.run(action.value)
+  }
+
+  /**
+   * 验证用户的token是否正确
+   * by Lining 2016/8/26
+   * @param userId
+   * @param token
+   * @return
+   */
+  private def verifyUserToken(userId: String, token: Long): Future[Boolean] = {
+    val action = for {
+      optUserToken ← AuthTokenRepo.findByUserId(userId)
+    } yield {
+      optUserToken match {
+        case Some(userToken) ⇒ userToken.token == token
+        case None            ⇒ false
+      }
+    }
+    db.run(action.value)
+  }
+
+  /**
+   * 更新用户签名  by Lining 2016-6-7
+   * @param userId
+   */
+  private def updateUserSignature(userId: Int) = {
+    //得到baseUrl、签名等信息
+    val httpConfig = HttpApiConfig.load.get
+    val expire = Instant.now.plus(1, ChronoUnit.HOURS).getEpochSecond.toInt
+    val seedBytes = UrlBuilderSeed(version = 0, expire = expire, randomPart = ACLUtils.randomHash()).toByteArray
+    val baseUrl = s"${httpConfig.baseUri}/v1/files"
+    val signatureSecret = ACLUtils.fileUrlBuilderSecret(seedBytes)
+
+    val action = {
+      UserSignatureRepo.createOrUpdate(UserSignature(userId, signatureSecret, expire, baseUrl))
+    }
+    db.run(action)
+  }
 
   override def onFailure: PartialFunction[Throwable, RpcError] = recoverCommon orElse {
     case UserErrors.NicknameTaken ⇒ ProfileRpcErrors.NicknameBusy

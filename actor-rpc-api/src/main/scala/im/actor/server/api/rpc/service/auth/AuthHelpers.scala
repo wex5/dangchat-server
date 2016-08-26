@@ -333,6 +333,7 @@ trait AuthHelpers extends Helpers {
 
   /**
    * 更新用户签名  by Lining 2016-6-7
+   *
    * @param userId
    */
   private def updateUserSignature(userId: Int) = {

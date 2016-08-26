@@ -28,6 +28,8 @@ object AuthErrors {
   val PasswordInvalid = RpcError(400, "PASSWORD_INVALID", s"Password have to be more than ${ACLUtils.PasswordMinLength} and less than ${ACLUtils.PasswordMaxLength}", false, None)
   val UserDeleted = CommonRpcErrors.forbidden("Unable to log in, your account is deleted")
 
+  val TokenInvalid = RpcError(400, "TOKEN_INVALID", "Invalid token.", false, None)
+
   def activationFailure(failure: CodeFailure): RpcError = failure match {
     case SendFailure(message) ⇒ RpcError(500, "GATE_ERROR", message, true, None)
     case BadRequest(message)  ⇒ RpcError(400, "CODE_WAIT", message, false, None)
