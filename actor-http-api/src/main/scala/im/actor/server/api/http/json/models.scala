@@ -18,3 +18,7 @@ case class Status(status: String)
 case class ReverseHookResponse(id: Int, url: Option[String])
 
 final case class ServerInfo(projectName: String, endpoints: List[String])
+
+final case class UserBotInfo(id: Int, nickname: String, name: String, token: String)
+
+final case class UserBotInfoArray(bots: List[UserBotInfo])

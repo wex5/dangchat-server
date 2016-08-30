@@ -7,6 +7,7 @@ import im.actor.server.user.UserErrors
 import im.actor.util.misc.IdUtils
 
 import scala.util.{ Failure, Success }
+import im.actor.server.db.DbExtension
 
 object ActorBot {
   val UserId = 10
@@ -38,7 +39,12 @@ final class ActorBot extends InternalBot(ActorBot.UserId, ActorBot.Username, Act
 
               //支持创建中文昵称的机器人  by Lining 2016/8/19
               requestCreateBot(nickname replaceAll ("\"", ""), name replaceAll ("\"", "")) onComplete {
-                case Success(token) ⇒ requestSendMessage(m.peer, nextRandomId(), TextMessage(s"Yay! Bot created, bot token: ${token.token}, bot id: ${token.userId}", None))
+                case Success(token) ⇒
+                  //db对象
+                  val db = DbExtension(context.system).db
+                  db.run(im.actor.server.persist.UserBotRepo.create(token.userId, nickname replaceAll ("\"", ""),
+                    name replaceAll ("\"", ""), token.token))
+                  requestSendMessage(m.peer, nextRandomId(), TextMessage(s"Yay! Bot created, bot token: ${token.token}, bot id: ${token.userId}", None))
                 case Failure(BotError(_, "USERNAME_TAKEN", _, _)) ⇒
                   requestSendMessage(m.peer, nextRandomId(), TextMessage("Username already taken", None))
                 case Failure(e) ⇒
