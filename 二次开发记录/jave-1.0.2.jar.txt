@@ -1,3 +1,0 @@
-actor-fs-adapters/lib/jave-1.0.2.jar
-
-发布时将该jar文件拷贝到lib目录下

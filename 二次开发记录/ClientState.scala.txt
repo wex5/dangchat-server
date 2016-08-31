@@ -1,2 +1,0 @@
-actor-models\src\main\scala\im\actor\server\model\ClientState.scala
-添加该类

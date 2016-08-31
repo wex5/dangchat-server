@@ -1,6 +1,0 @@
-actor-runtime/src/main/scala/im/actor/util/misc/StringUtils.scala
-
-
-  //支持保存中文昵称  by Lining 2016-1-21
-  //private val usernamePattern = Pattern.compile("""^[0-9a-zA-Z_]{5,32}""", Pattern.UNICODE_CHARACTER_CLASS)
-  private val usernamePattern = Pattern.compile("""[^\s]{1,32}""", Pattern.UNICODE_CHARACTER_CLASS)

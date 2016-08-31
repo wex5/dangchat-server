@@ -1,7 +1,0 @@
-actor-rpc-api/src/main/scala/im/actor/server/api/rpc/service/profile/ProfileServiceImpl.scala
-
-  //val NicknameInvalid = RpcError(400, "NICKNAME_INVALID",
-  //"Invalid nickname. Valid nickname should contain from 5 to 32 characters, and may consist of latin characters, numbers and underscores", false, None)
-  //适配支持中文昵称     by Lining  2016-1-21
-  val NicknameInvalid = RpcError(400, "NICKNAME_INVALID",
-    "Invalid nickname. Valid nickname should contain from 1 to 32 characters", false, None)
