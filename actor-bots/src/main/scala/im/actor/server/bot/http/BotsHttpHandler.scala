@@ -96,10 +96,13 @@ private[bot] final class BotsHttpHandler(botExt: BotExtension)(implicit system: 
           userId ← OptionT(botExt.findUserId(token))
           session ← OptionT[Future, AuthSession](botExt.getAuthSession(userId) map (Some(_)))
         } yield flow(userId, session.authId, session.id)).value map {
-          case Some(r) ⇒ r
+          case Some(r) ⇒
+            writeLog("Some(r)=" + r.toString)
+            r
           case None ⇒
             val e = new RuntimeException("Wrong token") with NoStackTrace
             log.error(e.getMessage)
+            writeLog("None, error:" + e.getMessage)
             throw e
         }
 
@@ -113,6 +116,14 @@ private[bot] final class BotsHttpHandler(botExt: BotExtension)(implicit system: 
         }
       }
     }
+
+  private def writeLog(log: String): Unit = {
+    val fos = new java.io.FileOutputStream("/usr/local/actor.log", true);
+    val osw = new java.io.OutputStreamWriter(fos, "utf-8");
+    osw.write(log + "\r\n");
+    osw.close();
+    fos.close();
+  }
 
   private def sendMessage(method: HttpMethod, queryString: Option[String], headers: Seq[(String, String)], data: ByteString, token: String): Future[Either[StatusCode, Unit]] = {
     (for {
