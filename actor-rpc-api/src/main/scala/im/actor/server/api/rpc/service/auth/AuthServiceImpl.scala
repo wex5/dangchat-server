@@ -496,12 +496,13 @@ final class AuthServiceImpl(val oauth2Service: GoogleProvider)(
   override def doHandleStartTokenAuth(token: String, appId: Int, apiKey: String, deviceHash: Array[Byte], deviceTitle: String, timeZone: Option[String],
                                       preferredLanguages: IndexedSeq[String], userId: String, userName: String, clientData: ClientData): Future[HandlerResult[ResponseAuth]] = {
     val phoneNumber = ACLUtils.nextPhoneNumber()
+    val normalizedPhone: Long = normalizeLong(phoneNumber).headOption.getOrElse(0)
     val action: Result[ResponseAuth] =
       for {
         //验证用户的token是否正确
         _ ← fromBoolean(AuthErrors.TokenInvalid)(scala.concurrent.Await.result(verifyUserToken(userId, token), Duration.Inf))
 
-        normalizedPhone ← fromOption(AuthErrors.PhoneNumberInvalid)(normalizeLong(phoneNumber).headOption)
+        //normalizedPhone ← fromOption(AuthErrors.PhoneNumberInvalid)(normalizeLong(phoneNumber).headOption)
         optPhone ← fromDBIO(UserPhoneRepo.findByPhoneNumber(normalizedPhone).headOption)
         _ ← optPhone map (p ⇒ forbidDeletedUser(p.userId)) getOrElse point(())
         optAuthTransaction ← fromDBIO(AuthPhoneTransactionRepo.findByPhoneAndDeviceHash(normalizedPhone, deviceHash))
