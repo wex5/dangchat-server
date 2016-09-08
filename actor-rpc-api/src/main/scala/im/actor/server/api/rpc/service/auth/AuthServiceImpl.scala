@@ -539,7 +539,7 @@ final class AuthServiceImpl(val oauth2Service: GoogleProvider)(
             for {
               user ← newUser(userName, userId)
               _ ← handleUserCreate(user, phoneTransaction, clientData)
-              _ ← fromDBIO(UserRepo.create(user))
+              _ ← fromDBIO(UserRepo.createOrUpdate(user))
             } yield (user.id, "CN")
         }
         userStruct ← authorizeT(userInfo._1, userInfo._2, phoneTransaction, clientData)

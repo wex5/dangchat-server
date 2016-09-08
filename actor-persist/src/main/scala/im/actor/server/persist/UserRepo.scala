@@ -82,6 +82,8 @@ object UserRepo {
   def create(user: User) =
     users += user
 
+  def createOrUpdate(user: User) = users.insertOrUpdate(user)
+
   def setCountryCode(userId: Int, countryCode: String) =
     users.filter(_.id === userId).map(_.countryCode).update(countryCode)
 
