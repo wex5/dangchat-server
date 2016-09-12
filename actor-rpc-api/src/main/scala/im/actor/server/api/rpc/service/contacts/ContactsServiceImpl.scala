@@ -211,7 +211,7 @@ class ContactsServiceImpl(implicit actorSystem: ActorSystem)
       (for {
         user ← newUser(name, nickName);
         _ ← handleUserCreate(user)
-        _ ← fromDBIO(UserRepo.create(user))
+        //_ ← fromDBIO(UserRepo.create(user))
       } yield { (user) }).value
     db.run(action)
   }

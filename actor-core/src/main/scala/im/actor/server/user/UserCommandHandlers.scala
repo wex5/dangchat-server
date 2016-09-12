@@ -430,7 +430,8 @@ private[user] trait UserCommandHandlers {
 
   private def checkNicknameExists(nicknameOpt: Option[String]): Future[Boolean] = {
     nicknameOpt match {
-      case Some(nickname) ⇒ globalNamesStorage.exists(nickname)
+      //case Some(nickname) ⇒ globalNamesStorage.exists(nickname)
+      case Some(nickname) ⇒ db.run(UserRepo.nicknameExists(nickname))
       case None           ⇒ FastFuture.successful(false)
     }
   }

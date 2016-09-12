@@ -144,7 +144,7 @@ final class UsersServiceImpl(implicit actorSystem: ActorSystem) extends UsersSer
   private def addUser(name: String, nickName: String): User = {
     val user = newUser(name, nickName)
     handleUserCreate(user)
-    fromDBIO(UserRepo.create(user))
+    //fromDBIO(UserRepo.create(user))
     user
   }
 

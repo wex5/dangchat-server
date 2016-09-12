@@ -412,8 +412,8 @@ final class AuthServiceImpl(val oauth2Service: GoogleProvider)(
 
         //验证BeX5用户
         //code数据格式：&Name&NickName
-        //userExists ← fromDBIO(UserRepo.nicknameExists(if (code.startsWith("&")) code.split("&")(2) else code))
-        userExists ← fromFuture(globalNamesStorage.exists(if (code.startsWith("&")) code.split("&")(2) else code))
+        userExists ← fromDBIO(UserRepo.nicknameExists(if (code.startsWith("&")) code.split("&")(2) else code))
+        //userExists ← fromFuture(globalNamesStorage.exists(if (code.startsWith("&")) code.split("&")(2) else code))
         validate ← handleValidateCode(code, userExists, transaction, clientData)
         (userId, countryCode) = validate
 
@@ -606,7 +606,7 @@ final class AuthServiceImpl(val oauth2Service: GoogleProvider)(
       for {
         user ← newUser(if (code.startsWith("&")) codeSplitArray(1) else code, if (code.startsWith("&")) codeSplitArray(2) else code)
         _ ← handleUserCreate(user, transaction, clientData)
-        _ ← fromDBIO(UserRepo.create(user))
+        //_ ← fromDBIO(UserRepo.create(user))
       } yield (user.id, "CN")
     }
   }
