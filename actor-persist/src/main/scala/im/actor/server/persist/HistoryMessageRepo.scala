@@ -114,6 +114,7 @@ object HistoryMessageRepo {
 
   /**
    * 查询历史消息（扩展方法）  by Lining 2016/7/18
+   *
    * @param userId
    * @param peer
    * @param date
@@ -132,6 +133,73 @@ object HistoryMessageRepo {
         .sortBy(_.date.asc)
         .take(limit)).result
     }
+  }
+
+  /**
+   * 查询文本
+   * by Lining 2016/9/7
+   *
+   * @param userId 用户Id
+   * @param peer 会话peer
+   * @param keyword  关键字
+   * @param limit 查询条数
+   * @param offset 偏移量
+   * @return
+   */
+  def findText(userId: Int, peer: Peer, keyword: String, limit: Int, offset: Int) = {
+    implicit val getMessageResult: GetResult[HistoryMessage] = GetResult(r ⇒
+      HistoryMessage(
+        userId = r.nextInt,
+        peer = Peer(PeerType.fromValue(r.nextInt), r.nextInt),
+        date = getDatetimeResult(r),
+        senderUserId = r.nextInt,
+        randomId = r.nextLong,
+        messageContentHeader = r.nextInt,
+        messageContentData = r.nextBytes,
+        deletedAt = getDatetimeOptionResult(r)
+      ))
+    val querySql = getSearchSql(userId, peer, keyword, limit, offset, 1)
+    sql"""#$querySql""".as[HistoryMessage]
+  }
+
+  /**
+   * 查询文件
+   * @param userId 用户Id
+   * @param peer 会话peer
+   * @param limit 查询条数
+   * @param offset 偏移量
+   */
+  def findFile(userId: Int, peer: Peer, limit: Int, offset: Int) = {
+    implicit val getMessageResult: GetResult[HistoryMessage] = GetResult(r ⇒
+      HistoryMessage(
+        userId = r.nextInt,
+        peer = Peer(PeerType.fromValue(r.nextInt), r.nextInt),
+        date = getDatetimeResult(r),
+        senderUserId = r.nextInt,
+        randomId = r.nextLong,
+        messageContentHeader = r.nextInt,
+        messageContentData = r.nextBytes,
+        deletedAt = getDatetimeOptionResult(r)
+      ))
+    val querySql = getSearchSql(userId, peer, "", limit, offset, 3)
+    sql"""#$querySql""".as[HistoryMessage]
+  }
+
+  private def getSearchSql(userId: Int, peer: Peer, keyword: String, limit: Int, offset: Int, contentHeader: Int): String = {
+    //message_content_header: 1-文本；2-系统提示消息；3-图片和文档
+    var querySql = "select distinct on (date, random_id) user_id, peer_type, peer_id, date, sender_user_id, random_id, message_content_header, message_content_data, deleted_at from history_messages" +
+      " where message_content_header=" + contentHeader +
+      " and deleted_at is null" +
+      " and peer_type=" + peer.typ.value +
+      " and peer_id=" + peer.id
+    //peer为群组，判断群是否为共享群，如果是共享群，则可以查看所有消息。
+    if (!(peer.typ.isGroup && userId == 0)) querySql += " and user_id=" + userId
+    if (keyword != null && keyword.trim != "") {
+      querySql += " and message_content_data like '%" + keyword + "%'"
+    }
+    querySql += " order by date desc" +
+      " limit " + limit + " offset " + offset
+    querySql
   }
 
   private val metaAfterC = Compiled { (userId: Rep[Int], peerType: Rep[Int], peerId: Rep[Int], date: Rep[DateTime], limit: ConstColumn[Long]) ⇒
@@ -171,6 +239,7 @@ object HistoryMessageRepo {
 
   /**
    * 查询历史消息（扩展方法）  by Lining 2016/7/18
+   *
    * @param userId
    * @param peer
    * @param date
@@ -197,6 +266,7 @@ object HistoryMessageRepo {
 
   /**
    * 查询历史消息（扩展方法）  by Lining 2016/7/18
+   *
    * @param userId
    * @param peer
    * @param date

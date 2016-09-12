@@ -12638,6 +12638,58 @@
         {
           "type": "struct",
           "content": {
+            "name": "SearchDataLimit",
+            "doc": [
+              "Searching data limit count condition",
+              {
+                "type": "reference",
+                "argument": "limit",
+                "category": "full",
+                "description": "  data limit count"
+              }
+            ],
+            "trait": {
+              "name": "SearchCondition",
+              "key": 8
+            },
+            "attributes": [
+              {
+                "type": "int32",
+                "id": 1,
+                "name": "limit"
+              }
+            ]
+          }
+        },
+        {
+          "type": "struct",
+          "content": {
+            "name": "SearchDataOffset",
+            "doc": [
+              "Searching data offset count condition",
+              {
+                "type": "reference",
+                "argument": "offset",
+                "category": "full",
+                "description": "  data offset count"
+              }
+            ],
+            "trait": {
+              "name": "SearchCondition",
+              "key": 9
+            },
+            "attributes": [
+              {
+                "type": "int32",
+                "id": 1,
+                "name": "offset"
+              }
+            ]
+          }
+        },
+        {
+          "type": "struct",
+          "content": {
             "name": "PeerSearchResult",
             "doc": [
               "Peer search result",

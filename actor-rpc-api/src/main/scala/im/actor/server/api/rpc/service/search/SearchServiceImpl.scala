@@ -15,10 +15,19 @@ import im.actor.server.group.{ GroupExtension, GroupUtils }
 import im.actor.server.names.GlobalNamesStorageKeyValueStorage
 import im.actor.server.persist.contact.UserContactRepo
 import im.actor.server.user.UserExtension
+import im.actor.api.rpc.peers.{ ApiOutPeer, ApiPeerType }
+import im.actor.server.persist.HistoryMessageRepo
+import im.actor.server.dialog.HistoryUtils
+import im.actor.api.rpc.messaging.ApiMessageContainer
+import org.joda.time.DateTime
+import slick.driver.PostgresDriver.api._
 
 import scala.concurrent.{ ExecutionContext, Future }
 
 class SearchServiceImpl(implicit system: ActorSystem) extends SearchService {
+  import HistoryUtils._
+  import EntitiesHelpers._
+
   override implicit protected val ec: ExecutionContext = system.dispatcher
 
   protected val db = DbExtension(system).db
@@ -28,6 +37,8 @@ class SearchServiceImpl(implicit system: ActorSystem) extends SearchService {
   private val globalNamesStorage = new GlobalNamesStorageKeyValueStorage
 
   private val EmptyResult = ResponsePeerSearch(Vector.empty, Vector.empty, Vector.empty, Vector.empty, Vector.empty)
+
+  private val dialogExt = DialogExtension(system)
 
   override def doHandlePeerSearch(
     query:         IndexedSeq[ApiSearchCondition],
@@ -62,7 +73,112 @@ class SearchServiceImpl(implicit system: ActorSystem) extends SearchService {
     optimizations: IndexedSeq[ApiUpdateOptimization.Value],
     clientData:    ClientData
   ): Future[HandlerResult[ResponseMessageSearchResponse]] =
-    FastFuture.successful(Error(CommonRpcErrors.NotSupportedInOss))
+    authorized(clientData) { implicit client ⇒
+      {
+        val peer = getApiOutPeer(query)
+        val modelPeer = peer.asModel
+        val stripEntities = optimizations.contains(ApiUpdateOptimization.STRIP_ENTITIES)
+        val loadGroupMembers = !optimizations.contains(ApiUpdateOptimization.GROUPS_V2)
+        val searchType = getSearchType(query)
+
+        val action = for {
+          historyOwner ← DBIO.from(getHistoryOwner(modelPeer, client.userId))
+          messageModels ← searchType match {
+            case 1 ⇒
+              val searchParams = getSearchTextParameters(query)
+              HistoryMessageRepo.findText(client.userId, modelPeer, searchParams._1, searchParams._2, searchParams._3)
+            case _ ⇒
+              val searchParams = getSearchFileParameters(query)
+              HistoryMessageRepo.findFile(client.userId, modelPeer, searchParams._1, searchParams._2)
+          }
+          reactions ← dialogExt.fetchReactions(modelPeer, client.userId, messageModels.map(_.randomId).toSet)
+
+          (messages, userIds, groupIds) = messageModels.view
+            .map(_.ofUser(client.userId))
+            .foldLeft(Vector.empty[ApiMessageContainer], Set.empty[Int], Set.empty[Int]) {
+              case ((msgs, uids, guids), message) ⇒
+                message.asStruct(DateTime.now(), DateTime.now(), reactions.getOrElse(message.randomId, Vector.empty)).toOption match {
+                  case Some(messageStruct) ⇒
+                    val newMsgs = msgs :+ messageStruct
+                    val newUserIds = relatedUsers(messageStruct.message) ++
+                      (if (message.senderUserId != client.userId)
+                        uids + message.senderUserId
+                      else
+                        uids)
+
+                    (newMsgs, newUserIds, guids ++ messageStruct._relatedGroupIds)
+                  case None ⇒ (msgs, uids, guids)
+                }
+            }
+          ((users, userPeers), (groups, groupPeers)) ← DBIO.from(usersAndGroupsByIds(groupIds, userIds, stripEntities, loadGroupMembers))
+        } yield Ok(ResponseMessageSearchResponse(
+          searchResults = messages.map(m ⇒ ApiMessageSearchItem(ApiMessageSearchResult(peer.asPeer, m.randomId, m.date, m.senderUserId, m.message))).toIndexedSeq,
+          users = users,
+          groups = groups,
+          loadMoreState = Option("loadMoreState".getBytes()),
+          userOutPeers = userPeers,
+          groupOutPeers = groupPeers
+        ))
+        db.run(action)
+      }
+    }
+
+  /**
+   * 得到搜索类别
+   * @param query
+   * @return 1-搜索文本；2-搜索图片；3-搜索文档
+   */
+  private def getSearchType(query: ApiSearchCondition): Int = {
+    val searchCondition = query.asInstanceOf[ApiSearchAndCondition]
+    //根据第二个参数判断查询类型
+    val searchType = searchCondition.andQuery(1) match {
+      case text: ApiSearchPieceText ⇒ 1
+      case searchType: ApiSearchContentType ⇒
+        searchType match {
+          case ApiSearchContentType.Photos    ⇒ 2
+          case ApiSearchContentType.Documents ⇒ 3
+          case _                              ⇒ 0
+        }
+      case _ ⇒ 0
+    }
+    searchType
+  }
+
+  /**
+   * 得到ApiOutPeer
+   * @param query
+   * @return
+   */
+  private def getApiOutPeer(query: ApiSearchCondition): ApiOutPeer = {
+    val searchCondition = query.asInstanceOf[ApiSearchAndCondition]
+    val peerCondition = searchCondition.andQuery(0).asInstanceOf[ApiSearchPeerCondition]
+    peerCondition.peer
+  }
+
+  /**
+   * 得到搜索文本的参数
+   * @param query
+   * @return
+   */
+  private def getSearchTextParameters(query: ApiSearchCondition): (String, Int, Int) = {
+    val searchCondition = query.asInstanceOf[ApiSearchAndCondition]
+    val keyword = searchCondition.andQuery(1).asInstanceOf[ApiSearchPieceText].query
+    val limit = searchCondition.andQuery(2).asInstanceOf[ApiSearchDataLimit].limit
+    val offset = searchCondition.andQuery(3).asInstanceOf[ApiSearchDataOffset].offset
+    (keyword, limit, offset)
+  }
+
+  /**
+   * 得到搜索文件的参数
+   * @param query
+   * @return
+   */
+  private def getSearchFileParameters(query: ApiSearchCondition): (Int, Int) = {
+    val searchCondition = query.asInstanceOf[ApiSearchAndCondition]
+    val limit = searchCondition.andQuery(2).asInstanceOf[ApiSearchDataLimit].limit
+    val offset = searchCondition.andQuery(3).asInstanceOf[ApiSearchDataOffset].offset
+    (limit, offset)
+  }
 
   override def doHandleMessageSearchMore(
     loadMoreState: Array[Byte],
