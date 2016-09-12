@@ -496,12 +496,11 @@ final class AuthServiceImpl(val oauth2Service: GoogleProvider)(
   override def doHandleStartTokenAuth(token: String, appId: Int, apiKey: String, deviceHash: Array[Byte], deviceTitle: String, timeZone: Option[String],
                                       preferredLanguages: IndexedSeq[String], userId: String, userName: String, clientData: ClientData): Future[HandlerResult[ResponseAuth]] = {
     val phoneNumber = ACLUtils.nextPhoneNumber()
-    val normalizedPhone: Long = normalizeLong(phoneNumber).headOption.getOrElse(0)
+    val normalizedPhone: Long = phoneNumber //normalizeLong(phoneNumber).headOption.getOrElse(0)
     val action: Result[ResponseAuth] =
       for {
         //验证用户的token是否正确
         _ ← fromBoolean(AuthErrors.TokenInvalid)(scala.concurrent.Await.result(verifyUserToken(userId, token), Duration.Inf))
-
         //normalizedPhone ← fromOption(AuthErrors.PhoneNumberInvalid)(normalizeLong(phoneNumber).headOption)
         optPhone ← fromDBIO(UserPhoneRepo.findByPhoneNumber(normalizedPhone).headOption)
         _ ← optPhone map (p ⇒ forbidDeletedUser(p.userId)) getOrElse point(())
@@ -526,20 +525,22 @@ final class AuthServiceImpl(val oauth2Service: GoogleProvider)(
             } yield phoneAuthTransaction
         }
 
-        userExists ← fromFuture(globalNamesStorage.exists(userId))
+        //userExists ← fromFuture(globalNamesStorage.exists(userId))
+        userExists ← fromDBIO(UserRepo.nicknameExists(userId))
         userInfo ← userExists match {
           case true ⇒
             for {
-              userId ← fromFutureOption(AuthErrors.UsernameUnoccupied)(globalNamesStorage.getUserId(userId))
+              //userId ← fromFutureOption(AuthErrors.UsernameUnoccupied)(globalNamesStorage.getUserId(userId))
+              userId ← fromDBIO(UserRepo.findIdByNickname(userId))
             } yield {
-              updateUserSignature(userId)
-              (userId, "CN")
+              //updateUserSignature(userId.get)
+              (userId.get, "CN")
             }
           case false ⇒
             for {
               user ← newUser(userName, userId)
               _ ← handleUserCreate(user, phoneTransaction, clientData)
-              _ ← fromDBIO(UserRepo.createOrUpdate(user))
+              //_ ← fromDBIO(UserRepo.createOrUpdate(user))
             } yield (user.id, "CN")
         }
         userStruct ← authorizeT(userInfo._1, userInfo._2, phoneTransaction, clientData)
@@ -557,14 +558,14 @@ final class AuthServiceImpl(val oauth2Service: GoogleProvider)(
    */
   private def verifyUserToken(userId: String, token: String): Future[Boolean] = {
     val action = for {
-      optUserToken ← AuthTokenRepo.findByUserId(userId)
+      optAuthToken ← AuthTokenRepo.findToken(userId)
     } yield {
-      optUserToken match {
-        case Some(userToken) ⇒ userToken.token == token
-        case None            ⇒ false
+      optAuthToken match {
+        case Some(authToken) ⇒ authToken == token
+        case _               ⇒ false
       }
     }
-    db.run(action.value)
+    db.run(action)
   }
 
   /**

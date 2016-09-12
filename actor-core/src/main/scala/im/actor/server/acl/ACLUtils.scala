@@ -161,12 +161,10 @@ object ACLUtils extends ACLBase with ACLFiles {
    * @return
    */
   def nextPhoneNumber(): Long = {
-    /*    val date = new java.util.Date()
+    val date = new java.util.Date()
     val formatter = new java.text.SimpleDateFormat("yyyyMMddHHmmss")
     //val formatDate = "66" + formatter.format(date)
     val formatDate = new scala.util.Random().nextInt(99).toString + formatter.format(date)
-    formatDate.toLong*/
-
-    im.actor.util.misc.IdUtils.nextLongId()
+    formatDate.toLong
   }
 }

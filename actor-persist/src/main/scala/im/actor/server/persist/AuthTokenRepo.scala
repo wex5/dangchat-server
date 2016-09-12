@@ -36,6 +36,10 @@ object AuthTokenRepo {
   def findByUserId(userId: String) =
     tokens.filter(t ⇒ t.userId === userId).result.headOption
 
+  def findToken(userId: String) = {
+    sql"""select token from auth_tokens where user_id=$userId""".as[String].headOption
+  }
+
   def findByToken(token: String) =
     tokens.filter(t ⇒ t.token === token).result.headOption
 

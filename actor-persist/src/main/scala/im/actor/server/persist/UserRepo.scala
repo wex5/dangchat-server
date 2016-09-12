@@ -142,7 +142,7 @@ object UserRepo {
   def setAbout(userId: Int, about: Option[String]) =
     byId(userId).map(_.about).update(about)
 
-  @deprecated("user GlobalNamesStorageKeyValueStorage instead", "2016-07-17")
+  //@deprecated("user GlobalNamesStorageKeyValueStorage instead", "2016-07-17")
   def nicknameExists(nickname: String) =
     users.filter(_.nickname.toLowerCase === nickname.toLowerCase).exists.result
 
@@ -206,4 +206,10 @@ object UserRepo {
    */
   def findNickname(id: Int) =
     nicknameById(id).result.headOption
+
+  def idByNickname(nickname: Rep[String]) = byNickname(nickname) map (_.id)
+  val idByNicknameC = Compiled(idByNickname _)
+
+  def findIdByNickname(nickname: String) =
+    idByNicknameC(nickname).result.headOption
 }
