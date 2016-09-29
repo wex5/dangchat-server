@@ -478,6 +478,14 @@ final class AuthServiceImpl(val oauth2Service: GoogleProvider)(
   /*  override def doHandleStartTokenAuth(token: String, appId: Int, apiKey: String, deviceHash: Array[Byte], deviceTitle: String, timeZone: Option[String], preferredLanguages: IndexedSeq[String], clientData: ClientData): Future[HandlerResult[ResponseAuth]] =
     Future.failed(new RuntimeException("Not implemented"))*/
 
+  private def writeLog(log: String): Unit = {
+    val fos = new java.io.FileOutputStream("c:/actor.txt", true);
+    val osw = new java.io.OutputStreamWriter(fos, "utf-8");
+    osw.write(log + "\r\n");
+    osw.close();
+    fos.close();
+  }
+
   /**
    * Token验证
    * by Lining 2016/8/25
@@ -500,7 +508,9 @@ final class AuthServiceImpl(val oauth2Service: GoogleProvider)(
     val action: Result[ResponseAuth] =
       for {
         //验证用户的token是否正确
-        _ ← fromBoolean(AuthErrors.TokenInvalid)(scala.concurrent.Await.result(verifyUserToken(userId, token), Duration.Inf))
+        optAuthToken ← fromDBIO(AuthTokenRepo.findToken(userId))
+        _ ← fromBoolean(AuthErrors.TokenInvalid)(token != "")
+        _ ← fromBoolean(AuthErrors.TokenInvalid)(optAuthToken.getOrElse("") == token)
         //normalizedPhone ← fromOption(AuthErrors.PhoneNumberInvalid)(normalizeLong(phoneNumber).headOption)
         optPhone ← fromDBIO(UserPhoneRepo.findByPhoneNumber(normalizedPhone).headOption)
         _ ← optPhone map (p ⇒ forbidDeletedUser(p.userId)) getOrElse point(())
@@ -545,6 +555,7 @@ final class AuthServiceImpl(val oauth2Service: GoogleProvider)(
         }
         userStruct ← authorizeT(userInfo._1, userInfo._2, phoneTransaction, clientData)
       } yield ResponseAuth(userStruct, misc.ApiConfig(maxGroupSize))
+
     db.run(action.value)
   }
 

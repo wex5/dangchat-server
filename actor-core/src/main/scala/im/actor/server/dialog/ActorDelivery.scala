@@ -18,8 +18,8 @@ import scala.concurrent.{ ExecutionContext, Future }
 import com.justep.message.dispatcher._
 
 //default extension
-final class ActorDelivery()(implicit val system: ActorSystem)
-  extends DeliveryExtension
+final class ActorDelivery(val system: ActorSystem)
+  extends DeliveryExtension(system, Array.emptyByteArray)
   with PushText
   with PeersImplicits {
 
