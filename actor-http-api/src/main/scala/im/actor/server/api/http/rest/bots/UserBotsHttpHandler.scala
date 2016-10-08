@@ -30,7 +30,8 @@ private[http] final class UserBotsHttpHandler()(implicit system: ActorSystem) ex
             complete("The post http request is not processed!")
           }
         } ~
-          get { //获取request对象 request =>
+          get {
+            //获取request对象 request =>
             path("""\d+""".r) { botName ⇒
               //单个获取参数：ctx.uri.query.get("apiPwd")
               parameters('apiPassword) { apiPassword ⇒

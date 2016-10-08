@@ -72,4 +72,6 @@ object AuthIdRepo {
 
   def delete(id: Long) =
     activeAuthIds.filter(_.id === id).map(_.deletedAt).update(Some(new DateTime))
+
+  def findActiveAuthIds = activeAuthIds.filter(_.deletedAt.isEmpty).result
 }

@@ -22,3 +22,5 @@ final case class ServerInfo(projectName: String, endpoints: List[String])
 final case class UserBotInfo(id: Int, nickname: String, name: String, token: String)
 
 final case class UserBotInfoArray(bots: List[UserBotInfo])
+
+final case class UserInfo(id: Int, name: String, accessHash: Long)

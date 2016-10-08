@@ -25,4 +25,6 @@ object JsonFormatters {
 
   implicit val userBotInfoFormat: Format[UserBotInfo] = Json.format[UserBotInfo]
   implicit val userBotInfoArrayFormat: Format[UserBotInfoArray] = Json.format[UserBotInfoArray]
+
+  implicit val userInfoFormat: Format[UserInfo] = Json.format[UserInfo]
 }
