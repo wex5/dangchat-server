@@ -6,7 +6,7 @@ object Dependencies {
   object V {
     val actorCommons = "0.0.20"
     val actorBotkit = "1.0.109"
-    val akka = "2.4.9"
+    val akka = "2.4.11"
     val akkaHttpJson = "1.10.0"
     val cats = "0.7.2"
     val circe = "0.5.1"
@@ -38,7 +38,7 @@ object Dependencies {
     val akkaHttpCirce           = "de.heikoseeberger"             %% "akka-http-circe"               % V.akkaHttpJson
     val akkaSlf4j               = "com.typesafe.akka"             %% "akka-slf4j"                    % V.akka
 
-    val sprayClient             = "io.spray"                      %% "spray-client"                  % "1.3.3"
+    val sprayClient             = "io.spray"                      %% "spray-client"                  % "1.3.4"
     val sprayWebsocket          = "com.wandoulabs.akka"           %% "spray-websocket"               % "0.1.4"
 
     val akkaPersistenceJdbc     = "com.github.dnvriend"           %% "akka-persistence-jdbc"         % "2.3.3"
