@@ -27,4 +27,6 @@ object JsonFormatters {
   implicit val userBotInfoArrayFormat: Format[UserBotInfoArray] = Json.format[UserBotInfoArray]
 
   implicit val userInfoFormat: Format[UserInfo] = Json.format[UserInfo]
+
+  implicit val discussionGroupInfoFormat: Format[DiscussionGroupInfo] = Json.format[DiscussionGroupInfo]
 }

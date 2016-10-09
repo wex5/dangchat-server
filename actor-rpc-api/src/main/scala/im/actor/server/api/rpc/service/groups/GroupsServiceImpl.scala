@@ -294,12 +294,24 @@ final class GroupsServiceImpl(groupInviteConfig: GroupInviteConfig)(implicit act
           case ApiGroupType.CHANNEL ⇒ GroupType.Channel
         } getOrElse GroupType.General
 
+        /*
+         * 如果群组名称的格式为：groupName,唯一字符
+         * 则表示是创建讨论组，需要特殊处理
+         */
+        var groupTitle = title
+        val titleSplit = title.split(",")
+        if (titleSplit.length > 1) {
+          groupTitle = titleSplit(1)
+          val discussionGroup = im.actor.server.model.DiscussionGroup(titleSplit(0), groupId)
+          im.actor.server.persist.DiscussionGroupRepo.create(discussionGroup)
+        }
+
         for {
           CreateAck(_, seqStateDate) ← groupExt.create(
             groupId,
             client.userId,
             client.authId,
-            title,
+            groupTitle,
             randomId,
             userIds = users.map(_.userId).toSet,
             typ
