@@ -31,7 +31,7 @@ private[http] final class DiscussionGroupsHttpHandler()(implicit system: ActorSy
         } ~
           get {
             //获取request对象 request =>
-            path("""\d+""".r) { discussionGroupId ⇒
+            path(Segment) { discussionGroupId ⇒
               //单个获取参数：ctx.uri.query.get("apiPwd")
               parameters('apiPassword) { apiPassword ⇒
                 if (SecurityManager.checkApiPassword(apiPassword, config)) {
