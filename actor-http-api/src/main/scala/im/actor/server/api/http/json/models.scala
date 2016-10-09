@@ -23,6 +23,6 @@ final case class UserBotInfo(id: Int, nickname: String, name: String, token: Str
 
 final case class UserBotInfoArray(bots: List[UserBotInfo])
 
-final case class UserInfo(id: Int, name: String, accessHash: Long)
+final case class UserInfo(id: Int, name: String, accessHash: Long, nickname: String)
 
 final case class DiscussionGroupInfo(id: String, groupId: Int)

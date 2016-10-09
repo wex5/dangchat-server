@@ -43,7 +43,8 @@ private[http] final class UsersHttpHandler()(implicit system: ActorSystem) exten
                 val authIds = scala.concurrent.Await.result(
                   db.run(AuthIdRepo.findActiveAuthIds), scala.concurrent.duration.Duration.Inf
                 )
-                val list = userList.map((user: User) ⇒ UserInfo(user.id, user.name, getUserAccessHash(authIds, user.id, user.accessSalt)))
+                //val list = userList.map((user: User) ⇒ UserInfo(user.id, user.name, getUserAccessHash(authIds, user.id, user.accessSalt)))
+                val list = userList.map((user: User) ⇒ UserInfo(user.id, user.name, 0, user.nickname.getOrElse("")))
                 complete(OK → list)
               } else {
                 complete("Api password错误！")
