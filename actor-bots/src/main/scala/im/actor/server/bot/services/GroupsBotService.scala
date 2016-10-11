@@ -31,9 +31,10 @@ private[bot] final class GroupsBotService(system: ActorSystem) extends BotServic
       var groupTitle = title
       val titleSplit = title.split(",")
       if (titleSplit.length > 1) {
-        groupTitle = titleSplit(1)
-        val discussionGroup = im.actor.server.model.DiscussionGroup(titleSplit(0), groupId)
-        im.actor.server.persist.DiscussionGroupRepo.create(discussionGroup)
+        groupTitle = titleSplit(0)
+        val discussionGroup = im.actor.server.model.DiscussionGroup(titleSplit(1), groupId)
+        val db = im.actor.server.db.DbExtension(system).db
+        db.run(im.actor.server.persist.DiscussionGroupRepo.create(discussionGroup))
       }
 
       for {
