@@ -17,7 +17,10 @@ import scala.util.{ Failure, Success, Try }
 final class DbExtensionImpl(val db: Database, val connector: Connector) extends Extension with FlywayInit {
   private lazy val flyway: Flyway = {
     val ds = db.source match {
-      case s: HikariCPJdbcDataSource   ⇒ s.ds
+      case s: HikariCPJdbcDataSource ⇒
+        s.hconf.setConnectionTimeout(10 * 1000)
+        s.hconf.setMaximumPoolSize(200)
+        s.ds
       case s: DataSourceJdbcDataSource ⇒ s.ds
       case s                           ⇒ throw new IllegalArgumentException(s"Unknown DataSource: ${s.getClass.getName}")
     }
@@ -63,6 +66,14 @@ object DbExtension extends ExtensionId[DbExtensionImpl] with ExtensionIdProvider
     val sqlConfig = appConfig.getConfig("services.postgresql")
 
     val useConfig = for {
+      //添加连接池参数，解决并发量大的时候服务出现异常的问题
+      //Lining  2017/1/16
+      minConnections ← sqlConfig.get[Try[Int]]("minConnections")
+      maxConnections ← sqlConfig.get[Try[Int]]("maxConnections")
+      connectionTimeout ← sqlConfig.get[Try[Int]]("connectionTimeout")
+      idleTimeout ← sqlConfig.get[Try[Int]]("idleTimeout")
+      maxLifetime ← sqlConfig.get[Try[Int]]("maxLifetime")
+
       host ← sqlConfig.get[Try[String]]("host")
       port ← sqlConfig.get[Try[Int]]("port")
       db ← sqlConfig.get[Try[String]]("db")
