@@ -6,14 +6,14 @@ object Dependencies {
   object V {
     val actorCommons = "0.0.20"
     val actorBotkit = "1.0.113"
-    val akka = "2.4.16"
-    val akkaHttpJson = "1.10.1"
+    val akka = "2.4.10"
+    val akkaHttpJson = "1.10.0"
     val cats = "0.7.2"
-    val circe = "0.5.4"
+    val circe = "0.5.1"
     val kamon = "0.5.2"
     val slick = "3.1.1"
-    val slickPg = "0.14.4"
-    val scalatest = "3.0.1"
+    val slickPg = "0.14.3"
+    val scalatest = "2.2.4"
     val shardakka = "0.1.24"
     val scalapbSer = "0.1.14"
   }
@@ -58,20 +58,20 @@ object Dependencies {
     val configs                 = "com.github.kxbmap"             %% "configs"                       % "0.3.0"
 
     val dispatch                = "net.databinder.dispatch"       %% "dispatch-core"                 % "0.11.3"
-    val javaCompat              = "org.scala-lang.modules"        %% "scala-java8-compat"            % "0.7.0"
+    val javaCompat              = "org.scala-lang.modules"        %% "scala-java8-compat"            % "0.8.0"
 
     val playJson                = "com.typesafe.play"             %% "play-json"                     % "2.5.6"
     val upickle                 = "com.lihaoyi"                   %% "upickle"                       % "0.3.6"
 
-    val postgresJdbc            = "org.postgresql"                %  "postgresql"                    % "9.4.1208" exclude("org.slf4j", "slf4j-simple")
-    val slick                   = "com.typesafe.slick"            %% "slick"                         % "3.1.1.2" //V.slick FIXME: remove after slick/slick#1274 released
-    val slickHikaricp           = "com.typesafe.slick"            %% "slick-hikaricp"                % "3.1.1.2" exclude("com.zaxxer", "HikariCP-java6") //V.slick FIXME: remove after slick/slick#1274 released
+    val postgresJdbc            = "org.postgresql"                %  "postgresql"                    % "9.4.1212" exclude("org.slf4j", "slf4j-simple")
+    val slick                   = "com.typesafe.slick"            %% "slick"                         % V.slick //FIXME: remove after slick/slick#1274 released
+    val slickHikaricp           = "com.typesafe.slick"            %% "slick-hikaricp"                % V.slick exclude("com.zaxxer", "HikariCP-java6") //V.slick FIXME: remove after slick/slick#1274 released
     val slickJoda               = "com.github.tototoshi"          %% "slick-joda-mapper"             % "2.0.0"
     val slickPg                 = "com.github.tminglei"           %% "slick-pg"                      % V.slickPg
     val slickPgDate2            = "com.github.tminglei"           %% "slick-pg_date2"                % V.slickPg
     val slickTestkit            = "com.typesafe.slick"            %% "slick-testkit"                 % V.slick
     val flywayCore              = "org.flywaydb"                  %  "flyway-core"                   % "3.1"
-    val hikariCP                = "com.zaxxer"                    %  "HikariCP"                      % "2.4.6"
+    val hikariCP                = "com.zaxxer"                    %  "HikariCP"                      % "2.5.1"
 
     val amazonaws               = "com.amazonaws"                 %  "aws-java-sdk-s3"               % "1.9.31"
     val awsWrap                 = "com.github.dwhjames"           %% "aws-wrap"                      % "0.7.2"
