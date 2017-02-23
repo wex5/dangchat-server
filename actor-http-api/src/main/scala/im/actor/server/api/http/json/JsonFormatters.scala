@@ -29,4 +29,7 @@ object JsonFormatters {
   implicit val userInfoFormat: Format[UserInfo] = Json.format[UserInfo]
 
   implicit val discussionGroupInfoFormat: Format[DiscussionGroupInfo] = Json.format[DiscussionGroupInfo]
+
+  implicit val groupMemberDTOFormat: Format[im.actor.server.model.GroupMemberDTO] = Json.format[im.actor.server.model.GroupMemberDTO]
+  implicit val groupDTOInfoFormat: Format[GroupDTOInfo] = Json.format[GroupDTOInfo]
 }
