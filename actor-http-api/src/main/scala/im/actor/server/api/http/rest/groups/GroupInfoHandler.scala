@@ -47,8 +47,8 @@ private[http] final class GroupInfoHandler()(implicit system: ActorSystem) exten
                       val groupMemberDTOs = scala.concurrent.Await.result(
                         db.run(GroupMemberDTORepo.findByGroupId(Integer.parseInt(groupId))), scala.concurrent.duration.Duration.Inf
                       )
-                      complete(OK → im.actor.server.api.http.json.GroupDTOInfo(groupDTO.groupId, groupDTO.groupName, groupMemberDTOs))
-                    case None ⇒ complete(OK → im.actor.server.api.http.json.GroupDTOInfo(0, "", null))
+                      complete(OK → im.actor.server.api.http.json.GroupDTOInfo(groupDTO.groupId, groupDTO.groupName, groupDTO.creatorUserId, groupDTO.about, groupMemberDTOs))
+                    case None ⇒ complete(OK → im.actor.server.api.http.json.GroupDTOInfo(0, "", 0, "", null))
                   }
                 } else {
                   complete("Api password错误！")

@@ -100,11 +100,12 @@ private object HttpApiFrontend {
     val usersRest = new im.actor.server.api.http.rest.users.UsersHttpHandler()
     val discussionGroupsRest = new im.actor.server.api.http.rest.groups.DiscussionGroupsHttpHandler()
     val groupInfoRest = new im.actor.server.api.http.rest.groups.GroupInfoHandler()
+    val loadHistoryMessageRest = new im.actor.server.api.http.rest.messaging.MessageInfoHandler()
 
     //添加tokens routes
     //by Lining 2016/8/24
     def defaultRoutes: Route = app.routes ~ tokensRest.routes ~ userBotsRest.routes ~ usersRest.routes ~
-      discussionGroupsRest.routes ~ groupInfoRest.routes ~ defaultVersion(status.routes ~ info.routes)
+      discussionGroupsRest.routes ~ groupInfoRest.routes ~ loadHistoryMessageRest.routes ~ defaultVersion(status.routes ~ info.routes)
     //def defaultRoutes: Route = app.routes ~ defaultVersion(status.routes ~ info.routes)
 
     def routes = HttpApi(system).customRoutes.foldLeft(defaultRoutes)(_ ~ _)

@@ -19,6 +19,7 @@ import im.actor.api.rpc.peers.{ ApiOutPeer, ApiPeerType }
 import im.actor.server.persist.HistoryMessageRepo
 import im.actor.server.dialog.HistoryUtils
 import im.actor.api.rpc.messaging.ApiMessageContainer
+import im.actor.server.model.{ Peer, PeerType }
 import org.joda.time.DateTime
 import slick.driver.PostgresDriver.api._
 
@@ -84,9 +85,17 @@ class SearchServiceImpl(implicit system: ActorSystem) extends SearchService {
         val action = for {
           historyOwner ← DBIO.from(getHistoryOwner(modelPeer, client.userId))
           messageModels ← searchType match {
+            case 0 ⇒
+              val searchParams = getSearchTextParameters(query)
+              HistoryMessageRepo.findHistory(client.userId, modelPeer, searchParams._1, searchParams._2, historyOwner)
             case 1 ⇒
               val searchParams = getSearchTextParameters(query)
-              HistoryMessageRepo.findText(client.userId, modelPeer, searchParams._1, searchParams._2, searchParams._3)
+              //从关键字判断是否是加载历史消息（^^^^^^$random_id：该格式为加载历史消息）
+              if (searchParams._1.startsWith("^^^^^^$")) {
+                HistoryMessageRepo.findHistory(client.userId, modelPeer, searchParams._1.split("\\$")(1), searchParams._2, historyOwner)
+              } else {
+                HistoryMessageRepo.findText(client.userId, modelPeer, searchParams._1, searchParams._2, searchParams._3)
+              }
             case _ ⇒
               val searchParams = getSearchFileParameters(query)
               HistoryMessageRepo.findFile(client.userId, modelPeer, searchParams._1, searchParams._2)
@@ -123,8 +132,52 @@ class SearchServiceImpl(implicit system: ActorSystem) extends SearchService {
       }
     }
 
+  def loadHistoryMessage(
+    userId: Int, peerType: Int, peerId: Int, randomId: String, limit: Int
+  ): Future[HandlerResult[ResponseMessageSearchResponse]] =
+    {
+      var peer = ApiOutPeer(ApiPeerType.Group, peerId, 66666)
+      if (peerType == 1) {
+        peer = ApiOutPeer(ApiPeerType.Private, peerId, 66666)
+      }
+      val modelPeer = peer.asModel
+      val action = for {
+        historyOwner ← DBIO.from(getHistoryOwner(modelPeer, userId))
+        messageModels ← HistoryMessageRepo.findHistory(userId, modelPeer, randomId, limit, historyOwner)
+        reactions ← dialogExt.fetchReactions(modelPeer, userId, messageModels.map(_.randomId).toSet)
+
+        (messages, userIds, groupIds) = messageModels.view
+          .map(_.ofUser(userId))
+          .foldLeft(Vector.empty[ApiMessageContainer], Set.empty[Int], Set.empty[Int]) {
+            case ((msgs, uids, guids), message) ⇒
+              message.asStruct(DateTime.now(), DateTime.now(), reactions.getOrElse(message.randomId, Vector.empty)).toOption match {
+                case Some(messageStruct) ⇒
+                  val newMsgs = msgs :+ messageStruct
+                  val newUserIds = relatedUsers(messageStruct.message) ++
+                    (if (message.senderUserId != userId)
+                      uids + message.senderUserId
+                    else
+                      uids)
+
+                  (newMsgs, newUserIds, guids ++ messageStruct._relatedGroupIds)
+                case None ⇒ (msgs, uids, guids)
+              }
+          }
+        //((users, userPeers), (groups, groupPeers)) ← DBIO.from(usersAndGroupsByIds(groupIds, userIds, true, false))
+      } yield Ok(ResponseMessageSearchResponse(
+        searchResults = messages.map(m ⇒ ApiMessageSearchItem(ApiMessageSearchResult(peer.asPeer, m.randomId, m.date, m.senderUserId, m.message))).toIndexedSeq,
+        users = Vector.empty, //users,
+        groups = Vector.empty, //groups,
+        loadMoreState = Option("loadMoreState".getBytes()),
+        userOutPeers = Vector.empty, //userPeers,
+        groupOutPeers = Vector.empty //groupPeers
+      ))
+      db.run(action)
+    }
+
   /**
    * 得到搜索类别
+   *
    * @param query
    * @return 1-搜索文本；2-搜索图片；3-搜索文档
    */
@@ -146,6 +199,7 @@ class SearchServiceImpl(implicit system: ActorSystem) extends SearchService {
 
   /**
    * 得到ApiOutPeer
+   *
    * @param query
    * @return
    */
@@ -157,6 +211,7 @@ class SearchServiceImpl(implicit system: ActorSystem) extends SearchService {
 
   /**
    * 得到搜索文本的参数
+   *
    * @param query
    * @return
    */
@@ -170,6 +225,7 @@ class SearchServiceImpl(implicit system: ActorSystem) extends SearchService {
 
   /**
    * 得到搜索文件的参数
+   *
    * @param query
    * @return
    */

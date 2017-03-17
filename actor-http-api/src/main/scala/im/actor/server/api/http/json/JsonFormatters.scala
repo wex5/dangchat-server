@@ -1,5 +1,6 @@
 package im.actor.server.api.http.json
 
+import im.actor.server.api.http.rest.messaging.HistoryMessagePatchesResult
 import play.api.libs.json._
 import play.api.libs.functional.syntax._
 
@@ -32,4 +33,10 @@ object JsonFormatters {
 
   implicit val groupMemberDTOFormat: Format[im.actor.server.model.GroupMemberDTO] = Json.format[im.actor.server.model.GroupMemberDTO]
   implicit val groupDTOInfoFormat: Format[GroupDTOInfo] = Json.format[GroupDTOInfo]
+
+  implicit val historyMessagePatchesResultFormat: Format[HistoryMessagePatchesResult] = Json.format[HistoryMessagePatchesResult]
+
+  //  implicit val historyMessageFormat: Format[im.actor.server.model.HistoryMessage] = Json.format[im.actor.server.model.HistoryMessage]
+  //  implicit val peerFormat: Format[im.actor.server.model.Peer] = Json.format[im.actor.server.model.Peer]
+  //  implicit val peerTypeFormat: Format[im.actor.server.model.PeerType] = Json.format[im.actor.server.model.PeerType]
 }

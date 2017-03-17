@@ -13,10 +13,12 @@ object GroupDTORepo {
     implicit val getMessageResult: GetResult[GroupDTO] = GetResult(r ⇒
       GroupDTO(
         groupId = r.nextInt(),
-        groupName = r.nextString()
+        groupName = r.nextString(),
+        creatorUserId = r.nextInt(),
+        about = r.nextString()
       ))
 
-    sql"""SELECT id,title FROM groups where id=$groupId""".as[GroupDTO].headOption
+    sql"""SELECT id,title,creatorUserId,about FROM groups where id=$groupId""".as[GroupDTO].headOption
   }
 
 }

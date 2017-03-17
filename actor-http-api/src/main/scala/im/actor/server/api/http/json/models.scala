@@ -27,4 +27,4 @@ final case class UserInfo(id: Int, name: String, accessHash: Long, nickname: Str
 
 final case class DiscussionGroupInfo(id: String, groupId: Int)
 
-final case class GroupDTOInfo(groupId: Int, groupName: String, members: Vector[im.actor.server.model.GroupMemberDTO])
+final case class GroupDTOInfo(groupId: Int, groupName: String, creatorUserId: Int, about: String, members: Vector[im.actor.server.model.GroupMemberDTO])

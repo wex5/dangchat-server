@@ -1,14 +1,14 @@
 package im.actor.server.persist
 
 import com.github.tototoshi.slick.PostgresJodaSupport._
-import im.actor.server.model.{ Peer, PeerType, HistoryMessage }
+import im.actor.server.model.{ HistoryMessage, Peer, PeerType }
 import im.actor.server.persist.dialog.DialogRepo
 import org.joda.time.DateTime
-import slick.dbio.Effect.{ Write, Read }
+import slick.dbio.Effect.{ Read, Write }
 import slick.driver.PostgresDriver
 import slick.driver.PostgresDriver.api._
 import slick.jdbc.GetResult
-import slick.profile.{ SqlStreamingAction, SqlAction, FixedSqlStreamingAction, FixedSqlAction }
+import slick.profile.{ FixedSqlAction, FixedSqlStreamingAction, SqlAction, SqlStreamingAction }
 
 final class HistoryMessageTable(tag: Tag) extends Table[HistoryMessage](tag, "history_messages") {
   def userId = column[Int]("user_id", O.PrimaryKey)
@@ -47,6 +47,7 @@ final class HistoryMessageTable(tag: Tag) extends Table[HistoryMessage](tag, "hi
   }
 
   private def unapplyHistoryMessage: HistoryMessage ⇒ Option[(Int, Int, Int, DateTime, Int, Long, Int, Array[Byte], Option[DateTime])] = { historyMessage ⇒
+    val sdf = new java.text.SimpleDateFormat("yyyy-MM-dd")
     HistoryMessage.unapply(historyMessage) map {
       case (userId, peer, date, senderUserId, randomId, messageContentHeader, messageContentData, deletedAt) ⇒
         (userId, peer.typ.value, peer.id, date, senderUserId, randomId, messageContentHeader, messageContentData, deletedAt)
@@ -183,6 +184,61 @@ object HistoryMessageRepo {
       ))
     val querySql = getSearchSql(userId, peer, "", limit, offset, 3)
     sql"""#$querySql""".as[HistoryMessage]
+  }
+
+  def findHistory(userId: Int, peer: Peer, randomId: String, limit: Int, historyOwner: Int) = {
+    implicit val getMessageResult: GetResult[HistoryMessage] = GetResult(r ⇒
+      HistoryMessage(
+        userId = r.nextInt,
+        peer = Peer(PeerType.fromValue(r.nextInt), r.nextInt),
+        date = getDatetimeResult(r),
+        senderUserId = r.nextInt,
+        randomId = r.nextLong,
+        messageContentHeader = r.nextInt,
+        messageContentData = r.nextBytes,
+        deletedAt = getDatetimeOptionResult(r)
+      ))
+    val querySql = getLoadHistorySql(peer.id, peer.`type`.value, userId, randomId, limit, historyOwner)
+    sql"""#$querySql""".as[HistoryMessage]
+  }
+
+  private def getLoadHistorySql(peerId: Int, peerType: Int, userId: Int, randomId: String, limit: Int, historyOwner: Int): String = {
+    val sb: StringBuilder = new StringBuilder(1024)
+    if (historyOwner > 0) {
+      //      sb.append("SELECT m.*,u.name as sender_name,u.nickname,(")
+      //      sb.append(userId).append("=m.sender_user_id) as is_out ")
+      //      sb.append("FROM history_messages m INNER JOIN users u ON m.sender_user_id=u.id ")
+      //      sb.append("WHERE m.peer_id=").append(peerId).append(" AND m.date<")
+      //      sb.append("(SELECT date FROM history_messages WHERE random_id=").append(randomId).append(" LIMIT 1) ")
+      //      sb.append("AND m.random_id<>").append(randomId)
+      //      sb.append(" AND m.user_id=").append(userId)
+
+      sb.append("SELECT DISTINCT ON(m.date,m.random_id) m.*,u.name as sender_name,u.nickname,(")
+      sb.append(userId).append("=m.sender_user_id) as is_out ")
+      sb.append("FROM history_messages m INNER JOIN users u ON m.sender_user_id=u.id ")
+      sb.append("WHERE m.peer_id=").append(peerId).append(" AND m.date<")
+      sb.append("(SELECT date FROM history_messages WHERE random_id=").append(randomId).append(" LIMIT 1) ")
+      sb.append("AND m.user_id=").append(userId)
+    } else {
+      //      sb.append("SELECT m.*,u.name as sender_name,u.nickname,(")
+      //      sb.append(userId).append("=m.sender_user_id) as is_out ")
+      //      sb.append("FROM history_messages m INNER JOIN users u ON m.sender_user_id=u.id ")
+      //      sb.append("WHERE m.peer_id=").append(peerId).append(" AND m.user_id=(")
+      //      sb.append("SELECT creator_user_id FROM groups WHERE id=").append(peerId).append(") ")
+      //      sb.append("AND m.date<(SELECT date FROM history_messages WHERE random_id=").append(randomId)
+      //      sb.append(" LIMIT 1)")
+
+      sb.append("SELECT DISTINCT ON(m.date,m.random_id) m.*,u.name as sender_name,u.nickname,(")
+      sb.append(userId).append("=m.sender_user_id) as is_out ")
+      sb.append("FROM history_messages m INNER JOIN users u ON m.sender_user_id=u.id ")
+      sb.append("WHERE m.peer_id=").append(peerId).append(" AND ")
+      sb.append("m.date<(SELECT date FROM history_messages WHERE random_id=").append(randomId).append(" LIMIT 1)")
+    }
+    sb.append(" ORDER BY m.date DESC LIMIT ").append(limit)
+    println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    println(sb.toString())
+    println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    sb.toString()
   }
 
   private def getSearchSql(userId: Int, peer: Peer, keyword: String, limit: Int, offset: Int, contentHeader: Int): String = {
