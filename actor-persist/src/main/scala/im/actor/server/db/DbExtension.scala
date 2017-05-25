@@ -18,7 +18,7 @@ final class DbExtensionImpl(val db: Database, val connector: Connector) extends 
   private lazy val flyway: Flyway = {
     val ds = db.source match {
       case s: HikariCPJdbcDataSource ⇒
-        s.hconf.setConnectionTimeout(10 * 1000)
+        s.hconf.setConnectionTimeout(20 * 1000)
         s.hconf.setMaximumPoolSize(200)
         s.ds
       case s: DataSourceJdbcDataSource ⇒ s.ds

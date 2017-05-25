@@ -36,7 +36,6 @@ object HistoryMessageRepoPatches {
       sb.append(" AND m.user_id=").append(userId)
     }
     sb.append(" ORDER BY date DESC LIMIT ").append(limit)
-    println(sb.toString())
     val querySql = sb.toString()
     sql"""#$querySql""".as[HistoryMessagePatches]
   }

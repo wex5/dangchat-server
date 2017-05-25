@@ -18,7 +18,7 @@ object GroupDTORepo {
         about = r.nextString()
       ))
 
-    sql"""SELECT id,title,creatorUserId,about FROM groups where id=$groupId""".as[GroupDTO].headOption
+    sql"""SELECT id,title,creator_user_id,about FROM groups where id=$groupId""".as[GroupDTO].headOption
   }
 
 }

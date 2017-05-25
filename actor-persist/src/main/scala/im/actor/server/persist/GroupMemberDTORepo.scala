@@ -17,7 +17,7 @@ object GroupMemberDTORepo {
         isAdmin = r.nextBoolean()
       ))
 
-    sql"""SELECT u.id,u.name,is_admin FROM group_users gu INNER JOIN users u ON gu.user_id=u.id WHERE gu.group_id=$groupId""".as[GroupMemberDTO]
+    sql"""SELECT u.id,u.name,gu.is_admin FROM group_users gu INNER JOIN users u ON gu.user_id=u.id WHERE gu.group_id=$groupId""".as[GroupMemberDTO]
   }
 
 }

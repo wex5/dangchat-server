@@ -218,7 +218,7 @@ object HistoryMessageRepo {
       sb.append("FROM history_messages m INNER JOIN users u ON m.sender_user_id=u.id ")
       sb.append("WHERE m.peer_id=").append(peerId).append(" AND m.date<")
       sb.append("(SELECT date FROM history_messages WHERE random_id=").append(randomId).append(" LIMIT 1) ")
-      sb.append("AND m.user_id=").append(userId)
+      sb.append("AND m.user_id=").append(userId).append(" AND m.deleted_at IS NULL")
     } else {
       //      sb.append("SELECT m.*,u.name as sender_name,u.nickname,(")
       //      sb.append(userId).append("=m.sender_user_id) as is_out ")
@@ -233,11 +233,9 @@ object HistoryMessageRepo {
       sb.append("FROM history_messages m INNER JOIN users u ON m.sender_user_id=u.id ")
       sb.append("WHERE m.peer_id=").append(peerId).append(" AND ")
       sb.append("m.date<(SELECT date FROM history_messages WHERE random_id=").append(randomId).append(" LIMIT 1)")
+      sb.append(" AND m.deleted_at IS NULL")
     }
     sb.append(" ORDER BY m.date DESC LIMIT ").append(limit)
-    println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-    println(sb.toString())
-    println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
     sb.toString()
   }
 
